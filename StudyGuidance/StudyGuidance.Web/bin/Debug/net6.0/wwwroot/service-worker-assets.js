@@ -5,7 +5,7 @@
       "url": "css\/app.css"
     },
     {
-      "hash": "sha256-z8OR40MowJ8GgK6P89Y+hiJK5+cclzFHzLhFQLL92bg=",
+      "hash": "sha256-SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7\/p4nS6D\/0=",
       "url": "css\/bootstrap\/bootstrap.min.css"
     },
     {
@@ -65,6 +65,10 @@
       "url": "index.html"
     },
     {
+      "hash": "sha256-j8TlRIzQUdiFZDb0xb0XNKoDm8w37dtUKb7SOdx51Gk=",
+      "url": "logo-talentit-white.png"
+    },
+    {
       "hash": "sha256-9ZDPhU0p0vEHUTqtmmHitj+L6z4fSCU5Wv6kmBGHwcg=",
       "url": "manifest.json"
     },
@@ -73,7 +77,7 @@
       "url": "sample-data\/weather.json"
     },
     {
-      "hash": "sha256-wUiwbBMLI6\/V6h\/zQeuoi+Rkbr5EBpd6TQUPhsroDnc=",
+      "hash": "sha256-PKB+0BMBRsxEMky+WMa4RhigV29BKzxMWwTy1mZKJLE=",
       "url": "StudyGuidance.Web.styles.css"
     },
     {
@@ -833,8 +837,8 @@
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
-      "hash": "sha256-Iww31ANFa3KZuR4RkhiSYt3FJ7PKpMdeFNq3l3Td1h8=",
-      "url": "_framework\/dotnet.6.0.18.dhyik9n34e.js"
+      "hash": "sha256-GT2gK+GjOisRXJY+9yh6H8s6K\/KDIsaFMFIgWvAnttY=",
+      "url": "_framework\/dotnet.6.0.16.qi11z9xxye.js"
     },
     {
       "hash": "sha256-eZ48TqSDBkRFut2vm6DOJQJPQjvG+LB8ucOA4NLkqg0=",
@@ -861,11 +865,11 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-+DGnHeHFzoUofvbHWyTPvOA8xJpzVwln5Czle\/ol1Eo=",
+      "hash": "sha256-nfKebgL3znco1LOuq2tttTLlwTZC1fxLQNGaNKpfW5E=",
       "url": "_framework\/StudyGuidance.Web.dll"
     },
     {
-      "hash": "sha256-jnmOTkcL+jfw\/gBhq701M0rZlHd3T322jdQQIQGaozE=",
+      "hash": "sha256-AGgf\/KVwotqT9Q9M5kFGEdAJNrWgOZt2NeDZk\/BPH6c=",
       "url": "_framework\/StudyGuidance.Web.pdb"
     },
     {
@@ -873,9 +877,9 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-uKVXuO07j9OG1Btz9Uu4hziUKxLezC13Adcm9e\/wtGI=",
+      "hash": "sha256-PLWl8pNe7Wm0\/cdmtaPHrrwTUb+ReleJoZ85y953X6A=",
       "url": "_framework\/blazor.boot.json"
     }
   ],
-  "version": "Ns0jzD82"
+  "version": "YEqswTjt"
 };

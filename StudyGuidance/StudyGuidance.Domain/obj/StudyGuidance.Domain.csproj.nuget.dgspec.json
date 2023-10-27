@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Domain\\StudyGuidance.Domain.csproj": {}
+    "C:\\Users\\Gebruiker\\OneDrive - PXL\\Documenten\\pxl\\3AONb\\IT-project\\NieuwProject\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Domain\\StudyGuidance.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Domain\\StudyGuidance.Domain.csproj": {
+    "C:\\Users\\Gebruiker\\OneDrive - PXL\\Documenten\\pxl\\3AONb\\IT-project\\NieuwProject\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Domain\\StudyGuidance.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Domain\\StudyGuidance.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Gebruiker\\OneDrive - PXL\\Documenten\\pxl\\3AONb\\IT-project\\NieuwProject\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Domain\\StudyGuidance.Domain.csproj",
         "projectName": "StudyGuidance.Domain",
-        "projectPath": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Domain\\StudyGuidance.Domain.csproj",
-        "packagesPath": "C:\\Users\\Lucah\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Domain\\obj\\",
+        "projectPath": "C:\\Users\\Gebruiker\\OneDrive - PXL\\Documenten\\pxl\\3AONb\\IT-project\\NieuwProject\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Domain\\StudyGuidance.Domain.csproj",
+        "packagesPath": "C:\\Users\\Gebruiker\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Gebruiker\\OneDrive - PXL\\Documenten\\pxl\\3AONb\\IT-project\\NieuwProject\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Lucah\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Gebruiker\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
