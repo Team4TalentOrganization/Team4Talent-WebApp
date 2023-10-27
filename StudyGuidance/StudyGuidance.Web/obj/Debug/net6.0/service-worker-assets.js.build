@@ -5,7 +5,7 @@
       "url": "css\/app.css"
     },
     {
-      "hash": "sha256-z8OR40MowJ8GgK6P89Y+hiJK5+cclzFHzLhFQLL92bg=",
+      "hash": "sha256-SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7\/p4nS6D\/0=",
       "url": "css\/bootstrap\/bootstrap.min.css"
     },
     {
@@ -61,7 +61,7 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-Dz9dMTVNQMV\/lCuErZAWhritEVFOWtBs3TW8Lc8O4ao=",
+      "hash": "sha256-tklvNKyg6V\/63JXtbNaoVAy33Cu2xwcqc\/y4zclhTBw=",
       "url": "index.html"
     },
     {
@@ -73,7 +73,7 @@
       "url": "sample-data\/weather.json"
     },
     {
-      "hash": "sha256-wUiwbBMLI6\/V6h\/zQeuoi+Rkbr5EBpd6TQUPhsroDnc=",
+      "hash": "sha256-13OF1Gj8Y7WoAc1F7ee1lnLMYi3NVOG0ybGVUChCOUs=",
       "url": "StudyGuidance.Web.styles.css"
     },
     {
@@ -141,6 +141,14 @@
       "url": "_framework\/Microsoft.Extensions.FileSystemGlobbing.dll"
     },
     {
+      "hash": "sha256-5vcfCTnU9cD9k\/NWMvpZbd0bLlMNu2nGYzwRR7pE2zE=",
+      "url": "_framework\/Microsoft.Extensions.Localization.dll"
+    },
+    {
+      "hash": "sha256-mlOCYrC65BpJ1O\/5ql15iSS3u4e4w7O7YSqi0ZN5cl4=",
+      "url": "_framework\/Microsoft.Extensions.Localization.Abstractions.dll"
+    },
+    {
       "hash": "sha256-GDZQCBtVHfrZZ6fL95lGoinLeUWLjQShLbfESwO7mrc=",
       "url": "_framework\/Microsoft.Extensions.Logging.dll"
     },
@@ -163,6 +171,10 @@
     {
       "hash": "sha256-JENkxS9516I3yudzXFewx4Jbc3E42bTb8zXN9kXis9M=",
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.dll"
+    },
+    {
+      "hash": "sha256-NpF5EJuK2nKkdp2yOktqQKQhe3bk\/KXNedQQE8H7TgA=",
+      "url": "_framework\/MudBlazor.dll"
     },
     {
       "hash": "sha256-6+E55JXedimdw1c1bDtVg4K7XuWjVWVTifH8QpfzXSY=",
@@ -861,11 +873,11 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-+DGnHeHFzoUofvbHWyTPvOA8xJpzVwln5Czle\/ol1Eo=",
+      "hash": "sha256-43I8U0ZrCn5p4VvFEp3pDzjrG30clLxH\/00fecLHNq0=",
       "url": "_framework\/StudyGuidance.Web.dll"
     },
     {
-      "hash": "sha256-jnmOTkcL+jfw\/gBhq701M0rZlHd3T322jdQQIQGaozE=",
+      "hash": "sha256-DLZsLl034HXr7LfuQ5PJQ728rnDgHyqi8CO3+9T6mzM=",
       "url": "_framework\/StudyGuidance.Web.pdb"
     },
     {
@@ -873,9 +885,17 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-uKVXuO07j9OG1Btz9Uu4hziUKxLezC13Adcm9e\/wtGI=",
+      "hash": "sha256-wKjKkCNnCToxt6oKhm3JMMsx1LbyRQ7ZM6BWXvPofew=",
       "url": "_framework\/blazor.boot.json"
+    },
+    {
+      "hash": "sha256-YRt7VVv7R8QKqqxiF7U39TJJE9k7rvVd35MPHWRs7Wk=",
+      "url": "_content\/MudBlazor\/MudBlazor.min.css"
+    },
+    {
+      "hash": "sha256-GCtA+TppdsK+07YxEakAQLwOkibijn+mpWkqphJvaKc=",
+      "url": "_content\/MudBlazor\/MudBlazor.min.js"
     }
   ],
-  "version": "Ns0jzD82"
+  "version": "+ET6hhKf"
 };

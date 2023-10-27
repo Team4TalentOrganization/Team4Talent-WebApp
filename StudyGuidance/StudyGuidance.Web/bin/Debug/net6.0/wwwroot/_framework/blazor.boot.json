@@ -23,12 +23,15 @@
       "Microsoft.Extensions.FileProviders.Abstractions.dll": "sha256-7PzvEcQvpK1c8tTX9VPI8AF+XrekqbAytNBQXJjvTvQ=",
       "Microsoft.Extensions.FileProviders.Physical.dll": "sha256-sXujvGMZDgBBZ9HqfcEq9XsM0pvwyhPt60NA9qLDzGI=",
       "Microsoft.Extensions.FileSystemGlobbing.dll": "sha256-viiXOG0fwhWobT0TQ1ZOJiZBdRvYRlWbDtjz+6d8sQI=",
+      "Microsoft.Extensions.Localization.dll": "sha256-5vcfCTnU9cD9k\/NWMvpZbd0bLlMNu2nGYzwRR7pE2zE=",
+      "Microsoft.Extensions.Localization.Abstractions.dll": "sha256-mlOCYrC65BpJ1O\/5ql15iSS3u4e4w7O7YSqi0ZN5cl4=",
       "Microsoft.Extensions.Logging.dll": "sha256-GDZQCBtVHfrZZ6fL95lGoinLeUWLjQShLbfESwO7mrc=",
       "Microsoft.Extensions.Logging.Abstractions.dll": "sha256-TeK78LW1mefI\/Ao7uFcK6TBhgjx9HUMSm3nqBsUC6pI=",
       "Microsoft.Extensions.Options.dll": "sha256-eGESyy9mRu8RcCGajAu4E8nxSmeB5nxiZkFPVaZ5Vl0=",
       "Microsoft.Extensions.Primitives.dll": "sha256-jOmoWSfsdQexH\/6QCA56gR1RMEqeix2iDDUBWbpAOQI=",
       "Microsoft.JSInterop.dll": "sha256-ALn8NC3hrTKXR7eHxOPax8hsoVRUDr+2fn6cTY635kE=",
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-JENkxS9516I3yudzXFewx4Jbc3E42bTb8zXN9kXis9M=",
+      "MudBlazor.dll": "sha256-NpF5EJuK2nKkdp2yOktqQKQhe3bk\/KXNedQQE8H7TgA=",
       "System.IO.Pipelines.dll": "sha256-6+E55JXedimdw1c1bDtVg4K7XuWjVWVTifH8QpfzXSY=",
       "Microsoft.CSharp.dll": "sha256-lyq5nrD2zhAnxIMzHgyqSnQeiY4waa4MlyAJ2pF8TQE=",
       "Microsoft.VisualBasic.Core.dll": "sha256-mtl8KYqcpZ5OaYRGkjQtye0INeF\/g+IF79v8ZXAGJxU=",
@@ -196,13 +199,13 @@
       "mscorlib.dll": "sha256-R1JlsouwIAVx0f4j8Ku8nSgx9UWnoKc26EJSnZko6MY=",
       "netstandard.dll": "sha256-8Ej3VOdrj8ijDcTS0\/1AEMpisaFDe3Nmj0Fbq5sfZEk=",
       "System.Private.CoreLib.dll": "sha256-tqFypIfntE2p16olQ2cI4rklqWNJqsPJvAoPSChg0H0=",
-      "StudyGuidance.Web.dll": "sha256-+DGnHeHFzoUofvbHWyTPvOA8xJpzVwln5Czle\/ol1Eo="
+      "StudyGuidance.Web.dll": "sha256-43I8U0ZrCn5p4VvFEp3pDzjrG30clLxH\/00fecLHNq0="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "StudyGuidance.Web.pdb": "sha256-jnmOTkcL+jfw\/gBhq701M0rZlHd3T322jdQQIQGaozE="
+      "StudyGuidance.Web.pdb": "sha256-DLZsLl034HXr7LfuQ5PJQ728rnDgHyqi8CO3+9T6mzM="
     },
     "runtime": {
       "dotnet.6.0.18.dhyik9n34e.js": "sha256-Iww31ANFa3KZuR4RkhiSYt3FJ7PKpMdeFNq3l3Td1h8=",

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HiQTwkkopV7cSTB1FoG4CMVxufGg31mB7o3IwM/S4AY=",
+  "Hash": "J6sFtOOn8xrXePRHEa1+O1qJqHyT5AuZ4PR5xCKuNzk=",
   "Source": "StudyGuidance.Web",
   "BasePath": "/",
   "Mode": "Root",
@@ -16,6 +16,40 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\Lucah\\.nuget\\packages\\mudblazor\\6.11.0\\staticwebassets\\MudBlazor.min.css",
+      "SourceId": "MudBlazor",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\Lucah\\.nuget\\packages\\mudblazor\\6.11.0\\staticwebassets\\",
+      "BasePath": "_content/MudBlazor",
+      "RelativePath": "MudBlazor.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Lucah\\.nuget\\packages\\mudblazor\\6.11.0\\staticwebassets\\MudBlazor.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\Lucah\\.nuget\\packages\\mudblazor\\6.11.0\\staticwebassets\\MudBlazor.min.js",
+      "SourceId": "MudBlazor",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\Lucah\\.nuget\\packages\\mudblazor\\6.11.0\\staticwebassets\\",
+      "BasePath": "_content/MudBlazor",
+      "RelativePath": "MudBlazor.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Lucah\\.nuget\\packages\\mudblazor\\6.11.0\\staticwebassets\\MudBlazor.min.js"
+    },
     {
       "Identity": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\bin\\Debug\\net6.0\\wwwroot\\_framework\\blazor.boot.json",
       "SourceId": "StudyGuidance.Web",
@@ -459,6 +493,40 @@
       "OriginalItemSpec": "C:\\Users\\Lucah\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\6.0.0\\lib\\net6.0\\Microsoft.Extensions.FileSystemGlobbing.dll"
     },
     {
+      "Identity": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Extensions.Localization.Abstractions.dll",
+      "SourceId": "StudyGuidance.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Localization.Abstractions.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Lucah\\.nuget\\packages\\microsoft.extensions.localization.abstractions\\6.0.16\\lib\\net6.0\\Microsoft.Extensions.Localization.Abstractions.dll"
+    },
+    {
+      "Identity": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Extensions.Localization.dll",
+      "SourceId": "StudyGuidance.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Localization.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Lucah\\.nuget\\packages\\microsoft.extensions.localization\\6.0.16\\lib\\net6.0\\Microsoft.Extensions.Localization.dll"
+    },
+    {
       "Identity": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Extensions.Logging.Abstractions.dll",
       "SourceId": "StudyGuidance.Web",
       "SourceType": "Computed",
@@ -644,6 +712,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Lucah\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.18\\runtimes\\browser-wasm\\lib\\net6.0\\mscorlib.dll"
+    },
+    {
+      "Identity": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\bin\\Debug\\net6.0\\wwwroot\\_framework\\MudBlazor.dll",
+      "SourceId": "StudyGuidance.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/MudBlazor.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Lucah\\.nuget\\packages\\mudblazor\\6.11.0\\lib\\net6.0\\MudBlazor.dll"
     },
     {
       "Identity": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\bin\\Debug\\net6.0\\wwwroot\\_framework\\netstandard.dll",
@@ -3434,6 +3519,23 @@
       "OriginalItemSpec": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.IO.Pipes.AccessControl.dll"
     },
     {
+      "Identity": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\obj\\Debug\\net6.0\\build-gz\\+7aiqMS6.gz",
+      "SourceId": "StudyGuidance.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Localization.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Extensions.Localization.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Extensions.Localization.dll"
+    },
+    {
       "Identity": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\obj\\Debug\\net6.0\\build-gz\\+7XBfQv+.gz",
       "SourceId": "StudyGuidance.Web",
       "SourceType": "Computed",
@@ -3449,6 +3551,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Reflection.TypeExtensions.dll"
+    },
+    {
+      "Identity": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\obj\\Debug\\net6.0\\build-gz\\+AVUG6e6.gz",
+      "SourceId": "StudyGuidance.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Localization.Abstractions.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Extensions.Localization.Abstractions.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Extensions.Localization.Abstractions.dll"
     },
     {
       "Identity": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\obj\\Debug\\net6.0\\build-gz\\+q0WbXYb.gz",
@@ -4401,6 +4520,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Security.dll"
+    },
+    {
+      "Identity": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\obj\\Debug\\net6.0\\build-gz\\DxvvP91d.gz",
+      "SourceId": "StudyGuidance.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/MudBlazor.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\bin\\Debug\\net6.0\\wwwroot\\_framework\\MudBlazor.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\bin\\Debug\\net6.0\\wwwroot\\_framework\\MudBlazor.dll"
     },
     {
       "Identity": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\obj\\Debug\\net6.0\\build-gz\\e5BfpY8X.gz",

@@ -24,6 +24,8 @@ C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\Study
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.FileProviders.Abstractions.dll
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.Localization.Abstractions.dll
+C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.Localization.dll
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.Logging.dll
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.Options.dll
@@ -35,6 +37,7 @@ C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\Study
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Win32.Primitives.dll
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Win32.Registry.dll
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\mscorlib.dll
+C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\MudBlazor.dll
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\netstandard.dll
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\StudyGuidance.Web.dll
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\StudyGuidance.Web.pdb
@@ -199,7 +202,9 @@ C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\Study
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\System.Xml.XPath.XDocument.dll
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\WindowsBase.dll
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\System.IO.Pipes.AccessControl.dll.gz
+C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.Localization.dll.gz
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\System.Reflection.TypeExtensions.dll.gz
+C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.Localization.Abstractions.dll.gz
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\System.IO.FileSystem.Watcher.dll.gz
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\System.Runtime.Serialization.dll.gz
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\System.Memory.dll.gz
@@ -256,6 +261,7 @@ C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\Study
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\System.ComponentModel.TypeConverter.dll.gz
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\WindowsBase.dll.gz
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\System.Security.dll.gz
+C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\MudBlazor.dll.gz
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Metadata.dll.gz
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.Options.dll.gz
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\wwwroot\_framework\System.Net.NetworkInformation.dll.gz
@@ -418,12 +424,15 @@ C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\Study
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\Microsoft.Extensions.Localization.dll
+C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\Microsoft.Extensions.Localization.Abstractions.dll
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\Microsoft.JSInterop.dll
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\Microsoft.JSInterop.WebAssembly.dll
+C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\MudBlazor.dll
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\System.IO.Pipelines.dll
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\Microsoft.CSharp.dll
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\bin\Debug\net6.0\Microsoft.VisualBasic.Core.dll
@@ -620,12 +629,15 @@ C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\Study
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\obj\Debug\net6.0\build-gz\bXe0x4Ku.gz
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\obj\Debug\net6.0\build-gz\ti84NLfk.gz
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\obj\Debug\net6.0\build-gz\kl0BG+Qu.gz
+C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\obj\Debug\net6.0\build-gz\+7aiqMS6.gz
+C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\obj\Debug\net6.0\build-gz\+AVUG6e6.gz
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\obj\Debug\net6.0\build-gz\jt9RPhoK.gz
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\obj\Debug\net6.0\build-gz\zEwI9BKr.gz
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\obj\Debug\net6.0\build-gz\ebELcPIM.gz
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\obj\Debug\net6.0\build-gz\UrPwK78M.gz
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\obj\Debug\net6.0\build-gz\x98GzbFb.gz
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\obj\Debug\net6.0\build-gz\sLixF4yr.gz
+C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\obj\Debug\net6.0\build-gz\DxvvP91d.gz
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\obj\Debug\net6.0\build-gz\ySAKYFNK.gz
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\obj\Debug\net6.0\build-gz\A6+8wEP+.gz
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\obj\Debug\net6.0\build-gz\UqMwVInE.gz
@@ -822,3 +834,5 @@ C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\Study
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\obj\Debug\net6.0\refint\StudyGuidance.Web.dll
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\obj\Debug\net6.0\StudyGuidance.Web.pdb
 C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\obj\Debug\net6.0\ref\StudyGuidance.Web.dll
+C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\obj\Debug\net6.0\scopedcss\Shared\HomepageHeroe.razor.rz.scp.css
+C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\obj\Debug\net6.0\scopedcss\Shared\PlayerCards.razor.rz.scp.css

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gXZ84fs9sUqn1xErANl8MXmHfLia5cNislreEPPmQF1M31tnDIEyI6Msi+ZS4jJW/g3S7Q7nuBGEwr0mQadmVA==",
+  "dgSpecHash": "eMOdOM5gvkoRNHyRF3T7BLzJZEtOKkaQlAAKrlmwzsMudpijclCtjUYVujwdLVz/CL9eWDfPleqwAHjLOa/Z1g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\StudyGuidance.Web.csproj",
   "expectedPackageFiles": [
@@ -22,12 +22,15 @@
     "C:\\Users\\Lucah\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\6.0.0\\microsoft.extensions.fileproviders.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Lucah\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\6.0.0\\microsoft.extensions.fileproviders.physical.6.0.0.nupkg.sha512",
     "C:\\Users\\Lucah\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\6.0.0\\microsoft.extensions.filesystemglobbing.6.0.0.nupkg.sha512",
+    "C:\\Users\\Lucah\\.nuget\\packages\\microsoft.extensions.localization\\6.0.16\\microsoft.extensions.localization.6.0.16.nupkg.sha512",
+    "C:\\Users\\Lucah\\.nuget\\packages\\microsoft.extensions.localization.abstractions\\6.0.16\\microsoft.extensions.localization.abstractions.6.0.16.nupkg.sha512",
     "C:\\Users\\Lucah\\.nuget\\packages\\microsoft.extensions.logging\\6.0.0\\microsoft.extensions.logging.6.0.0.nupkg.sha512",
     "C:\\Users\\Lucah\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.3\\microsoft.extensions.logging.abstractions.6.0.3.nupkg.sha512",
     "C:\\Users\\Lucah\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\Lucah\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\Lucah\\.nuget\\packages\\microsoft.jsinterop\\6.0.16\\microsoft.jsinterop.6.0.16.nupkg.sha512",
     "C:\\Users\\Lucah\\.nuget\\packages\\microsoft.jsinterop.webassembly\\6.0.16\\microsoft.jsinterop.webassembly.6.0.16.nupkg.sha512",
+    "C:\\Users\\Lucah\\.nuget\\packages\\mudblazor\\6.11.0\\mudblazor.6.11.0.nupkg.sha512",
     "C:\\Users\\Lucah\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\Lucah\\.nuget\\packages\\system.io.pipelines\\6.0.3\\system.io.pipelines.6.0.3.nupkg.sha512",
     "C:\\Users\\Lucah\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",

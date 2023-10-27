@@ -1,0 +1,12 @@
+C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\bin\Debug\net6.0\StudyGuidance.AppLogic.deps.json
+C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\bin\Debug\net6.0\StudyGuidance.AppLogic.dll
+C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\bin\Debug\net6.0\StudyGuidance.AppLogic.pdb
+C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\obj\Debug\net6.0\StudyGuidance.AppLogic.csproj.AssemblyReference.cache
+C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\obj\Debug\net6.0\StudyGuidance.AppLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\obj\Debug\net6.0\StudyGuidance.AppLogic.AssemblyInfoInputs.cache
+C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\obj\Debug\net6.0\StudyGuidance.AppLogic.AssemblyInfo.cs
+C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\obj\Debug\net6.0\StudyGuidance.AppLogic.csproj.CoreCompileInputs.cache
+C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\obj\Debug\net6.0\StudyGuidance.AppLogic.dll
+C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\obj\Debug\net6.0\refint\StudyGuidance.AppLogic.dll
+C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\obj\Debug\net6.0\StudyGuidance.AppLogic.pdb
+C:\Users\Lucah\Documents\School\2023-2024\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\obj\Debug\net6.0\ref\StudyGuidance.AppLogic.dll
