@@ -77,7 +77,7 @@
       "url": "sample-data\/weather.json"
     },
     {
-      "hash": "sha256-PKB+0BMBRsxEMky+WMa4RhigV29BKzxMWwTy1mZKJLE=",
+      "hash": "sha256-Zuf+ebi7sB9IBiQ77p0hpf8RQaXPTYZFHtihdCgO6zQ=",
       "url": "StudyGuidance.Web.styles.css"
     },
     {
@@ -881,5 +881,5 @@
       "url": "_framework\/blazor.boot.json"
     }
   ],
-  "version": "YEqswTjt"
+  "version": "QB\/p7noI"
 };
