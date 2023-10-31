@@ -1,0 +1,11 @@
+C:\Users\11701393\OneDrive - PXL\Bureaublad\studyGuidance\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\bin\Debug\net6.0\StudyGuidance.Domain.deps.json
+C:\Users\11701393\OneDrive - PXL\Bureaublad\studyGuidance\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\bin\Debug\net6.0\StudyGuidance.Domain.dll
+C:\Users\11701393\OneDrive - PXL\Bureaublad\studyGuidance\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\bin\Debug\net6.0\StudyGuidance.Domain.pdb
+C:\Users\11701393\OneDrive - PXL\Bureaublad\studyGuidance\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\obj\Debug\net6.0\StudyGuidance.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\11701393\OneDrive - PXL\Bureaublad\studyGuidance\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\obj\Debug\net6.0\StudyGuidance.Domain.AssemblyInfoInputs.cache
+C:\Users\11701393\OneDrive - PXL\Bureaublad\studyGuidance\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\obj\Debug\net6.0\StudyGuidance.Domain.AssemblyInfo.cs
+C:\Users\11701393\OneDrive - PXL\Bureaublad\studyGuidance\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\obj\Debug\net6.0\StudyGuidance.Domain.csproj.CoreCompileInputs.cache
+C:\Users\11701393\OneDrive - PXL\Bureaublad\studyGuidance\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\obj\Debug\net6.0\StudyGuidance.Domain.dll
+C:\Users\11701393\OneDrive - PXL\Bureaublad\studyGuidance\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\obj\Debug\net6.0\refint\StudyGuidance.Domain.dll
+C:\Users\11701393\OneDrive - PXL\Bureaublad\studyGuidance\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\obj\Debug\net6.0\StudyGuidance.Domain.pdb
+C:\Users\11701393\OneDrive - PXL\Bureaublad\studyGuidance\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\obj\Debug\net6.0\ref\StudyGuidance.Domain.dll
