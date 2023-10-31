@@ -11,7 +11,7 @@ using StudyGuidance.Infrastructure;
 namespace StudyGuidance.Infrastructure.Migrations
 {
     [DbContext(typeof(StudyGuidanceDbContext))]
-    [Migration("20231031144809_DomainQuestion")]
+    [Migration("20231031162205_DomainQuestion")]
     partial class DomainQuestion
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,6 +35,9 @@ namespace StudyGuidance.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsChecked")
+                        .HasColumnType("bit");
+
                     b.Property<int>("QuestionId")
                         .HasColumnType("int");
 
@@ -49,31 +52,36 @@ namespace StudyGuidance.Infrastructure.Migrations
                         {
                             OptionId = 1,
                             Content = "AI",
-                            QuestionId = -1
+                            IsChecked = false,
+                            QuestionId = 1
                         },
                         new
                         {
                             OptionId = 2,
                             Content = "Development",
-                            QuestionId = -1
+                            IsChecked = false,
+                            QuestionId = 1
                         },
                         new
                         {
                             OptionId = 3,
                             Content = "Software Engineering",
-                            QuestionId = -1
+                            IsChecked = false,
+                            QuestionId = 1
                         },
                         new
                         {
                             OptionId = 4,
                             Content = "Systeem en netwerkbeheer",
-                            QuestionId = -1
+                            IsChecked = false,
+                            QuestionId = 1
                         },
                         new
                         {
                             OptionId = 5,
                             Content = "Data",
-                            QuestionId = -1
+                            IsChecked = false,
+                            QuestionId = 1
                         });
                 });
 
@@ -96,7 +104,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            QuestionId = -1,
+                            QuestionId = 1,
                             Phrase = "In welk domein interesseer je je?"
                         });
                 });

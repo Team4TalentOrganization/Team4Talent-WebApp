@@ -9,7 +9,7 @@ namespace StudyGuidance.AppLogic
 {
     public interface IQuestionRepository
     {
-        List<Question> GetQuestions();
+        Task<IReadOnlyList<Question>> GetQuestionsAsync();
 
     }
 }

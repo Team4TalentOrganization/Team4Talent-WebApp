@@ -28,7 +28,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                     OptionId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     QuestionId = table.Column<int>(type: "int", nullable: false),
-                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsChecked = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -44,18 +45,18 @@ namespace StudyGuidance.Infrastructure.Migrations
             migrationBuilder.InsertData(
                 table: "Questions",
                 columns: new[] { "QuestionId", "Phrase" },
-                values: new object[] { -1, "In welk domein interesseer je je?" });
+                values: new object[] { 1, "In welk domein interesseer je je?" });
 
             migrationBuilder.InsertData(
                 table: "Options",
-                columns: new[] { "OptionId", "Content", "QuestionId" },
+                columns: new[] { "OptionId", "Content", "IsChecked", "QuestionId" },
                 values: new object[,]
                 {
-                    { 1, "AI", -1 },
-                    { 2, "Development", -1 },
-                    { 3, "Software Engineering", -1 },
-                    { 4, "Systeem en netwerkbeheer", -1 },
-                    { 5, "Data", -1 }
+                    { 1, "AI", false, 1 },
+                    { 2, "Development", false, 1 },
+                    { 3, "Software Engineering", false, 1 },
+                    { 4, "Systeem en netwerkbeheer", false, 1 },
+                    { 5, "Data", false, 1 }
                 });
 
             migrationBuilder.CreateIndex(

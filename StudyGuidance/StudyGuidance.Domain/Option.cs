@@ -14,5 +14,7 @@ namespace StudyGuidance.Domain
         public int QuestionId { get; set; }
 
         public string Content { get; set; } = string.Empty;
+
+        public bool IsChecked { get; set; } = false;
     }
 }

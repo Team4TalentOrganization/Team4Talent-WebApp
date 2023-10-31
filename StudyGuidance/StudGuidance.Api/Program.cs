@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using StudyGuidance.AppLogic;
 using StudyGuidance.Infrastructure;
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,8 @@ builder.Services.AddSwaggerGen();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<StudyGuidanceDbContext>(options =>
     options.UseSqlServer(connectionString));
+
+builder.Services.AddScoped<IQuestionRepository, QuestionDbRepository>();
 
 var app = builder.Build();
 

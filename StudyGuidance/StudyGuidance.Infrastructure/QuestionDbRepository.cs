@@ -19,9 +19,9 @@ namespace StudyGuidance.Infrastructure
             _context = context;
         }
 
-        public List<Question> GetQuestions()
+        public async Task<IReadOnlyList<Question>> GetQuestionsAsync()
         {
-            return _context.Questions.Include(options => options.Options).ToList();
+            return await _context.Questions.Include(options => options.Options).ToListAsync<Question>();
         }
     }
 }
