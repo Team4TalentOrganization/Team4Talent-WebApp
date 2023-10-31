@@ -31,11 +31,11 @@ namespace StudyGuidance.Infrastructure
             modelBuilder.Entity<Question>().HasData(domainQuestion);
 
             modelBuilder.Entity<Option>().HasData(
-                        new Option { OptionId = 1, Content = "AI", QuestionId = domainQuestion.QuestionId = 1 },
-                        new Option { OptionId = 2, Content = "Development", QuestionId = domainQuestion.QuestionId = 1 },
-                        new Option { OptionId = 3, Content = "Software Engineering", QuestionId = domainQuestion.QuestionId = 1 },
-                        new Option { OptionId = 4, Content = "Systeem en netwerkbeheer", QuestionId = domainQuestion.QuestionId = 1 },
-                        new Option { OptionId = 5, Content = "Data", QuestionId = domainQuestion.QuestionId = 1 }
+                        new Option { OptionId = 1, Content = "AI", QuestionId = domainQuestion.QuestionId },
+                        new Option { OptionId = 2, Content = "Development", QuestionId = domainQuestion.QuestionId },
+                        new Option { OptionId = 3, Content = "Software Engineering", QuestionId = domainQuestion.QuestionId },
+                        new Option { OptionId = 4, Content = "Systeem en netwerkbeheer", QuestionId = domainQuestion.QuestionId },
+                        new Option { OptionId = 5, Content = "Data", QuestionId = domainQuestion.QuestionId }
             );
         }
     }

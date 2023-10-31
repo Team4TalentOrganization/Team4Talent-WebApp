@@ -11,7 +11,7 @@ using StudyGuidance.Infrastructure;
 namespace StudyGuidance.Infrastructure.Migrations
 {
     [DbContext(typeof(StudyGuidanceDbContext))]
-    [Migration("20231031162205_DomainQuestion")]
+    [Migration("20231031163721_DomainQuestion")]
     partial class DomainQuestion
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
