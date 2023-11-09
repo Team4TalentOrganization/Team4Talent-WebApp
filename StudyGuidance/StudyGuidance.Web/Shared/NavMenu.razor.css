@@ -7,7 +7,6 @@
 
 .top-row {
     height: 3.5rem;
-    /*background: linear-gradient(45deg, rgba(255,84,4,0.8156512605042017) 20%, rgba(8,36,84,0.6811974789915967) 67%);*/
 }
 
 .titleApp{
@@ -23,13 +22,6 @@
     font-size: 1.1rem;
     margin-right: 0;
 }
-
-/*.oi {
-    width: 2rem;
-    font-size: 1.1rem;
-    vertical-align: text-top;
-    top: -2px;
-}*/
 
 .navbar-brand[b-o6mx9bwrvr] {
     font-size: 1.1rem;
@@ -93,7 +85,6 @@ nav.flex-column {
     }
 
     .collapse {
-        /* Never collapse the sidebar for wide screens */
         display: block;
     }
 }
