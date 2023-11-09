@@ -73,6 +73,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Gebruiker\\OneDrive - PXL\\Documenten\\pxl\\3AONb\\IT-project\\NieuwProject\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\wwwroot\\fonts\\GothamBold.ttf",
+      "PackagePath": "staticwebassets\\fonts\\GothamBold.ttf"
+    },
+    {
       "Id": "C:\\Users\\Gebruiker\\OneDrive - PXL\\Documenten\\pxl\\3AONb\\IT-project\\NieuwProject\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\wwwroot\\icon-192.png",
       "PackagePath": "staticwebassets\\icon-192.png"
     },

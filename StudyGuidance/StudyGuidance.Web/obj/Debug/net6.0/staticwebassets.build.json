@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "93lKfU8FwK2OUPqSTJ3rqHciNbtAPL1zHV/hqY+8J+0=",
+  "Hash": "e9+wPyaZ0tXoPbArDsNkMlJIdVhLietJB3gR1U5I4Eg=",
   "Source": "StudyGuidance.Web",
   "BasePath": "/",
   "Mode": "Root",
@@ -7121,6 +7121,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Gebruiker\\OneDrive - PXL\\Documenten\\pxl\\3AONb\\IT-project\\NieuwProject\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\wwwroot\\fonts\\GothamBold.ttf",
+      "SourceId": "StudyGuidance.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Gebruiker\\OneDrive - PXL\\Documenten\\pxl\\3AONb\\IT-project\\NieuwProject\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "fonts/GothamBold.ttf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\fonts\\GothamBold.ttf"
     },
     {
       "Identity": "C:\\Users\\Gebruiker\\OneDrive - PXL\\Documenten\\pxl\\3AONb\\IT-project\\NieuwProject\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\wwwroot\\icon-192.png",

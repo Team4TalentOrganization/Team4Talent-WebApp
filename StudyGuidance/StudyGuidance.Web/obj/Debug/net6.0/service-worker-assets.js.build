@@ -1,7 +1,7 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
-      "hash": "sha256-lDAEEaul32OkTANWkZgjgs4sFCsMdLsR5NJxrjVcXdo=",
+      "hash": "sha256-NY\/161P5wa6thrEezdcVnAUvRFqMs6Nqpn5ZZzeAFsM=",
       "url": "css\/app.css"
     },
     {
@@ -53,6 +53,10 @@
       "url": "favicon.ico"
     },
     {
+      "hash": "sha256-UHktjkjvJfs06vx3J3SQxyl0UQXyf8wAn7Byq2oInOs=",
+      "url": "fonts\/GothamBold.ttf"
+    },
+    {
       "hash": "sha256-DbpQaq68ZSb5IoPosBErM1QWBfsbTxpJqhU0REi6wP4=",
       "url": "icon-192.png"
     },
@@ -77,7 +81,7 @@
       "url": "sample-data\/weather.json"
     },
     {
-      "hash": "sha256-aqTcjeAQ\/Ohz4rIcPcZnmZER5JMAfytJzOHd8AUR6ZY=",
+      "hash": "sha256-NBYVD07ef0qVEXV3u32jPHbjc9rAudj81BAYPTnZ8ZI=",
       "url": "StudyGuidance.Web.styles.css"
     },
     {
@@ -865,11 +869,11 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-nfKebgL3znco1LOuq2tttTLlwTZC1fxLQNGaNKpfW5E=",
+      "hash": "sha256-NAZ5NOz5G6sXeaRvPmslnrxXn40O4qLOg0otQnxSo7I=",
       "url": "_framework\/StudyGuidance.Web.dll"
     },
     {
-      "hash": "sha256-AGgf\/KVwotqT9Q9M5kFGEdAJNrWgOZt2NeDZk\/BPH6c=",
+      "hash": "sha256-\/LTQEA6updGQ7pHAmwilvDiy9IN+SUCXAmZeBJR3P4Q=",
       "url": "_framework\/StudyGuidance.Web.pdb"
     },
     {
@@ -877,9 +881,9 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-PLWl8pNe7Wm0\/cdmtaPHrrwTUb+ReleJoZ85y953X6A=",
+      "hash": "sha256-ouUFOeg4n40KRtmtR0iYOtDISLgEP7xlbf58QmqNOyU=",
       "url": "_framework\/blazor.boot.json"
     }
   ],
-  "version": "3dL52tjL"
+  "version": "vioFGujm"
 };

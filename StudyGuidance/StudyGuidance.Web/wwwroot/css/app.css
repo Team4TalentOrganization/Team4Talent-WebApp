@@ -1,7 +1,13 @@
 ﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
+
+@font-face {
+    font-family: 'Gotham-Bold';
+    src: url('../fonts/GothamBold.ttf') format('truetype');
+}
+
 html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Gotham-Bold', Helvetica, Arial, sans-serif;
 }
 
 h1:focus {
