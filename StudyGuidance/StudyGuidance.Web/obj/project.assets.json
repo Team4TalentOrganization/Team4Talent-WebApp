@@ -1768,11 +1768,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\11701393\\OneDrive - PXL\\Bureaublad\\studyGuidance\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\StudyGuidance.Web.csproj",
+      "projectUniqueName": "C:\\Users\\11701393\\IT-Project\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\StudyGuidance.Web.csproj",
       "projectName": "StudyGuidance.Web",
-      "projectPath": "C:\\Users\\11701393\\OneDrive - PXL\\Bureaublad\\studyGuidance\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\StudyGuidance.Web.csproj",
+      "projectPath": "C:\\Users\\11701393\\IT-Project\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\StudyGuidance.Web.csproj",
       "packagesPath": "C:\\Users\\11701393\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\11701393\\OneDrive - PXL\\Bureaublad\\studyGuidance\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\obj\\",
+      "outputPath": "C:\\Users\\11701393\\IT-Project\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

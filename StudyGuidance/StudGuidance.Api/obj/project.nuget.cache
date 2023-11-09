@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DIWgYsWJHn783HO4s9fZVj8f4I+Wpc7S+t1qe0avzgoJS345N+4jj04pvemD7+chrOstQbszqO9P9Kc2qq9kEg==",
+  "dgSpecHash": "RlUrb2uZtYNMBxt1/4uWY74GO0WKqJwZznlp+GFKCxDUkba5nX0W2zyAgvU97lbpoIrHII9NI1KkRM+dv6i17g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\11701393\\OneDrive - PXL\\Bureaublad\\studyGuidance\\Team4Talent-WebApp\\StudyGuidance\\StudGuidance.Api\\StudGuidance.Api.csproj",
+  "projectFilePath": "C:\\Users\\11701393\\IT-Project\\Team4Talent-WebApp\\StudyGuidance\\StudGuidance.Api\\StudGuidance.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\11701393\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\11701393\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

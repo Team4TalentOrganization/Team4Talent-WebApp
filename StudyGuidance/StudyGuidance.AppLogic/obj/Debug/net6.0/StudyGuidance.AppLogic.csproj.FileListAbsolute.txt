@@ -13,3 +13,18 @@ C:\Users\11701393\OneDrive - PXL\Bureaublad\studyGuidance\Team4Talent-WebApp\Stu
 C:\Users\11701393\OneDrive - PXL\Bureaublad\studyGuidance\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\obj\Debug\net6.0\refint\StudyGuidance.AppLogic.dll
 C:\Users\11701393\OneDrive - PXL\Bureaublad\studyGuidance\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\obj\Debug\net6.0\StudyGuidance.AppLogic.pdb
 C:\Users\11701393\OneDrive - PXL\Bureaublad\studyGuidance\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\obj\Debug\net6.0\ref\StudyGuidance.AppLogic.dll
+C:\Users\11701393\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\bin\Debug\net6.0\StudyGuidance.AppLogic.deps.json
+C:\Users\11701393\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\bin\Debug\net6.0\StudyGuidance.AppLogic.dll
+C:\Users\11701393\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\bin\Debug\net6.0\StudyGuidance.AppLogic.pdb
+C:\Users\11701393\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\bin\Debug\net6.0\StudyGuidance.Domain.dll
+C:\Users\11701393\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\bin\Debug\net6.0\StudyGuidance.Domain.pdb
+C:\Users\11701393\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\obj\Debug\net6.0\StudyGuidance.AppLogic.csproj.AssemblyReference.cache
+C:\Users\11701393\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\obj\Debug\net6.0\StudyGuidance.AppLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\11701393\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\obj\Debug\net6.0\StudyGuidance.AppLogic.AssemblyInfoInputs.cache
+C:\Users\11701393\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\obj\Debug\net6.0\StudyGuidance.AppLogic.AssemblyInfo.cs
+C:\Users\11701393\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\obj\Debug\net6.0\StudyGuidance.AppLogic.csproj.CoreCompileInputs.cache
+C:\Users\11701393\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\obj\Debug\net6.0\StudyGuidance.AppLogic.csproj.CopyComplete
+C:\Users\11701393\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\obj\Debug\net6.0\StudyGuidance.AppLogic.dll
+C:\Users\11701393\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\obj\Debug\net6.0\refint\StudyGuidance.AppLogic.dll
+C:\Users\11701393\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\obj\Debug\net6.0\StudyGuidance.AppLogic.pdb
+C:\Users\11701393\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\obj\Debug\net6.0\ref\StudyGuidance.AppLogic.dll

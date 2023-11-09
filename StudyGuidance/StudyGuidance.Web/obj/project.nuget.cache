@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2DqOEQ5L8loXJ4iYnD8Zr+V5gV7sk2oVgeD3T1aZLZC2mPqX+OpUe6v4JQfd1HW+rdru25jg4GEtVmhdi7dssQ==",
+  "dgSpecHash": "xZNzBghN6E3RDtHSR7YHtY9DKuRi85HFIppj3Q7fD39FoE4cFOlj6Wo+1QxtcOJH2IMeJ1twNntCRrQh7bYlVw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\11701393\\OneDrive - PXL\\Bureaublad\\studyGuidance\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\StudyGuidance.Web.csproj",
+  "projectFilePath": "C:\\Users\\11701393\\IT-Project\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\StudyGuidance.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\11701393\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.16\\microsoft.aspnetcore.authorization.6.0.16.nupkg.sha512",
     "C:\\Users\\11701393\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.16\\microsoft.aspnetcore.components.6.0.16.nupkg.sha512",
