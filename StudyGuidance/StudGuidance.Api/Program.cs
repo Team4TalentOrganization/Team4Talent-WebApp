@@ -14,7 +14,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<StudyGuidanceDbContext>(options =>
     options.UseSqlServer(connectionString));
 
-builder.Services.AddScoped<IQuestionRepository, QuestionDbRepository>();
+builder.Services.AddScoped<IQuizRepository, QuizDbRepository>();
 
 var app = builder.Build();
 

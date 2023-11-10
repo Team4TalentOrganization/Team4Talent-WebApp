@@ -833,8 +833,8 @@
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
-      "hash": "sha256-YYG9NE7FnTlr1qMbQzBTzUGZOcLX64xP2Z1+An1jT6U=",
-      "url": "_framework\/dotnet.6.0.23.dftmrl0emi.js"
+      "hash": "sha256-Vpgzm0BMIfPGXG2SCtEChw5HmXlQJIIS0eyBG8kP+u4=",
+      "url": "_framework\/dotnet.6.0.22.rn6nj7gi6j.js"
     },
     {
       "hash": "sha256-LkY3Fufh0g5N20FCmf40Ihcr4PHqCCF7W+W9FtR7VyE=",
@@ -861,11 +861,11 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-yEGZeockGqztgK3kReZQQGsNiTL2UwXdPGZcrfgQboM=",
+      "hash": "sha256-5jc7MYXoaTmFyDtC3WVwBCdQDC1uSly870BnTHCFX9U=",
       "url": "_framework\/StudyGuidance.Web.dll"
     },
     {
-      "hash": "sha256-65PwvZnHyTNWS+TSp1YdwBgDNTHxJRAZ6KTou\/fWtPQ=",
+      "hash": "sha256-ZMXaJdg4ZqbSf93zspOg+wWKBqCduUT7irgDLpSKjoY=",
       "url": "_framework\/StudyGuidance.Web.pdb"
     },
     {
@@ -873,9 +873,9 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-XwYlzajM6ojP88\/TeIwhU3kl8MGS0g0uJw3CjS6zR3E=",
+      "hash": "sha256-fSx85SMZBU3AY7GoVaZcMMxwvTTZOBHRXfFCFwzeEbY=",
       "url": "_framework\/blazor.boot.json"
     }
   ],
-  "version": "pj7izSGO"
+  "version": "FS2Msm9D"
 };

@@ -8,8 +8,8 @@ namespace StudGuidance.Api.Controllers
     [ApiController]
     public class QuizController : ControllerBase
     {
-        private readonly IQuestionRepository _questionRepository;
-        public QuizController(IQuestionRepository questionRepository)
+        private readonly IQuizRepository _questionRepository;
+        public QuizController(IQuizRepository questionRepository)
         {
             _questionRepository = questionRepository;
         }

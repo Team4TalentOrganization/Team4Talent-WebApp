@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\11701393\\IT-Project\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\StudyGuidance.Web.csproj": {}
+    "C:\\Users\\12100276\\Documents\\ITProject\\Project\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\StudyGuidance.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\11701393\\IT-Project\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\StudyGuidance.Web.csproj": {
+    "C:\\Users\\12100276\\Documents\\ITProject\\Project\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\StudyGuidance.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\11701393\\IT-Project\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\StudyGuidance.Web.csproj",
+        "projectUniqueName": "C:\\Users\\12100276\\Documents\\ITProject\\Project\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\StudyGuidance.Web.csproj",
         "projectName": "StudyGuidance.Web",
-        "projectPath": "C:\\Users\\11701393\\IT-Project\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\StudyGuidance.Web.csproj",
-        "packagesPath": "C:\\Users\\11701393\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\11701393\\IT-Project\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\obj\\",
+        "projectPath": "C:\\Users\\12100276\\Documents\\ITProject\\Project\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\StudyGuidance.Web.csproj",
+        "packagesPath": "C:\\Users\\12100276\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\12100276\\Documents\\ITProject\\Project\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\11701393\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\12100276\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -69,7 +69,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-              "version": "[6.0.23, 6.0.23]"
+              "version": "[6.0.22, 6.0.22]"
             }
           ],
           "frameworkReferences": {
@@ -77,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
