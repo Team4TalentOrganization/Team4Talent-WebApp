@@ -8,7 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Shared\StandardQuestionCard.razor.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\logo-talentit-white.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Shared\StandardQuestionCard.razor.css" />
   </ItemGroup>
 
   <ItemGroup>
