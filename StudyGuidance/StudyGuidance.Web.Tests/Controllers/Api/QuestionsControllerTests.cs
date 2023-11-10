@@ -9,14 +9,14 @@ namespace StudyGuidance.Web.Tests.Controllers.Api
     public class QuestionsControllerTests
     {
 
-        private QuestionsController _controller;
+        private QuizController _controller;
         private Mock<IQuestionRepository> _questionRepositoryMock;
 
         [SetUp]
         public void SetUp()
         {
             _questionRepositoryMock = new Mock<IQuestionRepository>();
-            _controller = new QuestionsController(_questionRepositoryMock.Object);
+            _controller = new QuizController(_questionRepositoryMock.Object);
         }
 
         [Test]

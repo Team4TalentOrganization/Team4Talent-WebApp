@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StudyGuidance.AppLogic;
 using StudyGuidance.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudyGuidance.Infrastructure
 {
@@ -22,6 +17,18 @@ namespace StudyGuidance.Infrastructure
         public async Task<IReadOnlyList<Question>> GetQuestionsAsync()
         {
             return await _context.Questions.Include(options => options.Options).ToListAsync<Question>();
+        }
+
+        public async Task<IReadOnlyList<Option>> GetDomainsAsync()
+        {
+            return await _context.Options.Where(o => o.QuestionId == 1).ToListAsync<Option>();
+        }
+
+        public async Task<IReadOnlyList<Option>> GetSubDomainsAsync(List<int> domainIds)
+        {
+            return await _context.Options
+                .Where(o => domainIds.Contains(o.OptionRelation))
+                .ToListAsync();
         }
     }
 }

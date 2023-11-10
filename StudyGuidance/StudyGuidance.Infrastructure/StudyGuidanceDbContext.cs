@@ -1,13 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.Extensions.Options;
 using StudyGuidance.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudyGuidance.Infrastructure
 {
@@ -48,24 +40,24 @@ namespace StudyGuidance.Infrastructure
             );
 
             modelBuilder.Entity<Option>().HasData(
-            new Option { OptionId = 8, Content = "Backend", QuestionId = subDomainQuestion.QuestionId },
-            new Option { OptionId = 9, Content = "AI Robotics", QuestionId = subDomainQuestion.QuestionId },
-            new Option { OptionId = 10, Content = "Machine Learning", QuestionId = subDomainQuestion.QuestionId },
-            new Option { OptionId = 11, Content = "Computer Vision", QuestionId = subDomainQuestion.QuestionId },
-            new Option { OptionId = 12, Content = "Project Management", QuestionId = subDomainQuestion.QuestionId },
-            new Option { OptionId = 13, Content = "Software analysis", QuestionId = subDomainQuestion.QuestionId },
-            new Option { OptionId = 14, Content = "Automation", QuestionId = subDomainQuestion.QuestionId },
-            new Option { OptionId = 15, Content = "Security", QuestionId = subDomainQuestion.QuestionId },
-            new Option { OptionId = 16, Content = "Networking", QuestionId = subDomainQuestion.QuestionId },
-            new Option { OptionId = 17, Content = "Elektronica-ICT", QuestionId = subDomainQuestion.QuestionId },
-            new Option { OptionId = 18, Content = "Internet of Things", QuestionId = subDomainQuestion.QuestionId },
-            new Option { OptionId = 19, Content = "Elektromechanica", QuestionId = subDomainQuestion.QuestionId },
-            new Option { OptionId = 20, Content = "Analyst", QuestionId = subDomainQuestion.QuestionId },
-            new Option { OptionId = 21, Content = "Data AI", QuestionId = subDomainQuestion.QuestionId },
-            new Option { OptionId = 22, Content = "VR", QuestionId = subDomainQuestion.QuestionId },
-            new Option { OptionId = 23, Content = "AR", QuestionId = subDomainQuestion.QuestionId },
-            new Option { OptionId = 24, Content = "Fullstack", QuestionId = subDomainQuestion.QuestionId },
-            new Option { OptionId = 25, Content = "Frontend", QuestionId = subDomainQuestion.QuestionId }
+            new Option { OptionId = 8, Content = "AI Robotics", QuestionId = subDomainQuestion.QuestionId, OptionRelation = 1 },
+            new Option { OptionId = 9, Content = "Machine Learning", QuestionId = subDomainQuestion.QuestionId, OptionRelation = 1 },
+            new Option { OptionId = 10, Content = "Computer Vision", QuestionId = subDomainQuestion.QuestionId, OptionRelation = 1 },
+            new Option { OptionId = 11, Content = "Fullstack", QuestionId = subDomainQuestion.QuestionId, OptionRelation = 2 },
+            new Option { OptionId = 12, Content = "Frontend", QuestionId = subDomainQuestion.QuestionId, OptionRelation = 2 },
+            new Option { OptionId = 13, Content = "Backend", QuestionId = subDomainQuestion.QuestionId, OptionRelation = 2 },
+            new Option { OptionId = 14, Content = "Project Management", QuestionId = subDomainQuestion.QuestionId, OptionRelation = 3 },
+            new Option { OptionId = 15, Content = "Software analysis", QuestionId = subDomainQuestion.QuestionId, OptionRelation = 3 },
+            new Option { OptionId = 16, Content = "Automation", QuestionId = subDomainQuestion.QuestionId, OptionRelation = 4 },
+            new Option { OptionId = 17, Content = "Security", QuestionId = subDomainQuestion.QuestionId, OptionRelation = 4 },
+            new Option { OptionId = 18, Content = "Networking", QuestionId = subDomainQuestion.QuestionId, OptionRelation = 4 },
+            new Option { OptionId = 19, Content = "Elektronica-ICT", QuestionId = subDomainQuestion.QuestionId, OptionRelation = 5 },
+            new Option { OptionId = 20, Content = "Internet of Things", QuestionId = subDomainQuestion.QuestionId, OptionRelation = 5 },
+            new Option { OptionId = 21, Content = "Elektromechanica", QuestionId = subDomainQuestion.QuestionId, OptionRelation = 5 },
+            new Option { OptionId = 22, Content = "Analyst", QuestionId = subDomainQuestion.QuestionId, OptionRelation = 6 },
+            new Option { OptionId = 23, Content = "Data AI", QuestionId = subDomainQuestion.QuestionId, OptionRelation = 6 },
+            new Option { OptionId = 24, Content = "VR", QuestionId = subDomainQuestion.QuestionId, OptionRelation = 7 },
+            new Option { OptionId = 25, Content = "AR", QuestionId = subDomainQuestion.QuestionId, OptionRelation = 7 }
             );
         }
     }
