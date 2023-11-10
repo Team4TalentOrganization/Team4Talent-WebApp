@@ -29,11 +29,11 @@
 }
 
 nav.flex-column {
-    margin-top: 16%;
+    margin-top: 38%;
     margin-bottom: 16%;
     background-color: white;
     font-weight: bold;
-    font-family: 'Gotham-Bold';
+    font-family: 'Gotham';
 }
 
 .navbar-dark .navbar-brand {
@@ -44,6 +44,15 @@ nav.flex-column {
     color: black;
     text-align: center;
     font-size: 18px;
+    margin: 3%;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #ff5404;
+    color: black;
+    border-radius: 30px;
+    width: 85%;
+    margin: auto;
 }
 
 .nav-item {

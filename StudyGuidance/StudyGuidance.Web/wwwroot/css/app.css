@@ -6,6 +6,11 @@
     src: url('../fonts/GothamBold.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Gotham';
+    src: url('../fonts/GothamLight.ttf') format('truetype');
+}
+
 html, body {
     font-family: 'Gotham-Bold', Helvetica, Arial, sans-serif;
 }

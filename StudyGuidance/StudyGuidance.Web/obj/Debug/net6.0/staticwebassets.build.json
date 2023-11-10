@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "e9+wPyaZ0tXoPbArDsNkMlJIdVhLietJB3gR1U5I4Eg=",
+  "Hash": "v1XwAQrMFawajGs6cRr5vnvFKXhyTSbWBOiL/97yy24=",
   "Source": "StudyGuidance.Web",
   "BasePath": "/",
   "Mode": "Root",
@@ -7138,6 +7138,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\fonts\\GothamBold.ttf"
+    },
+    {
+      "Identity": "C:\\Users\\Gebruiker\\OneDrive - PXL\\Documenten\\pxl\\3AONb\\IT-project\\NieuwProject\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\wwwroot\\fonts\\GothamLight.ttf",
+      "SourceId": "StudyGuidance.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Gebruiker\\OneDrive - PXL\\Documenten\\pxl\\3AONb\\IT-project\\NieuwProject\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "fonts/GothamLight.ttf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\fonts\\GothamLight.ttf"
     },
     {
       "Identity": "C:\\Users\\Gebruiker\\OneDrive - PXL\\Documenten\\pxl\\3AONb\\IT-project\\NieuwProject\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\wwwroot\\icon-192.png",
