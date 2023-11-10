@@ -1,0 +1,8 @@
+﻿.bg-custom-color {
+    background-color: #FF6900 !important;
+    border: #FF6900 !important
+}
+
+.card-body{
+    overflow: hidden;
+}

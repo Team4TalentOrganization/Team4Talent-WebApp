@@ -1,0 +1,78 @@
+﻿<div class="container mt-3">
+    <h1 class="text-center mt-5 custom-color">Kies een speler</h1>
+    <p class="text-center custom-color">Klik op een van onderstaande situaties die het beste bij jou past.</p>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+        @foreach (var player in players)
+        {
+            <div class="col mb-3 w-75 mx-auto">
+                <div class="card text-white bg-custom-color" @onclick="() => FlipCard(player)">
+                    <div class="card-body mx-auto" style="@player.CardBodyStyle">
+                        <img id="@player.Name" class="" src="@player.ImagePath" alt="@player.Name" style="@player.ImageStyle" />
+                        <div style="@player.DivStyle">
+                            <hr class="mx-auto w-50" style="@player.HrStyle" />
+                            <h1 class="text-center">@player.Name</h1>
+                            @if (!@player.ShowFront)
+                            {
+                                <hr class="mx-auto w-50" style="@player.HrStyleBack" />
+                                <p class="h-50">@player.Description</p>
+                                @if (@player.Name == "Gustaph")
+                                {
+                                    <div class="text-center align-items-end">
+                                        <button href="jobs" class="btn btn-primary w-75" style=" border-radius: 15px !important; background-color: #062455 !important;border-color: #062455 !important;">
+                                            <a href="jobs">Naar Jobs</a>
+                                        </button>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="text-center align-items-end">
+                                        <button href="quiz" class="btn btn-primary w-75" style=" border-radius: 15px !important; background-color: #062455 !important;border-color: #062455 !important;">
+                                            <a href="quiz">Start De Quiz</a>
+                                        </button>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    private List<PlayerModel> players = new List<PlayerModel>
+    {
+        new PlayerModel { Name = "Debbie", Description="ik weet niet wat ik wil doen, help! :(", ImagePath = "/images/woman.png", ShowFront = true, ImageStyle = "width: 100%; height: 100%;", HrStyle= "height: 3px; border: none; background-color: white; opacity: revert;", HrStyleBack="height: 0; visibility: hidden; margin: 0;", CardBodyStyle="", DivStyle="" },
+        new PlayerModel { Name = "Gustaph", Description="sqdqs ldkqsldmqs kldqsk dlqskdlm qsdmqsld qsld qmldq slmdqsmld qsl kqsmld", ImagePath = "/images/man.png", ShowFront = true, ImageStyle = "width: 100%; height: 100%;", HrStyle= "height: 3px; border: none; background-color: white; opacity: revert;", HrStyleBack="height: 0; visibility: hidden; margin: 0;", CardBodyStyle="", DivStyle="" },
+        new PlayerModel { Name = "Ayoub", Description="Ik Weet wat ik wil doen lets go!!!!!!", ImagePath = "/images/man2.png", ShowFront = true, ImageStyle = "width: 100%; height: 100%;", HrStyle= "height: 3px; border: none; background-color: white; opacity: revert;", HrStyleBack="height: 0; visibility: hidden; margin: 0;", CardBodyStyle="", DivStyle="" },
+    };
+
+    private void FlipCard(PlayerModel player)
+    {
+        player.ShowFront = !player.ShowFront;
+        player.ImageStyle = player.ShowFront
+            ? "width: 100%; height: 100%; opacity: 1; transform: translateY(0); transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;"
+            : "width: 100%; height: 100%; opacity: 0; transform: translateY(-100%); transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;";
+        player.HrStyle = player.ShowFront ? "height: 3px; border: none; background-color: white; opacity: revert;" : "height: 0; visibility: hidden; margin: 0; ";
+        player.HrStyleBack = !player.ShowFront ? "height: 3px; border: none; background-color: white; opacity: revert;" : "height: 0; visibility: hidden; margin: 0;";
+        player.CardBodyStyle = !player.ShowFront ? "height: 345px;" : "";
+        player.DivStyle = player.ShowFront
+            ? "width: 100%; height: 100%; opacity: 1; transform: translateY(0); transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;"
+            : "width: 100%; height: 100%; opacity: 1; transform: translateY(-100%); transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;";
+    }
+
+
+    public class PlayerModel
+    {
+        public string Name { get; set; }
+        public string ImagePath { get; set; }
+        public bool ShowFront { get; set; }
+        public string ImageStyle { get; set; }
+        public string HrStyle { get; set; }
+        public string HrStyleBack { get; set; }
+        public string CardBodyStyle { get; set; }
+        public string Description { get; set; }
+        public string DivStyle { get; set; }
+    }
+}

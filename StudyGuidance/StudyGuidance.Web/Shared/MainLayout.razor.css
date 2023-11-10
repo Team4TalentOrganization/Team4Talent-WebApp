@@ -12,6 +12,13 @@ main {
     background-color: white;
 }
 
+.btn-primary {
+    background-color: #FF6900 !important;
+    border-color: #FF6900 !important;
+    color: #062455 !important
+}
+
+
 .top-row {
     background-color: #f7f7f7;
     border-bottom: 1px solid #d6d5d5;
