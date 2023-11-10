@@ -1,17 +1,36 @@
-﻿@inherits LayoutComponentBase
+@inherits LayoutComponentBase
 
 <div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+    <NavMenu/>
 
     <main>
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-        </div>
-
-        <article class="content px-4">
+        <article class="content px-0 pt-0">
             @Body
         </article>
     </main>
+    <div class="container mt-5" style="background-color: #062455;">
+        <footer class="py-3 my-4">
+            <div class="row row-cols-1">
+                <div class="col justify-content-center text-center">
+                    <button class="btn btn-primary w-50 mt-3" style="height: 50px; border-radius: 25px; font-weight:bold;">
+                        <a href="https://www.cookiecrunchers.be/">Cookie Crunchers</a>
+                    </button>
+                </div>
+                <div class="col justify-content-center text-center p-0 mt-5" style="color: #FF6900;">
+                    <p class="mb-0">Houtdok-Noordkaai</p>
+                    <p class="mb-0">122030 Antwerpen</p>
+                    <p class="mb-0">+32 3 870 51 51</p>
+                    <p class="mb-0" style="text-decoration: underline;">
+                        <a href="mailto:your@email.com">info@cookiecrunchers.be</a>
+                    </p>
+                </div>
+                <div class="col justify-content-center text-center p-0 mt-5 mb-5">
+                    <h3 class="mt-5 mb-0" style="font-weight: bold; color: #FF6900;">Powerd By</h3>
+                    <a href="https://www.talent-it.be/">
+                        <img class="w-25 h-50" src="/images/TIT_Group.png" alt="Talent-It-Group" />
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
 </div>
