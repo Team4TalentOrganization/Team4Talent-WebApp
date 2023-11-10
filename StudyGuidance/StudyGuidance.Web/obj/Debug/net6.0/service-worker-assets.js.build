@@ -1,7 +1,7 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
-      "hash": "sha256-lDAEEaul32OkTANWkZgjgs4sFCsMdLsR5NJxrjVcXdo=",
+      "hash": "sha256-AF+GmJ8vNKZoWpJnThL\/3QoG0hFt3aIb7Jcch2l35Po=",
       "url": "css\/app.css"
     },
     {
@@ -61,6 +61,22 @@
       "url": "icon-512.png"
     },
     {
+      "hash": "sha256-u4TDCutWpXJr2tFvOyOEx2LMgRYbSTHyLMEBkOrvC+k=",
+      "url": "images\/man.png"
+    },
+    {
+      "hash": "sha256-jKFVCFzZVFJVhMsnPkmYNfsw1kGRghTN5ly4nQjeXps=",
+      "url": "images\/man2.png"
+    },
+    {
+      "hash": "sha256-L\/+\/HPEtkRVi+PxRbXPiFiLl2op000sU+merbW6AUGg=",
+      "url": "images\/person1.jpg"
+    },
+    {
+      "hash": "sha256-lB7sBUtDsycfxKlnYkjbAqnmd\/lVNAcVPIXOeY5cS+s=",
+      "url": "images\/woman.png"
+    },
+    {
       "hash": "sha256-tklvNKyg6V\/63JXtbNaoVAy33Cu2xwcqc\/y4zclhTBw=",
       "url": "index.html"
     },
@@ -73,7 +89,7 @@
       "url": "sample-data\/weather.json"
     },
     {
-      "hash": "sha256-13OF1Gj8Y7WoAc1F7ee1lnLMYi3NVOG0ybGVUChCOUs=",
+      "hash": "sha256-ewl6PPZMtfE0T5GYIEoeyIZgmVrette6j0Y\/CWBbT5Y=",
       "url": "StudyGuidance.Web.styles.css"
     },
     {
@@ -873,11 +889,11 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-4BifN2ygHqNStVXoGG61Zh6asofoS2FqDffvCXggkpA=",
+      "hash": "sha256-srOkowIVCGUGkpv97mY8cNKdj6sGUih53gELgjzIF0Q=",
       "url": "_framework\/StudyGuidance.Web.dll"
     },
     {
-      "hash": "sha256-+npYcBhH7N7g3+1jjwULRfytLiLoAwlAL8TmtyUvg2g=",
+      "hash": "sha256-X2CRswg0k7Zxe36VBIrJtrTxfZjBk0e1uYxD99pGa3E=",
       "url": "_framework\/StudyGuidance.Web.pdb"
     },
     {
@@ -885,7 +901,7 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-PKAeMsg2HwN0CAE+6MsvNom3TiU7EjhBzKi84NP6XOU=",
+      "hash": "sha256-gDZUYDzZ4TDNkmUqEBjYBBrtjuLLbrwlDP+zKY2RsbQ=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -897,5 +913,5 @@
       "url": "_content\/MudBlazor\/MudBlazor.min.js"
     }
   ],
-  "version": "8UKRMJAY"
+  "version": "3Hwli7A\/"
 };

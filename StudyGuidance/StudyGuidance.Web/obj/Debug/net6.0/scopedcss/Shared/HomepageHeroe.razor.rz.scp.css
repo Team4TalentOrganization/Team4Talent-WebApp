@@ -1,2 +1,6 @@
 body[b-m94535xdig] {
 }
+
+.gradient[b-m94535xdig] {
+    background: linear-gradient(45deg, rgba(255,84,4,0.8156512605042017) 45%, rgba(8,36,84,0.6811974789915967) 85%);
+}

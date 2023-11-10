@@ -81,6 +81,22 @@
       "PackagePath": "staticwebassets\\icon-512.png"
     },
     {
+      "Id": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\wwwroot\\images\\man.png",
+      "PackagePath": "staticwebassets\\images\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\wwwroot\\images\\man2.png",
+      "PackagePath": "staticwebassets\\images\\man2.png"
+    },
+    {
+      "Id": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\wwwroot\\images\\person1.jpg",
+      "PackagePath": "staticwebassets\\images\\person1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\wwwroot\\images\\woman.png",
+      "PackagePath": "staticwebassets\\images\\woman.png"
+    },
+    {
       "Id": "C:\\Users\\Lucah\\Documents\\School\\2023-2024\\Team4Talent-WebApp\\StudyGuidance\\StudyGuidance.Web\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
