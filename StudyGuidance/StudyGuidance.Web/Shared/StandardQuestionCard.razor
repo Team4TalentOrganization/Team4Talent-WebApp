@@ -1,29 +1,64 @@
-﻿<div class="card text-white bg-custom-color">
-	<div class="card-body">
-		<div class="card text-black">
-			<div class="card-body">
-				<h1>MASTER</h1>
-			</div>
-		</div>
-		<div class="card text-black">
-			<div class="card-body">
-				<h1>BACHELOR</h1>
-			</div>
-		</div>
-		<div class="card text-black">
-			<div class="card-body">
-				<h1>GRADUAAT</h1>
-			</div>
-		</div>
-		<div class="card text-black">
-			<div class="card-body">
-				<h1>ANDERE...</h1>
-			</div>
-		</div>
-		<p class="text-black">Heb je een master, bachelor, graduaat of andere in IT?</p>
-	</div>
+﻿<div class="container bg-custom-color rounded-lg" style="width: 70%; height: 350px; position: relative; overflow: hidden;">
+    <div class="mt-4" style="width: 48%; height:50%; float:left;">
+        <div class="card @CardClasses[0]" @onmouseover="() => MouseOver(0)" @onmouseout="() => MouseOut(0)" @onclick="() => CardClicked(0)">
+            <div class="card-body text-center d-flex align-items-center">
+                <p class="m-auto">MASTER</p>
+            </div>
+        </div>
+        <div class="card @CardClasses[1]" @onmouseover="() => MouseOver(1)" @onmouseout="() => MouseOut(1)" @onclick="() => CardClicked(1)">
+            <div class="card-body text-center d-flex align-items-center">
+                <p class="m-auto">BACHELOR</p>
+            </div>
+        </div>
+    </div>
+    <div class="mt-4" style="width: 48%; height:50%; float:right;">
+        <div class="card @CardClasses[2]" @onmouseover="() => MouseOver(2)" @onmouseout="() => MouseOut(2)" @onclick="() => CardClicked(2)">
+            <div class="card-body text-center d-flex align-items-center">
+                <p class="m-auto">GRADUAAT</p>
+            </div>
+        </div>
+        <div class="card @CardClasses[3]" @onmouseover="() => MouseOver(3)" @onmouseout="() => MouseOut(3)" @onclick="() => CardClicked(3)">
+            <div class="card-body text-center d-flex align-items-center">
+                <p class="m-auto">ANDERE...</p>
+            </div>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+    <p class="text-black text-center" style="position: absolute; bottom: 17%; left: 50%; transform: translateX(-50%); width:85%">Heb je een master, bachelor, graduaat of andere in IT?</p>
+    <button type="button" class="btn btn-light btn-circle btn-lg rounded-circle mb-3" style="position: absolute; bottom: 0;">
+        <span style="font-size: 20px;">&lt;</span>
+    </button>
 </div>
+<button type="button" class="btn btn-primary rounded-btn">VOLGENDE VRAAG</button>
 
 @code {
+    string[] CardClasses = new string[4] { "card text-black h-50 mb-3", "card text-black h-50 mb-3", "card text-black h-50 mb-3", "card text-black h-50 mb-3" };
 
+    async Task MouseOver(int cardNumber)
+    {
+        await SetCardClass(cardNumber, CardClasses[cardNumber].Contains("bg-orange-color-click") ? "card text-white bg-orange-color-click h-50 mb-3" : "card text-white bg-orange-color h-50 mb-3");
+    }
+
+    async Task MouseOut(int cardNumber)
+    {
+        await SetCardClass(cardNumber, CardClasses[cardNumber].Contains("bg-orange-color-click") ? "card text-white bg-orange-color-click h-50 mb-3" : "card text-black h-50 mb-3");
+    }
+
+    async Task SetCardClass(int cardNumber, string cssClass)
+    {
+        CardClasses[cardNumber] = cssClass;
+    }
+
+    void CardClicked(int cardNumber)
+    {
+        // Toggle between two states
+        if (CardClasses[cardNumber].Contains("bg-orange-color-click"))
+        {
+            CardClasses[cardNumber] = "card text-black h-50 mb-3";
+        }
+        else
+        {
+            CardClasses[cardNumber] = "card text-white bg-orange-color-click h-50 mb-3";
+        }
+    }
 }

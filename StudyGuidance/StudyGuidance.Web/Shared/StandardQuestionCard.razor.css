@@ -1,7 +1,23 @@
 ﻿.bg-custom-color {
-	background-color: #082454 !important;
+	background-color: #0066cc !important;
+}
+.bg-orange-color {
+	background-color: #fc8403 !important;
 }
 
-@code {
-
+.bg-orange-color-click {
+	background-color: #fc8403 !important;
+}
+.rounded-btn {
+	border-radius: 25px;
+	font-size: 8px;
+	float:right;
+	margin-right: 15%;
+	margin-top: 10%;
+}
+.card {
+	border-radius: 15px;
+}
+.container {
+	width: 80%;
 }
