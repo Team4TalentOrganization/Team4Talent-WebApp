@@ -2,34 +2,37 @@
     <div class="mt-4" style="width: 48%; height:50%; float:left;">
         <div class="card @CardClasses[0]" @onmouseover="() => MouseOver(0)" @onmouseout="() => MouseOut(0)" @onclick="() => CardClicked(0)">
             <div class="card-body text-center d-flex align-items-center">
-                <p class="m-auto">MASTER</p>
+                <p class="m-auto">@GetAnswersForCurrentQuestion()[0]</p>
             </div>
         </div>
         <div class="card @CardClasses[1]" @onmouseover="() => MouseOver(1)" @onmouseout="() => MouseOut(1)" @onclick="() => CardClicked(1)">
             <div class="card-body text-center d-flex align-items-center">
-                <p class="m-auto">BACHELOR</p>
+                <p class="m-auto">@GetAnswersForCurrentQuestion()[1]</p>
             </div>
         </div>
     </div>
     <div class="mt-4" style="width: 48%; height:50%; float:right;">
         <div class="card @CardClasses[2]" @onmouseover="() => MouseOver(2)" @onmouseout="() => MouseOut(2)" @onclick="() => CardClicked(2)">
             <div class="card-body text-center d-flex align-items-center">
-                <p class="m-auto">GRADUAAT</p>
+                <p class="m-auto">@GetAnswersForCurrentQuestion()[2]</p>
             </div>
         </div>
         <div class="card @CardClasses[3]" @onmouseover="() => MouseOver(3)" @onmouseout="() => MouseOut(3)" @onclick="() => CardClicked(3)">
             <div class="card-body text-center d-flex align-items-center">
-                <p class="m-auto">ANDERE...</p>
+                <p class="m-auto">@GetAnswersForCurrentQuestion()[3]</p>
             </div>
         </div>
     </div>
     <div style="clear: both;"></div>
-    <p class="text-black text-center" style="position: absolute; bottom: 17%; left: 50%; transform: translateX(-50%); width:85%">Heb je een master, bachelor, graduaat of andere in IT?</p>
-    <button type="button" class="btn btn-light btn-circle btn-lg rounded-circle mb-3" style="position: absolute; bottom: 0;">
-        <span style="font-size: 20px;">&lt;</span>
-    </button>
+    <p class="text-black text-center" style="position: absolute; bottom: 17%; left: 50%; transform: translateX(-50%); width:85%">@GetQuestionForCurrentQuestion()</p>
+    @if (currentQuestion > 0)
+    {
+        <button @onclick="() => previousQuestionClicked()" type="button" class="btn btn-light btn-circle btn-lg rounded-circle mb-3" style="position: absolute; bottom: 0;">
+            <span style="font-size: 20px;">&lt;</span>
+        </button>
+    }
 </div>
-<button type="button" class="btn btn-primary rounded-btn">VOLGENDE VRAAG</button>
+<button @onclick="() => nextQuestionClicked()" type="button" class="btn btn-primary rounded-btn">VOLGENDE VRAAG</button>
 
 @code {
     string[] CardClasses = new string[4] { "card text-black h-50 mb-3", "card text-black h-50 mb-3", "card text-black h-50 mb-3", "card text-black h-50 mb-3" };
@@ -60,5 +63,43 @@
         {
             CardClasses[cardNumber] = "card text-white bg-orange-color-click h-50 mb-3";
         }
+    }
+
+
+    List<List<string>> answersList = new List<List<string>>
+    {
+        new List<string> { "MASTER", "BACHELOR", "GRADUAAT", "ANDERE..."},
+        new List<string> { "Answer 1A", "Answer 2A", "Answer 3A", "Answer 4A" },
+        new List<string> { "Answer 1B", "Answer 2B", "Answer 3B", "Answer 4B" },
+    };
+
+    List<string> questionsList = new List<string>
+    {
+        "Heb je een master, bachelor, graduaat of andere in IT?",
+        "Question A",
+        "Question B"
+    };
+
+    int currentQuestion = 0;
+
+    public List<string> GetAnswersForCurrentQuestion()
+    {
+        return answersList[currentQuestion];
+    }
+
+    public string GetQuestionForCurrentQuestion()
+    {
+        return questionsList[currentQuestion];
+    }
+
+    public void nextQuestionClicked()
+    {
+        currentQuestion = (currentQuestion + 1) % answersList.Count;
+
+    }
+
+    public void previousQuestionClicked()
+    {
+        currentQuestion = (currentQuestion - 1) % answersList.Count;
     }
 }
