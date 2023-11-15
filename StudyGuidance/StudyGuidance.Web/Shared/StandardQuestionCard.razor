@@ -32,7 +32,14 @@
         </button>
     }
 </div>
-<button @onclick="() => nextQuestionClicked()" type="button" class="btn btn-primary rounded-btn">VOLGENDE VRAAG</button>
+    @if (currentQuestion < questionsList.Count - 1)
+    {
+        <button @onclick="() => nextQuestionClicked()" type="button" class="btn btn-primary rounded-btn">VOLGENDE VRAAG</button>
+    }
+    else
+    {
+        <button @onclick="() => endQuizClicked()" type="button" class="btn btn-primary rounded-btn">EINDE QUIZ</button>
+    }
 
 @code {
     string[] CardClasses = new string[4] { "card text-black h-50 mb-3", "card text-black h-50 mb-3", "card text-black h-50 mb-3", "card text-black h-50 mb-3" };
@@ -98,8 +105,12 @@
 
     }
 
-    public void previousQuestionClicked()
+    public async void previousQuestionClicked()
     {
         currentQuestion = (currentQuestion - 1) % answersList.Count;
+    }
+
+    public void endQuizClicked() {
+
     }
 }

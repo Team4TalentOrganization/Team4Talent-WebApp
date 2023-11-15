@@ -31,14 +31,32 @@
     transition: background-color 1s ease;
 }
 
-    .card:hover {
+.card:hover {
         transform: scale(1.05); /* Adjust the scale factor as needed */
         animation: scaleAnimation 2s forwards; /* Use a CSS animation for the hover effect */
-    }
+}
 
 @keyframes scaleAnimation {
     to {
         transform: scale(1);
     }
+}
+
+@keyframes colorChange {
+    0% {
+        background-color: #fff;
+    }
+
+    50% {
+        background-color: #fc8403;
+    }
+
+    100% {
+        background-color: #fff;
+    }
+}
+
+.previousButton {
+    animation: colorChange 1s; /* 1s duration for the animation */
 }
 
