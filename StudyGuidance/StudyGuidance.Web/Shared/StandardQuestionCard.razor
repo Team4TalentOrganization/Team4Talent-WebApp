@@ -27,7 +27,7 @@
     <p class="text-black text-center" style="position: absolute; bottom: 17%; left: 50%; transform: translateX(-50%); width:85%">@GetQuestionForCurrentQuestion()</p>
     @if (currentQuestion > 0)
     {
-        <button @onclick="() => previousQuestionClicked()" type="button" class="btn btn-light btn-circle btn-lg rounded-circle mb-3" style="position: absolute; bottom: 0;">
+        <button @onclick="() => previousQuestionClicked()" id="previousButton" type="button" class="btn btn-light btn-circle btn-lg rounded-circle mb-3" style="position: absolute; bottom: 0;">
             <span style="font-size: 20px;">&lt;</span>
         </button>
     }
