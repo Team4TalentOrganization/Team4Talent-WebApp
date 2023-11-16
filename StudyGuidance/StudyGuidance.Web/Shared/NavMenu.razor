@@ -5,7 +5,7 @@
 @if(collapseNavMenu){
     <div class="top-row ps-3 navbar navbar-light" style="background-color:transparent">
         <div class="container-fluid">
-            <a class="navbar-brand" href="">
+                <a class="navbar-brand" @onclick='() => route("/")'>
                 <p class="titleApp">STUDY GUIDANCE</p>
             </a>
             <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
@@ -18,7 +18,7 @@ else
 {
     <div class="top-row ps-3 navbar navbar-light" style="background-color:white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="">
+                <a class="navbar-brand" @onclick='() => route("/")'>
                 <p class="titleApp">STUDY GUIDANCE</p>
             </a>
             <button title="Navigation menu" class="navbar-toggler" style="background-color:#ff5404" @onclick="ToggleNavMenu">
@@ -32,16 +32,16 @@ else
     <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
         <nav class="flex-column">
             <div >
-                <a class="nav-link" href="" Match="NavLinkMatch.All" aria-hidden="true">HOME</a>
+                <a class="nav-link" @onclick='() => route("/")' aria-hidden="true">HOME</a>
             </div>
             <div>
                 <a class="nav-link" @onclick='() => route("/faq")' aria-hidden="true">FAQ</a>
             </div>
             <div >
-                <a class="nav-link" href="https://www.cookiecrunchers.be/" aria-hidden="true">COOKIE CRUNCHERS</a>
+                <a class="nav-link" @onclick='() => route("https://www.cookiecrunchers.be/")' aria-hidden="true">COOKIE CRUNCHERS</a>
             </div>
             <div class="nav flex-column nav-pills">
-                <a class="nav-link active" href="ContactPage" aria-selected="true">CONTACT US</a>
+                <a class="nav-link active" @onclick='() => route("/ContactPage")' aria-selected="true">CONTACT US</a>
             </div>
         </nav>
     </div>
