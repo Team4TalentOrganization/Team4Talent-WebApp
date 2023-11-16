@@ -1,0 +1,37 @@
+﻿<div style="position: relative; overflow: hidden; height: 100vh; ">
+    <MudBlazor.MudText Class="custom-font-size mud-width-full text-center text-white fw-bold" style="z-index: 1; position: absolute; --mud-typography-body1-size: 45px; margin-top: 40px;">Talent-It Group</MudBlazor.MudText>
+    <MudCarousel Class="mud-width-full" @ref="_carousel" ItemsSource="_source" @bind-SelectedIndex="selectedIndex" Style="height:600px;" ShowArrows="_arrows" ShowBullets="_bullets" EnableSwipeGesture="_enableSwipeGesture" AutoCycle="_autocycle">
+        <ItemTemplate>
+            <div class="d-flex flex-column flex-column justify-center" style="height:100%; opacity: revert;">
+                <div class="container text-center">
+                    <img src="@_source[selectedIndex]" alt="Carousel Image" class="mx-auto" style="max-width: 50%; height: 50; border-radius: 20%;" />
+                    <hr class="mx-auto w-50" style="height: 3px; border: none; background-color: white; opacity: revert;" />
+                    <MudText Align="@Align.Center" Class="mx-auto mt-5 w-50 text-white">@_text[selectedIndex]</MudText>
+                </div>
+            </div>
+        </ItemTemplate>
+    </MudCarousel>
+</div>
+@code {
+    private MudCarousel<string> _carousel;
+    private bool _arrows = false;
+    private bool _bullets = true;
+    private bool _enableSwipeGesture = true;
+    private bool _autocycle = true;
+    private IList<string> _source = new List<string>()
+    {
+        "/images/person1.jpg",
+        "/images/person1.jpg",
+        "/images/person1.jpg",
+    };
+
+    private IList<string> _text = new List<string>()
+    {
+        "Via Talent-IT Group heb ik mijn droomjob gevonden!",
+        "De juiste studierichting? Talent-IT Group heeft me super goed geholpen",
+        "De juiste studierichting vinden om je droomjob te doen? Talent-IT Group!!!!",
+    };
+
+    public int selectedIndex = 0;
+
+}

@@ -8,9 +8,12 @@ main {
     flex: 1;
 }
 
-.sidebar {
-    background-color: white;
+.btn-primary {
+    background-color: #FF6900 !important;
+    border-color: #FF6900 !important;
+    color: #062455 !important
 }
+
 
 .top-row {
     background-color: #f7f7f7;
