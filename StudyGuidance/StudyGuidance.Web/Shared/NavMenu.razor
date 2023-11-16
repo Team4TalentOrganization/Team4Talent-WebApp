@@ -1,11 +1,38 @@
 ﻿@inject NavigationManager UriHelper
 @inject IJSRuntime JSRuntime
 @inject Microsoft.AspNetCore.Components.NavigationManager NavigationManager
+
+<div class="modal @ModalClass" tabindex="-1" role="dialog" style="display:@ModalDisplay">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Let op!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Ben je zeker dat je de quiz wil verlaten?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" @onclick="() => Close()">Doordoen!</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" @onclick='() => CloseAndRouteTo()'>Verlaten</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (ShowBackdrop)
+{
+    <div class="modal-backdrop fade show"></div>
+}
+
+
 <div class="sidebar" style="@navStyle">
 @if(collapseNavMenu){
     <div class="top-row ps-3 navbar navbar-light" style="background-color:transparent">
         <div class="container-fluid">
-                <a class="navbar-brand" @onclick='() => route("/")'>
+                <a class="navbar-brand" @onclick='() => Open("/")'>
                 <p class="titleApp">STUDY GUIDANCE</p>
             </a>
             <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
@@ -18,7 +45,7 @@ else
 {
     <div class="top-row ps-3 navbar navbar-light" style="background-color:white">
         <div class="container-fluid">
-                <a class="navbar-brand" @onclick='() => route("/")'>
+                <a class="navbar-brand" @onclick='() => Open("/")'>
                 <p class="titleApp">STUDY GUIDANCE</p>
             </a>
             <button title="Navigation menu" class="navbar-toggler" style="background-color:#ff5404" @onclick="ToggleNavMenu">
@@ -32,16 +59,16 @@ else
     <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
         <nav class="flex-column">
             <div >
-                <a class="nav-link" @onclick='() => route("/")' aria-hidden="true">HOME</a>
+                <a class="nav-link" @onclick='() => Open("/")' aria-hidden="true">HOME</a>
             </div>
             <div>
-                <a class="nav-link" @onclick='() => route("/faq")' aria-hidden="true">FAQ</a>
+                <a class="nav-link" @onclick='() => Open("/faq")' aria-hidden="true">FAQ</a>
             </div>
             <div >
-                <a class="nav-link" @onclick='() => route("https://www.cookiecrunchers.be/")' aria-hidden="true">COOKIE CRUNCHERS</a>
+                <a class="nav-link" @onclick='() => Open("https://www.cookiecrunchers.be/")' aria-hidden="true">COOKIE CRUNCHERS</a>
             </div>
             <div class="nav flex-column nav-pills">
-                <a class="nav-link active" @onclick='() => route("/ContactPage")' aria-selected="true">CONTACT US</a>
+                <a class="nav-link active" @onclick='() => Open("/ContactPage")' aria-selected="true">CONTACT US</a>
             </div>
         </nav>
     </div>
@@ -54,6 +81,8 @@ else
 
     private string navStyle = "width: 100%;";
 
+    private string destinationUrl = String.Empty;
+
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
@@ -63,27 +92,37 @@ else
 
     }
 
-    public async void route(string destinationUrl)
-    {
-        string quizPageUrl = "/quiz";
+    public Guid Guid = Guid.NewGuid();
+    public string ModalDisplay = "none;";
+    public string ModalClass = "";
+    public bool ShowBackdrop = false;
 
-        if (NavigationManager.Uri.Contains(quizPageUrl))
-        {
-            
-            if (!await JSRuntime.InvokeAsync<bool>("confirm", "Ben je zeker dat je de quiz wil verlaten?"))
-            {
-                
-            }
-            else
-            {
-                UriHelper.NavigateTo(destinationUrl);
-            }
-        }
-        else
-        {
-            UriHelper.NavigateTo(destinationUrl);
-        }
+    public void Open(string destinationUrl)
+    {
+        this.destinationUrl = destinationUrl;
+        ModalDisplay = "block;";
+        ModalClass = "Show";
+        ShowBackdrop = true;
+        StateHasChanged();
     }
 
-    
+    public void Close()
+    {
+        ModalDisplay = "none";
+        ModalClass = "";
+        ShowBackdrop = false;
+        StateHasChanged();
+    }
+
+    public void CloseAndRouteTo()
+    {
+        ModalDisplay = "none";
+        ModalClass = "";
+        ShowBackdrop = false;
+        StateHasChanged();
+        if (NavigationManager.Uri.Contains("/quiz"))
+        {
+            UriHelper.NavigateTo(this.destinationUrl);
+        }
+    }
 }
