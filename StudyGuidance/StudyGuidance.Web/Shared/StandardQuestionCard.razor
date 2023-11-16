@@ -1,7 +1,4 @@
-﻿@inject NavigationManager UriHelper
-@inject IJSRuntime JSRuntime
-
-<div class="container bg-custom-color" style="width: 70%; height: 350px; position: relative; overflow: hidden; border-radius: 15px;">
+﻿<div class="container bg-custom-color" style="width: 70%; height: 350px; position: relative; overflow: hidden; border-radius: 15px;">
     <div class="mt-4" style="width: 48%; height:50%; float:left;">
         <div class="card @CardClasses[0]" @onmouseover="() => MouseOver(0)" @onmouseout="() => MouseOut(0)" @onclick="() => CardClicked(0)">
             <div class="card-body text-center d-flex align-items-center">
@@ -80,6 +77,7 @@
     }
 
 @code {
+
     string[] CardClasses = new string[4] { "card text-black h-50 mb-3", "card text-black h-50 mb-3", "card text-black h-50 mb-3", "card text-black h-50 mb-3" };
 
     async Task MouseOver(int cardNumber)
@@ -158,33 +156,6 @@
     }
 
     public void endQuizClicked() {
-
+        return;
     }
-    protected override void OnInitialized()
-    {
-        UriHelper.LocationChanged += DetectNavigation;
-    }
-
-    private async void DetectNavigation(object sender, LocationChangedEventArgs e)
-    {
-        // Check if the destination URL is different from the quiz page URL
-        if (!e.Location.Contains("quiz"))
-        {
-            // Show the navigation alert
-            if (!await JSRuntime.InvokeAsync<bool>("confirm", "Ben je zeker dat je de quiz wil verlaten?"))
-            {
-                Dispose();
-                UriHelper.NavigateTo("/quiz");
-            } else
-            {
-                Dispose();
-            }
-        }
-    }
-    public void Dispose()
-    {
-        UriHelper.LocationChanged -= DetectNavigation;
-        StateHasChanged(); // Ensure that the component is re-rendered after disposing
-    }
-
 }

@@ -1,4 +1,7 @@
-﻿<div class="sidebar" style="@navStyle">
+﻿@inject NavigationManager UriHelper
+@inject IJSRuntime JSRuntime
+@inject Microsoft.AspNetCore.Components.NavigationManager NavigationManager
+<div class="sidebar" style="@navStyle">
 @if(collapseNavMenu){
     <div class="top-row ps-3 navbar navbar-light" style="background-color:transparent">
         <div class="container-fluid">
@@ -32,7 +35,7 @@ else
                 <a class="nav-link" href="" Match="NavLinkMatch.All" aria-hidden="true">HOME</a>
             </div>
             <div>
-                <a class="nav-link" href="FAQ" aria-hidden="true">FAQ</a>
+                <a class="nav-link" @onclick='() => route("/faq")' aria-hidden="true">FAQ</a>
             </div>
             <div >
                 <a class="nav-link" href="https://www.cookiecrunchers.be/" aria-hidden="true">COOKIE CRUNCHERS</a>
@@ -57,6 +60,30 @@ else
 
         navStyle = collapseNavMenu ? "width: 100%;" : "height: 100vh;";
 
-        
+
     }
+
+    public async void route(string destinationUrl)
+    {
+        string quizPageUrl = "/quiz";
+
+        if (NavigationManager.Uri.Contains(quizPageUrl))
+        {
+            
+            if (!await JSRuntime.InvokeAsync<bool>("confirm", "Ben je zeker dat je de quiz wil verlaten?"))
+            {
+                
+            }
+            else
+            {
+                UriHelper.NavigateTo(destinationUrl);
+            }
+        }
+        else
+        {
+            UriHelper.NavigateTo(destinationUrl);
+        }
+    }
+
+    
 }
