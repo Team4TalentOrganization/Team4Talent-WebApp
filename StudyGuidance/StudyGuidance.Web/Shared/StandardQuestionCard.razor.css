@@ -1,5 +1,5 @@
 ﻿.bg-custom-color {
-    background: radial-gradient(#456a8e, #0066cc) !important; /* Adjust the gradient colors */
+    background: #062455 !important; /* Adjust the gradient colors */
 }
 
 .bg-orange-color {
@@ -7,7 +7,7 @@
 }
 
 .bg-orange-color-click {
-    background-color: #fc8403 !important;
+    background-color: #FF6900 !important;
 }
 
 .rounded-btn {
@@ -58,5 +58,9 @@
 
 .previousButton {
     animation: colorChange 1s; /* 1s duration for the animation */
+}
+
+.nextButton {
+    background: #062455
 }
 
