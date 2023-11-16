@@ -49,14 +49,12 @@ else
 
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
-    private string navStyle = "width: 100%;";
+    private string navStyle = "width: 100%; background-color: transparent;";
 
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
 
-        navStyle = collapseNavMenu ? "width: 100%;" : "height: 100vh;";
-
-        
+        navStyle = collapseNavMenu ? "width: 100%; background-color: transparent" : "height: 100vh; background-color: white;";
     }
 }
