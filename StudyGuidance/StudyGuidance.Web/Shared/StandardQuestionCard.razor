@@ -103,11 +103,20 @@
     {
         currentQuestion = (currentQuestion + 1) % answersList.Count;
 
+        for (int i = 0; i < CardClasses.Length; i++)
+        {
+            CardClasses[i] = "card text-black h-50 mb-3";
+        }
     }
 
     public async void previousQuestionClicked()
     {
         currentQuestion = (currentQuestion - 1) % answersList.Count;
+
+        for (int i = 0; i < CardClasses.Length; i++)
+        {
+            CardClasses[i] = "card text-black h-50 mb-3";
+        }
     }
 
     public void endQuizClicked() {
