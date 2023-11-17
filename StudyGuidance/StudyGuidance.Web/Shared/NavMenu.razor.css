@@ -60,33 +60,37 @@ nav.flex-column {
     padding-bottom: 0.5rem;
 }
 
-    .nav-item:first-of-type {
-        padding-top: 1rem;
-    }
+.nav-item:first-of-type {
+    padding-top: 1rem;
+}
 
-    .nav-item:last-of-type {
-        padding-bottom: 1rem;
-    }
+.nav-item:last-of-type {
+    padding-bottom: 1rem;
+}
 
-    .nav-item ::deep a {
-        color: black;
-        background-color: black;
-        border-radius: 4px;
-        height: 3rem;
-        display: flex;
-        align-items: center;
-        line-height: 3rem;
-    }
+.nav-item ::deep a {
+    color: black;
+    background-color: black;
+    border-radius: 4px;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    line-height: 3rem;
+}
 
-        .nav-item ::deep a.active {
-            background-color: rgba(8, 36, 84);
-            color: white;
-        }
+.nav-item ::deep a.active {
+     background-color: rgba(8, 36, 84);
+     color: white;
+}
 
-        .nav-item ::deep a:hover {
-            background-color: rgba(255, 84, 4);
-            color: white;
-        }
+.nav-item ::deep a:hover {
+     background-color: rgba(255, 84, 4);
+     color: white;
+}
+
+.btn-secondary {
+    background-color: #062455;
+}
 
 @media (min-width: 641px) {
     .navbar-toggler {

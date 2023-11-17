@@ -73,7 +73,7 @@
     }
     else
     {
-        <button @onclick="() => endQuizClicked()" type="button" class="nextButton btn btn-primary rounded-btn">EINDE QUIZ</button>
+    <button @onclick="() => endQuizClicked()" disabled="@(!AreAnyCardsSelected())" type="button" class="nextButton btn btn-primary rounded-btn">EINDE QUIZ</button>
     }
 
 @code {
