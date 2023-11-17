@@ -77,17 +77,14 @@ else
 
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
-    private string navStyle = "width: 100%;";
+    private string navStyle = "width: 100%; background-color: transparent;";
 
     private string destinationUrl = String.Empty;
 
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
-
-        navStyle = collapseNavMenu ? "width: 100%;" : "height: 100vh;";
-
-
+        navStyle = collapseNavMenu ? "width: 100%; background-color: transparent" : "height: 100vh; background-color: white;";
     }
 
     public Guid Guid = Guid.NewGuid();
@@ -122,6 +119,5 @@ else
         ShowBackdrop = false;
         StateHasChanged();
         UriHelper.NavigateTo(this.destinationUrl);
-        
     }
 }

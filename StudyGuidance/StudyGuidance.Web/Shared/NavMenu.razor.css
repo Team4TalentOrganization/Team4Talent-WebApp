@@ -10,7 +10,6 @@
 }
 
 .titleApp{
-    font-family: 'Gotham-Bold';
     font-weight: bold;
 }
 
@@ -33,7 +32,6 @@ nav.flex-column {
     margin-bottom: 16%;
     background-color: white;
     font-weight: bold;
-    font-family: 'Gotham';
 }
 
 .navbar-dark .navbar-brand {
