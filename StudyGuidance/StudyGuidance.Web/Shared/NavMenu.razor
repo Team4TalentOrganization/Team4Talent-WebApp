@@ -102,6 +102,11 @@ else
             ShowBackdrop = true;
             StateHasChanged();
         }
+        else
+        {
+            this.destinationUrl = destinationUrl;
+            UriHelper.NavigateTo(this.destinationUrl);
+        }
     }
 
     public void Close()
