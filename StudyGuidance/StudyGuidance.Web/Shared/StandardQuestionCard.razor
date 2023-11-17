@@ -69,7 +69,7 @@
 </div> *@
     @if (currentQuestion < questionsList.Count - 1)
     {
-        <button @onclick="() => nextQuestionClicked()" type="button" class="nextButton btn btn-primary rounded-btn">VOLGENDE VRAAG</button>
+    <button @onclick="() => nextQuestionClicked()" disabled="@(!AreAnyCardsSelected())" type="button" class="nextButton btn btn-primary rounded-btn">VOLGENDE VRAAG</button>
     }
     else
     {
@@ -157,5 +157,10 @@
 
     public void endQuizClicked() {
         return;
+    }
+
+    public bool AreAnyCardsSelected()
+    {
+        return CardClasses.Any(cc => cc.Contains("bg-orange-color-click"));
     }
 }
