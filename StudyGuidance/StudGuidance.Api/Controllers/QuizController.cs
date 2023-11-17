@@ -18,6 +18,12 @@ namespace StudGuidance.Api.Controllers
         public async Task<IActionResult> GetAllQuestions()
         {
             IReadOnlyList<Question> allQuestions = await _questionRepository.GetQuestionsAsync();
+
+            if(allQuestions.Count <= 0) 
+            {
+                return NotFound("AllQuestions bevat geen inhoud");
+            }
+
             return Ok(allQuestions);
         }
 
@@ -25,6 +31,12 @@ namespace StudGuidance.Api.Controllers
         public async Task<IActionResult> GetAllDomains()
         {
             IReadOnlyList<Option> allDomains = await _questionRepository.GetDomainsAsync();
+
+            if(allDomains.Count <= 0)
+            {
+                return NotFound("AllDomians bevat geen inhoud");
+            }
+
             return Ok(allDomains);
         }
 
@@ -33,8 +45,9 @@ namespace StudGuidance.Api.Controllers
         {
             IReadOnlyList<Option> allSubDomains = await _questionRepository.GetSubDomainsAsync(domainId);
 
-            if(allSubDomains.Count == 0) { 
-                return NotFound();
+            if(allSubDomains.Count == 0) 
+            { 
+                return NotFound("SubDomains bevat geen inhoud");
             }
 
             return Ok(allSubDomains);

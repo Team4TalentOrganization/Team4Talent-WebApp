@@ -1,0 +1,11 @@
+í
+àC:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain.Tests\Builders\BuilderBase.csutf-8î
+äC:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain.Tests\Builders\OptionBuilder.csutf-8ñ
+åC:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain.Tests\Builders\QuestionBuilder.csutf-8à
+C:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain.Tests\OptionTests.csutf-8ã
+ÅC:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain.Tests\QuestionTests.csutf-8É
+zC:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain.Tests\Usings.csutf-8}
+rC:\Users\Lucah\.nuget\packages\microsoft.net.test.sdk\17.5.0\build\netcoreapp3.1\Microsoft.NET.Test.Sdk.Program.csutf-8∫
+ÆC:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain.Tests\obj\Debug\net6.0\StudyGuidance.Domain.Tests.GlobalUsings.g.csutf-8º
+∞C:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain.Tests\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.csutf-8∏
+¨C:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain.Tests\obj\Debug\net6.0\StudyGuidance.Domain.Tests.AssemblyInfo.csutf-8

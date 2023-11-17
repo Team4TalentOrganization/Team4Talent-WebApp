@@ -1,0 +1,14 @@
+®
+ûC:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231031163721_DomainQuestion.csutf-8≥
+ßC:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231031163721_DomainQuestion.Designer.csutf-8´
+°C:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231109140326_SubDomainQuestion.csutf-8∂
+™C:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231109140326_SubDomainQuestion.Designer.csutf-8±
+ßC:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231110095936_SubDomainQuestionChange.csutf-8º
+∞C:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231110095936_SubDomainQuestionChange.Designer.csutf-8∞
+§C:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\StudyGuidanceDbContextModelSnapshot.csutf-8ï
+ãC:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Properties\Properties.csutf-8ê
+ÜC:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\QuizDbRepository.csutf-8ñ
+åC:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\StudyGuidanceDbContext.csutf-8æ
+≤C:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\obj\Debug\net6.0\StudyGuidance.Infrastructure.GlobalUsings.g.csutf-8æ
+≤C:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.csutf-8º
+∞C:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\obj\Debug\net6.0\StudyGuidance.Infrastructure.AssemblyInfo.csutf-8
