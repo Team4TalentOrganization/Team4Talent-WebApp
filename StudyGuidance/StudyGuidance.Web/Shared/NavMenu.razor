@@ -1,8 +1,36 @@
-﻿<div class="sidebar" style="@navStyle">
+﻿@inject NavigationManager UriHelper
+@inject IJSRuntime JSRuntime
+@inject Microsoft.AspNetCore.Components.NavigationManager NavigationManager
+
+<div class="modal @ModalClass mx-auto" tabindex="-1" role="dialog" style="display:@ModalDisplay;">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Let op!</h5>
+            </div>
+            <div class="modal-body">
+                <p>Ben je zeker dat je de quiz wil verlaten?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" @onclick="() => Close()">Doordoen!</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" @onclick='() => CloseAndRouteTo()'>Verlaten</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@if (ShowBackdrop)
+{
+    <div class="modal-backdrop fade show"></div>
+}
+
+
+<div class="sidebar" style="@navStyle">
 @if(collapseNavMenu){
     <div class="top-row ps-3 navbar navbar-light" style="background-color:transparent">
         <div class="container-fluid">
-            <a class="navbar-brand" href="">
+                <a class="navbar-brand" @onclick='() => Open("/")'>
                 <p class="titleApp">STUDY GUIDANCE</p>
             </a>
             <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
@@ -15,7 +43,7 @@ else
 {
     <div class="top-row ps-3 navbar navbar-light" style="background-color:white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="">
+                <a class="navbar-brand" @onclick='() => Open("/")'>
                 <p class="titleApp">STUDY GUIDANCE</p>
             </a>
             <button title="Navigation menu" class="navbar-toggler" style="background-color:#ff5404" @onclick="ToggleNavMenu">
@@ -29,16 +57,16 @@ else
     <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
         <nav class="flex-column">
             <div >
-                <a class="nav-link" href="" Match="NavLinkMatch.All" aria-hidden="true">HOME</a>
+                <a class="nav-link" @onclick='() => Open("/")' aria-hidden="true">HOME</a>
             </div>
             <div>
-                <a class="nav-link" href="FAQ" aria-hidden="true">FAQ</a>
+                <a class="nav-link" @onclick='() => Open("/faq")' aria-hidden="true">FAQ</a>
             </div>
             <div >
-                <a class="nav-link" href="https://www.cookiecrunchers.be/" aria-hidden="true">COOKIE CRUNCHERS</a>
+                <a class="nav-link" @onclick='() => Open("https://www.cookiecrunchers.be/")' aria-hidden="true">COOKIE CRUNCHERS</a>
             </div>
             <div class="nav flex-column nav-pills">
-                <a class="nav-link active" href="ContactPage" aria-selected="true">CONTACT US</a>
+                <a class="nav-link active" @onclick='() => Open("/ContactPage")' aria-selected="true">CONTACT US</a>
             </div>
         </nav>
     </div>
@@ -49,14 +77,52 @@ else
 
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
-    private string navStyle = "width: 100%;";
+    private string navStyle = "width: 100%; background-color: transparent;";
+
+    private string destinationUrl = String.Empty;
 
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
+        navStyle = collapseNavMenu ? "width: 100%; background-color: transparent" : "height: 100vh; background-color: white;";
+    }
 
-        navStyle = collapseNavMenu ? "width: 100%;" : "height: 100vh;";
+    public Guid Guid = Guid.NewGuid();
+    public string ModalDisplay = "none;";
+    public string ModalClass = "";
+    public bool ShowBackdrop = false;
 
-        
+    public void Open(string destinationUrl)
+    {
+        if (NavigationManager.Uri.Contains("/quiz"))
+        {
+            this.destinationUrl = destinationUrl;
+            ModalDisplay = "block;";
+            ModalClass = "Show";
+            ShowBackdrop = true;
+            StateHasChanged();
+        }
+        else
+        {
+            this.destinationUrl = destinationUrl;
+            UriHelper.NavigateTo(this.destinationUrl);
+        }
+    }
+
+    public void Close()
+    {
+        ModalDisplay = "none";
+        ModalClass = "";
+        ShowBackdrop = false;
+        StateHasChanged();
+    }
+
+    public void CloseAndRouteTo()
+    {
+        ModalDisplay = "none";
+        ModalClass = "";
+        ShowBackdrop = false;
+        StateHasChanged();
+        UriHelper.NavigateTo(this.destinationUrl);
     }
 }

@@ -1,0 +1,66 @@
+﻿.bg-custom-color {
+    background: #062455 !important; /* Adjust the gradient colors */
+}
+
+.bg-orange-color {
+    background-color: #fc8403 !important;
+}
+
+.bg-orange-color-click {
+    background-color: #FF6900 !important;
+}
+
+.rounded-btn {
+    border-radius: 25px;
+    font-size: 8px;
+    float: right;
+    margin-right: 15%;
+    margin-top: 10%;
+}
+
+.card {
+    border-radius: 15px;
+}
+
+.container {
+    width: 80%;
+}
+
+.card {
+    transition: transform 0.3s ease; /* Add a smooth transition effect */
+    transition: background-color 1s ease;
+}
+
+.card:hover {
+        transform: scale(1.05); /* Adjust the scale factor as needed */
+        animation: scaleAnimation 2s forwards; /* Use a CSS animation for the hover effect */
+}
+
+@keyframes scaleAnimation {
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        background-color: #fff;
+    }
+
+    50% {
+        background-color: #fc8403;
+    }
+
+    100% {
+        background-color: #fff;
+    }
+}
+
+.previousButton {
+    animation: colorChange 1s; /* 1s duration for the animation */
+}
+
+.nextButton {
+    background: #062455
+}
+

@@ -1,0 +1,47 @@
+name: Unit tests on push
+env:
+  WORKING_DIRECTORY: ./StudyGuidance/
+  DOTNET_VERSION: '6.0'
+  CONFIGURATION: Release
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+    types: 
+      - opened
+      - closed
+    branches:
+      - development
+      - main
+
+jobs:
+  build:
+    runs-on: "ubuntu-latest"
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: setup .NET
+      uses: actions/setup-dotnet@v3
+      with: 
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: Restore
+      run: dotnet restore "${{ env.WORKING_DIRECTORY }}"
+
+    - name: Build
+      run: dotnet build "${{ env.WORKING_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-restore
+
+    - name: Test
+      run: dotnet test "${{ env.WORKING_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --logger "trx;LogFileName=test-results.trx" || true
+
+    - name: Test Report
+      uses: dorny/test-reporter@v1
+      if: always()
+      with:
+        name: DotNET Tests
+        path: "**/test-results.trx"                            
+        reporter: dotnet-trx
+        fail-on-error: true

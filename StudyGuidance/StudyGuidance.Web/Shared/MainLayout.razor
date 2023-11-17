@@ -1,9 +1,17 @@
 @inherits LayoutComponentBase
 
-<div class="page">
-    <NavMenu/>
+<div id="video">
+    <video preload="auto" autoplay loop muted style="position: absolute; top: 0; left: 0; height: 100%; overflow: hidden;">
+        <source src="https://www.talent-it.be/wp-content/uploads/2023/03/TalentIT_comp1_540p.mp4" type="video/mp4" />
+    </video>
+</div>
 
+<div class="page">
+    
+    <NavMenu/>
+    
     <main>
+        
         <article class="content px-0 pt-0">
             @Body
         </article>
