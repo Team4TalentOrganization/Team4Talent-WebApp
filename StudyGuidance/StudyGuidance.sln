@@ -17,6 +17,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyGuidance.Web.Tests", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyGuidance.Infrastructure.Tests", "StudyGuidance.Infrastructure.Tests\StudyGuidance.Infrastructure.Tests.csproj", "{E25522F8-D6AB-4D34-9CFA-CAF4337A3892}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyGuidance.Api.Tests", "StudyGuidance.Api.Tests\StudyGuidance.Api.Tests.csproj", "{0B458C75-EB6F-4D05-BA40-828AEBE26C99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyGuidance.Domain.Tests", "StudyGuidance.Domain.Tests\StudyGuidance.Domain.Tests.csproj", "{0B0AD721-1432-4F89-9A08-CCC91D17B3C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{E25522F8-D6AB-4D34-9CFA-CAF4337A3892}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E25522F8-D6AB-4D34-9CFA-CAF4337A3892}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E25522F8-D6AB-4D34-9CFA-CAF4337A3892}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B458C75-EB6F-4D05-BA40-828AEBE26C99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B458C75-EB6F-4D05-BA40-828AEBE26C99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B458C75-EB6F-4D05-BA40-828AEBE26C99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B458C75-EB6F-4D05-BA40-828AEBE26C99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B0AD721-1432-4F89-9A08-CCC91D17B3C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B0AD721-1432-4F89-9A08-CCC91D17B3C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B0AD721-1432-4F89-9A08-CCC91D17B3C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B0AD721-1432-4F89-9A08-CCC91D17B3C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

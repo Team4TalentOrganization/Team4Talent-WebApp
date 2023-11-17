@@ -52,7 +52,7 @@ namespace StudyGuidance.Infrastructure.Tests
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.AreEqual(2, result.Count);
+            Assert.That(2, Is.EqualTo(result.Count));
             Assert.IsTrue(result.All(q => q.Options.Any()));
         }
 
@@ -74,7 +74,7 @@ namespace StudyGuidance.Infrastructure.Tests
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.AreEqual(2, result.Count);
+            Assert.That(2, Is.EqualTo(result.Count));
         }
 
         [Test]
@@ -95,7 +95,7 @@ namespace StudyGuidance.Infrastructure.Tests
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.AreEqual(2, result.Count);
+            Assert.That(2, Is.EqualTo(result.Count));
         }
     }
 }

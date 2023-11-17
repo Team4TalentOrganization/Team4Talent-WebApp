@@ -1,0 +1,11 @@
+﻿C:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Controllers\QuizController.cs
+C:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Program.cs
+C:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\obj\Debug\net6.0\StudGuidance.Api.GlobalUsings.g.cs
+C:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.cs
+C:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\obj\Debug\net6.0\StudGuidance.Api.AssemblyInfo.cs
+C:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\obj\Debug\net6.0\StudGuidance.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\appsettings.Development.json
+C:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\appsettings.json
+C:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Dockerfile
+C:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Properties\launchSettings.json
+C:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\.dockerignore
