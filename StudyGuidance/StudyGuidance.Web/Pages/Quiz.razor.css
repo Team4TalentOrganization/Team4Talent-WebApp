@@ -1,0 +1,16 @@
+﻿.header {
+    text-align: center;
+    color: #fc8403;
+    margin-top: 5%;
+    margin-bottom: 1%;
+}
+
+.line {
+    border: 2px solid black;
+    width: 100px;
+    margin: auto;
+    margin-bottom: 5%;
+    opacity: 100%;
+}
+
+

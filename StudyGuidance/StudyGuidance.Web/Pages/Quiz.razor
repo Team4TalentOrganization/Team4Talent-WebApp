@@ -1,2 +1,10 @@
 ﻿@page "/quiz"
-<h1>Quiz Pagina</h1>
+<style>
+    /*This must be on this page, if you put this in the css file it won't work anymore*/
+    footer {
+        display: none;
+    }
+</style>
+<p class="header">STANDAARD QUIZ</p>
+<hr class="line" />
+<StandardQuestionCard></StandardQuestionCard>
