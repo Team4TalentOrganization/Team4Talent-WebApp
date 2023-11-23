@@ -4,7 +4,7 @@ namespace StudyGuidance.Domain
 {
     public class Option
     {
-        private string _content = string.Empty;
+      private string _content = string.Empty;  
         private int _optionRelation;
         private int _questionId;
 

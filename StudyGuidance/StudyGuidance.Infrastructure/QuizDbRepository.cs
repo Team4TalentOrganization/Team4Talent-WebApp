@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StudyGuidance.AppLogic;
 using StudyGuidance.Domain;
+using System.Linq;
 
 namespace StudyGuidance.Infrastructure
 {
@@ -29,6 +30,20 @@ namespace StudyGuidance.Infrastructure
             return await _context.Options
                 .Where(o => domainIds.Contains(o.OptionRelation))
                 .ToListAsync();
+        }
+
+        public async Task<IReadOnlyList<Job>> GetJobsAsync()
+        {
+            return await _context.Jobs.ToListAsync<Job>();
+        }
+
+        public async Task<IReadOnlyList<Job>> GetJobsBySubDomain(List<string> subdomains)
+        {
+            var matchingJobs = await _context.Jobs
+            .Where(job => subdomains.Contains(job.SubDomain))
+            .ToListAsync();
+
+            return matchingJobs;
         }
     }
 }

@@ -97,5 +97,49 @@ namespace StudyGuidance.Infrastructure.Tests
             Assert.IsNotNull(result);
             Assert.That(2, Is.EqualTo(result.Count));
         }
+
+        [Test]
+        public async Task GetJobsAsync_ReturnsAllJobsFromRepository()
+        {
+            // Arrange
+            var jobs = new List<Job>
+            {
+                new Job { JobId = 1, SubDomain = "Subdomain 1" },
+                new Job { JobId = 2, SubDomain = "Subdomain 2" },
+                new Job { JobId = 3, SubDomain = "Subdomain 3" }
+            };
+            _dbContext.Jobs.AddRange(jobs);
+            _dbContext.SaveChanges();
+
+            // Act
+            var result = await _repository.GetJobsAsync();
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.That(3, Is.EqualTo(result.Count));
+        }
+
+        [Test]
+        public async Task GetJobsBySubDomainAsync_ReturnsAllRequestedSubDomainsFromRepository()
+        {
+            // Arrange
+            var jobs = new List<Job>
+            {
+                new Job { JobId = 1, SubDomain = "Subdomain 1" },
+                new Job { JobId = 2, SubDomain = "Subdomain 2" },
+                new Job { JobId = 3, SubDomain = "Subdomain 3" }
+            };
+            _dbContext.Jobs.AddRange(jobs);
+            _dbContext.SaveChanges();
+
+            // Act
+            var result = await _repository.GetJobsBySubDomain(new List<string> { "Subdomain 1", "Subdomain 2" });
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.That(2, Is.EqualTo(result.Count));
+            Assert.That(result.Select(job => job.SubDomain), Is.EquivalentTo(new[] { "Subdomain 1", "Subdomain 2" }));
+        }
+
     }
 }
