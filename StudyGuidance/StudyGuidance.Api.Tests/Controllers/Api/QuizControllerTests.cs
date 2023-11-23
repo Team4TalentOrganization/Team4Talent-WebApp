@@ -97,8 +97,6 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
 
             // Assert
             Assert.IsInstanceOf<NotFoundObjectResult>(result);
-            //var notFoundResult = result as NotFoundObjectResult;
-            //Assert.AreEqual("AllQuestions bevat geen inhoud", notFoundResult.Value);
         }
     }
 }
