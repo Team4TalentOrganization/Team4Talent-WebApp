@@ -1,82 +1,58 @@
-﻿<div class="container bg-custom-color" style="width: 70%; height: 350px; position: relative; overflow: hidden; border-radius: 15px;">
-    <div class="mt-4" style="width: 48%; height:50%; float:left;">
-        <div class="card @CardClasses[0]" @onmouseover="() => MouseOver(0)" @onmouseout="() => MouseOut(0)" @onclick="() => CardClicked(0)">
-            <div class="card-body text-center d-flex align-items-center">
-                <p class="m-auto">@GetAnswersForCurrentQuestion()[0]</p>
-            </div>
-        </div>
-        <div class="card @CardClasses[1]" @onmouseover="() => MouseOver(1)" @onmouseout="() => MouseOut(1)" @onclick="() => CardClicked(1)">
-            <div class="card-body text-center d-flex align-items-center">
-                <p class="m-auto">@GetAnswersForCurrentQuestion()[1]</p>
-            </div>
-        </div>
-    </div>
-    <div class="mt-4" style="width: 48%; height:50%; float:right;">
-        <div class="card @CardClasses[2]" @onmouseover="() => MouseOver(2)" @onmouseout="() => MouseOut(2)" @onclick="() => CardClicked(2)">
-            <div class="card-body text-center d-flex align-items-center">
-                <p class="m-auto">@GetAnswersForCurrentQuestion()[2]</p>
-            </div>
-        </div>
-        <div class="card @CardClasses[3]" @onmouseover="() => MouseOver(3)" @onmouseout="() => MouseOut(3)" @onclick="() => CardClicked(3)">
-            <div class="card-body text-center d-flex align-items-center">
-                <p class="m-auto">@GetAnswersForCurrentQuestion()[3]</p>
-            </div>
-        </div>
-    </div>
-    <div style="clear: both;"></div>
-    <p class="text-white text-center" style="position: absolute; bottom: 17%; left: 50%; transform: translateX(-50%); width:85%">@GetQuestionForCurrentQuestion()</p>
-    @if (currentQuestion > 0)
-    {
-        <button @onclick="() => previousQuestionClicked()" id="previousButton" type="button" class="btn btn-light btn-circle btn-lg rounded-circle mb-3" style="position: absolute; bottom: 0;">
-            <span style="font-size: 20px;">&lt;</span>
-        </button>
-    }
-</div>
-
-@* <div class="container bg-custom-color rounded-lg" style="width: 70%; height: 350px;">
-    <div class="row" style="height:50%">
-        <div class="col-6 d-flex align-items-center" style="height:100%;">
-            <div class="card @CardClasses[0]" @onmouseover="() => MouseOver(0)" @onmouseout="() => MouseOut(0)" @onclick="() => CardClicked(0)" style="height: 100%; width:100%;">
-                <div class="card-body text-center d-flex align-items-center">
-                    <p class="m-auto">@GetAnswersForCurrentQuestion()[0]</p>
+﻿@if (!quizEnded)
+{
+    <Animation Effect="Effect.ZoomIn" Speed="@Speed.Fast">
+        <div class="container bg-custom-color" style="width: 70%; height: 350px; position: relative; overflow: hidden; border-radius: 15px;">
+            <div class="mt-4" style="width: 48%; height:50%; float:left;">
+                <div class="card @CardClasses[0]" @onmouseover="() => MouseOver(0)" @onmouseout="() => MouseOut(0)" @onclick="() => CardClicked(0)">
+                    <div class="card-body text-center d-flex align-items-center">
+                        <p class="m-auto">@GetAnswersForCurrentQuestion()[0]</p>
+                    </div>
+                </div>
+                <div class="card @CardClasses[1]" @onmouseover="() => MouseOver(1)" @onmouseout="() => MouseOut(1)" @onclick="() => CardClicked(1)">
+                    <div class="card-body text-center d-flex align-items-center">
+                        <p class="m-auto">@GetAnswersForCurrentQuestion()[1]</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-6 d-flex align-items-center" style="height:100%;">
-            <div class="card @CardClasses[1]" @onmouseover="() => MouseOver(1)" @onmouseout="() => MouseOut(1)" @onclick="() => CardClicked(1)" style="height: 100%; width:100%;">
-                <div class="card-body text-center d-flex align-items-center">
-                    <p class="m-auto">@GetAnswersForCurrentQuestion()[1]</p>
+            <div class="mt-4" style="width: 48%; height:50%; float:right;">
+                <div class="card @CardClasses[2]" @onmouseover="() => MouseOver(2)" @onmouseout="() => MouseOut(2)" @onclick="() => CardClicked(2)">
+                    <div class="card-body text-center d-flex align-items-center">
+                        <p class="m-auto">@GetAnswersForCurrentQuestion()[2]</p>
+                    </div>
+                </div>
+                <div class="card @CardClasses[3]" @onmouseover="() => MouseOver(3)" @onmouseout="() => MouseOut(3)" @onclick="() => CardClicked(3)">
+                    <div class="card-body text-center d-flex align-items-center">
+                        <p class="m-auto">@GetAnswersForCurrentQuestion()[3]</p>
+                    </div>
                 </div>
             </div>
+            <div style="clear: both;"></div>
+            <p class="text-white text-center" style="position: absolute; bottom: 17%; left: 50%; transform: translateX(-50%); width:85%">@GetQuestionForCurrentQuestion()</p>
+            @if (currentQuestion > 0)
+            {
+                <button @onclick="() => previousQuestionClicked()" id="previousButton" type="button" class="btn btn-light btn-circle btn-lg rounded-circle mb-3" style="position: absolute; bottom: 0;">
+                    <span style="font-size: 20px;">&lt;</span>
+                </button>
+            }
         </div>
-    </div>
-    <div class="row" style="height:50%;">
-        <div class="col-6 d-flex align-items-center" style="height:100%;">
-            <div class="card @CardClasses[2]" @onmouseover="() => MouseOver(2)" @onmouseout="() => MouseOut(2)" @onclick="() => CardClicked(2)" style="height: 100%; width:100%;">
-                <div class="card-body text-center d-flex align-items-center">
-                    <p class="m-auto">@GetAnswersForCurrentQuestion()[2]</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 d-flex align-items-center" style="height:100%;">
-            <div class="card @CardClasses[3]" @onmouseover="() => MouseOver(3)" @onmouseout="() => MouseOut(3)" @onclick="() => CardClicked(3)" style="height: 100%; width:100%;">
-                <div class="card-body text-center d-flex align-items-center">
-                    <p class="m-auto">@GetAnswersForCurrentQuestion()[3]</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> *@
+    </Animation>
     @if (currentQuestion < questionsList.Count - 1)
     {
-    <button @onclick="() => nextQuestionClicked()" disabled="@(!AreAnyCardsSelected())" type="button" class="nextButton btn btn-primary rounded-btn">VOLGENDE VRAAG</button>
+        <button @onclick="() => nextQuestionClicked()" disabled="@(!AreAnyCardsSelected())" type="button" class="nextButton btn btn-primary rounded-btn">VOLGENDE VRAAG</button>
     }
     else
     {
-    <button @onclick="() => endQuizClicked()" disabled="@(!AreAnyCardsSelected())" type="button" class="nextButton btn btn-primary rounded-btn">EINDE QUIZ</button>
+        <button @onclick="() => endQuizClicked()" disabled="@(!AreAnyCardsSelected())" type="button" class="nextButton btn btn-primary rounded-btn">EINDE QUIZ</button>
     }
+}
+else
+{
+    <TinderQuestionCard></TinderQuestionCard>
+}
+
 
 @code {
+    bool quizEnded = false;
 
     string[] CardClasses = new string[4] { "card text-black h-50 mb-3", "card text-black h-50 mb-3", "card text-black h-50 mb-3", "card text-black h-50 mb-3" };
 
@@ -156,7 +132,7 @@
     }
 
     public void endQuizClicked() {
-        return;
+        quizEnded = true;
     }
 
     public bool AreAnyCardsSelected()
