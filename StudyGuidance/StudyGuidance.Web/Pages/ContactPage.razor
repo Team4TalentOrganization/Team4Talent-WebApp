@@ -1,3 +1,27 @@
 ﻿@page "/ContactPage"
 
-<h1>Contact page</h1>
+<div class="vh-100 " style="background-color: white;">
+    <form class="was-validated" style="top: 100%; padding-top: 35%; padding-left: 4%; padding-right: 4%">
+
+        <div class="mb-5">
+            <h4 class="mb-0">Contacteer ons</h4>
+            <small class="text-muted">Vragen? We contacteren u zo spoedig mogelijk terug.</small>
+        </div>
+        
+
+        <div class="mb-3">
+            <input class="form-control" id="inputName" placeholder="Naam" required>
+        </div>
+
+        <div class="mb-3">
+            <input class="form-control" id="inputMessage" type="email" placeholder="Email" required />
+        </div>
+
+        <div class="mb-3">
+            <textarea class="form-control" id="validationTextarea" placeholder="Bericht" required></textarea>
+        </div>
+
+        <button style="background-color: transparent; border-color: black; color: black" type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+

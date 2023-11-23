@@ -50,12 +50,14 @@ jobs:
       - name: Install SonarCloud scanners
         run: |
           dotnet tool install --global dotnet-sonarscanner
+          dotnet tool install --global dotnet-coverage
       
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         run: |
-          dotnet-sonarscanner begin /k:"${{ env.PROJECT_NAME }}" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url=${{ secrets.SONAR_HOST_URL }}
+          dotnet-sonarscanner begin /k:"${{ env.PROJECT_NAME }}" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url=${{ secrets.SONAR_HOST_URL }}  /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml
           dotnet build ${{ env.WORKING_DIRECTORY }}
+          dotnet-coverage collect 'dotnet test ${{ env.WORKING_DIRECTORY }}' -f xml  -o 'coverage.xml'
           dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
