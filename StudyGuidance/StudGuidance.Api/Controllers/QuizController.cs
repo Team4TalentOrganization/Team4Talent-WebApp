@@ -67,7 +67,7 @@ namespace StudGuidance.Api.Controllers
         }
 
         [HttpGet("jobsBySubDomain")]
-        public async Task<IActionResult> GetAllJobs([FromQuery] List<string> subdomains)
+        public async Task<IActionResult> GetAllJobsBySubDomains([FromQuery] List<string> subdomains)
         {
             IReadOnlyList<Job> allJobsBySubDomain = await _questionRepository.GetJobsBySubDomain(subdomains);
 

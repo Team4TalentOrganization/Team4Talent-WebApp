@@ -111,5 +111,65 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
             // Assert
             Assert.IsInstanceOf<NotFoundObjectResult>(result);
         }
+
+        [Test]
+        public async Task GetAllJobs_ReturnsNotFound_WhenNoJobsExist()
+        {
+            var emptyList = new List<Job>();
+            _questionRepositoryMock.Setup(repo => repo.GetJobsAsync()).ReturnsAsync(emptyList);
+
+            // Act
+            var result = await _controller.GetAllJobs();
+
+            // Assert
+            Assert.IsInstanceOf<NotFoundObjectResult>(result);
+        }
+
+        [Test]
+        public async Task GetAllJobs_ReturnsOk_WhenJobsExist()
+        {
+            var jobsList = new List<Job> {
+                        new Job { JobId = 1, Name = "Job 1" },
+                        new Job { JobId = 2, Name = "Job 2" }
+                };
+            _questionRepositoryMock.Setup(repo => repo.GetJobsAsync()).ReturnsAsync(jobsList);
+
+            // Act
+            var result = await _controller.GetAllJobs();
+
+            // Assert
+            Assert.IsInstanceOf<OkObjectResult>(result);
+            var okResult = (OkObjectResult)result;
+            Assert.That(jobsList, Is.EqualTo(okResult.Value));
+        }
+
+        [Test]
+        public async Task GetAllJobsBySubDomains_ReturnsNotFound_WhenNoJobsExistWithRequestedSubDomains()
+        {
+            var invalidSubDomains = new List<string> { "non existing domain", "another non existing domain" };
+            var jobs = new List<Job> { };
+            _questionRepositoryMock.Setup(repo => repo.GetJobsBySubDomain(invalidSubDomains)).ReturnsAsync(jobs);
+
+            var result = await _controller.GetAllJobsBySubDomains(invalidSubDomains);
+
+            Assert.IsInstanceOf<NotFoundObjectResult>(result);
+        }
+
+        [Test]
+        public async Task GetAllJobsBySubDomains_ReturnsOk_WhenJobsExistWithRequestedSubDomains()
+        {
+            var validSubDomains = new List<string> { "Subdomain 1", "Subdomain 2" };
+            var jobs = new List<Job> {
+                        new Job { JobId = 1, Name = "Job 1", SubDomain = "Subdomain 1" },
+                        new Job { JobId = 2, Name = "Job 2", SubDomain = "Subdomain 2" }
+                };
+            _questionRepositoryMock.Setup(repo => repo.GetJobsBySubDomain(validSubDomains)).ReturnsAsync(jobs);
+
+            var result = await _controller.GetAllJobsBySubDomains(validSubDomains);
+
+            Assert.IsInstanceOf<OkObjectResult>(result);
+            var okResult = (OkObjectResult)result;
+            Assert.That(jobs, Is.EqualTo(okResult.Value));
+        }
     }
 }
