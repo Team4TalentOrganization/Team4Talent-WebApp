@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using StudyGuidance.Domain;
 using StudyGuidance.Infrastructure.Migrations;
 using StudyGuidance.Domain.Tests.Builders;
+using System.Collections.Generic;
 
 namespace StudyGuidance.Api.Tests.Controllers.Api
 {
@@ -83,6 +84,21 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
             var result = await _controller.GetAllSubDomains(invalidDomainIds);
 
             Assert.IsInstanceOf<NotFoundObjectResult>(result);
+        }
+
+        [Test]
+        public async Task GetAllQuestions_ReturnsNotFound_WhenNoQuestionsExist()
+        {
+            var emptyList = new List<Question>();
+            _questionRepositoryMock.Setup(repo => repo.GetQuestionsAsync()).ReturnsAsync(emptyList);
+
+            // Act
+            var result = await _controller.GetAllQuestions();
+
+            // Assert
+            Assert.IsInstanceOf<NotFoundObjectResult>(result);
+            //var notFoundResult = result as NotFoundObjectResult;
+            //Assert.AreEqual("AllQuestions bevat geen inhoud", notFoundResult.Value);
         }
     }
 }
