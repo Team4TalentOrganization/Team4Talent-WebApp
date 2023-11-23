@@ -141,5 +141,12 @@ namespace StudyGuidance.Infrastructure.Tests
             Assert.That(result.Select(job => job.SubDomain), Is.EquivalentTo(new[] { "Subdomain 1", "Subdomain 2" }));
         }
 
+        [TearDown]
+        public void TearDown()
+        {
+            _dbContext.Database.EnsureDeleted(); // database deleten
+            _dbContext.Dispose();
+        }
+
     }
 }
