@@ -1,6 +1,8 @@
 ﻿using StudyGuidance.Domain.Exceptions;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,11 +11,10 @@ namespace StudyGuidance.Domain
 {
     public class Job
     {
-        private string _name = string.Empty;
+        public string _name = string.Empty;
         public string _domain = string.Empty;
         public string _subDomain = string.Empty;
         public string _description = string.Empty;
-
         public int JobId { get; set; }
 
 
@@ -52,10 +53,10 @@ namespace StudyGuidance.Domain
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new BusinessException("Sub domain cannot be null or empty.");
+                    throw new BusinessException("Sub domain list cannot be null or empty.");
                 }
 
-                _domain = value;
+                _subDomain = value;
             }
         }
 
