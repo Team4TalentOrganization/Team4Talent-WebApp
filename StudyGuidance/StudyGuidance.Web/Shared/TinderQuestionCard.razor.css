@@ -1,0 +1,31 @@
+﻿.bg-custom-color {
+	background: #007ce0 !important; /* Adjust the gradient colors */
+}
+
+.bg-orange-color {
+	background-color: #fc8403 !important;
+}
+
+.bg-custom-border {
+	border: 2px solid #FF6900;
+}
+
+.w-85{
+	width: 85%;
+}
+
+.h-85{
+	height: 85%;
+}
+
+.card {
+	border-radius: 15px;
+}
+
+.previousButton {
+	animation: colorChange 1s; /* 1s duration for the animation */
+}
+
+.nextButton {
+	background: #007ce0
+}
