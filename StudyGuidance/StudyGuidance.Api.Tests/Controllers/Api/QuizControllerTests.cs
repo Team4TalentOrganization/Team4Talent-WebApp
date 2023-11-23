@@ -98,5 +98,18 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
             // Assert
             Assert.IsInstanceOf<NotFoundObjectResult>(result);
         }
+
+        [Test]
+        public async Task GetAllDomains_ReturnsNotFound_WhenNoDomainsExist()
+        {
+            var emptyList = new List<Option>();
+            _questionRepositoryMock.Setup(repo => repo.GetDomainsAsync()).ReturnsAsync(emptyList);
+
+            // Act
+            var result = await _controller.GetAllDomains();
+
+            // Assert
+            Assert.IsInstanceOf<NotFoundObjectResult>(result);
+        }
     }
 }
