@@ -1,15 +1,13 @@
 ﻿.header {
     text-align: center;
-    color: #082454;
-    margin-top: 5%;
-    margin-bottom: 1%;
+    color: #FF6900;
+    font-size: 2rem;
 }
 
 .line {
     border: 2px solid black;
-    width: 100px;
+    width: 200px;
     margin: auto;
-    margin-bottom: 5%;
     opacity: 100%;
 }
 
