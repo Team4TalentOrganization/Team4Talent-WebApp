@@ -1,0 +1,92 @@
+﻿@using System.Linq
+
+<div class="pt-5"></div>
+
+@if (showFilterMenu)
+{
+    <div class="mx-auto text-center" style="width: 90%; border: 2px solid #007ce0; border-radius: 10px;">
+        <Button Class="w-100" Style="height: 55px; background-color: #007ce0; color: white; border-radius: 8px;" Type="BlazorBootstrap.ButtonType.Button" @onclick="ToggleContentAsync">
+            <svg style="margin-right: 3%;" xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-sliders" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1z" />
+            </svg>
+            FILTER RESULTATEN
+        </Button>
+
+        <Collapse Class="container text-center" @ref="collapse1" Style="border: none">
+            <Card Class="p-0 text-center mt-4" Style="border: none; border-radius: 25px">
+                <div class="row">
+                    <MudSelect MultiSelectionTextFunc="@(new Func<List<string>, string>(GetMultiSelectionText))" MultiSelection="true" @bind-Value="value" @bind-SelectedValues="options" T="string" Label="US States" AdornmentIcon="@Icons.Material.Filled.Search">
+                        @foreach (var state in states)
+                        {
+                            <MudSelectItem T="string" Value="@state">@state</MudSelectItem>
+                        }
+                    </MudSelect>
+
+                    
+                </div>
+                <div class="row">
+                    
+                </div>
+
+                
+
+            </Card>
+        </Collapse>
+    </div>
+}
+
+
+
+@code {
+    [Parameter]
+    public string Name { get; set; }
+    Collapse collapse1 = default!;
+
+    Boolean showFilterMenu;
+
+    private async Task ShowContentAsync() => await collapse1.ShowAsync();
+    private async Task HideContentAsync() => await collapse1.HideAsync();
+    private async Task ToggleContentAsync() => await collapse1.ToggleAsync();
+
+    private bool multiselectionTextChoice;
+    private string value { get; set; } = "Nothing selected";
+    private IEnumerable<string> options { get; set; } = new HashSet<string>() { "Alaska" };
+
+    private string[] states =
+    {
+        "Alabama", "Alaska", "American Samoa", "Arizona",
+        "Arkansas", "California", "Colorado", "Connecticut",
+        "Delaware", "District of Columbia", "Federated States of Micronesia",
+        "Florida", "Georgia", "Guam", "Hawaii", "Idaho",
+        "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky",
+        "Louisiana", "Maine", "Marshall Islands", "Maryland",
+        "Massachusetts", "Michigan", "Minnesota", "Mississippi",
+        "Missouri", "Montana", "Nebraska", "Nevada",
+        "New Hampshire", "New Jersey", "New Mexico", "New York",
+        "North Carolina", "North Dakota", "Northern Mariana Islands", "Ohio",
+        "Oklahoma", "Oregon", "Palau", "Pennsylvania", "Puerto Rico",
+        "Rhode Island", "South Carolina", "South Dakota", "Tennessee",
+        "Texas", "Utah", "Vermont", "Virgin Island", "Virginia",
+        "Washington", "West Virginia", "Wisconsin", "Wyoming",
+    };
+
+    protected override void OnParametersSet()
+    {
+        if(this.Name == "Gustaph")
+        {
+            this.showFilterMenu = true;
+        } else
+        {
+            this.showFilterMenu = false;
+        }
+
+        base.OnParametersSet();
+    }
+
+    private string GetMultiSelectionText(List<string> selectedValues)
+    {
+        
+       return $"{selectedValues.Count} state{(selectedValues.Count > 1 ? "s have" : " has")} been selected";
+        
+    }
+}
