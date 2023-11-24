@@ -11,7 +11,7 @@ using StudyGuidance.Infrastructure;
 namespace StudyGuidance.Infrastructure.Migrations
 {
     [DbContext(typeof(StudyGuidanceDbContext))]
-    [Migration("20231124123608_Jobs")]
+    [Migration("20231124145101_Jobs")]
     partial class Jobs
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -616,6 +616,16 @@ namespace StudyGuidance.Infrastructure.Migrations
                         {
                             QuestionId = 2,
                             Phrase = "In welk subdomein heb je interesse?"
+                        },
+                        new
+                        {
+                            QuestionId = 3,
+                            Phrase = "Werk je graag vaak in groep?"
+                        },
+                        new
+                        {
+                            QuestionId = 4,
+                            Phrase = "Houd je ervan om regelmatig andere bedrijven te bezoeken?"
                         });
                 });
 

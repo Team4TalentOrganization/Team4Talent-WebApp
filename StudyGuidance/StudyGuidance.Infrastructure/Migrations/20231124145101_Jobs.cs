@@ -62,12 +62,31 @@ namespace StudyGuidance.Infrastructure.Migrations
                     { 29, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "Systeem en netwerkbeheer", "Security Engineer", "Security", false, false },
                     { 30, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "Systeem en netwerkbeheer", "PEN Tester", "Security", false, true }
                 });
+
+            migrationBuilder.InsertData(
+                table: "Questions",
+                columns: new[] { "QuestionId", "Phrase" },
+                values: new object[,]
+                {
+                    { 3, "Werk je graag vaak in groep?" },
+                    { 4, "Houd je ervan om regelmatig andere bedrijven te bezoeken?" }
+                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
                 name: "Jobs");
+
+            migrationBuilder.DeleteData(
+                table: "Questions",
+                keyColumn: "QuestionId",
+                keyValue: 3);
+
+            migrationBuilder.DeleteData(
+                table: "Questions",
+                keyColumn: "QuestionId",
+                keyValue: 4);
         }
     }
 }
