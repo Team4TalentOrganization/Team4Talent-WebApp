@@ -11,7 +11,7 @@ using StudyGuidance.Infrastructure;
 namespace StudyGuidance.Infrastructure.Migrations
 {
     [DbContext(typeof(StudyGuidanceDbContext))]
-    [Migration("20231124102710_Jobs")]
+    [Migration("20231124123608_Jobs")]
     partial class Jobs
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -50,6 +50,9 @@ namespace StudyGuidance.Infrastructure.Migrations
                     b.Property<bool>("WorkInTeam")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("WorkOnSite")
+                        .HasColumnType("bit");
+
                     b.HasKey("JobId");
 
                     b.ToTable("Jobs");
@@ -62,7 +65,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Software Management",
                             Name = "Tester",
                             SubDomain = "Software analysis",
-                            WorkInTeam = false
+                            WorkInTeam = false,
+                            WorkOnSite = true
                         },
                         new
                         {
@@ -71,7 +75,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Software Management",
                             Name = "QA Engineer",
                             SubDomain = "Software Management",
-                            WorkInTeam = true
+                            WorkInTeam = true,
+                            WorkOnSite = true
                         },
                         new
                         {
@@ -80,7 +85,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Software Management",
                             Name = "Business Analyst",
                             SubDomain = "Software analysis",
-                            WorkInTeam = true
+                            WorkInTeam = true,
+                            WorkOnSite = false
                         },
                         new
                         {
@@ -89,7 +95,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Software Management",
                             Name = "Functional Analyst",
                             SubDomain = "Software analysis",
-                            WorkInTeam = true
+                            WorkInTeam = true,
+                            WorkOnSite = false
                         },
                         new
                         {
@@ -98,7 +105,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Development",
                             Name = "Application Support",
                             SubDomain = "Fullstack",
-                            WorkInTeam = true
+                            WorkInTeam = true,
+                            WorkOnSite = true
                         },
                         new
                         {
@@ -107,7 +115,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Software Management",
                             Name = "Helpdesk",
                             SubDomain = "Project Management",
-                            WorkInTeam = false
+                            WorkInTeam = false,
+                            WorkOnSite = true
                         },
                         new
                         {
@@ -116,7 +125,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Development",
                             Name = "PHP Developer",
                             SubDomain = "Backend",
-                            WorkInTeam = true
+                            WorkInTeam = true,
+                            WorkOnSite = true
                         },
                         new
                         {
@@ -125,7 +135,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Development",
                             Name = "Drupal Developer",
                             SubDomain = "Fullstack",
-                            WorkInTeam = true
+                            WorkInTeam = true,
+                            WorkOnSite = true
                         },
                         new
                         {
@@ -134,7 +145,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Development",
                             Name = "Cobol Developer",
                             SubDomain = "Fullstack",
-                            WorkInTeam = true
+                            WorkInTeam = true,
+                            WorkOnSite = true
                         },
                         new
                         {
@@ -143,7 +155,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Development",
                             Name = "Dynammics Developer",
                             SubDomain = "Fullstack",
-                            WorkInTeam = true
+                            WorkInTeam = true,
+                            WorkOnSite = true
                         },
                         new
                         {
@@ -152,7 +165,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Development",
                             Name = "Java Developer",
                             SubDomain = "Backend",
-                            WorkInTeam = true
+                            WorkInTeam = true,
+                            WorkOnSite = true
                         },
                         new
                         {
@@ -161,7 +175,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Development",
                             Name = "SAP Developer",
                             SubDomain = "Fullstack",
-                            WorkInTeam = true
+                            WorkInTeam = true,
+                            WorkOnSite = true
                         },
                         new
                         {
@@ -170,7 +185,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Development",
                             Name = "Siebel Developer",
                             SubDomain = "Fullstack",
-                            WorkInTeam = true
+                            WorkInTeam = true,
+                            WorkOnSite = true
                         },
                         new
                         {
@@ -179,7 +195,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Development",
                             Name = "RPG developer",
                             SubDomain = "Fullstack",
-                            WorkInTeam = true
+                            WorkInTeam = true,
+                            WorkOnSite = true
                         },
                         new
                         {
@@ -188,7 +205,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Systeem en netwerkbeheer",
                             Name = "System admin",
                             SubDomain = "Networking",
-                            WorkInTeam = false
+                            WorkInTeam = false,
+                            WorkOnSite = true
                         },
                         new
                         {
@@ -197,7 +215,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Systeem en netwerkbeheer",
                             Name = "Network engineer",
                             SubDomain = "Networking",
-                            WorkInTeam = false
+                            WorkInTeam = false,
+                            WorkOnSite = false
                         },
                         new
                         {
@@ -206,7 +225,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Data",
                             Name = "Data migration expert",
                             SubDomain = "Analyst",
-                            WorkInTeam = false
+                            WorkInTeam = false,
+                            WorkOnSite = false
                         },
                         new
                         {
@@ -215,7 +235,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Data",
                             Name = "Data architect",
                             SubDomain = "Analyst",
-                            WorkInTeam = false
+                            WorkInTeam = false,
+                            WorkOnSite = false
                         },
                         new
                         {
@@ -224,7 +245,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Data",
                             Name = "Database administrator",
                             SubDomain = "Analyst",
-                            WorkInTeam = false
+                            WorkInTeam = false,
+                            WorkOnSite = false
                         },
                         new
                         {
@@ -233,7 +255,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Systeem en netwerkbeheer",
                             Name = "AWS DevOps Engineer",
                             SubDomain = "Automation",
-                            WorkInTeam = false
+                            WorkInTeam = false,
+                            WorkOnSite = false
                         },
                         new
                         {
@@ -242,7 +265,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Software Management",
                             Name = "Project manager",
                             SubDomain = "Project Management",
-                            WorkInTeam = true
+                            WorkInTeam = true,
+                            WorkOnSite = false
                         },
                         new
                         {
@@ -251,7 +275,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Systeem en netwerkbeheer",
                             Name = "Azure DevOps Engineer",
                             SubDomain = "Automation",
-                            WorkInTeam = false
+                            WorkInTeam = false,
+                            WorkOnSite = false
                         },
                         new
                         {
@@ -260,7 +285,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Development",
                             Name = "SharePoint Developer",
                             SubDomain = "Fullstack",
-                            WorkInTeam = true
+                            WorkInTeam = true,
+                            WorkOnSite = true
                         },
                         new
                         {
@@ -269,7 +295,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Development",
                             Name = ".NET Developer",
                             SubDomain = "Backend",
-                            WorkInTeam = true
+                            WorkInTeam = true,
+                            WorkOnSite = true
                         },
                         new
                         {
@@ -278,7 +305,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Development",
                             Name = "Frontend Developer",
                             SubDomain = "Frontend",
-                            WorkInTeam = true
+                            WorkInTeam = true,
+                            WorkOnSite = true
                         },
                         new
                         {
@@ -287,7 +315,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Development",
                             Name = "Software Architect",
                             SubDomain = "Fullstack",
-                            WorkInTeam = false
+                            WorkInTeam = false,
+                            WorkOnSite = false
                         },
                         new
                         {
@@ -296,7 +325,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Development",
                             Name = "Development Team Lead",
                             SubDomain = "Fullstack",
-                            WorkInTeam = true
+                            WorkInTeam = true,
+                            WorkOnSite = true
                         },
                         new
                         {
@@ -305,7 +335,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Software Management",
                             Name = "SCRUM Master",
                             SubDomain = "Project Management",
-                            WorkInTeam = true
+                            WorkInTeam = true,
+                            WorkOnSite = true
                         },
                         new
                         {
@@ -314,7 +345,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Systeem en netwerkbeheer",
                             Name = "Security Engineer",
                             SubDomain = "Security",
-                            WorkInTeam = false
+                            WorkInTeam = false,
+                            WorkOnSite = false
                         },
                         new
                         {
@@ -323,7 +355,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Systeem en netwerkbeheer",
                             Name = "PEN Tester",
                             SubDomain = "Security",
-                            WorkInTeam = false
+                            WorkInTeam = false,
+                            WorkOnSite = true
                         });
                 });
 

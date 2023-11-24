@@ -148,10 +148,11 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
         {
             var invalidSubDomains = new List<string> { "non existing domain", "another non existing domain" };
             bool workInTeam = false;
+            bool workOnSite = false;
             var jobs = new List<Job> { };
-            _questionRepositoryMock.Setup(repo => repo.GetJobsByFilterAsync(invalidSubDomains, workInTeam)).ReturnsAsync(jobs);
+            _questionRepositoryMock.Setup(repo => repo.GetJobsByFilterAsync(invalidSubDomains, workInTeam, workOnSite)).ReturnsAsync(jobs);
 
-            var result = await _controller.GetAllJobsByFilter(invalidSubDomains, workInTeam);
+            var result = await _controller.GetAllJobsByFilter(invalidSubDomains, workInTeam, workOnSite);
 
             Assert.IsInstanceOf<NotFoundObjectResult>(result);
         }
@@ -161,15 +162,16 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
         {
             var validSubDomains = new List<string> { "Subdomain 1", "Subdomain 2" };
             bool workInTeam = false;
+            bool workOnSite = false;
             var jobs = new List<Job> {
-                        new Job { JobId = 1, Name = "Job 1", SubDomain = "Subdomain 1", WorkInTeam = true },
-                        new Job { JobId = 2, Name = "Job 2", SubDomain = "Subdomain 1", WorkInTeam = false }
+                        new Job { JobId = 1, Name = "Job 1", SubDomain = "Subdomain 1", WorkInTeam = true, WorkOnSite = true },
+                        new Job { JobId = 2, Name = "Job 2", SubDomain = "Subdomain 1", WorkInTeam = false, WorkOnSite = false }
                 };
             var selectedJob = new List<Job>();
             selectedJob.Add(jobs[1]);
-            _questionRepositoryMock.Setup(repo => repo.GetJobsByFilterAsync(validSubDomains, workInTeam)).ReturnsAsync(selectedJob);
+            _questionRepositoryMock.Setup(repo => repo.GetJobsByFilterAsync(validSubDomains, workInTeam, workOnSite)).ReturnsAsync(selectedJob);
 
-            var result = await _controller.GetAllJobsByFilter(validSubDomains, workInTeam);
+            var result = await _controller.GetAllJobsByFilter(validSubDomains, workInTeam, workOnSite);
 
             Assert.IsInstanceOf<OkObjectResult>(result);
             var okResult = (OkObjectResult)result;
