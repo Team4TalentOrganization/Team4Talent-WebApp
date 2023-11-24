@@ -45,6 +45,9 @@ namespace StudyGuidance.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("WorkInTeam")
+                        .HasColumnType("bit");
+
                     b.HasKey("JobId");
 
                     b.ToTable("Jobs");
@@ -56,7 +59,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Software Management",
                             Name = "Tester",
-                            SubDomain = "Software analysis"
+                            SubDomain = "Software analysis",
+                            WorkInTeam = false
                         },
                         new
                         {
@@ -64,7 +68,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Software Management",
                             Name = "QA Engineer",
-                            SubDomain = "Software Management"
+                            SubDomain = "Software Management",
+                            WorkInTeam = true
                         },
                         new
                         {
@@ -72,7 +77,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Software Management",
                             Name = "Business Analyst",
-                            SubDomain = "Software analysis"
+                            SubDomain = "Software analysis",
+                            WorkInTeam = true
                         },
                         new
                         {
@@ -80,7 +86,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Software Management",
                             Name = "Functional Analyst",
-                            SubDomain = "Software analysis"
+                            SubDomain = "Software analysis",
+                            WorkInTeam = true
                         },
                         new
                         {
@@ -88,7 +95,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Development",
                             Name = "Application Support",
-                            SubDomain = "Fullstack"
+                            SubDomain = "Fullstack",
+                            WorkInTeam = true
                         },
                         new
                         {
@@ -96,7 +104,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Software Management",
                             Name = "Helpdesk",
-                            SubDomain = "Project Management"
+                            SubDomain = "Project Management",
+                            WorkInTeam = false
                         },
                         new
                         {
@@ -104,7 +113,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Development",
                             Name = "PHP Developer",
-                            SubDomain = "Backend"
+                            SubDomain = "Backend",
+                            WorkInTeam = true
                         },
                         new
                         {
@@ -112,7 +122,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Development",
                             Name = "Drupal Developer",
-                            SubDomain = "Fullstack"
+                            SubDomain = "Fullstack",
+                            WorkInTeam = true
                         },
                         new
                         {
@@ -120,7 +131,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Development",
                             Name = "Cobol Developer",
-                            SubDomain = "Fullstack"
+                            SubDomain = "Fullstack",
+                            WorkInTeam = true
                         },
                         new
                         {
@@ -128,7 +140,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Development",
                             Name = "Dynammics Developer",
-                            SubDomain = "Fullstack"
+                            SubDomain = "Fullstack",
+                            WorkInTeam = true
                         },
                         new
                         {
@@ -136,7 +149,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Development",
                             Name = "Java Developer",
-                            SubDomain = "Backend"
+                            SubDomain = "Backend",
+                            WorkInTeam = true
                         },
                         new
                         {
@@ -144,7 +158,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Development",
                             Name = "SAP Developer",
-                            SubDomain = "Fullstack"
+                            SubDomain = "Fullstack",
+                            WorkInTeam = true
                         },
                         new
                         {
@@ -152,7 +167,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Development",
                             Name = "Siebel Developer",
-                            SubDomain = "Fullstack"
+                            SubDomain = "Fullstack",
+                            WorkInTeam = true
                         },
                         new
                         {
@@ -160,7 +176,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Development",
                             Name = "RPG developer",
-                            SubDomain = "Fullstack"
+                            SubDomain = "Fullstack",
+                            WorkInTeam = true
                         },
                         new
                         {
@@ -168,7 +185,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Systeem en netwerkbeheer",
                             Name = "System admin",
-                            SubDomain = "Networking"
+                            SubDomain = "Networking",
+                            WorkInTeam = false
                         },
                         new
                         {
@@ -176,7 +194,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Systeem en netwerkbeheer",
                             Name = "Network engineer",
-                            SubDomain = "Networking"
+                            SubDomain = "Networking",
+                            WorkInTeam = false
                         },
                         new
                         {
@@ -184,7 +203,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Data",
                             Name = "Data migration expert",
-                            SubDomain = "Analyst"
+                            SubDomain = "Analyst",
+                            WorkInTeam = false
                         },
                         new
                         {
@@ -192,7 +212,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Data",
                             Name = "Data architect",
-                            SubDomain = "Analyst"
+                            SubDomain = "Analyst",
+                            WorkInTeam = false
                         },
                         new
                         {
@@ -200,7 +221,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Data",
                             Name = "Database administrator",
-                            SubDomain = "Analyst"
+                            SubDomain = "Analyst",
+                            WorkInTeam = false
                         },
                         new
                         {
@@ -208,7 +230,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Systeem en netwerkbeheer",
                             Name = "AWS DevOps Engineer",
-                            SubDomain = "Automation"
+                            SubDomain = "Automation",
+                            WorkInTeam = false
                         },
                         new
                         {
@@ -216,7 +239,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Software Management",
                             Name = "Project manager",
-                            SubDomain = "Project Management"
+                            SubDomain = "Project Management",
+                            WorkInTeam = true
                         },
                         new
                         {
@@ -224,7 +248,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Systeem en netwerkbeheer",
                             Name = "Azure DevOps Engineer",
-                            SubDomain = "Automation"
+                            SubDomain = "Automation",
+                            WorkInTeam = false
                         },
                         new
                         {
@@ -232,7 +257,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Development",
                             Name = "SharePoint Developer",
-                            SubDomain = "Fullstack"
+                            SubDomain = "Fullstack",
+                            WorkInTeam = true
                         },
                         new
                         {
@@ -240,7 +266,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Development",
                             Name = ".NET Developer",
-                            SubDomain = "Backend"
+                            SubDomain = "Backend",
+                            WorkInTeam = true
                         },
                         new
                         {
@@ -248,7 +275,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Development",
                             Name = "Frontend Developer",
-                            SubDomain = "Frontend"
+                            SubDomain = "Frontend",
+                            WorkInTeam = true
                         },
                         new
                         {
@@ -256,7 +284,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Development",
                             Name = "Software Architect",
-                            SubDomain = "Fullstack"
+                            SubDomain = "Fullstack",
+                            WorkInTeam = false
                         },
                         new
                         {
@@ -264,7 +293,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Development",
                             Name = "Development Team Lead",
-                            SubDomain = "Fullstack"
+                            SubDomain = "Fullstack",
+                            WorkInTeam = true
                         },
                         new
                         {
@@ -272,7 +302,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Software Management",
                             Name = "SCRUM Master",
-                            SubDomain = "Project Management"
+                            SubDomain = "Project Management",
+                            WorkInTeam = true
                         },
                         new
                         {
@@ -280,7 +311,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Systeem en netwerkbeheer",
                             Name = "Security Engineer",
-                            SubDomain = "Security"
+                            SubDomain = "Security",
+                            WorkInTeam = false
                         },
                         new
                         {
@@ -288,7 +320,8 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Systeem en netwerkbeheer",
                             Name = "PEN Tester",
-                            SubDomain = "Security"
+                            SubDomain = "Security",
+                            WorkInTeam = false
                         });
                 });
 

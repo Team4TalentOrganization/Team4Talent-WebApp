@@ -42,5 +42,11 @@ namespace StudyGuidance.Domain.Tests.Builders
             SetProperty(o => o.Description, description);
             return this;
         }
+
+        public JobBuilder WithJobWorkInTeam(bool workInTeam)
+        {
+            SetProperty(o => o.WorkInTeam, workInTeam);
+            return this;
+        }
     }
 }

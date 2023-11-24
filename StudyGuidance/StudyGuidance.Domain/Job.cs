@@ -15,6 +15,7 @@ namespace StudyGuidance.Domain
         public string _domain = string.Empty;
         public string _subDomain = string.Empty;
         public string _description = string.Empty;
+        public bool WorkInTeam { get; set; }
         public int JobId { get; set; }
 
 

@@ -14,6 +14,7 @@ namespace StudyGuidance.Domain.Tests
         private string _subDomain;
         private string _description;
         private int _jobId;
+        private bool _workInTeam;
         private Random _random = new Random();
 
         [SetUp]
@@ -23,6 +24,7 @@ namespace StudyGuidance.Domain.Tests
             _domain = Guid.NewGuid().ToString();
             _subDomain = Guid.NewGuid().ToString();
             _description = Guid.NewGuid().ToString();
+            _workInTeam = true;
             _jobId = _random.Next();
         }
 
@@ -35,6 +37,7 @@ namespace StudyGuidance.Domain.Tests
                 Domain = _domain,
                 SubDomain = _subDomain,
                 Description = _description,
+                WorkInTeam = _workInTeam,
                 JobId = _jobId
             };
 
@@ -42,6 +45,7 @@ namespace StudyGuidance.Domain.Tests
             Assert.That(job.Domain, Is.EqualTo(_domain));
             Assert.That(job.SubDomain, Is.EqualTo(_subDomain));
             Assert.That(job.Description, Is.EqualTo(_description));
+            Assert.That(job.WorkInTeam, Is.EqualTo(_workInTeam));
             Assert.That(job.JobId, Is.EqualTo(_jobId));
         }
 

@@ -144,32 +144,36 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
         }
 
         [Test]
-        public async Task GetAllJobsBySubDomains_ReturnsNotFound_WhenNoJobsExistWithRequestedSubDomains()
+        public async Task GetAllJobsByFilter_ReturnsNotFound_WhenNoJobsExistWithRequestedFilter()
         {
             var invalidSubDomains = new List<string> { "non existing domain", "another non existing domain" };
+            bool workInTeam = false;
             var jobs = new List<Job> { };
-            _questionRepositoryMock.Setup(repo => repo.GetJobsBySubDomain(invalidSubDomains)).ReturnsAsync(jobs);
+            _questionRepositoryMock.Setup(repo => repo.GetJobsByFilterAsync(invalidSubDomains, workInTeam)).ReturnsAsync(jobs);
 
-            var result = await _controller.GetAllJobsBySubDomains(invalidSubDomains);
+            var result = await _controller.GetAllJobsByFilter(invalidSubDomains, workInTeam);
 
             Assert.IsInstanceOf<NotFoundObjectResult>(result);
         }
 
         [Test]
-        public async Task GetAllJobsBySubDomains_ReturnsOk_WhenJobsExistWithRequestedSubDomains()
+        public async Task GetAllJobsByFilter_ReturnsOk_WhenJobsExistWithRequestedFilter()
         {
             var validSubDomains = new List<string> { "Subdomain 1", "Subdomain 2" };
+            bool workInTeam = false;
             var jobs = new List<Job> {
-                        new Job { JobId = 1, Name = "Job 1", SubDomain = "Subdomain 1" },
-                        new Job { JobId = 2, Name = "Job 2", SubDomain = "Subdomain 2" }
+                        new Job { JobId = 1, Name = "Job 1", SubDomain = "Subdomain 1", WorkInTeam = true },
+                        new Job { JobId = 2, Name = "Job 2", SubDomain = "Subdomain 1", WorkInTeam = false }
                 };
-            _questionRepositoryMock.Setup(repo => repo.GetJobsBySubDomain(validSubDomains)).ReturnsAsync(jobs);
+            var selectedJob = new List<Job>();
+            selectedJob.Add(jobs[1]);
+            _questionRepositoryMock.Setup(repo => repo.GetJobsByFilterAsync(validSubDomains, workInTeam)).ReturnsAsync(selectedJob);
 
-            var result = await _controller.GetAllJobsBySubDomains(validSubDomains);
+            var result = await _controller.GetAllJobsByFilter(validSubDomains, workInTeam);
 
             Assert.IsInstanceOf<OkObjectResult>(result);
             var okResult = (OkObjectResult)result;
-            Assert.That(jobs, Is.EqualTo(okResult.Value));
+            Assert.That(selectedJob, Is.EqualTo(okResult.Value));
         }
     }
 }
