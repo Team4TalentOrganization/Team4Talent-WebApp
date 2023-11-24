@@ -28,8 +28,22 @@ namespace StudyGuidance.Infrastructure
                 QuestionId = 2
             };
 
+            var workInTeamQuestion = new Question
+            {
+                Phrase = "Werk je graag vaak in groep?",
+                QuestionId = 3
+            };
+
+            var workOnSiteQuestion = new Question
+            {
+                Phrase = "Houd je ervan om regelmatig andere bedrijven te bezoeken?",
+                QuestionId = 4
+            };
+
             modelBuilder.Entity<Question>().HasData(domainQuestion);
             modelBuilder.Entity<Question>().HasData(subDomainQuestion);
+            modelBuilder.Entity<Question>().HasData(workInTeamQuestion);
+            modelBuilder.Entity<Question>().HasData(workOnSiteQuestion);
 
             modelBuilder.Entity<Option>().HasData(
                         new Option { OptionId = 1, Content = "AI", QuestionId = domainQuestion.QuestionId },
