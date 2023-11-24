@@ -52,5 +52,31 @@ namespace StudGuidance.Api.Controllers
 
             return Ok(allSubDomains);
         }
+
+        [HttpGet("jobs")]
+        public async Task<IActionResult> GetAllJobs()
+        {
+            IReadOnlyList<Job> allJobs = await _questionRepository.GetJobsAsync();
+
+            if (allJobs.Count <= 0)
+            {
+                return NotFound("AllJobs bevat geen inhoud");
+            }
+
+            return Ok(allJobs);
+        }
+
+        [HttpGet("jobsByFilter")]
+        public async Task<IActionResult> GetAllJobsByFilter([FromQuery] List<string> subdomains, [FromQuery] bool workInTeam, [FromQuery] bool workOnSite)
+        {
+            IReadOnlyList<Job> allJobsByFilter = await _questionRepository.GetJobsByFilterAsync(subdomains, workInTeam, workOnSite);
+
+            if (allJobsByFilter.Count <= 0)
+            {
+                return NotFound("jobsByFilter bevat geen inhoud");
+            }
+
+            return Ok(allJobsByFilter);
+        }
     }
 }
