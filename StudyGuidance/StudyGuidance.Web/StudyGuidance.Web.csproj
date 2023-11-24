@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Shared\JobOverview.razor.css" />
     <None Remove="Shared\TinderQuestionCard.razor.css" />
   </ItemGroup>
 
@@ -16,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Shared\JobOverview.razor.css" />
     <Content Include="Shared\TinderQuestionCard.razor.css" />
   </ItemGroup>
 

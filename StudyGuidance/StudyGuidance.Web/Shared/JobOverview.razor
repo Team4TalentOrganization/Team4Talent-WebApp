@@ -21,36 +21,43 @@
                             <MudSelectItem T="string" Value="@state">@state</MudSelectItem>
                         }
                     </MudSelect>
-
-                    
                 </div>
-                <div class="row">
-                    
+                <div class="row mt-4">
+                    <MudSelect MultiSelectionTextFunc="@(new Func<List<string>, string>(GetMultiSelectionText))" MultiSelection="true" @bind-Value="value" @bind-SelectedValues="options" T="string" Label="US States" AdornmentIcon="@Icons.Material.Filled.Search">
+                        @foreach (var state in states)
+                        {
+                            <MudSelectItem T="string" Value="@state">@state</MudSelectItem>
+                        }
+                    </MudSelect>
                 </div>
-
-                
-
+                <div class="row mt-4 mb-5">
+                    <MudSelect MultiSelectionTextFunc="@(new Func<List<string>, string>(GetMultiSelectionText))" MultiSelection="true" @bind-Value="value" @bind-SelectedValues="options" T="string" Label="US States" AdornmentIcon="@Icons.Material.Filled.Search">
+                        @foreach (var state in states)
+                        {
+                            <MudSelectItem T="string" Value="@state">@state</MudSelectItem>
+                        }
+                    </MudSelect>
+                </div>
             </Card>
         </Collapse>
+    </div>
+    <div class="mx-auto text-center mt-5" style="width: 90%;">
+        <MudTextField Class="custom-color red-text" Immediate="true" @bind-Value="@_immediateText" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" />
     </div>
 }
 
 
 
 @code {
-    [Parameter]
-    public string Name { get; set; }
-    Collapse collapse1 = default!;
-
-    Boolean showFilterMenu;
-
+    private Collapse collapse1 = default!;
+    private Boolean showFilterMenu;
     private async Task ShowContentAsync() => await collapse1.ShowAsync();
     private async Task HideContentAsync() => await collapse1.HideAsync();
     private async Task ToggleContentAsync() => await collapse1.ToggleAsync();
-
     private bool multiselectionTextChoice;
     private string value { get; set; } = "Nothing selected";
     private IEnumerable<string> options { get; set; } = new HashSet<string>() { "Alaska" };
+    private string _immediateText = "t";
 
     private string[] states =
     {
@@ -69,6 +76,9 @@
         "Texas", "Utah", "Vermont", "Virgin Island", "Virginia",
         "Washington", "West Virginia", "Wisconsin", "Wyoming",
     };
+
+    [Parameter]
+    public string Name { get; set; }
 
     protected override void OnParametersSet()
     {
