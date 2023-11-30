@@ -4,28 +4,40 @@
     <Animation Effect="Effect.ZoomIn" Speed="@Speed.Fast">
         <div class="container bg-custom-color" style="width: 70%; height: 350px; position: relative; overflow: hidden; border-radius: 15px;">
             <div class="mt-4" style="width: 48%; height:50%; float:left;">
-                <div class="card @CardClasses[0]" @onmouseover="() => MouseOver(0)" @onmouseout="() => MouseOut(0)" @onclick="() => CardClicked(0)">
-                    <div class="card-body text-center d-flex align-items-center">
-                        <p class="m-auto">@GetAnswersForCurrentQuestion()[0]</p>
+                @if (GetOptionsForCurrentQuestion()[0] != null)
+                {
+                    <div class="card @CardClasses[0]" @onmouseover="() => MouseOver(0)" @onmouseout="() => MouseOut(0)" @onclick="() => CardClicked(0)">
+                        <div class="card-body text-center d-flex align-items-center">
+                        <p class="m-auto">@GetOptionsForCurrentQuestion()[0]</p>
                     </div>
                 </div>
+                }
+                @if (GetOptionsForCurrentQuestion()[1] != null)
+                {
                 <div class="card @CardClasses[1]" @onmouseover="() => MouseOver(1)" @onmouseout="() => MouseOut(1)" @onclick="() => CardClicked(1)">
                     <div class="card-body text-center d-flex align-items-center">
-                        <p class="m-auto">@GetAnswersForCurrentQuestion()[1]</p>
+                        <p class="m-auto">@GetOptionsForCurrentQuestion()[1]</p>
                     </div>
                 </div>
+                }
             </div>
             <div class="mt-4" style="width: 48%; height:50%; float:right;">
+                @if (GetOptionsForCurrentQuestion()[2] != null)
+                {
                 <div class="card @CardClasses[2]" @onmouseover="() => MouseOver(2)" @onmouseout="() => MouseOut(2)" @onclick="() => CardClicked(2)">
                     <div class="card-body text-center d-flex align-items-center">
-                        <p class="m-auto">@GetAnswersForCurrentQuestion()[2]</p>
+                        <p class="m-auto">@GetOptionsForCurrentQuestion()[2]</p>
                     </div>
                 </div>
+                }
+                @if (GetOptionsForCurrentQuestion()[3] != null)
+                {
                 <div class="card @CardClasses[3]" @onmouseover="() => MouseOver(3)" @onmouseout="() => MouseOut(3)" @onclick="() => CardClicked(3)">
                     <div class="card-body text-center d-flex align-items-center">
-                        <p class="m-auto">@GetAnswersForCurrentQuestion()[3]</p>
+                        <p class="m-auto">@GetOptionsForCurrentQuestion()[3]</p>
                     </div>
                 </div>
+                }
             </div>
             <div style="clear: both;"></div>
             <p class="text-white text-center" style="position: absolute; bottom: 17%; left: 50%; transform: translateX(-50%); width:85%">@GetCurrentQuestion()</p>
@@ -37,7 +49,7 @@
             }
         </div>
     </Animation>
-    @if (currentQuestion < questions.Count - 1)
+    @if (currentQuestion < questions.Count - 2)
     {
         <button @onclick="() => nextQuestionClicked()" disabled="@(!AreAnyCardsSelected())" type="button" class="nextButton btn btn-primary rounded-btn">VOLGENDE VRAAG</button>
     }
@@ -86,19 +98,9 @@ else
         }
     }
 
-
-    List<List<string>> answersList = new List<List<string>>
+    private List<string> GetOptionsForCurrentQuestion()
     {
-        new List<string> { "MASTER", "BACHELOR", "GRADUAAT", "ANDERE..."},
-        new List<string> { "Answer 1A", "Answer 2A", "Answer 3A", "Answer 4A" },
-        new List<string> { "Answer 1B", "Answer 2B", "Answer 3B", "Answer 4B" },
-        new List<string> { "Answer 1B", "Answer 2B", "Answer 3B", "Answer 4B" },
-    };
-
-    private List<string> GetAnswersForCurrentQuestion()
-    {
-       //return answersList[currentQuestion].Select(option => option.Content).ToList();
-       return questions[currentQuestion].Options.Select(option => option.Content).ToList();
+        return questions[currentQuestion].Options.Select(option => option.Content).ToList();
     }
 
     public string GetCurrentQuestion()
@@ -108,7 +110,7 @@ else
 
     public void nextQuestionClicked()
     {
-        currentQuestion = (currentQuestion + 1) % GetAnswersForCurrentQuestion().Count;
+        currentQuestion = (currentQuestion + 1) % GetOptionsForCurrentQuestion().Count;
 
         for (int i = 0; i < CardClasses.Length; i++)
         {
@@ -118,7 +120,7 @@ else
 
     public async void previousQuestionClicked()
     {
-        currentQuestion = (currentQuestion - 1) % GetAnswersForCurrentQuestion().Count;
+        currentQuestion = (currentQuestion - 1) % GetOptionsForCurrentQuestion().Count;
 
         for (int i = 0; i < CardClasses.Length; i++)
         {

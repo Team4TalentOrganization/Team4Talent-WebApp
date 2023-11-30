@@ -76,6 +76,16 @@ namespace StudyGuidance.Infrastructure
             new Option { OptionId = 25, Content = "AR", QuestionId = subDomainQuestion.QuestionId, OptionRelation = 7 }
             );
 
+            modelBuilder.Entity<Option>().HasData(
+            new Option { OptionId = 26, Content = "Ja", QuestionId = workInTeamQuestion.QuestionId },
+            new Option { OptionId = 27, Content = "Nee", QuestionId = workInTeamQuestion.QuestionId }
+            );
+
+            modelBuilder.Entity<Option>().HasData(
+            new Option { OptionId = 28, Content = "Ja", QuestionId = workOnSiteQuestion.QuestionId },
+            new Option { OptionId = 29, Content = "Nee", QuestionId = workOnSiteQuestion.QuestionId }
+            );
+
             modelBuilder.Entity<Job>().HasData(
             new Job { JobId = 1, Name = "Tester", WorkInTeam = false, WorkOnSite = true, Domain = "Software Management", SubDomain = "Software analysis", Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." },
             new Job { JobId = 2, Name = "QA Engineer", WorkInTeam = true, WorkOnSite = true, Domain = "Software Management", SubDomain = "Software Management", Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." },
