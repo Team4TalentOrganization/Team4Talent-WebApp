@@ -1,0 +1,23 @@
+﻿body {
+}
+
+#domains{
+    color: grey;
+    font-size: 125%;
+}
+
+.container{
+    padding: 6%;
+}
+
+#JobCard{
+    background-color: white;
+}
+
+.overflow-auto::-webkit-scrollbar {
+    display: none;
+}
+
+hr{
+    margin: auto;
+}

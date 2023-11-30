@@ -1,0 +1,35 @@
+﻿@using StudyGuidance.Web.Models;
+<div id="JobCard">
+	<hr />
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <figure class="shadow rounded-3">
+                    <img class="w-100 h-100 rounded-3" src="/images/person1.jpg" />
+                </figure>
+            </div>
+            <div class="col">
+                <h2>@Job.Name</h2>
+                <br />
+                <p id="domains">Domeinen: @Job.Domain</p>
+                
+            </div>
+        </div>
+        <div class="row">
+            <p>
+                @Job.Description
+            </p>
+
+        </div>
+    </div>
+
+</div>
+
+@code {
+
+    [Parameter]
+    public Job Job { get; set; }
+
+
+
+}

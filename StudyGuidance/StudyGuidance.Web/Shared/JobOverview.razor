@@ -1,7 +1,10 @@
 ﻿@using System.Linq
+@using StudyGuidance.Web.Models;
+@inject HttpClient httpClient
 
 <div class="pt-5"></div>
 
+<div>
 @if (showFilterMenu)
 {
     <div class="mx-auto text-center" style="width: 90%; border: 2px solid #007ce0; border-radius: 10px;">
@@ -15,38 +18,28 @@
         <Collapse Class="container text-center" @ref="collapse1" Style="border: none">
             <Card Class="p-0 text-center mt-4" Style="border: none; border-radius: 25px">
                 <div class="row">
-                    <MudSelect MultiSelectionTextFunc="@(new Func<List<string>, string>(GetMultiSelectionText))" MultiSelection="true" @bind-Value="value" @bind-SelectedValues="options" T="string" Label="US States" AdornmentIcon="@Icons.Material.Filled.Search">
-                        @foreach (var state in states)
+                        <MudSelect MultiSelectionTextFunc="@(new Func<List<string>, string>(GetMultiSelectionText))" MultiSelection="true" @bind-Value="value" @bind-SelectedValues="options" T="string" Label="Subdomeinen" AdornmentIcon="@Icons.Material.Filled.ArrowDownward">
+                        @foreach (var subdomain in subDomains)
                         {
-                            <MudSelectItem T="string" Value="@state">@state</MudSelectItem>
-                        }
-                    </MudSelect>
-                </div>
-                <div class="row mt-4">
-                    <MudSelect MultiSelectionTextFunc="@(new Func<List<string>, string>(GetMultiSelectionText))" MultiSelection="true" @bind-Value="value" @bind-SelectedValues="options" T="string" Label="US States" AdornmentIcon="@Icons.Material.Filled.Search">
-                        @foreach (var state in states)
-                        {
-                            <MudSelectItem T="string" Value="@state">@state</MudSelectItem>
-                        }
-                    </MudSelect>
-                </div>
-                <div class="row mt-4 mb-5">
-                    <MudSelect MultiSelectionTextFunc="@(new Func<List<string>, string>(GetMultiSelectionText))" MultiSelection="true" @bind-Value="value" @bind-SelectedValues="options" T="string" Label="US States" AdornmentIcon="@Icons.Material.Filled.Search">
-                        @foreach (var state in states)
-                        {
-                            <MudSelectItem T="string" Value="@state">@state</MudSelectItem>
+                            <MudSelectItem T="string" Value="@subdomain.Content">@subdomain.Content</MudSelectItem>
                         }
                     </MudSelect>
                 </div>
             </Card>
         </Collapse>
     </div>
-    <div class="mx-auto text-center mt-5" style="width: 90%;">
-        <MudTextField Class="custom-color" Immediate="true" @bind-Value="@_immediateText" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" />
+    <div class="mx-auto text-center mt-5 mb-5" style="width: 90%;">
+        <MudTextField Class="custom-color" Placeholder="Zoeken" Immediate="true" @bind-Value="@_immediateText" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" />
     </div>
 }
 
-
+    <div class="overflow-auto">
+        @foreach(var job in FilteredJobs)
+        {
+            <JobCards Job="@job"></JobCards>
+        }
+    </div>
+</div>
 
 @code {
     private Collapse collapse1 = default!;
@@ -56,26 +49,70 @@
     private async Task ToggleContentAsync() => await collapse1.ToggleAsync();
     private bool multiselectionTextChoice;
     private string value { get; set; } = "Nothing selected";
-    private IEnumerable<string> options { get; set; } = new HashSet<string>() { "Alaska" };
-    private string _immediateText = "t";
-
-    private string[] states =
+    private IEnumerable<string> options { get; set; } = new HashSet<string>();
+    private string _immediateText = "";
+    private List<Job> jobs = new List<Job>
     {
-        "Alabama", "Alaska", "American Samoa", "Arizona",
-        "Arkansas", "California", "Colorado", "Connecticut",
-        "Delaware", "District of Columbia", "Federated States of Micronesia",
-        "Florida", "Georgia", "Guam", "Hawaii", "Idaho",
-        "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky",
-        "Louisiana", "Maine", "Marshall Islands", "Maryland",
-        "Massachusetts", "Michigan", "Minnesota", "Mississippi",
-        "Missouri", "Montana", "Nebraska", "Nevada",
-        "New Hampshire", "New Jersey", "New Mexico", "New York",
-        "North Carolina", "North Dakota", "Northern Mariana Islands", "Ohio",
-        "Oklahoma", "Oregon", "Palau", "Pennsylvania", "Puerto Rico",
-        "Rhode Island", "South Carolina", "South Dakota", "Tennessee",
-        "Texas", "Utah", "Vermont", "Virgin Island", "Virginia",
-        "Washington", "West Virginia", "Wisconsin", "Wyoming",
+        new Job
+        {
+            Name = "Frontend Developer",
+            Domain = "Information Technology",
+            SubDomain = "AI",
+            Description = "Creates user-friendly interfaces and implements designs in web applications.",
+            WorkInTeam = true,
+            WorkOnSite = false,
+            JobId = 1
+        },
+        new Job
+        {
+            Name = "Marketing Manager",
+            Domain = "Marketing",
+            SubDomain = "AR",
+            Description = "Leads marketing campaigns, analyzes market trends, and develops strategies.",
+            WorkInTeam = true,
+            WorkOnSite = true,
+            JobId = 2
+        },
+        new Job
+        {
+            Name = "Financial Analyst",
+            Domain = "Finance",
+            SubDomain = "VR",
+            Description = "Analyzes financial data, prepares reports, and provides insights for decision-making.",
+            WorkInTeam = true,
+            WorkOnSite = false,
+            JobId = 3
+        },
+        new Job
+        {
+            Name = "Financial Analyst",
+            Domain = "Finance",
+            SubDomain = "Backend",
+            Description = "Analyzes financial data, prepares reports, and provides insights for decision-making.",
+            WorkInTeam = true,
+            WorkOnSite = false,
+            JobId = 4
+        }
     };
+    private List<Option> subDomains;
+    private List<Job> FilteredJobs
+    {
+        get
+        {
+            if (string.IsNullOrWhiteSpace(_immediateText))
+            {
+                return options.Any()
+                    ? jobs.Where(job => options.Contains(job.SubDomain)).ToList()
+                    : jobs.ToList();
+            }
+            else
+            {
+                return options.Any()
+                    ? jobs.Where(job => options.Contains(job.SubDomain) && job.Name.ToLower().Contains(_immediateText.ToLower())).ToList()
+                    : jobs.Where(job => job.Name.ToLower().Contains(_immediateText.ToLower())).ToList();
+            }
+        }
+    }
 
     [Parameter]
     public string Name { get; set; }
@@ -95,8 +132,18 @@
 
     private string GetMultiSelectionText(List<string> selectedValues)
     {
+        if(selectedValues.Count == 1)
+        {
+            return $"{selectedValues.Count} subdomein is geselecteerd";
+        } else
+        {
+            return $"{selectedValues.Count} subdomeinen zijn geselecteerd";
+        }
         
-       return $"{selectedValues.Count} state{(selectedValues.Count > 1 ? "s have" : " has")} been selected";
-        
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        subDomains = await httpClient.GetFromJsonAsync<List<Option>>("https://localhost:7109/api/Quiz/subdomains?domainId=1&domainId=2&domainId=3&domainId=4&domainId=5&domainId=6&domainId=7");
     }
 }
