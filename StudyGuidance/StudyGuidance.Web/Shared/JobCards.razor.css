@@ -14,10 +14,14 @@
     background-color: white;
 }
 
-.overflow-auto::-webkit-scrollbar {
-    display: none;
+hr{
+    margin: auto;
+}
+
+h6{
+    font-weight: bold;
 }
 
 hr{
-    margin: auto;
+    height: 2px;
 }
