@@ -1,4 +1,5 @@
-﻿@if (!quizEnded)
+﻿@inject HttpClient httpClient
+@if (!quizEnded)
 {
     <Animation Effect="Effect.ZoomIn" Speed="@Speed.Fast">
         <div class="container bg-custom-color" style="width: 70%; height: 350px; position: relative; overflow: hidden; border-radius: 15px;">
@@ -27,7 +28,7 @@
                 </div>
             </div>
             <div style="clear: both;"></div>
-            <p class="text-white text-center" style="position: absolute; bottom: 17%; left: 50%; transform: translateX(-50%); width:85%">@GetQuestionForCurrentQuestion()</p>
+            <p class="text-white text-center" style="position: absolute; bottom: 17%; left: 50%; transform: translateX(-50%); width:85%">@GetCurrentQuestion()</p>
             @if (currentQuestion > 0)
             {
                 <button @onclick="() => previousQuestionClicked()" id="previousButton" type="button" class="btn btn-light btn-circle btn-lg rounded-circle mb-3" style="position: absolute; bottom: 0;">
@@ -36,7 +37,7 @@
             }
         </div>
     </Animation>
-    @if (currentQuestion < questionsList.Count - 1)
+    @if (currentQuestion < questions.Count - 1)
     {
         <button @onclick="() => nextQuestionClicked()" disabled="@(!AreAnyCardsSelected())" type="button" class="nextButton btn btn-primary rounded-btn">VOLGENDE VRAAG</button>
     }
@@ -53,6 +54,7 @@ else
 
 @code {
     bool quizEnded = false;
+    int currentQuestion = 0;
 
     string[] CardClasses = new string[4] { "card text-black h-50 mb-3", "card text-black h-50 mb-3", "card text-black h-50 mb-3", "card text-black h-50 mb-3" };
 
@@ -90,30 +92,23 @@ else
         new List<string> { "MASTER", "BACHELOR", "GRADUAAT", "ANDERE..."},
         new List<string> { "Answer 1A", "Answer 2A", "Answer 3A", "Answer 4A" },
         new List<string> { "Answer 1B", "Answer 2B", "Answer 3B", "Answer 4B" },
+        new List<string> { "Answer 1B", "Answer 2B", "Answer 3B", "Answer 4B" },
     };
 
-    List<string> questionsList = new List<string>
+    private List<string> GetAnswersForCurrentQuestion()
     {
-        "Heb je een master, bachelor, graduaat of andere in IT?",
-        "Question A",
-        "Question B"
-    };
-
-    int currentQuestion = 0;
-
-    public List<string> GetAnswersForCurrentQuestion()
-    {
-        return answersList[currentQuestion];
+       //return answersList[currentQuestion].Select(option => option.Content).ToList();
+       return questions[currentQuestion].Options.Select(option => option.Content).ToList();
     }
 
-    public string GetQuestionForCurrentQuestion()
+    public string GetCurrentQuestion()
     {
-        return questionsList[currentQuestion];
+        return questions.ElementAt(currentQuestion).Phrase;
     }
 
     public void nextQuestionClicked()
     {
-        currentQuestion = (currentQuestion + 1) % answersList.Count;
+        currentQuestion = (currentQuestion + 1) % GetAnswersForCurrentQuestion().Count;
 
         for (int i = 0; i < CardClasses.Length; i++)
         {
@@ -123,7 +118,7 @@ else
 
     public async void previousQuestionClicked()
     {
-        currentQuestion = (currentQuestion - 1) % answersList.Count;
+        currentQuestion = (currentQuestion - 1) % GetAnswersForCurrentQuestion().Count;
 
         for (int i = 0; i < CardClasses.Length; i++)
         {
@@ -138,5 +133,27 @@ else
     public bool AreAnyCardsSelected()
     {
         return CardClasses.Any(cc => cc.Contains("bg-orange-color-click"));
+    }
+
+    private List<Question> questions;
+
+    protected override async Task OnInitializedAsync()
+    {
+        questions = await httpClient.GetFromJsonAsync<List<Question>>("https://localhost:7109/api/Quiz/questions");
+    }
+
+    private class Question
+    {
+        public List<Option> Options { get; set; }
+        public int QuestionId { get; set; }
+        public string Phrase { get; set; }
+    }
+
+    private class Option
+    {
+        public string Content { get; set; }
+        public int OptionRelation { get; set; }
+        public int QuestionId { get; set; }
+        public int OptionId { get; set; }
     }
 }
