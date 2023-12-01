@@ -1,6 +1,9 @@
-﻿namespace StudyGuidance.Web.ApiClient
+﻿using StudyGuidance.Web.Models;
+
+namespace StudyGuidance.Web.ApiClient
 {
-    public class IQuizApiClient
+    public interface IQuizApiClient
     {
+        Task<List<Question>> GetAllQuestion();
     }
 }
