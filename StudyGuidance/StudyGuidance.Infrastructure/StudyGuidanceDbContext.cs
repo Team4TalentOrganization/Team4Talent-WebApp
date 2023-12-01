@@ -19,25 +19,29 @@ namespace StudyGuidance.Infrastructure
             var domainQuestion = new Question
             {
                 Phrase = "In welk domein heb je interesse?",
-                QuestionId = 1
+                QuestionId = 1,
+                QuestionType = QuestionType.StandardQuizQuestion
             };
 
             var subDomainQuestion = new Question
             {
                 Phrase = "In welk subdomein heb je interesse?",
-                QuestionId = 2
+                QuestionId = 2,
+                QuestionType = QuestionType.StandardQuizQuestion
             };
 
             var workInTeamQuestion = new Question
             {
                 Phrase = "Werk je graag vaak in groep?",
-                QuestionId = 3
+                QuestionId = 3,
+                QuestionType = QuestionType.TinderQuizQuestion
             };
 
             var workOnSiteQuestion = new Question
             {
                 Phrase = "Houd je ervan om regelmatig andere bedrijven te bezoeken?",
-                QuestionId = 4
+                QuestionId = 4,
+                QuestionType = QuestionType.TinderQuizQuestion
             };
 
             modelBuilder.Entity<Question>().HasData(domainQuestion);

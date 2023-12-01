@@ -4,40 +4,36 @@
     <Animation Effect="Effect.ZoomIn" Speed="@Speed.Fast">
         <div class="container bg-custom-color" style="width: 70%; height: 350px; position: relative; overflow: hidden; border-radius: 15px;">
             <div class="mt-4" style="width: 48%; height:50%; float:left;">
-                @if (GetOptionsForCurrentQuestion()[0] != null)
-                {
-                    <div class="card @CardClasses[0]" @onmouseover="() => MouseOver(0)" @onmouseout="() => MouseOut(0)" @onclick="() => CardClicked(0)">
+
+                    <div id="topLeftCard" class="card @CardClasses[0]" @onmouseover="() => MouseOver(0)" @onmouseout="() => MouseOut(0)" @onclick="() => CardClicked(0)">
                         <div class="card-body text-center d-flex align-items-center">
                         <p class="m-auto">@GetOptionsForCurrentQuestion()[0]</p>
                     </div>
                 </div>
-                }
-                @if (GetOptionsForCurrentQuestion()[1] != null)
-                {
-                <div class="card @CardClasses[1]" @onmouseover="() => MouseOver(1)" @onmouseout="() => MouseOut(1)" @onclick="() => CardClicked(1)">
+                
+          
+                    <div id="topRightCard" class="card @CardClasses[1]" @onmouseover="() => MouseOver(1)" @onmouseout="() => MouseOut(1)" @onclick="() => CardClicked(1)">
                     <div class="card-body text-center d-flex align-items-center">
                         <p class="m-auto">@GetOptionsForCurrentQuestion()[1]</p>
                     </div>
                 </div>
-                }
+                
             </div>
             <div class="mt-4" style="width: 48%; height:50%; float:right;">
-                @if (GetOptionsForCurrentQuestion()[2] != null)
-                {
-                <div class="card @CardClasses[2]" @onmouseover="() => MouseOver(2)" @onmouseout="() => MouseOut(2)" @onclick="() => CardClicked(2)">
+          
+                    <div id="bottomLeftCard" class="card @CardClasses[2]" @onmouseover="() => MouseOver(2)" @onmouseout="() => MouseOut(2)" @onclick="() => CardClicked(2)">
                     <div class="card-body text-center d-flex align-items-center">
                         <p class="m-auto">@GetOptionsForCurrentQuestion()[2]</p>
                     </div>
                 </div>
-                }
-                @if (GetOptionsForCurrentQuestion()[3] != null)
-                {
-                <div class="card @CardClasses[3]" @onmouseover="() => MouseOver(3)" @onmouseout="() => MouseOut(3)" @onclick="() => CardClicked(3)">
+               
+             
+                    <div id="bottomRightCard" class="card @CardClasses[3]" @onmouseover="() => MouseOver(3)" @onmouseout="() => MouseOut(3)" @onclick="() => CardClicked(3)">
                     <div class="card-body text-center d-flex align-items-center">
                         <p class="m-auto">@GetOptionsForCurrentQuestion()[3]</p>
                     </div>
                 </div>
-                }
+                
             </div>
             <div style="clear: both;"></div>
             <p class="text-white text-center" style="position: absolute; bottom: 17%; left: 50%; transform: translateX(-50%); width:85%">@GetCurrentQuestion()</p>
@@ -87,14 +83,18 @@ else
 
     void CardClicked(int cardNumber)
     {
-        // Toggle between two states
-        if (CardClasses[cardNumber].Contains("bg-orange-color-click"))
+        // Check if the option is not empty before toggling
+        if (!IsOptionValueEmpty(GetOptionsForCurrentQuestion()[cardNumber]))
         {
-            CardClasses[cardNumber] = "card text-black h-50 mb-3";
-        }
-        else
-        {
-            CardClasses[cardNumber] = "card text-white bg-orange-color-click h-50 mb-3";
+            // Toggle between two states
+            if (CardClasses[cardNumber].Contains("bg-orange-color-click"))
+            {
+                CardClasses[cardNumber] = "card text-black h-50 mb-3";
+            }
+            else
+            {
+                CardClasses[cardNumber] = "card text-white bg-orange-color-click h-50 mb-3";
+            }
         }
     }
 
@@ -110,18 +110,24 @@ else
 
     public void nextQuestionClicked()
     {
-        currentQuestion = (currentQuestion + 1) % GetOptionsForCurrentQuestion().Count;
-
-        for (int i = 0; i < CardClasses.Length; i++)
+        if (currentQuestion < questions.Count - 1)
         {
-            CardClasses[i] = "card text-black h-50 mb-3";
+            currentQuestion++;
+            ResetCardClasses();
         }
     }
 
-    public async void previousQuestionClicked()
+    public void previousQuestionClicked()
     {
-        currentQuestion = (currentQuestion - 1) % GetOptionsForCurrentQuestion().Count;
+        if (currentQuestion > 0)
+        {
+            currentQuestion--;
+            ResetCardClasses();
+        }
+    }
 
+    private void ResetCardClasses()
+    {
         for (int i = 0; i < CardClasses.Length; i++)
         {
             CardClasses[i] = "card text-black h-50 mb-3";
@@ -137,12 +143,56 @@ else
         return CardClasses.Any(cc => cc.Contains("bg-orange-color-click"));
     }
 
-    private List<Question> questions;
+    public bool IsOptionValueEmpty(string value)
+    {
+        if (value == null)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    private List<Question> questions = new List<Question>();
 
     protected override async Task OnInitializedAsync()
     {
-        questions = await httpClient.GetFromJsonAsync<List<Question>>("https://localhost:7109/api/Quiz/questions");
+        questions = await httpClient.GetFromJsonAsync<List<Question>>("https://localhost:7109/api/Quiz/standardquizquestions");
+
+        // Iterate through the questions
+        for (int i = 0; i < questions.Count; i++)
+        {
+            // Check if the current question has 3 or fewer options
+            if (questions[i].Options.Count <= 3)
+            {
+                // Calculate the number of empty options to add
+                int emptyOptionsToAdd = 4 - questions[i].Options.Count;
+
+                // Add new empty options to the current question
+                for (int j = 0; j < emptyOptionsToAdd; j++)
+                {
+                    questions[i].Options.Add(new Option()); // You can change this to the default value for new options
+                }
+            }
+            else if (questions[i].Options.Count > 4)
+            {
+                // Create a new question with the remaining options
+                var remainingOptions = questions[i].Options.Skip(4).ToList();
+                var newQuestion = new Question
+                    {
+                        Options = remainingOptions,
+                        QuestionId = questions[i].QuestionId, // Use the same QuestionId if needed
+                        Phrase = questions[i].Phrase + " (Contd.)" // Add a suffix to indicate continuation
+                    };
+
+                // Insert the new question right after the current question
+                questions.Insert(i + 1, newQuestion);
+
+                // Trim the current question's options to the first 4
+                questions[i].Options = questions[i].Options.Take(4).ToList();
+            }
+        }
     }
+
 
     private class Question
     {

@@ -20,6 +20,16 @@ namespace StudyGuidance.Infrastructure
             return await _context.Questions.Include(options => options.Options).ToListAsync<Question>();
         }
 
+        public async Task<IReadOnlyList<Question>> GetStandardQuizQuestionsAsync()
+        {
+            return await _context.Questions.Where(q => q.QuestionType == QuestionType.StandardQuizQuestion).Include(options => options.Options).ToListAsync<Question>();
+        }
+
+        public async Task<IReadOnlyList<Question>> GetTinderQuizQuestionsAsync()
+        {
+            return await _context.Questions.Where(q => q.QuestionType == QuestionType.TinderQuizQuestion).Include(options => options.Options).ToListAsync<Question>();
+        }
+
         public async Task<IReadOnlyList<Option>> GetDomainsAsync()
         {
             return await _context.Options.Where(o => o.QuestionId == 1).ToListAsync<Option>();

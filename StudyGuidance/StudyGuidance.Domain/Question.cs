@@ -6,7 +6,7 @@ namespace StudyGuidance.Domain
     {
         private string _phrase = string.Empty;
         private List<Option> _options = new List<Option>();
-
+        private QuestionType _questionType;
         public int QuestionId { get; set; }
 
         public string Phrase
@@ -34,6 +34,19 @@ namespace StudyGuidance.Domain
                 }
 
                 _options = value;
+            }
+        }
+        public QuestionType QuestionType
+        {
+            get => _questionType;
+            set
+            {
+                if (!Enum.IsDefined(typeof(QuestionType), value))
+                {
+                    throw new BusinessException("Invalid or default QuestionType.");
+                }
+
+                _questionType = value;
             }
         }
     }

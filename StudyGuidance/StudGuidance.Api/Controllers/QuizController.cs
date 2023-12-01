@@ -27,6 +27,32 @@ namespace StudGuidance.Api.Controllers
             return Ok(allQuestions);
         }
 
+        [HttpGet("standardquizquestions")]
+        public async Task<IActionResult> GetAllStandardQuizQuestions()
+        {
+            IReadOnlyList<Question> allStandardQuizQuestions = await _questionRepository.GetStandardQuizQuestionsAsync();
+
+            if (allStandardQuizQuestions.Count <= 0)
+            {
+                return NotFound("AllStandardQuizQuestions bevat geen inhoud");
+            }
+
+            return Ok(allStandardQuizQuestions);
+        }
+
+        [HttpGet("tinderquizquestions")]
+        public async Task<IActionResult> GetAllTinderQuizQuestions()
+        {
+            IReadOnlyList<Question> allTinderQuizQuestions = await _questionRepository.GetTinderQuizQuestionsAsync();
+
+            if (allTinderQuizQuestions.Count <= 0)
+            {
+                return NotFound("AllTinderQuizQuestions bevat geen inhoud");
+            }
+
+            return Ok(allTinderQuizQuestions);
+        }
+
         [HttpGet("domains")]
         public async Task<IActionResult> GetAllDomains()
         {
