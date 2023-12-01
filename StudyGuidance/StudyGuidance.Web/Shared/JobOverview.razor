@@ -1,64 +1,57 @@
 ﻿@using System.Linq
 @using StudyGuidance.Web.Models;
+@using StudyGuidance.Web.ApiClient
+@inject IJobApiClient JobApiClient;
 @inject HttpClient httpClient
+@inject NavigationManager NavigationManager
 
 <div class="pt-5"></div>
 
 <div>
-    @if (showJobDetailPage)
+    @if (showFilterMenu)
     {
-        <Animation Effect="Effect.ZoomIn" Speed="@Speed.Fast">
-            <JobDetail Job="@selectedJob" OnGoBack="GoBackToOverview"></JobDetail>
-        </Animation>
-    } else
-    {
-        @if (showFilterMenu)
-        {
-            <Animation Effect="Effect.ZoomIn" Speed="Speed.Fast">
-                <div class="mx-auto text-center" style="width: 90%; border: 2px solid #007ce0; border-radius: 10px;">
-                    <Button Class="w-100" Style="height: 55px; background-color: #007ce0; color: white; border-radius: 8px;" Type="BlazorBootstrap.ButtonType.Button" @onclick="ToggleContentAsync">
-                        <svg style="margin-right: 3%;" xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-sliders" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1z" />
-                        </svg>
-                        FILTER RESULTATEN
-                    </Button>
-
-                    <Collapse Class="container text-center" @ref="collapse1" Style="border: none">
-                        <Card Class="p-0 text-center mt-4" Style="border: none; border-radius: 25px">
-                            <div class="row">
-                                <MudSelect MultiSelectionTextFunc="@(new Func<List<string>, string>(GetMultiSelectionText))" MultiSelection="true" @bind-Value="value" @bind-SelectedValues="options" T="string" Label="Subdomeinen" AdornmentIcon="@Icons.Material.Filled.ArrowDownward">
-                                    @foreach (var subdomain in subDomains)
-                                    {
-                                        <MudSelectItem T="string" Value="@subdomain.Content">@subdomain.Content</MudSelectItem>
-                                    }
-                                </MudSelect>
-                            </div>
-                        </Card>
-                    </Collapse>
-                </div>
-            </Animation>
-        }
         <Animation Effect="Effect.ZoomIn" Speed="Speed.Fast">
-            <div class="mx-auto text-center mt-5 mb-5" style="width: 90%;">
-                <MudTextField Class="custom-color" Placeholder="Zoeken" Immediate="true" @bind-Value="@_immediateText" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" />
-            </div>
-            <div class="overflow-auto">
-                @foreach (var job in FilteredJobs)
-                {
-                    <div @onclick="@(e => GoToJobDetailPage(e, job))">
-                        <JobCards Job="job"></JobCards>
-                    </div>
-                }
+            <div class="mx-auto text-center" style="width: 90%; border: 2px solid #007ce0; border-radius: 10px;">
+                <Button Class="w-100" Style="height: 55px; background-color: #007ce0; color: white; border-radius: 8px;" Type="BlazorBootstrap.ButtonType.Button" @onclick="ToggleContentAsync">
+                    <svg style="margin-right: 3%;" xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-sliders" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1z" />
+                    </svg>
+                    FILTER RESULTATEN
+                </Button>
+
+                <Collapse Class="container text-center" @ref="collapse1" Style="border: none">
+                    <Card Class="p-0 text-center mt-4" Style="border: none; border-radius: 25px">
+                        <div class="row">
+                            <MudSelect MultiSelectionTextFunc="@(new Func<List<string>, string>(GetMultiSelectionText))" MultiSelection="true" @bind-Value="value" @bind-SelectedValues="options" T="string" Label="Subdomeinen" AdornmentIcon="@Icons.Material.Filled.ArrowDownward">
+                                @foreach (var subdomain in subDomains)
+                                {
+                                    <MudSelectItem T="string" Value="@subdomain.Content">@subdomain.Content</MudSelectItem>
+                                }
+                            </MudSelect>
+                        </div>
+                    </Card>
+                </Collapse>
             </div>
         </Animation>
     }
+    <Animation Effect="Effect.ZoomIn" Speed="Speed.Fast">
+        <div class="mx-auto text-center mt-5 mb-5" style="width: 90%;">
+            <MudTextField Class="custom-color" Placeholder="Zoeken" Immediate="true" @bind-Value="@_immediateText" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" />
+        </div>
+        <div class="overflow-auto">
+            @foreach (var job in FilteredJobs)
+            {
+                <div @onclick="@(e => GoToJobDetailPage(e, job.JobId))">
+                    <JobCards Job="job"></JobCards>
+                </div>
+            }
+        </div>
+    </Animation>
 </div>
 
 @code {
     private Collapse collapse1 = default!;
     private Boolean showFilterMenu;
-    private Boolean showJobDetailPage = false;
-    private Job selectedJob;
     private async Task ShowContentAsync() => await collapse1.ShowAsync();
     private async Task HideContentAsync() => await collapse1.HideAsync();
     private async Task ToggleContentAsync() => await collapse1.ToggleAsync();
@@ -66,50 +59,9 @@
     private string value { get; set; } = "Nothing selected";
     private IEnumerable<string> options { get; set; } = new HashSet<string>();
     private string _immediateText = "";
-    private List<Job> jobs = new List<Job>
-    {
-        new Job
-        {
-            Name = "Frontend Developer",
-            Domain = "Information Technology",
-            SubDomain = "AI",
-            Description = "Een DevOps AWS Engineer ontwikkelt, implementeert en onderhoudt geautomatiseerde processen op hetAWS-platform, optimaliseert infrastructuur en integreert CI/CD-pipelines om een efficiënte enschaalbare ontwikkelomgeving te waarborgen.",
-            WorkInTeam = true,
-            WorkOnSite = false,
-            JobId = 1
-        },
-        new Job
-        {
-            Name = "Marketing Manager",
-            Domain = "Marketing",
-            SubDomain = "AR",
-            Description = "Leads marketing campaigns, analyzes market trends, and develops strategies.",
-            WorkInTeam = true,
-            WorkOnSite = true,
-            JobId = 2
-        },
-        new Job
-        {
-            Name = "Financial Analyst",
-            Domain = "Finance",
-            SubDomain = "VR",
-            Description = "Analyzes financial data, prepares reports, and provides insights for decision-making.",
-            WorkInTeam = true,
-            WorkOnSite = false,
-            JobId = 3
-        },
-        new Job
-        {
-            Name = "Financial Analyst",
-            Domain = "Finance",
-            SubDomain = "Backend",
-            Description = "Analyzes financial data, prepares reports, and provides insights for decision-making.",
-            WorkInTeam = true,
-            WorkOnSite = false,
-            JobId = 4
-        }
-    };
-    private List<Option> subDomains;
+    private List<Job> jobs = new List<Job>();
+    private List<Option> subDomains = new List<Option>();
+    private List<String> filterDomains = new List<String>(){"Software analysis"};
     private List<Job> FilteredJobs
     {
         get
@@ -145,18 +97,9 @@
         base.OnParametersSet();
     }
 
-    private void GoToJobDetailPage(MouseEventArgs e, Job job)
+    private void GoToJobDetailPage(MouseEventArgs e, int id)
     {
-        this.selectedJob = job;
-        this.showJobDetailPage = true;
-    }
-
-    private void GoBackToOverview(bool goBack)
-    {
-        if (goBack)
-        {
-            this.showJobDetailPage = false;
-        }
+        NavigationManager.NavigateTo($"/jobs/detail/{id}");
     }
 
     private string GetMultiSelectionText(List<string> selectedValues)
@@ -168,11 +111,18 @@
         {
             return $"{selectedValues.Count} subdomeinen zijn geselecteerd";
         }
-        
+
     }
 
     protected override async Task OnInitializedAsync()
     {
-        subDomains = await httpClient.GetFromJsonAsync<List<Option>>("https://localhost:7109/api/Quiz/subdomains?domainId=1&domainId=2&domainId=3&domainId=4&domainId=5&domainId=6&domainId=7");
+        if (this.Name == "Gustaph")
+        {
+            jobs = await JobApiClient.GetJobsByFilterAsync(filterDomains, false, false);
+            subDomains = await JobApiClient.GetAllSubDomains();
+        } else
+        {
+            jobs = await JobApiClient.GetJobsAsync();
+        }
     }
 }
