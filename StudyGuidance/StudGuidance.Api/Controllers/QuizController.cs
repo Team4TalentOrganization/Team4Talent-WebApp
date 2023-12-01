@@ -9,17 +9,20 @@ namespace StudGuidance.Api.Controllers
     public class QuizController : ControllerBase
     {
         private readonly IQuizRepository _questionRepository;
-        public QuizController(IQuizRepository questionRepository)
+        private readonly IQuestionModificationService _questionModificationService;
+        public QuizController(IQuizRepository questionRepository, IQuestionModificationService questionModificationService)
         {
             _questionRepository = questionRepository;
+            _questionModificationService = questionModificationService;
         }
 
         [HttpGet("questions")]
         public async Task<IActionResult> GetAllQuestions()
         {
             IReadOnlyList<Question> allQuestions = await _questionRepository.GetQuestionsAsync();
+            allQuestions = _questionModificationService.ModifyQuestions(allQuestions);
 
-            if(allQuestions.Count <= 0) 
+            if (allQuestions.Count <= 0) 
             {
                 return NotFound("AllQuestions bevat geen inhoud");
             }
@@ -31,6 +34,7 @@ namespace StudGuidance.Api.Controllers
         public async Task<IActionResult> GetAllStandardQuizQuestions()
         {
             IReadOnlyList<Question> allStandardQuizQuestions = await _questionRepository.GetStandardQuizQuestionsAsync();
+            allStandardQuizQuestions = _questionModificationService.ModifyQuestions(allStandardQuizQuestions);
 
             if (allStandardQuizQuestions.Count <= 0)
             {
@@ -44,6 +48,7 @@ namespace StudGuidance.Api.Controllers
         public async Task<IActionResult> GetAllTinderQuizQuestions()
         {
             IReadOnlyList<Question> allTinderQuizQuestions = await _questionRepository.GetTinderQuizQuestionsAsync();
+            allTinderQuizQuestions = _questionModificationService.ModifyQuestions(allTinderQuizQuestions);
 
             if (allTinderQuizQuestions.Count <= 0)
             {

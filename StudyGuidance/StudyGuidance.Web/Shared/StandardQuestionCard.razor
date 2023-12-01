@@ -1,4 +1,6 @@
-﻿@inject HttpClient httpClient
+﻿@using System.Text;
+@inject HttpClient httpClient
+@inject IJSRuntime JS
 @if (!quizEnded)
 {
     <Animation Effect="Effect.ZoomIn" Speed="@Speed.Fast">
@@ -36,7 +38,7 @@
                 
             </div>
             <div style="clear: both;"></div>
-            <p class="text-white text-center" style="position: absolute; bottom: 17%; left: 50%; transform: translateX(-50%); width:85%">@GetCurrentQuestion()</p>
+            <p class="text-white text-center" style="position: absolute; bottom: 17%; left: 50%; transform: translateX(-50%); width:85%">@GetCurrentQuestionPhrase()</p>
             @if (currentQuestion > 0)
             {
                 <button @onclick="() => previousQuestionClicked()" id="previousButton" type="button" class="btn btn-light btn-circle btn-lg rounded-circle mb-3" style="position: absolute; bottom: 0;">
@@ -63,6 +65,9 @@ else
 @code {
     bool quizEnded = false;
     int currentQuestion = 0;
+    private List<Question> questions = new List<Question>();
+    private List<int> domainAnswers = new List<int>();
+    bool subDomainsAreSet = false;
 
     string[] CardClasses = new string[4] { "card text-black h-50 mb-3", "card text-black h-50 mb-3", "card text-black h-50 mb-3", "card text-black h-50 mb-3" };
 
@@ -102,19 +107,56 @@ else
     {
         return questions[currentQuestion].Options.Select(option => option.Content).ToList();
     }
+    private List<int> GetOptionIdForCurrentQuestion()
+    {
+        return questions[currentQuestion].Options.Select(option => option.OptionId).ToList();
+    }
 
-    public string GetCurrentQuestion()
+    public string GetCurrentQuestionPhrase()
     {
         return questions.ElementAt(currentQuestion).Phrase;
     }
 
-    public void nextQuestionClicked()
+    public async void nextQuestionClicked()
     {
-        if (currentQuestion < questions.Count - 1)
+        if (GetCurrentQuestionPhrase() == "In welk domein heb je interesse?")
         {
-            currentQuestion++;
-            ResetCardClasses();
+            for(int i = 0; i < 4; i++)
+            {
+                if (CardClasses[i] == "card text-white bg-orange-color-click h-50 mb-3")
+                {
+                    domainAnswers.Add(GetOptionIdForCurrentQuestion()[i]);
+                }
+            }
         }
+        currentQuestion++;
+        ResetCardClasses();
+        if (GetCurrentQuestionPhrase() == "In welk subdomein heb je interesse?" && !subDomainsAreSet)
+        {
+            StringBuilder endpointBuilder = new StringBuilder("https://localhost:7109/api/Quiz/subdomains?");
+            List<Option> subDomains = new List<Option>();
+            bool isFirstDomain = true;
+
+            foreach (int domainId in domainAnswers)
+            {
+                if (!isFirstDomain)
+                {
+                    endpointBuilder.Append("&");
+                }
+
+                endpointBuilder.Append($"domainId={domainId}");
+
+                isFirstDomain = false;
+            }
+
+            string endpointString = endpointBuilder.ToString();
+
+            subDomains = await httpClient.GetFromJsonAsync<List<Option>>(endpointString);
+            questions[currentQuestion].Options = subDomains;
+            await JS.InvokeVoidAsync("console.log", questions[currentQuestion].Options);
+            subDomainsAreSet = true;
+        }
+        await JS.InvokeVoidAsync("console.log", questions);
     }
 
     public void previousQuestionClicked()
@@ -152,8 +194,6 @@ else
         return false;
     }
 
-    private List<Question> questions = new List<Question>();
-
     protected override async Task OnInitializedAsync()
     {
         questions = await httpClient.GetFromJsonAsync<List<Question>>("https://localhost:7109/api/Quiz/standardquizquestions");
@@ -181,7 +221,7 @@ else
                     {
                         Options = remainingOptions,
                         QuestionId = questions[i].QuestionId, // Use the same QuestionId if needed
-                        Phrase = questions[i].Phrase + " (Contd.)" // Add a suffix to indicate continuation
+                        Phrase = questions[i].Phrase
                     };
 
                 // Insert the new question right after the current question

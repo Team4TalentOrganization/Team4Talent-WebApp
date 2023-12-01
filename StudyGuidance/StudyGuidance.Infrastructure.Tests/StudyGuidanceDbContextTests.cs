@@ -36,7 +36,7 @@ namespace StudyGuidance.Infrastructure.Tests
         {
             var optionsList = _context.Options.ToList();
             Assert.IsNotNull(optionsList);
-            Assert.That(25, Is.EqualTo(optionsList.Count));
+            Assert.That(29, Is.EqualTo(optionsList.Count));
             Assert.IsTrue(optionsList.Any(o => o.Content == "AI"));
             Assert.IsTrue(optionsList.Any(o => o.Content == "Fullstack"));
         }
