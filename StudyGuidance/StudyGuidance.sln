@@ -17,9 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyGuidance.Infrastructur
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyGuidance.Api.Tests", "StudyGuidance.Api.Tests\StudyGuidance.Api.Tests.csproj", "{0B458C75-EB6F-4D05-BA40-828AEBE26C99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyGuidance.Domain.Tests", "StudyGuidance.Domain.Tests\StudyGuidance.Domain.Tests.csproj", "{0B0AD721-1432-4F89-9A08-CCC91D17B3C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyGuidance.Domain.Tests", "StudyGuidance.Domain.Tests\StudyGuidance.Domain.Tests.csproj", "{0B0AD721-1432-4F89-9A08-CCC91D17B3C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyGuidance.Web.Tests", "StudyGuidance.Web.Tests\StudyGuidance.Web.Tests.csproj", "{6B6D6515-E61B-49ED-8062-8E681F6D285C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyGuidance.Web.Tests", "StudyGuidance.Web.Tests\StudyGuidance.Web.Tests.csproj", "{6B6D6515-E61B-49ED-8062-8E681F6D285C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
