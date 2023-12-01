@@ -20,7 +20,7 @@
                                     {
                                         <div class="text-center align-items-end">
                                             <button href="jobs" class="btn btn-primary w-75" style=" border-radius: 15px !important; background-color: #062455 !important;border-color: #062455 !important;">
-                                                <a href="jobs">Naar Jobs</a>
+                                                <a href="/jobs/@player.Name.ToString()">Naar Jobs</a>
                                             </button>
                                         </div>
                                     }
@@ -45,9 +45,9 @@
 @code {
     private List<PlayerModel> players = new List<PlayerModel>
     {
-        new PlayerModel { Name = "Debbie", Description="ik weet niet wat ik wil doen, help! :(", ImagePath = "/images/woman.png", ShowFront = true, ImageStyle = "width: 100%; height: 100%;", HrStyle= "height: 3px; border: none; background-color: white; opacity: revert;", HrStyleBack="height: 0; visibility: hidden; margin: 0;", CardBodyStyle="", DivStyle="" },
-        new PlayerModel { Name = "Gustaph", Description="sqdqs ldkqsldmqs kldqsk dlqskdlm qsdmqsld qsld qmldq slmdqsmld qsl kqsmld", ImagePath = "/images/man.png", ShowFront = true, ImageStyle = "width: 100%; height: 100%;", HrStyle= "height: 3px; border: none; background-color: white; opacity: revert;", HrStyleBack="height: 0; visibility: hidden; margin: 0;", CardBodyStyle="", DivStyle="" },
-        new PlayerModel { Name = "Ayoub", Description="Ik Weet wat ik wil doen lets go!!!!!!", ImagePath = "/images/man2.png", ShowFront = true, ImageStyle = "width: 100%; height: 100%;", HrStyle= "height: 3px; border: none; background-color: white; opacity: revert;", HrStyleBack="height: 0; visibility: hidden; margin: 0;", CardBodyStyle="", DivStyle="" },
+        new PlayerModel { Name = "Debbie", Description="Ik heb geen technische achtergrond en ik ben onzeker over welke baan het beste bij me past.", ImagePath = "/images/woman.png", ShowFront = true, ImageStyle = "width: 100%; height: 100%;", HrStyle= "height: 3px; border: none; background-color: white; opacity: revert;", HrStyleBack="height: 0; visibility: hidden; margin: 0;", CardBodyStyle="", DivStyle="" },
+        new PlayerModel { Name = "Gustaph", Description="Ik weet wat voor werk ik wil doen en zoek hiervoor een bijpassende studierichting.", ImagePath = "/images/man.png", ShowFront = true, ImageStyle = "width: 100%; height: 100%;", HrStyle= "height: 3px; border: none; background-color: white; opacity: revert;", HrStyleBack="height: 0; visibility: hidden; margin: 0;", CardBodyStyle="", DivStyle="" },
+        new PlayerModel { Name = "Ayoub", Description="Ik heb een technische achtergrond maar weet niet welke job bij mij past.", ImagePath = "/images/man2.png", ShowFront = true, ImageStyle = "width: 100%; height: 100%;", HrStyle= "height: 3px; border: none; background-color: white; opacity: revert;", HrStyleBack="height: 0; visibility: hidden; margin: 0;", CardBodyStyle="", DivStyle="" },
     };
 
     private void FlipCard(PlayerModel player)

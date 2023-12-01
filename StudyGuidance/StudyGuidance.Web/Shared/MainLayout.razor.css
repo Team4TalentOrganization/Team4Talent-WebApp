@@ -8,6 +8,14 @@ main {
     flex: 1;
 }
 
+#mail{
+    color: #FF6900;
+}
+
+#linkCookieCrunchers {
+    color: #062455;
+}
+
 .sidebar {
     background-color: white;
 }

@@ -97,7 +97,20 @@ namespace StudGuidance.Api.Controllers
             return Ok(allJobs);
         }
 
-        [HttpGet("jobsByFilter")]
+		[HttpGet("jobs/detail/{id}")]
+		public async Task<IActionResult> GetJobById(int id)
+		{
+			Job job = await _questionRepository.GetJobByIdAsync(id);
+
+			if (job == null)
+			{
+				return NotFound("Job niet gevonden");
+			}
+
+			return Ok(job);
+		}
+
+		[HttpGet("jobsByFilter")]
         public async Task<IActionResult> GetAllJobsByFilter([FromQuery] List<string> subdomains, [FromQuery] bool workInTeam, [FromQuery] bool workOnSite)
         {
             IReadOnlyList<Job> allJobsByFilter = await _questionRepository.GetJobsByFilterAsync(subdomains, workInTeam, workOnSite);

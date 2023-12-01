@@ -50,10 +50,15 @@ namespace StudyGuidance.Infrastructure
         public async Task<IReadOnlyList<Job>> GetJobsByFilterAsync(List<string> subdomains, bool workInTeam, bool workOnSite)
         {
             var matchingJobs = await _context.Jobs
-                .Where(job => subdomains.Contains(job.SubDomain) && job.WorkInTeam == workInTeam && job.WorkOnSite == workOnSite)
+                .Where(job => subdomains.Contains(job.SubDomain) && job.WorkInTeam == workInTeam || job.WorkOnSite == workOnSite)
                 .ToListAsync();
 
             return matchingJobs;
         }
-    }
+
+		public async Task<Job> GetJobByIdAsync(int id)
+		{
+			return await _context.Jobs.SingleOrDefaultAsync(j => j.JobId == id);
+		}
+	}
 }
