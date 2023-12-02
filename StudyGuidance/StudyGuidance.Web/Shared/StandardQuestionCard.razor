@@ -1,5 +1,7 @@
 ﻿@using System.Text;
-@inject HttpClient httpClient
+@using StudyGuidance.Web.Models;
+@using StudyGuidance.Web.ApiClient;
+@inject IQuizApiClient QuizApiClient;
 @inject IJSRuntime JS
 @if (!quizEnded)
 {
@@ -133,30 +135,13 @@ else
         ResetCardClasses();
         if (GetCurrentQuestionPhrase() == "In welk subdomein heb je interesse?" && !subDomainsAreSet)
         {
-            StringBuilder endpointBuilder = new StringBuilder("https://localhost:7109/api/Quiz/subdomains?");
-            List<Option> subDomains = new List<Option>();
+            Task<List<Option>> selectedDomains = QuizApiClient.GetSubdomains(domainAnswers);
             bool isFirstDomain = true;
 
-            foreach (int domainId in domainAnswers)
-            {
-                if (!isFirstDomain)
-                {
-                    endpointBuilder.Append("&");
-                }
-
-                endpointBuilder.Append($"domainId={domainId}");
-
-                isFirstDomain = false;
-            }
-
-            string endpointString = endpointBuilder.ToString();
-
-            subDomains = await httpClient.GetFromJsonAsync<List<Option>>(endpointString);
-            questions[currentQuestion].Options = subDomains;
+            questions[currentQuestion].Options = await selectedDomains;
             await JS.InvokeVoidAsync("console.log", questions[currentQuestion].Options);
             subDomainsAreSet = true;
         }
-        await JS.InvokeVoidAsync("console.log", questions);
     }
 
     public void previousQuestionClicked()
@@ -196,56 +181,6 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        questions = await httpClient.GetFromJsonAsync<List<Question>>("https://localhost:7109/api/Quiz/standardquizquestions");
-
-        // Iterate through the questions
-        for (int i = 0; i < questions.Count; i++)
-        {
-            // Check if the current question has 3 or fewer options
-            if (questions[i].Options.Count <= 3)
-            {
-                // Calculate the number of empty options to add
-                int emptyOptionsToAdd = 4 - questions[i].Options.Count;
-
-                // Add new empty options to the current question
-                for (int j = 0; j < emptyOptionsToAdd; j++)
-                {
-                    questions[i].Options.Add(new Option()); // You can change this to the default value for new options
-                }
-            }
-            else if (questions[i].Options.Count > 4)
-            {
-                // Create a new question with the remaining options
-                var remainingOptions = questions[i].Options.Skip(4).ToList();
-                var newQuestion = new Question
-                    {
-                        Options = remainingOptions,
-                        QuestionId = questions[i].QuestionId, // Use the same QuestionId if needed
-                        Phrase = questions[i].Phrase
-                    };
-
-                // Insert the new question right after the current question
-                questions.Insert(i + 1, newQuestion);
-
-                // Trim the current question's options to the first 4
-                questions[i].Options = questions[i].Options.Take(4).ToList();
-            }
-        }
-    }
-
-
-    private class Question
-    {
-        public List<Option> Options { get; set; }
-        public int QuestionId { get; set; }
-        public string Phrase { get; set; }
-    }
-
-    private class Option
-    {
-        public string Content { get; set; }
-        public int OptionRelation { get; set; }
-        public int QuestionId { get; set; }
-        public int OptionId { get; set; }
+        questions = await QuizApiClient.GetAllStandardQuizQuestions();
     }
 }

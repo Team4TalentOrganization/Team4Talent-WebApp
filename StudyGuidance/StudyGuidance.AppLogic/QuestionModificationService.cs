@@ -9,7 +9,7 @@ namespace StudyGuidance.AppLogic
     {
         public IReadOnlyList<Question> ModifyQuestions(IReadOnlyList<Question> questions)
         {
-            List<Question> modifiedQuestions = new List<Question>(questions);
+            List<Question> modifiedQuestions = new List<Question>();
 
             foreach (Question question in questions)
             {
@@ -29,19 +29,30 @@ namespace StudyGuidance.AppLogic
                 {
                     // Create a new question with the remaining options
                     var remainingOptions = question.Options.Skip(4).ToList();
-                    var newQuestion = new Question
-                    {
-                        Options = remainingOptions,
-                        QuestionId = question.QuestionId, // Use the same QuestionId if needed
-                        Phrase = question.Phrase // Add a suffix to indicate continuation
-                    };
 
-                    // Insert the new question right after the current question
-                    modifiedQuestions.Insert(modifiedQuestions.IndexOf(question) + 1, newQuestion);
+                    // Keep creating new questions until all remaining options are used
+                    while (remainingOptions.Count > 0)
+                    {
+                        var newQuestion = new Question
+                        {
+                            Options = remainingOptions.Take(4).ToList(),
+                            QuestionId = question.QuestionId, // Use the same QuestionId if needed
+                            Phrase = question.Phrase // Add a suffix to indicate continuation
+                        };
+
+                        // Insert the new question right after the current question
+                        modifiedQuestions.Add(newQuestion);
+
+                        // Trim the remaining options
+                        remainingOptions = remainingOptions.Skip(4).ToList();
+                    }
 
                     // Trim the current question's options to the first 4
                     question.Options = question.Options.Take(4).ToList();
                 }
+
+                // Add the modified or original question to the list
+                modifiedQuestions.Add(question);
             }
 
             // Ensure that every question has exactly 4 options
