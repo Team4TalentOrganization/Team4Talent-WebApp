@@ -32,11 +32,14 @@
     [Parameter]
     public List<int> SubDomainAnswers { get; set; }
 
-    bool IsActive = true;
 
-    AnimationEffect Effecten = Effect.ZoomIn; 
+    private bool IsActive = true;
 
-    List<string> imagesList = new List<string>
+    private AnimationEffect Effecten = Effect.ZoomIn; 
+    private event EventHandler AnimationComplete;
+
+
+    private List<string> imagesList = new List<string>
     {
         "/images/tinderquestion1.jpg",
         "/images/tinderquestion2.jpg" ,
@@ -49,13 +52,13 @@
     //     "Applicatie Ontwikkeling",
     //     "AI"
     // };
-    List<Question> questionsList = new List<Question>();
+    private List<Question> questionsList = new List<Question>();
 
-    List<string> answers = new List<string>();
+    private List<string> answers = new List<string>();
 
-    int currentQuestion = 0;
+    private int currentQuestion = 0;
 
-    public string GetAnswerForCurrentQuestion()
+    private string GetAnswerForCurrentQuestion()
     {
         if (currentQuestion >= 0 && currentQuestion < imagesList.Count)
         {
@@ -71,36 +74,44 @@
     // {
     //     return questionsList[currentQuestion];
     // }
-    public string GetQuestionForCurrentQuestion()
+    private string GetQuestionForCurrentQuestion()
     {
         return questionsList[currentQuestion].Phrase;
     }
 
-    public async void nextQuestionClicked(string answer)
+    private async Task nextQuestionClicked(string answer)
     {
-        if(answer != null)
+        if (answer != null)
         {
             answers.Add(answer);
             await JS.InvokeVoidAsync("console.log", answers);
             IsActive = true;
             Effecten = Effect.FadeOutTopRight;
-        } else
+        }
+        else
         {
             IsActive = true;
             Effecten = Effect.FadeOutTopLeft;
         }
 
-        if(currentQuestion == imagesList.Count - 1)
+        if (currentQuestion == questionsList.Count - 1)
         {
             sendAnswersToBackend(answers);
+            var tcs = new TaskCompletionSource<object>();
+
+            AnimationComplete += (sender, args) => tcs.SetResult(null);
+
+            // Wait for the animation to complete
+            await tcs.Task;
+
             NavigationManager.NavigateTo("/jobs");
-        } else
+        }
+        else
         {
             currentQuestion = currentQuestion + 1;
         }
-
-
     }
+
 
     private void sendAnswersToBackend(List<string> answers)
     {
@@ -110,6 +121,7 @@
     private void End()
     {
         IsActive = false;
+        AnimationComplete?.Invoke(this, EventArgs.Empty);
         StateHasChanged();
     }
 
