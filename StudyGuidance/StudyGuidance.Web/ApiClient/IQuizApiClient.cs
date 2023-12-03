@@ -5,7 +5,9 @@ namespace StudyGuidance.Web.ApiClient
     public interface IQuizApiClient
     {
         Task<List<Question>> GetAllQuestions();
+        Task<List<Question>> GetAllDomainQuestions();
         Task<List<Question>> GetAllStandardQuizQuestions();
-        Task<List<Option>> GetSubdomains(List<int> domainIds);
+        Task<List<Question>> GetAllTinderQuizQuestions();
+        Task<List<Question>> GetSubdomains(List<int> domainIds);
     }
 }

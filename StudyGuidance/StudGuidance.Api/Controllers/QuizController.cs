@@ -30,6 +30,20 @@ namespace StudGuidance.Api.Controllers
             return Ok(allQuestions);
         }
 
+        [HttpGet("domainquestions")]
+        public async Task<IActionResult> GetAllDomainQuestions()
+        {
+            IReadOnlyList<Question> allDomainQuestions = await _questionRepository.GetDomainQuestionsAsync();
+            allDomainQuestions = _questionModificationService.ModifyQuestions(allDomainQuestions);
+
+            if (allDomainQuestions.Count <= 0)
+            {
+                return NotFound("AllQuestions bevat geen inhoud");
+            }
+
+            return Ok(allDomainQuestions);
+        }
+
         [HttpGet("standardquizquestions")]
         public async Task<IActionResult> GetAllStandardQuizQuestions()
         {
@@ -74,14 +88,15 @@ namespace StudGuidance.Api.Controllers
         [HttpGet("subdomains")]
         public async Task<IActionResult> GetAllSubDomains([FromQuery] List<int> domainId)
         {
-            IReadOnlyList<Option> allSubDomains = await _questionRepository.GetSubDomainsAsync(domainId);
+            IReadOnlyList<Question> allSelectedSubDomains = await _questionRepository.GetSelectedSubDomainsAsync(domainId);
+            allSelectedSubDomains = _questionModificationService.ModifyQuestions(allSelectedSubDomains);
 
-            if(allSubDomains.Count == 0) 
+            if (allSelectedSubDomains.Count == 0) 
             { 
                 return NotFound("SubDomains bevat geen inhoud");
             }
 
-            return Ok(allSubDomains);
+            return Ok(allSelectedSubDomains);
         }
 
         [HttpGet("jobs")]

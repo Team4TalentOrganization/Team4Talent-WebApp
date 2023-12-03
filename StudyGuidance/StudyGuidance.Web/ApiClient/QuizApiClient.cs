@@ -12,6 +12,11 @@ namespace StudyGuidance.Web.ApiClient
         {
         }
 
+        public async Task<List<Question>> GetAllDomainQuestions()
+        {
+            return await GetJsonAsync<List<Question>>($"{_url}/domainquestions");
+        }
+
         public async Task<List<Question>> GetAllQuestions()
         {
             return await GetJsonAsync<List<Question>>($"{_url}/questions");
@@ -22,7 +27,12 @@ namespace StudyGuidance.Web.ApiClient
             return await GetJsonAsync<List<Question>>($"{_url}/standardquizquestions");
         }
 
-        public async Task<List<Option>> GetSubdomains(List<int> domainIds)
+        public async Task<List<Question>> GetAllTinderQuizQuestions()
+        {
+            return await GetJsonAsync<List<Question>>($"{_url}/tinderquizquestions");
+        }
+
+        public async Task<List<Question>> GetSubdomains(List<int> domainIds)
         {
             StringBuilder endpointBuilder = new StringBuilder();
             endpointBuilder.Append(_url);
@@ -43,7 +53,7 @@ namespace StudyGuidance.Web.ApiClient
 
             string endpointString = endpointBuilder.ToString();
 
-            return await GetJsonAsync<List<Option>>(endpointString);
+            return await GetJsonAsync<List<Question>>(endpointString);
         }
     }
 }

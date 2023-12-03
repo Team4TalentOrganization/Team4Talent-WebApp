@@ -28,7 +28,7 @@ namespace StudyGuidance.Infrastructure.Tests
             Assert.IsTrue(questions.Any(q => q.Phrase == "In welk domein heb je interesse?"));
             Assert.IsTrue(questions.Any(q => q.Phrase == "In welk subdomein heb je interesse?"));
             Assert.IsTrue(questions.Any(q => q.Phrase == "Werk je graag vaak in groep?"));
-            Assert.IsTrue(questions.Any(q => q.Phrase == "Houd je ervan om regelmatig andere bedrijven te bezoeken?"));
+            Assert.IsTrue(questions.Any(q => q.Phrase == "Reis je graag voor je werk?"));
         }
 
         [Test]
@@ -68,7 +68,7 @@ namespace StudyGuidance.Infrastructure.Tests
             Assert.IsTrue(questionsWithOptions.Any(q => q.Phrase == "In welk domein heb je interesse?" && q.Options.Any()));
             Assert.IsTrue(questionsWithOptions.Any(q => q.Phrase == "In welk subdomein heb je interesse?" && q.Options.Any()));
             Assert.IsTrue(questionsWithOptions.Any(q => q.Phrase == "Werk je graag vaak in groep?"));
-            Assert.IsTrue(questionsWithOptions.Any(q => q.Phrase == "Houd je ervan om regelmatig andere bedrijven te bezoeken?"));
+            Assert.IsTrue(questionsWithOptions.Any(q => q.Phrase == "Reis je graag voor je werk?"));
         }
 
         [Test]

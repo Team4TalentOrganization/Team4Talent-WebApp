@@ -14,12 +14,14 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
 
         private QuizController _controller;
         private Mock<IQuizRepository> _questionRepositoryMock;
+        private Mock<IQuestionModificationService> _questionModificationServiceMock;
 
         [SetUp]
         public void SetUp()
         {
             _questionRepositoryMock = new Mock<IQuizRepository>();
-            _controller = new QuizController(_questionRepositoryMock.Object);
+            _questionModificationServiceMock = new Mock<IQuestionModificationService>();
+            _controller = new QuizController(_questionRepositoryMock.Object, _questionModificationServiceMock.Object);
         }
 
         [Test]
@@ -31,6 +33,8 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
                 new QuestionBuilder().Build(),
             };
             _questionRepositoryMock.Setup(repo => repo.GetQuestionsAsync()).ReturnsAsync(questions);
+
+            _questionModificationServiceMock.Setup(service => service.ModifyQuestions(It.IsAny<List<Question>>())).Returns<List<Question>>(inputQuestions => inputQuestions);
 
             var result = await _controller.GetAllQuestions();
 
@@ -60,12 +64,13 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
         public async Task GetAllSubDomains_WithValidDomainIds_ReturnsOkWithSubDomains()
         {
             var domainIds = new List<int> { 1, 2 };
-            var subDomains = new List<Option>
+            var subDomains = new List<Question>
             {
-                new OptionBuilder().WithQuestionId(domainIds[0]).Build(),
-                new OptionBuilder().WithQuestionId(domainIds[1]).Build(),
+                new QuestionBuilder().WithQuestionId(domainIds[0]).Build(),
+                new QuestionBuilder().WithQuestionId(domainIds[1]).Build(),
             };
-            _questionRepositoryMock.Setup(repo => repo.GetSubDomainsAsync(domainIds)).ReturnsAsync(subDomains);
+            _questionRepositoryMock.Setup(repo => repo.GetSelectedSubDomainsAsync(domainIds)).ReturnsAsync(subDomains);
+            _questionModificationServiceMock.Setup(service => service.ModifyQuestions(It.IsAny<List<Question>>())).Returns<List<Question>>(inputQuestions => inputQuestions);
 
             var result = await _controller.GetAllSubDomains(domainIds);
 
@@ -78,8 +83,9 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
         public async Task GetAllSubDomains_WithInvalidDomainIds_ReturnsNotFound()
         {
             var invalidDomainIds = new List<int> { 3, 4 };
-            var subDomains = new List<Option> { };
-            _questionRepositoryMock.Setup(repo => repo.GetSubDomainsAsync(invalidDomainIds)).ReturnsAsync(subDomains);
+            var subDomains = new List<Question> { };
+            _questionRepositoryMock.Setup(repo => repo.GetSelectedSubDomainsAsync(invalidDomainIds)).ReturnsAsync(subDomains);
+            _questionModificationServiceMock.Setup(service => service.ModifyQuestions(It.IsAny<List<Question>>())).Returns<List<Question>>(inputQuestions => inputQuestions);
 
             var result = await _controller.GetAllSubDomains(invalidDomainIds);
 
@@ -91,6 +97,7 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
         {
             var emptyList = new List<Question>();
             _questionRepositoryMock.Setup(repo => repo.GetQuestionsAsync()).ReturnsAsync(emptyList);
+            _questionModificationServiceMock.Setup(service => service.ModifyQuestions(It.IsAny<List<Question>>())).Returns<List<Question>>(inputQuestions => inputQuestions);
 
             // Act
             var result = await _controller.GetAllQuestions();

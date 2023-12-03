@@ -37,7 +37,8 @@ namespace StudyGuidance.AppLogic
                         {
                             Options = remainingOptions.Take(4).ToList(),
                             QuestionId = question.QuestionId, // Use the same QuestionId if needed
-                            Phrase = question.Phrase // Add a suffix to indicate continuation
+                            Phrase = question.Phrase, // Add a suffix to indicate continuation
+                            QuestionType = question.QuestionType,
                         };
 
                         // Insert the new question right after the current question

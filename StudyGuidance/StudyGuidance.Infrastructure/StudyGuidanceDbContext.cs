@@ -39,7 +39,7 @@ namespace StudyGuidance.Infrastructure
 
             var workOnSiteQuestion = new Question
             {
-                Phrase = "Houd je ervan om regelmatig andere bedrijven te bezoeken?",
+                Phrase = "Reis je graag voor je werk?",
                 QuestionId = 4,
                 QuestionType = QuestionType.TinderQuizQuestion
             };

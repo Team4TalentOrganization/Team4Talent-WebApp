@@ -81,21 +81,31 @@ namespace StudyGuidance.Infrastructure.Tests
         public async Task GetSubDomainsAsync_ReturnsAllSubDomainsFromRepository()
         {
             // Arrange
-            var subDomains = new List<Option>
+            var subDomains = new List<Question>
             {
-                new Option { OptionId = 6, Content = "Subdomain 1", OptionRelation = 1 },
-                new Option { OptionId = 7, Content = "Subdomain 2", OptionRelation = 2 }
+                new Question
+                {
+                    // Assuming properties for Question (e.g., Phrase) are present
+                    Phrase = "Question 1",
+                    Options = new List<Option>
+                    {
+                        new Option { OptionId = 6, Content = "Subdomain 1", OptionRelation = 1 },
+                        new Option { OptionId = 7, Content = "Subdomain 2", OptionRelation = 2 }
+                    }
+                },
+                // Add more questions if needed
             };
 
-            _dbContext.Options.AddRange(subDomains);
+
+            _dbContext.Questions.AddRange(subDomains);
             _dbContext.SaveChanges();
 
             // Act
-            var result = await _repository.GetSubDomainsAsync(new List<int> { 1, 2 });
+            var result = await _repository.GetSelectedSubDomainsAsync(new List<int> { 1 });
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.That(2, Is.EqualTo(result.Count));
+            Assert.That(1, Is.EqualTo(result.Count));
         }
 
         [Test]

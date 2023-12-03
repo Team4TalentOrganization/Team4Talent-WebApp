@@ -2,7 +2,6 @@
 @using StudyGuidance.Web.Models;
 @using StudyGuidance.Web.ApiClient;
 @inject IQuizApiClient QuizApiClient;
-@inject IJSRuntime JS
 @if (!quizEnded)
 {
     <Animation Effect="Effect.ZoomIn" Speed="@Speed.Fast">
@@ -49,7 +48,7 @@
             }
         </div>
     </Animation>
-    @if (currentQuestion < questions.Count - 2)
+    @if (currentQuestion < questionsList.Count -1 || !subDomainsAreSet)
     {
         <button @onclick="() => nextQuestionClicked()" disabled="@(!AreAnyCardsSelected())" type="button" class="nextButton btn btn-primary rounded-btn">VOLGENDE VRAAG</button>
     }
@@ -60,35 +59,36 @@
 }
 else
 {
-    <TinderQuestionCard></TinderQuestionCard>
+    <TinderQuestionCard SubDomainAnswers="subDomainAnswers"></TinderQuestionCard>
 }
 
 
 @code {
-    bool quizEnded = false;
-    int currentQuestion = 0;
-    private List<Question> questions = new List<Question>();
-    private List<int> domainAnswers = new List<int>();
-    bool subDomainsAreSet = false;
+    private bool quizEnded = false;
+    private int currentQuestion = 0;
+    private List<Question> questionsList = new List<Question>();
+    private List<int> subDomainAnswers = new List<int>();
+    private List<Question> selectedDomains = new List<Question>();
+    private bool subDomainsAreSet = false;
 
-    string[] CardClasses = new string[4] { "card text-black h-50 mb-3", "card text-black h-50 mb-3", "card text-black h-50 mb-3", "card text-black h-50 mb-3" };
+    private string[] CardClasses = new string[4] { "card text-black h-50 mb-3", "card text-black h-50 mb-3", "card text-black h-50 mb-3", "card text-black h-50 mb-3" };
 
-    async Task MouseOver(int cardNumber)
+    private async Task MouseOver(int cardNumber)
     {
         await SetCardClass(cardNumber, CardClasses[cardNumber].Contains("bg-orange-color-click") ? "card text-white bg-orange-color-click h-50 mb-3" : "card text-white bg-orange-color h-50 mb-3");
     }
 
-    async Task MouseOut(int cardNumber)
+    private async Task MouseOut(int cardNumber)
     {
         await SetCardClass(cardNumber, CardClasses[cardNumber].Contains("bg-orange-color-click") ? "card text-white bg-orange-color-click h-50 mb-3" : "card text-black h-50 mb-3");
     }
 
-    async Task SetCardClass(int cardNumber, string cssClass)
+    private async Task SetCardClass(int cardNumber, string cssClass)
     {
         CardClasses[cardNumber] = cssClass;
     }
 
-    void CardClicked(int cardNumber)
+    private void CardClicked(int cardNumber)
     {
         // Check if the option is not empty before toggling
         if (!IsOptionValueEmpty(GetOptionsForCurrentQuestion()[cardNumber]))
@@ -103,52 +103,66 @@ else
                 CardClasses[cardNumber] = "card text-white bg-orange-color-click h-50 mb-3";
             }
         }
+        else
+        {
+            CardClasses[cardNumber] = "card text-black h-50 mb-3";
+        }
     }
 
     private List<string> GetOptionsForCurrentQuestion()
     {
-        return questions[currentQuestion].Options.Select(option => option.Content).ToList();
+        return questionsList[currentQuestion].Options.Select(option => option.Content).ToList();
     }
     private List<int> GetOptionIdForCurrentQuestion()
     {
-        return questions[currentQuestion].Options.Select(option => option.OptionId).ToList();
+        return questionsList[currentQuestion].Options.Select(option => option.OptionId).ToList();
     }
 
-    public string GetCurrentQuestionPhrase()
+    private string GetCurrentQuestionPhrase()
     {
-        return questions.ElementAt(currentQuestion).Phrase;
+        return questionsList.ElementAt(currentQuestion).Phrase;
     }
 
-    public async void nextQuestionClicked()
+    private string GetNextQuestionPhrase()
     {
-        if (GetCurrentQuestionPhrase() == "In welk domein heb je interesse?")
+        return questionsList.ElementAt(currentQuestion + 1).Phrase;
+    }
+
+    private async Task nextQuestionClicked()
+    {
+        for(int i = 0; i < 4; i++)
         {
-            for(int i = 0; i < 4; i++)
+            if (CardClasses[i] == "card text-white bg-orange-color-click h-50 mb-3")
             {
-                if (CardClasses[i] == "card text-white bg-orange-color-click h-50 mb-3")
-                {
-                    domainAnswers.Add(GetOptionIdForCurrentQuestion()[i]);
-                }
+                subDomainAnswers.Add(GetOptionIdForCurrentQuestion()[i]);
             }
         }
-        currentQuestion++;
-        ResetCardClasses();
-        if (GetCurrentQuestionPhrase() == "In welk subdomein heb je interesse?" && !subDomainsAreSet)
-        {
-            Task<List<Option>> selectedDomains = QuizApiClient.GetSubdomains(domainAnswers);
-            bool isFirstDomain = true;
 
-            questions[currentQuestion].Options = await selectedDomains;
-            await JS.InvokeVoidAsync("console.log", questions[currentQuestion].Options);
+        ResetCardClasses();
+
+        if (currentQuestion == questionsList.Count -1 && !subDomainsAreSet)
+        {
+            selectedDomains = await QuizApiClient.GetSubdomains(subDomainAnswers);
+            foreach(Question selectedDomain in selectedDomains)
+            {
+                questionsList.Add(selectedDomain);
+            }
             subDomainsAreSet = true;
         }
+        currentQuestion++;
     }
 
-    public void previousQuestionClicked()
+    private void previousQuestionClicked()
     {
         if (currentQuestion > 0)
         {
             currentQuestion--;
+            if (GetCurrentQuestionPhrase() == "In welk domein heb je interesse?")
+            {
+                questionsList.RemoveAll(questions => questions.Phrase.Contains("In welk subdomein heb je interesse?"));
+                subDomainsAreSet = false;
+                subDomainAnswers.Clear();
+            }
             ResetCardClasses();
         }
     }
@@ -161,18 +175,22 @@ else
         }
     }
 
-    public void endQuizClicked() {
+    private void endQuizClicked() {
         quizEnded = true;
     }
 
-    public bool AreAnyCardsSelected()
+    private bool AreAnyCardsSelected()
     {
-        return CardClasses.Any(cc => cc.Contains("bg-orange-color-click"));
+        if (!subDomainAnswers.Any() && currentQuestion == questionsList.Count)
+        {
+            return false;
+        }
+        return true;
     }
 
-    public bool IsOptionValueEmpty(string value)
+    private bool IsOptionValueEmpty(string value)
     {
-        if (value == null)
+        if (string.IsNullOrEmpty(value))
         {
             return true;
         }
@@ -181,6 +199,6 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        questions = await QuizApiClient.GetAllStandardQuizQuestions();
+        questionsList = await QuizApiClient.GetAllDomainQuestions();
     }
 }
