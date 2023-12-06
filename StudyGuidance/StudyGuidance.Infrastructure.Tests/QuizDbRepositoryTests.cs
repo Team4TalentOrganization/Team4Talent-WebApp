@@ -135,9 +135,9 @@ namespace StudyGuidance.Infrastructure.Tests
             // Arrange
             var jobs = new List<Job>
             {
-                new Job { JobId = 1, SubDomain = "Subdomain 1", WorkInTeam = true, WorkOnSite = true },
-                new Job { JobId = 2, SubDomain = "Subdomain 2", WorkInTeam = false, WorkOnSite = false },
-                new Job { JobId = 3, SubDomain = "Subdomain 3", WorkInTeam = true, WorkOnSite = false }
+                new Job { JobId = 1, OptionRelation = 5, SubDomain = "Subdomain 1", WorkInTeam = true, WorkOnSite = true },
+                new Job { JobId = 2, OptionRelation = 6, SubDomain = "Subdomain 2", WorkInTeam = false, WorkOnSite = false },
+                new Job { JobId = 3, OptionRelation = 7, SubDomain = "Subdomain 3", WorkInTeam = true, WorkOnSite = false }
             };
 
             bool workInTeam = true;
@@ -147,12 +147,12 @@ namespace StudyGuidance.Infrastructure.Tests
             _dbContext.SaveChanges();
 
             // Act
-            var result = await _repository.GetJobsByFilterAsync(new List<string> { "Subdomain 1", "Subdomain 2" }, workInTeam, workOnSite);
+            var result = await _repository.GetJobsByFilterAsync(new List<int> { 5, 6 }, workInTeam, workOnSite);
 
             // Assert
             Assert.IsNotNull(result);
             Assert.That(1, Is.EqualTo(result.Count));
-            Assert.That(result.Select(job => job.SubDomain), Is.EquivalentTo(new[] { "Subdomain 1"}));
+            Assert.That(result.Select(job => job.SubDomain), Is.EquivalentTo(new[] { "Subdomain 1" }));
         }
 
         [TearDown]

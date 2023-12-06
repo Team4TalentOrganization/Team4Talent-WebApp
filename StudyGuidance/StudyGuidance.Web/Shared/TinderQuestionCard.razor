@@ -30,9 +30,10 @@
     @inject IQuizApiClient QuizApiClient;
 
     [Parameter]
-    public List<int> SubDomainAnswers { get; set; }
+    public List<int> subDomainAnswers { get; set; }
 
-
+    private bool workInTeam = false;
+    private bool workOnSite = false;
     private bool IsActive = true;
 
     private AnimationEffect Effecten = Effect.ZoomIn; 
@@ -83,8 +84,14 @@
     {
         if (answer != null)
         {
-            answers.Add(answer);
-            await JS.InvokeVoidAsync("console.log", answers);
+            if (questionsList[currentQuestion].Phrase == "Werk je graag vaak in groep?")
+            {
+                workInTeam = true;
+            } else
+            if (questionsList[currentQuestion].Phrase == "Reis je graag voor je werk?")
+            {
+                workOnSite = true;
+            }
             IsActive = true;
             Effecten = Effect.FadeOutTopRight;
         }
@@ -103,8 +110,11 @@
 
             // Wait for the animation to complete
             await tcs.Task;
-
-            NavigationManager.NavigateTo("/jobs");
+            await JS.InvokeVoidAsync("console.log", answers);
+            await JS.InvokeVoidAsync("console.log", workInTeam);
+            await JS.InvokeVoidAsync("console.log", workOnSite);
+            string queryParams = $"?answers={string.Join(",", answers)}&workInTeam={workInTeam}&workOnSite={workOnSite}";
+            NavigationManager.NavigateTo("/jobs" + queryParams);
         }
         else
         {
@@ -128,6 +138,6 @@
     protected override async Task OnInitializedAsync()
     {
         questionsList = await QuizApiClient.GetAllTinderQuizQuestions();
-        answers = SubDomainAnswers.ConvertAll(x => x.ToString());
+        answers = subDomainAnswers.ConvertAll(x => x.ToString());
     }
 }

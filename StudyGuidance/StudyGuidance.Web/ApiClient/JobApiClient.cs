@@ -36,7 +36,8 @@ namespace StudyGuidance.Web.ApiClient
 
         public async Task<List<Job>> GetJobsByFilterAsync(List<string> subdomains, bool workInTeam, bool workOnSite)
         {
-            string url = $"{_url}/jobsByFilter?subdomains={string.Join(",", subdomains)}&workInTeam={workInTeam}&workOnSite={workOnSite}";
+            string subdomainsParam = string.Join("&", subdomains.Select(subdomain => $"subdomains={subdomain}"));
+            string url = $"{_url}/jobsByFilter?{subdomainsParam}&workInTeam={workInTeam}&workOnSite={workOnSite}";
             return await GetJsonAsync<List<Job>>(url);
         }
     }

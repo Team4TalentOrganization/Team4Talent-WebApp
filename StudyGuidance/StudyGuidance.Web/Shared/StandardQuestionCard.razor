@@ -2,6 +2,7 @@
 @using StudyGuidance.Web.Models;
 @using StudyGuidance.Web.ApiClient;
 @inject IQuizApiClient QuizApiClient;
+@inject IJSRuntime JS;
 @if (!quizEnded)
 {
     <Animation Effect="Effect.ZoomIn" Speed="@Speed.Fast">
@@ -59,7 +60,7 @@
 }
 else
 {
-    <TinderQuestionCard SubDomainAnswers="subDomainAnswers"></TinderQuestionCard>
+    <TinderQuestionCard subDomainAnswers="subDomainAnswers"></TinderQuestionCard>
 }
 
 
@@ -67,6 +68,7 @@ else
     private bool quizEnded = false;
     private int currentQuestion = 0;
     private List<Question> questionsList = new List<Question>();
+    private List<int> domainAnswers = new List<int>();
     private List<int> subDomainAnswers = new List<int>();
     private List<Question> selectedDomains = new List<Question>();
     private bool subDomainsAreSet = false;
@@ -134,21 +136,26 @@ else
         {
             if (CardClasses[i] == "card text-white bg-orange-color-click h-50 mb-3")
             {
-                subDomainAnswers.Add(GetOptionIdForCurrentQuestion()[i]);
+                domainAnswers.Add(GetOptionIdForCurrentQuestion()[i]);
+
+                if (subDomainsAreSet)
+                {
+                    subDomainAnswers.Add(GetOptionIdForCurrentQuestion()[i]);
+                }
             }
         }
 
-        ResetCardClasses();
-
         if (currentQuestion == questionsList.Count -1 && !subDomainsAreSet)
         {
-            selectedDomains = await QuizApiClient.GetSubdomains(subDomainAnswers);
+            selectedDomains = await QuizApiClient.GetSubdomains(domainAnswers);
             foreach(Question selectedDomain in selectedDomains)
             {
                 questionsList.Add(selectedDomain);
             }
             subDomainsAreSet = true;
         }
+
+        ResetCardClasses();
         currentQuestion++;
     }
 
@@ -161,7 +168,7 @@ else
             {
                 questionsList.RemoveAll(questions => questions.Phrase.Contains("In welk subdomein heb je interesse?"));
                 subDomainsAreSet = false;
-                subDomainAnswers.Clear();
+                domainAnswers.Clear();
             }
             ResetCardClasses();
         }
@@ -176,12 +183,23 @@ else
     }
 
     private void endQuizClicked() {
+
+        for (int i = 0; i < 4; i++)
+        {
+            if (CardClasses[i] == "card text-white bg-orange-color-click h-50 mb-3")
+            {
+                if (subDomainsAreSet)
+                {
+                    subDomainAnswers.Add(GetOptionIdForCurrentQuestion()[i]);
+                }
+            }
+        }
         quizEnded = true;
     }
 
     private bool AreAnyCardsSelected()
     {
-        if (!subDomainAnswers.Any() && currentQuestion == questionsList.Count)
+        if (!domainAnswers.Any() && currentQuestion == questionsList.Count)
         {
             return false;
         }
