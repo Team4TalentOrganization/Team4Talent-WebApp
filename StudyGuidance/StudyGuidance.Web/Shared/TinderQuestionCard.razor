@@ -1,7 +1,10 @@
 ﻿@using StudyGuidance.Web.ApiClient;
 @using StudyGuidance.Web.Models;
+@inject NavigationManager NavigationManager;
+@inject IJSRuntime JS;
+@inject IQuizApiClient QuizApiClient;
 <Animation Effect="Effecten" Enabled="IsActive" Speed="@Speed.Fast" OnAnimationEnd="End">
-    <div class="container bg-custom-color text-center" style="width: 70%; height: 350px; position: relative; overflow: hidden; border-radius: 15px;">
+    <div class="container bg-custom-color text-center" style="width: 70%; height: 400px; position: relative; overflow: hidden; border-radius: 15px;">
         <div class="w-85 h-50 mx-auto mt-5 mb-3">
             <img class="w-100 h-85 mt-3 bg-custom-border" src="@GetAnswerForCurrentQuestion()" style="border-radius: 15px;" />
         </div>
@@ -25,10 +28,6 @@
 </Animation>
 
 @code {
-    @inject NavigationManager NavigationManager;
-    @inject IJSRuntime JS;
-    @inject IQuizApiClient QuizApiClient;
-
     [Parameter]
     public List<int> subDomainAnswers { get; set; }
 
@@ -47,12 +46,6 @@
         "/images/tinderquestion3.jpg" 
     };
 
-    // List<string> questionsList = new List<string>
-    // {
-    //     "Systeem NetwerkBeheer",
-    //     "Applicatie Ontwikkeling",
-    //     "AI"
-    // };
     private List<Question> questionsList = new List<Question>();
 
     private List<string> answers = new List<string>();
@@ -61,23 +54,12 @@
 
     private string GetAnswerForCurrentQuestion()
     {
-        if (currentQuestion >= 0 && currentQuestion < imagesList.Count)
-        {
-            return imagesList[currentQuestion];
-        }
-        else
-        {
-            return "Invalid question index";
-        }
+        return imagesList.ElementAtOrDefault(currentQuestion) ?? string.Empty;
     }
 
-    // public string GetQuestionForCurrentQuestion()
-    // {
-    //     return questionsList[currentQuestion];
-    // }
     private string GetQuestionForCurrentQuestion()
     {
-        return questionsList[currentQuestion].Phrase;
+        return questionsList.ElementAtOrDefault(currentQuestion)?.Phrase ?? string.Empty;
     }
 
     private async Task nextQuestionClicked(string answer)
@@ -103,7 +85,6 @@
 
         if (currentQuestion == questionsList.Count - 1)
         {
-            sendAnswersToBackend(answers);
             var tcs = new TaskCompletionSource<object>();
 
             AnimationComplete += (sender, args) => tcs.SetResult(null);
@@ -120,12 +101,6 @@
         {
             currentQuestion = currentQuestion + 1;
         }
-    }
-
-
-    private void sendAnswersToBackend(List<string> answers)
-    {
-        
     }
 
     private void End()

@@ -3,7 +3,7 @@
 @using StudyGuidance.Web.ApiClient;
 @inject IQuizApiClient QuizApiClient;
 @inject IJSRuntime JS;
-@if (!quizEnded)
+@if (!StandardQuizEnded)
 {
     <Animation Effect="Effect.ZoomIn" Speed="@Speed.Fast">
         <div class="container bg-custom-color" style="width: 70%; height: 350px; position: relative; overflow: hidden; border-radius: 15px;">
@@ -11,14 +11,14 @@
 
                     <div id="topLeftCard" class="card @CardClasses[0]" @onmouseover="() => MouseOver(0)" @onmouseout="() => MouseOut(0)" @onclick="() => CardClicked(0)">
                         <div class="card-body text-center d-flex align-items-center">
-                        <p class="m-auto">@GetOptionsForCurrentQuestion()[0]</p>
+                        <p class="m-auto" style="max-width: 100%; overflow: hidden; text-overflow: ellipsis; word-wrap: break-word; overflow-wrap: break-word;">@GetOptionsForCurrentQuestion().FirstOrDefault()</p>
                     </div>
                 </div>
                 
           
                     <div id="topRightCard" class="card @CardClasses[1]" @onmouseover="() => MouseOver(1)" @onmouseout="() => MouseOut(1)" @onclick="() => CardClicked(1)">
                     <div class="card-body text-center d-flex align-items-center">
-                        <p class="m-auto">@GetOptionsForCurrentQuestion()[1]</p>
+                        <p class="m-auto" style="max-width: 100%; overflow: hidden; text-overflow: ellipsis; word-wrap: break-word; overflow-wrap: break-word;">@GetOptionsForCurrentQuestion().ElementAtOrDefault(1)</p>
                     </div>
                 </div>
                 
@@ -27,35 +27,37 @@
           
                     <div id="bottomLeftCard" class="card @CardClasses[2]" @onmouseover="() => MouseOver(2)" @onmouseout="() => MouseOut(2)" @onclick="() => CardClicked(2)">
                     <div class="card-body text-center d-flex align-items-center">
-                        <p class="m-auto">@GetOptionsForCurrentQuestion()[2]</p>
+                        <p class="m-auto" style="max-width: 100%; overflow: hidden; text-overflow: ellipsis; word-wrap: break-word; overflow-wrap: break-word;">@GetOptionsForCurrentQuestion().ElementAtOrDefault(2)</p>
                     </div>
                 </div>
                
              
                     <div id="bottomRightCard" class="card @CardClasses[3]" @onmouseover="() => MouseOver(3)" @onmouseout="() => MouseOut(3)" @onclick="() => CardClicked(3)">
                     <div class="card-body text-center d-flex align-items-center">
-                        <p class="m-auto">@GetOptionsForCurrentQuestion()[3]</p>
+                        <p class="m-auto" style="max-width: 100%; overflow: hidden; text-overflow: ellipsis; word-wrap: break-word; overflow-wrap: break-word;">@GetOptionsForCurrentQuestion().ElementAtOrDefault(3)</p>
                     </div>
                 </div>
                 
             </div>
             <div style="clear: both;"></div>
             <p class="text-white text-center" style="position: absolute; bottom: 17%; left: 50%; transform: translateX(-50%); width:85%">@GetCurrentQuestionPhrase()</p>
-            @if (currentQuestion > 0)
-            {
-                <button @onclick="() => previousQuestionClicked()" id="previousButton" type="button" class="btn btn-light btn-circle btn-lg rounded-circle mb-3" style="position: absolute; bottom: 0;">
-                    <span style="font-size: 20px;">&lt;</span>
-                </button>
-            }
+                <div style="position: absolute; bottom: 0; width: 100%; display: flex; justify-content: space-between; align-items: center;">
+                    @if (currentQuestion > 0)
+                    {
+                        <button @onclick="() => PreviousQuestionClicked()" id="previousButton" type="button" class="btn btn-light btn-circle btn-lg rounded-circle mb-3" style="position: absolute; bottom: 0;">
+                            <span style="font-size: 20px;">&lt;</span>
+                        </button>
+                    }
+                </div>
         </div>
     </Animation>
     @if (currentQuestion < questionsList.Count -1 || !subDomainsAreSet)
     {
-        <button @onclick="() => nextQuestionClicked()" disabled="@(!AreAnyCardsSelected())" type="button" class="nextButton btn btn-primary rounded-btn">VOLGENDE VRAAG</button>
+        <button @onclick="() => NextQuestionClicked()" disabled="@(!AreAnyCardsSelected())" type="button" class="nextButton btn btn-primary rounded-btn">VOLGENDE VRAAG</button>
     }
     else
     {
-        <button @onclick="() => endQuizClicked()" disabled="@(!AreAnyCardsSelected())" type="button" class="nextButton btn btn-primary rounded-btn">EINDE QUIZ</button>
+        <button @onclick="() => EndStandardQuiz()" disabled="@(subDomainAnswers.Count == 0 && !CardClasses.Any(cc => cc == "card text-white bg-orange-color-click h-50 mb-3"))" type="button" class="nextButton btn btn-primary rounded-btn">GO TO TINDER QUIZ</button>
     }
 }
 else
@@ -65,13 +67,14 @@ else
 
 
 @code {
-    private bool quizEnded = false;
+    private bool StandardQuizEnded = false;
     private int currentQuestion = 0;
     private List<Question> questionsList = new List<Question>();
     private List<int> domainAnswers = new List<int>();
     private List<int> subDomainAnswers = new List<int>();
     private List<Question> selectedDomains = new List<Question>();
     private bool subDomainsAreSet = false;
+    private bool EndButtonDisabled = false;
 
     private string[] CardClasses = new string[4] { "card text-black h-50 mb-3", "card text-black h-50 mb-3", "card text-black h-50 mb-3", "card text-black h-50 mb-3" };
 
@@ -113,24 +116,31 @@ else
 
     private List<string> GetOptionsForCurrentQuestion()
     {
-        return questionsList[currentQuestion].Options.Select(option => option.Content).ToList();
+        return GetQuestionAtIndex(currentQuestion)?.Options.Select(option => option.Content).ToList() ?? new List<string>();
     }
+
     private List<int> GetOptionIdForCurrentQuestion()
     {
-        return questionsList[currentQuestion].Options.Select(option => option.OptionId).ToList();
+        return GetQuestionAtIndex(currentQuestion)?.Options.Select(option => option.OptionId).ToList() ?? new List<int>();
     }
 
     private string GetCurrentQuestionPhrase()
     {
-        return questionsList.ElementAt(currentQuestion).Phrase;
+        return GetQuestionAtIndex(currentQuestion)?.Phrase ?? string.Empty;
     }
 
     private string GetNextQuestionPhrase()
     {
-        return questionsList.ElementAt(currentQuestion + 1).Phrase;
+        return GetQuestionAtIndex(currentQuestion + 1)?.Phrase ?? string.Empty;
     }
 
-    private async Task nextQuestionClicked()
+    private Question GetQuestionAtIndex(int index)
+    {
+        return (index >= 0 && index < questionsList.Count) ? questionsList[index] : null;
+    }
+
+
+    private async Task NextQuestionClicked()
     {
         for(int i = 0; i < 4; i++)
         {
@@ -159,7 +169,7 @@ else
         currentQuestion++;
     }
 
-    private void previousQuestionClicked()
+    private void PreviousQuestionClicked()
     {
         if (currentQuestion > 0)
         {
@@ -182,8 +192,7 @@ else
         }
     }
 
-    private void endQuizClicked() {
-
+    private void EndStandardQuiz() {
         for (int i = 0; i < 4; i++)
         {
             if (CardClasses[i] == "card text-white bg-orange-color-click h-50 mb-3")
@@ -194,7 +203,7 @@ else
                 }
             }
         }
-        quizEnded = true;
+        StandardQuizEnded = true;
     }
 
     private bool AreAnyCardsSelected()
