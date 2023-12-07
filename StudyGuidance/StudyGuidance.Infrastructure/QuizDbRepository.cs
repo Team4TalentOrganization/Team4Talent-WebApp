@@ -20,16 +20,38 @@ namespace StudyGuidance.Infrastructure
             return await _context.Questions.Include(options => options.Options).ToListAsync<Question>();
         }
 
+        public async Task<IReadOnlyList<Question>> GetStandardQuizQuestionsAsync()
+        {
+            return await _context.Questions.Where(q => q.QuestionType == QuestionType.StandardQuizQuestion).Include(options => options.Options).ToListAsync<Question>();
+        }
+
+        public async Task<IReadOnlyList<Question>> GetTinderQuizQuestionsAsync()
+        {
+            return await _context.Questions.Where(q => q.QuestionType == QuestionType.TinderQuizQuestion).Include(options => options.Options).ToListAsync<Question>();
+        }
+
         public async Task<IReadOnlyList<Option>> GetDomainsAsync()
         {
             return await _context.Options.Where(o => o.QuestionId == 1).ToListAsync<Option>();
         }
 
-        public async Task<IReadOnlyList<Option>> GetSubDomainsAsync(List<int> domainIds)
+        public async Task<IReadOnlyList<Question>> GetSelectedSubDomainsAsync(List<int> domainIds)
         {
-            return await _context.Options
+            List<Option> selectedOptions = await _context.Options
                 .Where(o => domainIds.Contains(o.OptionRelation))
                 .ToListAsync();
+
+            List<Question> questionsWithSelectedOptions = new List<Question>();
+            Question questionWithSelectedOption = new Question();
+            questionWithSelectedOption.Phrase = "In welk subdomein heb je interesse?";
+            questionWithSelectedOption.QuestionType = QuestionType.StandardQuizQuestion;
+            foreach (Option option in selectedOptions)
+            {
+                questionWithSelectedOption.Options.Add(option);
+            }
+            questionsWithSelectedOptions.Add(questionWithSelectedOption);
+            return questionsWithSelectedOptions;
+
         }
 
         public async Task<IReadOnlyList<Job>> GetJobsAsync()
@@ -37,10 +59,10 @@ namespace StudyGuidance.Infrastructure
             return await _context.Jobs.ToListAsync<Job>();
         }
 
-        public async Task<IReadOnlyList<Job>> GetJobsByFilterAsync(List<string> subdomains, bool workInTeam, bool workOnSite)
+        public async Task<IReadOnlyList<Job>> GetJobsByFilterAsync(List<int> subdomainIds, bool workInTeam, bool workOnSite)
         {
-            var matchingJobs = await _context.Jobs
-                .Where(job => subdomains.Contains(job.SubDomain) && job.WorkInTeam == workInTeam || job.WorkOnSite == workOnSite)
+            List<Job> matchingJobs = await _context.Jobs
+                .Where(job => subdomainIds.Contains(job.OptionRelation) && (job.WorkInTeam == workInTeam || job.WorkOnSite == workOnSite))
                 .ToListAsync();
 
             return matchingJobs;
@@ -50,5 +72,10 @@ namespace StudyGuidance.Infrastructure
 		{
 			return await _context.Jobs.SingleOrDefaultAsync(j => j.JobId == id);
 		}
-	}
+
+        public async Task<IReadOnlyList<Question>> GetDomainQuestionsAsync()
+        {
+            return await _context.Questions.Where(q => q.Phrase == "In welk domein heb je interesse?").Include(options => options.Options).ToListAsync<Question>();
+        }
+    }
 }

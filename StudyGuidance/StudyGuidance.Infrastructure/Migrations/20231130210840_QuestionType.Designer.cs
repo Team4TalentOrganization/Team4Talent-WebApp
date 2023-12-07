@@ -11,8 +11,8 @@ using StudyGuidance.Infrastructure;
 namespace StudyGuidance.Infrastructure.Migrations
 {
     [DbContext(typeof(StudyGuidanceDbContext))]
-    [Migration("20231124123608_Jobs")]
-    partial class Jobs
+    [Migration("20231130210840_QuestionType")]
+    partial class QuestionType
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -587,6 +587,38 @@ namespace StudyGuidance.Infrastructure.Migrations
                             IsChecked = false,
                             OptionRelation = 7,
                             QuestionId = 2
+                        },
+                        new
+                        {
+                            OptionId = 26,
+                            Content = "Ja",
+                            IsChecked = false,
+                            OptionRelation = 0,
+                            QuestionId = 3
+                        },
+                        new
+                        {
+                            OptionId = 27,
+                            Content = "Nee",
+                            IsChecked = false,
+                            OptionRelation = 0,
+                            QuestionId = 3
+                        },
+                        new
+                        {
+                            OptionId = 28,
+                            Content = "Ja",
+                            IsChecked = false,
+                            OptionRelation = 0,
+                            QuestionId = 4
+                        },
+                        new
+                        {
+                            OptionId = 29,
+                            Content = "Nee",
+                            IsChecked = false,
+                            OptionRelation = 0,
+                            QuestionId = 4
                         });
                 });
 
@@ -602,6 +634,9 @@ namespace StudyGuidance.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("QuestionType")
+                        .HasColumnType("int");
+
                     b.HasKey("QuestionId");
 
                     b.ToTable("Questions");
@@ -610,12 +645,26 @@ namespace StudyGuidance.Infrastructure.Migrations
                         new
                         {
                             QuestionId = 1,
-                            Phrase = "In welk domein heb je interesse?"
+                            Phrase = "In welk domein heb je interesse?",
+                            QuestionType = 1
                         },
                         new
                         {
                             QuestionId = 2,
-                            Phrase = "In welk subdomein heb je interesse?"
+                            Phrase = "In welk subdomein heb je interesse?",
+                            QuestionType = 1
+                        },
+                        new
+                        {
+                            QuestionId = 3,
+                            Phrase = "Werk je graag vaak in groep?",
+                            QuestionType = 0
+                        },
+                        new
+                        {
+                            QuestionId = 4,
+                            Phrase = "Houd je ervan om regelmatig andere bedrijven te bezoeken?",
+                            QuestionType = 0
                         });
                 });
 

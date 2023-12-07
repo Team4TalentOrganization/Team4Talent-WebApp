@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StudyGuidance.Infrastructure;
 
@@ -10,9 +11,10 @@ using StudyGuidance.Infrastructure;
 namespace StudyGuidance.Infrastructure.Migrations
 {
     [DbContext(typeof(StudyGuidanceDbContext))]
-    partial class StudyGuidanceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231124145101_Jobs")]
+    partial class Jobs
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,9 +43,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("OptionRelation")
-                        .HasColumnType("int");
-
                     b.Property<string>("SubDomain")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -65,7 +64,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Software Management",
                             Name = "Tester",
-                            OptionRelation = 15,
                             SubDomain = "Software analysis",
                             WorkInTeam = false,
                             WorkOnSite = true
@@ -76,8 +74,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Software Management",
                             Name = "QA Engineer",
-                            OptionRelation = 14,
-                            SubDomain = "Project Management",
+                            SubDomain = "Software Management",
                             WorkInTeam = true,
                             WorkOnSite = true
                         },
@@ -87,7 +84,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Software Management",
                             Name = "Business Analyst",
-                            OptionRelation = 15,
                             SubDomain = "Software analysis",
                             WorkInTeam = true,
                             WorkOnSite = false
@@ -98,7 +94,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Software Management",
                             Name = "Functional Analyst",
-                            OptionRelation = 15,
                             SubDomain = "Software analysis",
                             WorkInTeam = true,
                             WorkOnSite = false
@@ -109,7 +104,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Development",
                             Name = "Application Support",
-                            OptionRelation = 11,
                             SubDomain = "Fullstack",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -120,7 +114,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Software Management",
                             Name = "Helpdesk",
-                            OptionRelation = 14,
                             SubDomain = "Project Management",
                             WorkInTeam = false,
                             WorkOnSite = true
@@ -131,7 +124,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Development",
                             Name = "PHP Developer",
-                            OptionRelation = 13,
                             SubDomain = "Backend",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -142,7 +134,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Development",
                             Name = "Drupal Developer",
-                            OptionRelation = 11,
                             SubDomain = "Fullstack",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -153,7 +144,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Development",
                             Name = "Cobol Developer",
-                            OptionRelation = 11,
                             SubDomain = "Fullstack",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -164,7 +154,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Development",
                             Name = "Dynammics Developer",
-                            OptionRelation = 11,
                             SubDomain = "Fullstack",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -175,7 +164,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Development",
                             Name = "Java Developer",
-                            OptionRelation = 13,
                             SubDomain = "Backend",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -186,7 +174,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Development",
                             Name = "SAP Developer",
-                            OptionRelation = 11,
                             SubDomain = "Fullstack",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -197,7 +184,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Development",
                             Name = "Siebel Developer",
-                            OptionRelation = 11,
                             SubDomain = "Fullstack",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -208,7 +194,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Development",
                             Name = "RPG developer",
-                            OptionRelation = 11,
                             SubDomain = "Fullstack",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -219,7 +204,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Systeem en netwerkbeheer",
                             Name = "System admin",
-                            OptionRelation = 18,
                             SubDomain = "Networking",
                             WorkInTeam = false,
                             WorkOnSite = true
@@ -230,7 +214,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Systeem en netwerkbeheer",
                             Name = "Network engineer",
-                            OptionRelation = 18,
                             SubDomain = "Networking",
                             WorkInTeam = false,
                             WorkOnSite = false
@@ -241,7 +224,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Data",
                             Name = "Data migration expert",
-                            OptionRelation = 22,
                             SubDomain = "Analyst",
                             WorkInTeam = false,
                             WorkOnSite = false
@@ -252,7 +234,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Data",
                             Name = "Data architect",
-                            OptionRelation = 22,
                             SubDomain = "Analyst",
                             WorkInTeam = false,
                             WorkOnSite = false
@@ -263,7 +244,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Data",
                             Name = "Database administrator",
-                            OptionRelation = 22,
                             SubDomain = "Analyst",
                             WorkInTeam = false,
                             WorkOnSite = false
@@ -274,7 +254,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Systeem en netwerkbeheer",
                             Name = "AWS DevOps Engineer",
-                            OptionRelation = 16,
                             SubDomain = "Automation",
                             WorkInTeam = false,
                             WorkOnSite = false
@@ -285,7 +264,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Software Management",
                             Name = "Project manager",
-                            OptionRelation = 14,
                             SubDomain = "Project Management",
                             WorkInTeam = true,
                             WorkOnSite = false
@@ -296,7 +274,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Systeem en netwerkbeheer",
                             Name = "Azure DevOps Engineer",
-                            OptionRelation = 16,
                             SubDomain = "Automation",
                             WorkInTeam = false,
                             WorkOnSite = false
@@ -307,7 +284,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Development",
                             Name = "SharePoint Developer",
-                            OptionRelation = 11,
                             SubDomain = "Fullstack",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -318,7 +294,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Development",
                             Name = ".NET Developer",
-                            OptionRelation = 13,
                             SubDomain = "Backend",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -329,7 +304,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Development",
                             Name = "Frontend Developer",
-                            OptionRelation = 12,
                             SubDomain = "Frontend",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -340,7 +314,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Development",
                             Name = "Software Architect",
-                            OptionRelation = 11,
                             SubDomain = "Fullstack",
                             WorkInTeam = false,
                             WorkOnSite = false
@@ -351,7 +324,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Development",
                             Name = "Development Team Lead",
-                            OptionRelation = 11,
                             SubDomain = "Fullstack",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -362,7 +334,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Software Management",
                             Name = "SCRUM Master",
-                            OptionRelation = 14,
                             SubDomain = "Project Management",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -373,7 +344,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Systeem en netwerkbeheer",
                             Name = "Security Engineer",
-                            OptionRelation = 17,
                             SubDomain = "Security",
                             WorkInTeam = false,
                             WorkOnSite = false
@@ -384,7 +354,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             Domain = "Systeem en netwerkbeheer",
                             Name = "PEN Tester",
-                            OptionRelation = 17,
                             SubDomain = "Security",
                             WorkInTeam = false,
                             WorkOnSite = true
@@ -618,38 +587,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                             IsChecked = false,
                             OptionRelation = 7,
                             QuestionId = 2
-                        },
-                        new
-                        {
-                            OptionId = 26,
-                            Content = "Ja",
-                            IsChecked = false,
-                            OptionRelation = 0,
-                            QuestionId = 3
-                        },
-                        new
-                        {
-                            OptionId = 27,
-                            Content = "Nee",
-                            IsChecked = false,
-                            OptionRelation = 0,
-                            QuestionId = 3
-                        },
-                        new
-                        {
-                            OptionId = 28,
-                            Content = "Ja",
-                            IsChecked = false,
-                            OptionRelation = 0,
-                            QuestionId = 4
-                        },
-                        new
-                        {
-                            OptionId = 29,
-                            Content = "Nee",
-                            IsChecked = false,
-                            OptionRelation = 0,
-                            QuestionId = 4
                         });
                 });
 
@@ -665,9 +602,6 @@ namespace StudyGuidance.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("QuestionType")
-                        .HasColumnType("int");
-
                     b.HasKey("QuestionId");
 
                     b.ToTable("Questions");
@@ -676,26 +610,22 @@ namespace StudyGuidance.Infrastructure.Migrations
                         new
                         {
                             QuestionId = 1,
-                            Phrase = "In welk domein heb je interesse?",
-                            QuestionType = 1
+                            Phrase = "In welk domein heb je interesse?"
                         },
                         new
                         {
                             QuestionId = 2,
-                            Phrase = "In welk subdomein heb je interesse?",
-                            QuestionType = 1
+                            Phrase = "In welk subdomein heb je interesse?"
                         },
                         new
                         {
                             QuestionId = 3,
-                            Phrase = "Werk je graag vaak in groep?",
-                            QuestionType = 0
+                            Phrase = "Werk je graag vaak in groep?"
                         },
                         new
                         {
                             QuestionId = 4,
-                            Phrase = "Reis je graag voor je werk?",
-                            QuestionType = 0
+                            Phrase = "Houd je ervan om regelmatig andere bedrijven te bezoeken?"
                         });
                 });
 

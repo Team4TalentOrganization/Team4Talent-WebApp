@@ -24,9 +24,11 @@ namespace StudyGuidance.Infrastructure.Tests
             var questions = _context.Questions.ToList();
 
             Assert.IsNotNull(questions);
-            Assert.That(2, Is.EqualTo(questions.Count));
+            Assert.That(4, Is.EqualTo(questions.Count));
             Assert.IsTrue(questions.Any(q => q.Phrase == "In welk domein heb je interesse?"));
             Assert.IsTrue(questions.Any(q => q.Phrase == "In welk subdomein heb je interesse?"));
+            Assert.IsTrue(questions.Any(q => q.Phrase == "Werk je graag vaak in groep?"));
+            Assert.IsTrue(questions.Any(q => q.Phrase == "Reis je graag voor je werk?"));
         }
 
         [Test]
@@ -34,7 +36,7 @@ namespace StudyGuidance.Infrastructure.Tests
         {
             var optionsList = _context.Options.ToList();
             Assert.IsNotNull(optionsList);
-            Assert.That(25, Is.EqualTo(optionsList.Count));
+            Assert.That(29, Is.EqualTo(optionsList.Count));
             Assert.IsTrue(optionsList.Any(o => o.Content == "AI"));
             Assert.IsTrue(optionsList.Any(o => o.Content == "Fullstack"));
         }
@@ -62,9 +64,11 @@ namespace StudyGuidance.Infrastructure.Tests
 
             // Assert
             Assert.IsNotNull(questionsWithOptions);
-            Assert.That(2, Is.EqualTo(questionsWithOptions.Count));
+            Assert.That(4, Is.EqualTo(questionsWithOptions.Count));
             Assert.IsTrue(questionsWithOptions.Any(q => q.Phrase == "In welk domein heb je interesse?" && q.Options.Any()));
             Assert.IsTrue(questionsWithOptions.Any(q => q.Phrase == "In welk subdomein heb je interesse?" && q.Options.Any()));
+            Assert.IsTrue(questionsWithOptions.Any(q => q.Phrase == "Werk je graag vaak in groep?"));
+            Assert.IsTrue(questionsWithOptions.Any(q => q.Phrase == "Reis je graag voor je werk?"));
         }
 
         [Test]

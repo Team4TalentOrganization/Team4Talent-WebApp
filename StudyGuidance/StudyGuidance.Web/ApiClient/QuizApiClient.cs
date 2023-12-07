@@ -1,4 +1,6 @@
-﻿using StudyGuidance.Web.Models;
+﻿using Microsoft.Extensions.Primitives;
+using StudyGuidance.Web.Models;
+using System.Text;
 
 namespace StudyGuidance.Web.ApiClient
 {
@@ -10,9 +12,48 @@ namespace StudyGuidance.Web.ApiClient
         {
         }
 
-        public async Task<List<Question>> GetAllQuestion()
+        public async Task<List<Question>> GetAllDomainQuestions()
+        {
+            return await GetJsonAsync<List<Question>>($"{_url}/domainquestions");
+        }
+
+        public async Task<List<Question>> GetAllQuestions()
         {
             return await GetJsonAsync<List<Question>>($"{_url}/questions");
+        }
+
+        public async Task<List<Question>> GetAllStandardQuizQuestions()
+        {
+            return await GetJsonAsync<List<Question>>($"{_url}/standardquizquestions");
+        }
+
+        public async Task<List<Question>> GetAllTinderQuizQuestions()
+        {
+            return await GetJsonAsync<List<Question>>($"{_url}/tinderquizquestions");
+        }
+
+        public async Task<List<Question>> GetSubdomains(List<int> domainIds)
+        {
+            StringBuilder endpointBuilder = new StringBuilder();
+            endpointBuilder.Append(_url);
+            endpointBuilder.Append("/subdomains?");
+            bool isFirstDomain = true;
+
+            foreach (int domainId in domainIds)
+            {
+                if (!isFirstDomain)
+                {
+                    endpointBuilder.Append("&");
+                }
+
+                endpointBuilder.Append($"domainId={domainId}");
+
+                isFirstDomain = false;
+            }
+
+            string endpointString = endpointBuilder.ToString();
+
+            return await GetJsonAsync<List<Question>>(endpointString);
         }
     }
 }

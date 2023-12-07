@@ -18,7 +18,21 @@ namespace StudyGuidance.Domain
         public bool WorkInTeam { get; set; }
         public bool WorkOnSite { get; set; }
         public int JobId { get; set; }
+        private int _optionRelation;
 
+        public int OptionRelation
+        {
+            get => _optionRelation;
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new BusinessException("OptionRelation must be greater than 0.");
+                }
+
+                _optionRelation = value;
+            }
+        }
 
         public string Name
         {

@@ -14,12 +14,14 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
 
         private QuizController _controller;
         private Mock<IQuizRepository> _questionRepositoryMock;
+        private Mock<IQuestionModificationService> _questionModificationServiceMock;
 
         [SetUp]
         public void SetUp()
         {
             _questionRepositoryMock = new Mock<IQuizRepository>();
-            _controller = new QuizController(_questionRepositoryMock.Object);
+            _questionModificationServiceMock = new Mock<IQuestionModificationService>();
+            _controller = new QuizController(_questionRepositoryMock.Object, _questionModificationServiceMock.Object);
         }
 
         [Test]
@@ -31,6 +33,8 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
                 new QuestionBuilder().Build(),
             };
             _questionRepositoryMock.Setup(repo => repo.GetQuestionsAsync()).ReturnsAsync(questions);
+
+            _questionModificationServiceMock.Setup(service => service.ModifyQuestions(It.IsAny<List<Question>>())).Returns<List<Question>>(inputQuestions => inputQuestions);
 
             var result = await _controller.GetAllQuestions();
 
@@ -60,12 +64,13 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
         public async Task GetAllSubDomains_WithValidDomainIds_ReturnsOkWithSubDomains()
         {
             var domainIds = new List<int> { 1, 2 };
-            var subDomains = new List<Option>
+            var subDomains = new List<Question>
             {
-                new OptionBuilder().WithQuestionId(domainIds[0]).Build(),
-                new OptionBuilder().WithQuestionId(domainIds[1]).Build(),
+                new QuestionBuilder().WithQuestionId(domainIds[0]).Build(),
+                new QuestionBuilder().WithQuestionId(domainIds[1]).Build(),
             };
-            _questionRepositoryMock.Setup(repo => repo.GetSubDomainsAsync(domainIds)).ReturnsAsync(subDomains);
+            _questionRepositoryMock.Setup(repo => repo.GetSelectedSubDomainsAsync(domainIds)).ReturnsAsync(subDomains);
+            _questionModificationServiceMock.Setup(service => service.ModifyQuestions(It.IsAny<List<Question>>())).Returns<List<Question>>(inputQuestions => inputQuestions);
 
             var result = await _controller.GetAllSubDomains(domainIds);
 
@@ -78,8 +83,9 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
         public async Task GetAllSubDomains_WithInvalidDomainIds_ReturnsNotFound()
         {
             var invalidDomainIds = new List<int> { 3, 4 };
-            var subDomains = new List<Option> { };
-            _questionRepositoryMock.Setup(repo => repo.GetSubDomainsAsync(invalidDomainIds)).ReturnsAsync(subDomains);
+            var subDomains = new List<Question> { };
+            _questionRepositoryMock.Setup(repo => repo.GetSelectedSubDomainsAsync(invalidDomainIds)).ReturnsAsync(subDomains);
+            _questionModificationServiceMock.Setup(service => service.ModifyQuestions(It.IsAny<List<Question>>())).Returns<List<Question>>(inputQuestions => inputQuestions);
 
             var result = await _controller.GetAllSubDomains(invalidDomainIds);
 
@@ -91,6 +97,7 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
         {
             var emptyList = new List<Question>();
             _questionRepositoryMock.Setup(repo => repo.GetQuestionsAsync()).ReturnsAsync(emptyList);
+            _questionModificationServiceMock.Setup(service => service.ModifyQuestions(It.IsAny<List<Question>>())).Returns<List<Question>>(inputQuestions => inputQuestions);
 
             // Act
             var result = await _controller.GetAllQuestions();
@@ -146,13 +153,21 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
         [Test]
         public async Task GetAllJobsByFilter_ReturnsNotFound_WhenNoJobsExistWithRequestedFilter()
         {
-            var invalidSubDomains = new List<string> { "non existing domain", "another non existing domain" };
+            List<int> invalidSubDomainIds = new List<int> { 100, 101 };
             bool workInTeam = false;
             bool workOnSite = false;
-            var jobs = new List<Job> { };
-            _questionRepositoryMock.Setup(repo => repo.GetJobsByFilterAsync(invalidSubDomains, workInTeam, workOnSite)).ReturnsAsync(jobs);
+            var jobs = new List<Job>
+            {
+                new Job { JobId = 1, OptionRelation = 11, Name = "Job 1", SubDomain = "Fullstack", WorkInTeam = false, WorkOnSite = false },
+                new Job { JobId = 2, OptionRelation = 12, Name = "Job 2", SubDomain = "Frontend", WorkInTeam = false, WorkOnSite = false },
+                new Job { JobId = 3, OptionRelation = 13, Name = "Job 3", SubDomain = "Backend", WorkInTeam = false, WorkOnSite = false },
+            };
 
-            var result = await _controller.GetAllJobsByFilter(invalidSubDomains, workInTeam, workOnSite);
+            var selectedJobs = jobs.Where(job => invalidSubDomainIds.Contains(job.OptionRelation)).ToList();
+
+            _questionRepositoryMock.Setup(repo => repo.GetJobsByFilterAsync(invalidSubDomainIds, workInTeam, workOnSite)).ReturnsAsync(selectedJobs);
+
+            var result = await _controller.GetAllJobsByFilter(invalidSubDomainIds, workInTeam, workOnSite);
 
             Assert.IsInstanceOf<NotFoundObjectResult>(result);
         }
@@ -160,22 +175,27 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
         [Test]
         public async Task GetAllJobsByFilter_ReturnsOk_WhenJobsExistWithRequestedFilter()
         {
-            var validSubDomains = new List<string> { "Subdomain 1", "Subdomain 2" };
+            var validSubDomainIds = new List<int> { 11, 12 };
             bool workInTeam = false;
             bool workOnSite = false;
-            var jobs = new List<Job> {
-                        new Job { JobId = 1, Name = "Job 1", SubDomain = "Subdomain 1", WorkInTeam = true, WorkOnSite = true },
-                        new Job { JobId = 2, Name = "Job 2", SubDomain = "Subdomain 1", WorkInTeam = false, WorkOnSite = false }
-                };
-            var selectedJob = new List<Job>();
-            selectedJob.Add(jobs[1]);
-            _questionRepositoryMock.Setup(repo => repo.GetJobsByFilterAsync(validSubDomains, workInTeam, workOnSite)).ReturnsAsync(selectedJob);
 
-            var result = await _controller.GetAllJobsByFilter(validSubDomains, workInTeam, workOnSite);
+            var jobs = new List<Job>
+            {
+                new Job { JobId = 1, OptionRelation = 11, Name = "Job 1", SubDomain = "Fullstack", WorkInTeam = false, WorkOnSite = false },
+                new Job { JobId = 2, OptionRelation = 12, Name = "Job 2", SubDomain = "Frontend", WorkInTeam = false, WorkOnSite = false },
+                new Job { JobId = 3, OptionRelation = 13, Name = "Job 3", SubDomain = "Backend", WorkInTeam = false, WorkOnSite = false },
+            };
+
+            var selectedJobs = jobs.Where(job => validSubDomainIds.Contains(job.OptionRelation)).ToList();
+
+            _questionRepositoryMock.Setup(repo => repo.GetJobsByFilterAsync(validSubDomainIds, workInTeam, workOnSite)).ReturnsAsync(selectedJobs);
+
+            var result = await _controller.GetAllJobsByFilter(validSubDomainIds, workInTeam, workOnSite);
 
             Assert.IsInstanceOf<OkObjectResult>(result);
+
             var okResult = (OkObjectResult)result;
-            Assert.That(selectedJob, Is.EqualTo(okResult.Value));
+            Assert.That(selectedJobs, Is.EqualTo(okResult.Value));
         }
     }
 }

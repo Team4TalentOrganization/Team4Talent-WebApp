@@ -9,22 +9,67 @@ namespace StudGuidance.Api.Controllers
     public class QuizController : ControllerBase
     {
         private readonly IQuizRepository _questionRepository;
-        public QuizController(IQuizRepository questionRepository)
+        private readonly IQuestionModificationService _questionModificationService;
+        public QuizController(IQuizRepository questionRepository, IQuestionModificationService questionModificationService)
         {
             _questionRepository = questionRepository;
+            _questionModificationService = questionModificationService;
         }
 
         [HttpGet("questions")]
         public async Task<IActionResult> GetAllQuestions()
         {
             IReadOnlyList<Question> allQuestions = await _questionRepository.GetQuestionsAsync();
+            allQuestions = _questionModificationService.ModifyQuestions(allQuestions);
 
-            if(allQuestions.Count <= 0) 
+            if (allQuestions.Count <= 0) 
             {
                 return NotFound("AllQuestions bevat geen inhoud");
             }
 
             return Ok(allQuestions);
+        }
+
+        [HttpGet("domainquestions")]
+        public async Task<IActionResult> GetAllDomainQuestions()
+        {
+            IReadOnlyList<Question> allDomainQuestions = await _questionRepository.GetDomainQuestionsAsync();
+            allDomainQuestions = _questionModificationService.ModifyQuestions(allDomainQuestions);
+
+            if (allDomainQuestions.Count <= 0)
+            {
+                return NotFound("AllQuestions bevat geen inhoud");
+            }
+
+            return Ok(allDomainQuestions);
+        }
+
+        [HttpGet("standardquizquestions")]
+        public async Task<IActionResult> GetAllStandardQuizQuestions()
+        {
+            IReadOnlyList<Question> allStandardQuizQuestions = await _questionRepository.GetStandardQuizQuestionsAsync();
+            allStandardQuizQuestions = _questionModificationService.ModifyQuestions(allStandardQuizQuestions);
+
+            if (allStandardQuizQuestions.Count <= 0)
+            {
+                return NotFound("AllStandardQuizQuestions bevat geen inhoud");
+            }
+
+            return Ok(allStandardQuizQuestions);
+        }
+
+        [HttpGet("tinderquizquestions")]
+        public async Task<IActionResult> GetAllTinderQuizQuestions()
+        {
+            IReadOnlyList<Question> allTinderQuizQuestions = await _questionRepository.GetTinderQuizQuestionsAsync();
+            allTinderQuizQuestions = _questionModificationService.ModifyQuestions(allTinderQuizQuestions);
+
+            if (allTinderQuizQuestions.Count <= 0)
+            {
+                return NotFound("AllTinderQuizQuestions bevat geen inhoud");
+            }
+
+            return Ok(allTinderQuizQuestions);
         }
 
         [HttpGet("domains")]
@@ -43,14 +88,15 @@ namespace StudGuidance.Api.Controllers
         [HttpGet("subdomains")]
         public async Task<IActionResult> GetAllSubDomains([FromQuery] List<int> domainId)
         {
-            IReadOnlyList<Option> allSubDomains = await _questionRepository.GetSubDomainsAsync(domainId);
+            IReadOnlyList<Question> allSelectedSubDomains = await _questionRepository.GetSelectedSubDomainsAsync(domainId);
+            allSelectedSubDomains = _questionModificationService.ModifyQuestions(allSelectedSubDomains);
 
-            if(allSubDomains.Count == 0) 
+            if (allSelectedSubDomains.Count == 0) 
             { 
                 return NotFound("SubDomains bevat geen inhoud");
             }
 
-            return Ok(allSubDomains);
+            return Ok(allSelectedSubDomains);
         }
 
         [HttpGet("jobs")]
@@ -80,7 +126,7 @@ namespace StudGuidance.Api.Controllers
 		}
 
 		[HttpGet("jobsByFilter")]
-        public async Task<IActionResult> GetAllJobsByFilter([FromQuery] List<string> subdomains, [FromQuery] bool workInTeam, [FromQuery] bool workOnSite)
+        public async Task<IActionResult> GetAllJobsByFilter([FromQuery] List<int> subdomains, [FromQuery] bool workInTeam, [FromQuery] bool workOnSite)
         {
             IReadOnlyList<Job> allJobsByFilter = await _questionRepository.GetJobsByFilterAsync(subdomains, workInTeam, workOnSite);
 
