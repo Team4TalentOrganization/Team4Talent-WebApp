@@ -28,7 +28,7 @@
 
 <div class="sidebar" style="@navStyle">
 @if(collapseNavMenu){
-    <div class="top-row ps-3 navbar navbar-light" style="background-color:transparent">
+        <div class="top-row ps-3 navbar navbar-light transparent-background">
         <div class="container-fluid">
                 <a class="navbar-brand" @onclick='() => Open("/")'>
                 <p class="titleApp">STUDY GUIDANCE</p>
@@ -41,12 +41,12 @@
 }
 else
 {
-    <div class="top-row ps-3 navbar navbar-light" style="background-color:white">
+        <div class="top-row ps-3 navbar navbar-light white-background">
         <div class="container-fluid">
                 <a class="navbar-brand" @onclick='() => Open("/")'>
                 <p class="titleApp">STUDY GUIDANCE</p>
             </a>
-            <button title="Navigation menu" class="navbar-toggler" style="background-color:#ff5404" @onclick="ToggleNavMenu">
+                <button title="Navigation menu" class="navbar-toggler orange-background" @onclick="ToggleNavMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
