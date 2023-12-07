@@ -31,6 +31,7 @@
     [Parameter]
     public List<int> subDomainAnswers { get; set; }
 
+
     private bool workInTeam = false;
     private bool workOnSite = false;
     private bool IsActive = true;
@@ -51,6 +52,15 @@
     private List<string> answers = new List<string>();
 
     private int currentQuestion = 0;
+
+    public TinderQuestionCard()
+    {
+
+    }
+    public TinderQuestionCard(IQuizApiClient quizApiClient)
+    {
+        QuizApiClient = quizApiClient;
+    }
 
     private string GetAnswerForCurrentQuestion()
     {
