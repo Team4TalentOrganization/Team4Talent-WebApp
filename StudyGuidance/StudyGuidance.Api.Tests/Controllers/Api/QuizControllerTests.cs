@@ -92,10 +92,8 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
             var emptyList = new List<Question>();
             _questionRepositoryMock.Setup(repo => repo.GetQuestionsAsync()).ReturnsAsync(emptyList);
 
-            // Act
             var result = await _controller.GetAllQuestions();
 
-            // Assert
             Assert.IsInstanceOf<NotFoundObjectResult>(result);
         }
 
@@ -105,10 +103,8 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
             var emptyList = new List<Option>();
             _questionRepositoryMock.Setup(repo => repo.GetDomainsAsync()).ReturnsAsync(emptyList);
 
-            // Act
             var result = await _controller.GetAllDomains();
 
-            // Assert
             Assert.IsInstanceOf<NotFoundObjectResult>(result);
         }
 
@@ -118,10 +114,8 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
             var emptyList = new List<Job>();
             _questionRepositoryMock.Setup(repo => repo.GetJobsAsync()).ReturnsAsync(emptyList);
 
-            // Act
             var result = await _controller.GetAllJobs();
 
-            // Assert
             Assert.IsInstanceOf<NotFoundObjectResult>(result);
         }
 
@@ -134,10 +128,8 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
                 };
             _questionRepositoryMock.Setup(repo => repo.GetJobsAsync()).ReturnsAsync(jobsList);
 
-            // Act
             var result = await _controller.GetAllJobs();
 
-            // Assert
             Assert.IsInstanceOf<OkObjectResult>(result);
             var okResult = (OkObjectResult)result;
             Assert.That(jobsList, Is.EqualTo(okResult.Value));
@@ -176,6 +168,62 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
             Assert.IsInstanceOf<OkObjectResult>(result);
             var okResult = (OkObjectResult)result;
             Assert.That(selectedJob, Is.EqualTo(okResult.Value));
+        }
+
+        [Test]
+        public async Task GetJobById_ExistingJob_ReturnsOkWithJob()
+        {
+            int jobId = 1;
+            var fakeJob = new Job { JobId = jobId, Name = "Fake Job" };
+            _questionRepositoryMock.Setup(repo => repo.GetJobByIdAsync(jobId)).ReturnsAsync(fakeJob);
+
+            var result = await _controller.GetJobById(jobId);
+
+            Assert.IsInstanceOf<OkObjectResult>(result);
+            var okResult = (OkObjectResult)result;
+            Assert.IsInstanceOf<Job>(okResult.Value);
+            var jobResult = (Job)okResult.Value;
+            Assert.AreEqual(fakeJob, jobResult);
+        }
+
+        [Test]
+        public async Task GetJobById_NonExistingJob_ReturnsNotFound()
+        {
+            int jobId = 999;
+            _questionRepositoryMock.Setup(repo => repo.GetJobByIdAsync(jobId)).ReturnsAsync((Job)null);
+
+            var result = await _controller.GetJobById(jobId);
+
+            Assert.IsInstanceOf<NotFoundObjectResult>(result);
+            var notFoundResult = (NotFoundObjectResult)result;
+            Assert.AreEqual("Job niet gevonden", notFoundResult.Value);
+        }
+
+        [Test]
+        public async Task GetJobById_ExistingJob_ReturnsCorrectStatusCode()
+        {
+            int jobId = 1;
+            var fakeJob = new Job { JobId = jobId, Name = "Fake Job" };
+            _questionRepositoryMock.Setup(repo => repo.GetJobByIdAsync(jobId)).ReturnsAsync(fakeJob);
+
+            var result = await _controller.GetJobById(jobId);
+
+            Assert.IsInstanceOf<OkObjectResult>(result);
+            var okResult = (OkObjectResult)result;
+            Assert.AreEqual(200, okResult.StatusCode);
+        }
+
+        [Test]
+        public async Task GetJobById_NonExistingJob_ReturnsCorrectStatusCode()
+        {
+            int jobId = 999;
+            _questionRepositoryMock.Setup(repo => repo.GetJobByIdAsync(jobId)).ReturnsAsync((Job)null);
+
+            var result = await _controller.GetJobById(jobId);
+
+            Assert.IsInstanceOf<NotFoundObjectResult>(result);
+            var notFoundResult = (NotFoundObjectResult)result;
+            Assert.AreEqual(404, notFoundResult.StatusCode);
         }
     }
 }

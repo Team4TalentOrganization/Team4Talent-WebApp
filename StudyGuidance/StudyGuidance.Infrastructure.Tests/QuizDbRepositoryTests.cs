@@ -29,7 +29,6 @@ namespace StudyGuidance.Infrastructure.Tests
         [Test]
         public async Task GetQuestionsAsync_ReturnsAllQuestionsWithOptions()
         {
-            // Arrange
             var questions = new List<Question>
             {
                 new Question { QuestionId = 1, Phrase = "Question 1" },
@@ -47,10 +46,8 @@ namespace StudyGuidance.Infrastructure.Tests
             _dbContext.Options.AddRange(options);
             _dbContext.SaveChanges();
 
-            // Act
             var result = await _repository.GetQuestionsAsync();
 
-            // Assert
             Assert.IsNotNull(result);
             Assert.That(2, Is.EqualTo(result.Count));
             Assert.IsTrue(result.All(q => q.Options.Any()));
@@ -59,7 +56,6 @@ namespace StudyGuidance.Infrastructure.Tests
         [Test]
         public async Task GetDomainsAsync_ReturnsAllDomainsFromRepository()
         {
-            // Arrange
             var domains = new List<Option>
             {
                 new Option { OptionId = 4, Content = "Domain 1", QuestionId = 1 },
@@ -69,10 +65,8 @@ namespace StudyGuidance.Infrastructure.Tests
             _dbContext.Options.AddRange(domains);
             _dbContext.SaveChanges();
 
-            // Act
             var result = await _repository.GetDomainsAsync();
 
-            // Assert
             Assert.IsNotNull(result);
             Assert.That(2, Is.EqualTo(result.Count));
         }
@@ -80,7 +74,6 @@ namespace StudyGuidance.Infrastructure.Tests
         [Test]
         public async Task GetSubDomainsAsync_ReturnsAllSubDomainsFromRepository()
         {
-            // Arrange
             var subDomains = new List<Option>
             {
                 new Option { OptionId = 6, Content = "Subdomain 1", OptionRelation = 1 },
@@ -90,10 +83,8 @@ namespace StudyGuidance.Infrastructure.Tests
             _dbContext.Options.AddRange(subDomains);
             _dbContext.SaveChanges();
 
-            // Act
             var result = await _repository.GetSubDomainsAsync(new List<int> { 1, 2 });
 
-            // Assert
             Assert.IsNotNull(result);
             Assert.That(2, Is.EqualTo(result.Count));
         }
@@ -101,7 +92,6 @@ namespace StudyGuidance.Infrastructure.Tests
         [Test]
         public async Task GetJobsAsync_ReturnsAllJobsFromRepository()
         {
-            // Arrange
             var jobs = new List<Job>
             {
                 new Job { JobId = 1, SubDomain = "Subdomain 1" },
@@ -111,10 +101,8 @@ namespace StudyGuidance.Infrastructure.Tests
             _dbContext.Jobs.AddRange(jobs);
             _dbContext.SaveChanges();
 
-            // Act
             var result = await _repository.GetJobsAsync();
 
-            // Assert
             Assert.IsNotNull(result);
             Assert.That(3, Is.EqualTo(result.Count));
         }
@@ -122,7 +110,6 @@ namespace StudyGuidance.Infrastructure.Tests
         [Test]
         public async Task GetJobsByFilterAsync_ReturnsAllRequestedJobsFromRepository()
         {
-            // Arrange
             var jobs = new List<Job>
             {
                 new Job { JobId = 1, SubDomain = "Subdomain 1", WorkInTeam = true, WorkOnSite = true },
@@ -136,19 +123,63 @@ namespace StudyGuidance.Infrastructure.Tests
             _dbContext.Jobs.AddRange(jobs);
             _dbContext.SaveChanges();
 
-            // Act
             var result = await _repository.GetJobsByFilterAsync(new List<string> { "Subdomain 1", "Subdomain 2" }, workInTeam, workOnSite);
 
-            // Assert
             Assert.IsNotNull(result);
             Assert.That(1, Is.EqualTo(result.Count));
             Assert.That(result.Select(job => job.SubDomain), Is.EquivalentTo(new[] { "Subdomain 1"}));
         }
 
+        [Test]
+        public async Task GetJobByIdAsync_ExistingJob_ReturnsJob()
+        {
+            var job = new Job { JobId = 1, Name = "Fake Job" };
+            _dbContext.Jobs.Add(job);
+            _dbContext.SaveChanges();
+
+            var result = await _repository.GetJobByIdAsync(1);
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOf<Job>(result);
+            Assert.AreEqual(job, result);
+        }
+
+        [Test]
+        public async Task GetJobByIdAsync_NonExistingJob_ReturnsNull()
+        {
+
+            var result = await _repository.GetJobByIdAsync(999);
+
+            Assert.IsNull(result);
+        }
+
+        [Test]
+        public async Task GetJobByIdAsync_ExistingJob_ReturnsCorrectStatusCode()
+        {
+            var job = new Job { JobId = 1, Name = "Fake Job" };
+            _dbContext.Jobs.Add(job);
+            _dbContext.SaveChanges();
+
+            var result = await _repository.GetJobByIdAsync(1);
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOf<Job>(result);
+            Assert.AreEqual(200, result.JobId);
+        }
+
+        [Test]
+        public async Task GetJobByIdAsync_NonExistingJob_ReturnsCorrectStatusCode()
+        {
+            var result = await _repository.GetJobByIdAsync(999);
+
+            Assert.IsNull(result);
+            Assert.AreEqual(404, result.JobId);
+        }
+
         [TearDown]
         public void TearDown()
         {
-            _dbContext.Database.EnsureDeleted(); // database deleten
+            _dbContext.Database.EnsureDeleted();
             _dbContext.Dispose();
         }
 
