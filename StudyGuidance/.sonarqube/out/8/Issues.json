@@ -6,11 +6,116 @@
       "tool": {
         "name": "Microsoft (R) Visual C# Compiler",
         "version": "4.6.0.0",
-        "fileVersion": "4.6.0-3.23259.8 (c3cc1d0c)",
+        "fileVersion": "4.6.0-3.23212.2 (d78a163b)",
         "semanticVersion": "4.6.0",
-        "language": "en-US"
+        "language": "nl-NL"
       },
       "results": [
+        {
+          "ruleId": "CS8600",
+          "level": "warning",
+          "message": "Converting null literal or possible null value to non-nullable type.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
+                "region": {
+                  "startLine": 185,
+                  "startColumn": 29,
+                  "endLine": 185,
+                  "endColumn": 48
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8600",
+          "level": "warning",
+          "message": "Converting null literal or possible null value to non-nullable type.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
+                "region": {
+                  "startLine": 193,
+                  "startColumn": 93,
+                  "endLine": 193,
+                  "endColumn": 102
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8620",
+          "level": "warning",
+          "message": "Argument of type 'ISetup<IQuizRepository, Task<Job>>' cannot be used for parameter 'mock' of type 'IReturns<IQuizRepository, Task<Job?>>' in 'IReturnsResult<IQuizRepository> ReturnsExtensions.ReturnsAsync<IQuizRepository, Job?>(IReturns<IQuizRepository, Task<Job?>> mock, Job? value)' due to differences in the nullability of reference types.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
+                "region": {
+                  "startLine": 193,
+                  "startColumn": 13,
+                  "endLine": 193,
+                  "endColumn": 79
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8600",
+          "level": "warning",
+          "message": "Converting null literal or possible null value to non-nullable type.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
+                "region": {
+                  "startLine": 220,
+                  "startColumn": 93,
+                  "endLine": 220,
+                  "endColumn": 102
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8620",
+          "level": "warning",
+          "message": "Argument of type 'ISetup<IQuizRepository, Task<Job>>' cannot be used for parameter 'mock' of type 'IReturns<IQuizRepository, Task<Job?>>' in 'IReturnsResult<IQuizRepository> ReturnsExtensions.ReturnsAsync<IQuizRepository, Job?>(IReturns<IQuizRepository, Task<Job?>> mock, Job? value)' due to differences in the nullability of reference types.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
+                "region": {
+                  "startLine": 220,
+                  "startColumn": 13,
+                  "endLine": 220,
+                  "endColumn": 79
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
         {
           "ruleId": "CS8618",
           "level": "warning",
@@ -21,11 +126,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Lucah/Documents/School/2023-2024/IT-Project/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
                 "region": {
-                  "startLine": 14,
+                  "startLine": 15,
                   "startColumn": 32,
-                  "endLine": 14,
+                  "endLine": 15,
                   "endColumn": 43
                 }
               }
@@ -34,11 +139,11 @@
           "relatedLocations": [
             {
               "physicalLocation": {
-                "uri": "file:///C:/Users/Lucah/Documents/School/2023-2024/IT-Project/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
                 "region": {
-                  "startLine": 14,
+                  "startLine": 15,
                   "startColumn": 32,
-                  "endLine": 14,
+                  "endLine": 15,
                   "endColumn": 43
                 }
               }
@@ -58,11 +163,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Lucah/Documents/School/2023-2024/IT-Project/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
                 "region": {
-                  "startLine": 15,
+                  "startLine": 16,
                   "startColumn": 39,
-                  "endLine": 15,
+                  "endLine": 16,
                   "endColumn": 62
                 }
               }
@@ -71,11 +176,11 @@
           "relatedLocations": [
             {
               "physicalLocation": {
-                "uri": "file:///C:/Users/Lucah/Documents/School/2023-2024/IT-Project/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
                 "region": {
-                  "startLine": 15,
+                  "startLine": 16,
                   "startColumn": 39,
-                  "endLine": 15,
+                  "endLine": 16,
                   "endColumn": 62
                 }
               }
@@ -92,11 +197,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Lucah/Documents/School/2023-2024/IT-Project/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
                 "region": {
-                  "startLine": 36,
+                  "startLine": 37,
                   "startColumn": 13,
-                  "endLine": 36,
+                  "endLine": 37,
                   "endColumn": 56
                 }
               }
@@ -118,11 +223,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Lucah/Documents/School/2023-2024/IT-Project/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
                 "region": {
-                  "startLine": 53,
+                  "startLine": 54,
                   "startColumn": 13,
-                  "endLine": 53,
+                  "endLine": 54,
                   "endColumn": 56
                 }
               }
@@ -144,11 +249,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Lucah/Documents/School/2023-2024/IT-Project/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
                 "region": {
-                  "startLine": 71,
+                  "startLine": 72,
                   "startColumn": 13,
-                  "endLine": 71,
+                  "endLine": 72,
                   "endColumn": 56
                 }
               }
@@ -170,11 +275,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Lucah/Documents/School/2023-2024/IT-Project/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
                 "region": {
-                  "startLine": 85,
+                  "startLine": 86,
                   "startColumn": 13,
-                  "endLine": 85,
+                  "endLine": 86,
                   "endColumn": 62
                 }
               }
@@ -188,9 +293,413 @@
               "ModelName": "IsInstanceOf"
             }
           }
+        },
+        {
+          "ruleId": "NUnit2038",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(actual, Is.InstanceOf(expected)), instead of the classic model, Assert.IsInstanceOf(expected, actual)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
+                "region": {
+                  "startLine": 97,
+                  "startColumn": 13,
+                  "endLine": 97,
+                  "endColumn": 62
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "True",
+              "ModelName": "IsInstanceOf"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2038",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(actual, Is.InstanceOf(expected)), instead of the classic model, Assert.IsInstanceOf(expected, actual)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
+                "region": {
+                  "startLine": 108,
+                  "startColumn": 13,
+                  "endLine": 108,
+                  "endColumn": 62
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "True",
+              "ModelName": "IsInstanceOf"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2038",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(actual, Is.InstanceOf(expected)), instead of the classic model, Assert.IsInstanceOf(expected, actual)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
+                "region": {
+                  "startLine": 119,
+                  "startColumn": 13,
+                  "endLine": 119,
+                  "endColumn": 62
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "True",
+              "ModelName": "IsInstanceOf"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2038",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(actual, Is.InstanceOf(expected)), instead of the classic model, Assert.IsInstanceOf(expected, actual)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
+                "region": {
+                  "startLine": 133,
+                  "startColumn": 13,
+                  "endLine": 133,
+                  "endColumn": 56
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "True",
+              "ModelName": "IsInstanceOf"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2038",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(actual, Is.InstanceOf(expected)), instead of the classic model, Assert.IsInstanceOf(expected, actual)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
+                "region": {
+                  "startLine": 149,
+                  "startColumn": 13,
+                  "endLine": 149,
+                  "endColumn": 62
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "True",
+              "ModelName": "IsInstanceOf"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2038",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(actual, Is.InstanceOf(expected)), instead of the classic model, Assert.IsInstanceOf(expected, actual)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
+                "region": {
+                  "startLine": 168,
+                  "startColumn": 13,
+                  "endLine": 168,
+                  "endColumn": 56
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "True",
+              "ModelName": "IsInstanceOf"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2038",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(actual, Is.InstanceOf(expected)), instead of the classic model, Assert.IsInstanceOf(expected, actual)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
+                "region": {
+                  "startLine": 182,
+                  "startColumn": 13,
+                  "endLine": 182,
+                  "endColumn": 56
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "True",
+              "ModelName": "IsInstanceOf"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2038",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(actual, Is.InstanceOf(expected)), instead of the classic model, Assert.IsInstanceOf(expected, actual)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
+                "region": {
+                  "startLine": 184,
+                  "startColumn": 13,
+                  "endLine": 184,
+                  "endColumn": 53
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "True",
+              "ModelName": "IsInstanceOf"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2005",
+          "level": "warning",
+          "message": "Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
+                "region": {
+                  "startLine": 186,
+                  "startColumn": 13,
+                  "endLine": 186,
+                  "endColumn": 48
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "False",
+              "ModelName": "AreEqual"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2038",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(actual, Is.InstanceOf(expected)), instead of the classic model, Assert.IsInstanceOf(expected, actual)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
+                "region": {
+                  "startLine": 197,
+                  "startColumn": 13,
+                  "endLine": 197,
+                  "endColumn": 62
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "True",
+              "ModelName": "IsInstanceOf"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2005",
+          "level": "warning",
+          "message": "Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
+                "region": {
+                  "startLine": 199,
+                  "startColumn": 13,
+                  "endLine": 199,
+                  "endColumn": 71
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "False",
+              "ModelName": "AreEqual"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2038",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(actual, Is.InstanceOf(expected)), instead of the classic model, Assert.IsInstanceOf(expected, actual)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
+                "region": {
+                  "startLine": 211,
+                  "startColumn": 13,
+                  "endLine": 211,
+                  "endColumn": 56
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "True",
+              "ModelName": "IsInstanceOf"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2005",
+          "level": "warning",
+          "message": "Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
+                "region": {
+                  "startLine": 213,
+                  "startColumn": 13,
+                  "endLine": 213,
+                  "endColumn": 54
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "False",
+              "ModelName": "AreEqual"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2038",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(actual, Is.InstanceOf(expected)), instead of the classic model, Assert.IsInstanceOf(expected, actual)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
+                "region": {
+                  "startLine": 224,
+                  "startColumn": 13,
+                  "endLine": 224,
+                  "endColumn": 62
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "True",
+              "ModelName": "IsInstanceOf"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2005",
+          "level": "warning",
+          "message": "Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Api.Tests/Controllers/Api/QuizControllerTests.cs",
+                "region": {
+                  "startLine": 226,
+                  "startColumn": 13,
+                  "endLine": 226,
+                  "endColumn": 60
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "False",
+              "ModelName": "AreEqual"
+            }
+          }
         }
       ],
       "rules": {
+        "CS8600": {
+          "id": "CS8600",
+          "shortDescription": "Converting null literal or possible null value to non-nullable type.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8600)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
         "CS8618": {
           "id": "CS8618",
           "shortDescription": "Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.",
@@ -203,6 +712,31 @@
               "Compiler",
               "Telemetry"
             ]
+          }
+        },
+        "CS8620": {
+          "id": "CS8620",
+          "shortDescription": "Argument cannot be used for parameter due to differences in the nullability of reference types.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8620)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "NUnit2005": {
+          "id": "NUnit2005",
+          "shortDescription": "Consider using Assert.That(actual, Is.EqualTo(expected)) instead of Assert.AreEqual(expected, actual)",
+          "fullDescription": "Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual).",
+          "defaultLevel": "warning",
+          "helpUri": "https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md",
+          "properties": {
+            "category": "Assertion",
+            "isEnabledByDefault": true
           }
         },
         "NUnit2038": {

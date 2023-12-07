@@ -164,7 +164,7 @@ namespace StudyGuidance.Infrastructure.Tests
 
             Assert.IsNotNull(result);
             Assert.IsInstanceOf<Job>(result);
-            Assert.AreEqual(200, result.JobId);
+            Assert.AreEqual(1, result.JobId);
         }
 
         [Test]
@@ -173,7 +173,6 @@ namespace StudyGuidance.Infrastructure.Tests
             var result = await _repository.GetJobByIdAsync(999);
 
             Assert.IsNull(result);
-            Assert.AreEqual(404, result.JobId);
         }
 
         [TearDown]

@@ -6,11 +6,341 @@
       "tool": {
         "name": "Microsoft (R) Visual C# Compiler",
         "version": "4.6.0.0",
-        "fileVersion": "4.6.0-3.23259.8 (c3cc1d0c)",
+        "fileVersion": "4.6.0-3.23212.2 (d78a163b)",
         "semanticVersion": "4.6.0",
-        "language": "en-US"
+        "language": "nl-NL"
       },
       "results": [
+        {
+          "ruleId": "CS8625",
+          "level": "warning",
+          "message": "Cannot convert null literal to non-nullable reference type.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_TinderQuestionCard_razor.g.cs",
+                "region": {
+                  "startLine": 198,
+                  "startColumn": 58,
+                  "endLine": 198,
+                  "endColumn": 62
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS1998",
+          "level": "warning",
+          "message": "This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_TinderQuestionCard_razor.g.cs",
+                "region": {
+                  "startLine": 289,
+                  "startColumn": 23,
+                  "endLine": 289,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Options' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Models/Question.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 29,
+                  "endLine": 5,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Models/Question.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 29,
+                  "endLine": 5,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Phrase' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Models/Question.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 23,
+                  "endLine": 7,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Models/Question.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 23,
+                  "endLine": 7,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Content' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Models/Option.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 23,
+                  "endLine": 5,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Models/Option.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 23,
+                  "endLine": 5,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Name' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Pages_Jobs_razor.g.cs",
+                "region": {
+                  "startLine": 138,
+                  "startColumn": 16,
+                  "endLine": 138,
+                  "endColumn": 20
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Pages_Jobs_razor.g.cs",
+                "region": {
+                  "startLine": 138,
+                  "startColumn": 16,
+                  "endLine": 138,
+                  "endColumn": 20
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS1998",
+          "level": "warning",
+          "message": "This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_StandardQuestionCard_razor.g.cs",
+                "region": {
+                  "startLine": 534,
+                  "startColumn": 16,
+                  "endLine": 534,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8603",
+          "level": "warning",
+          "message": "Possible null reference return.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/ApiClient/BaseApiClient.cs",
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 12,
+                  "endLine": 24,
+                  "endColumn": 58
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8603",
+          "level": "warning",
+          "message": "Possible null reference return.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/ApiClient/BaseApiClient.cs",
+                "region": {
+                  "startLine": 31,
+                  "startColumn": 11,
+                  "endLine": 31,
+                  "endColumn": 18
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable field 'Job' must contain a non-null value when exiting constructor. Consider declaring the field as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_JobDetail_razor.g.cs",
+                "region": {
+                  "startLine": 228,
+                  "startColumn": 14,
+                  "endLine": 228,
+                  "endColumn": 17
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_JobDetail_razor.g.cs",
+                "region": {
+                  "startLine": 228,
+                  "startColumn": 14,
+                  "endLine": 228,
+                  "endColumn": 17
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Job' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_JobCards_razor.g.cs",
+                "region": {
+                  "startLine": 186,
+                  "startColumn": 16,
+                  "endLine": 186,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_JobCards_razor.g.cs",
+                "region": {
+                  "startLine": 186,
+                  "startColumn": 16,
+                  "endLine": 186,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS1998",
+          "level": "warning",
+          "message": "This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_StandardQuestionCard_razor.g.cs",
+                "region": {
+                  "startLine": 589,
+                  "startColumn": 23,
+                  "endLine": 589,
+                  "endColumn": 46
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
         {
           "ruleId": "CS8618",
           "level": "warning",
@@ -20,9 +350,9 @@
               "resultFile": {
                 "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_HomepageHeroe_razor.g.cs",
                 "region": {
-                  "startLine": 222,
+                  "startLine": 239,
                   "startColumn": 33,
-                  "endLine": 222,
+                  "endLine": 239,
                   "endColumn": 42
                 }
               }
@@ -33,9 +363,9 @@
               "physicalLocation": {
                 "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_HomepageHeroe_razor.g.cs",
                 "region": {
-                  "startLine": 222,
+                  "startLine": 239,
                   "startColumn": 33,
-                  "endLine": 222,
+                  "endLine": 239,
                   "endColumn": 42
                 }
               }
@@ -54,9 +384,9 @@
               "resultFile": {
                 "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_PlayerCards_razor.g.cs",
                 "region": {
-                  "startLine": 323,
+                  "startLine": 388,
                   "startColumn": 23,
-                  "endLine": 323,
+                  "endLine": 388,
                   "endColumn": 27
                 }
               }
@@ -67,9 +397,9 @@
               "physicalLocation": {
                 "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_PlayerCards_razor.g.cs",
                 "region": {
-                  "startLine": 323,
+                  "startLine": 388,
                   "startColumn": 23,
-                  "endLine": 323,
+                  "endLine": 388,
                   "endColumn": 27
                 }
               }
@@ -88,9 +418,9 @@
               "resultFile": {
                 "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_PlayerCards_razor.g.cs",
                 "region": {
-                  "startLine": 324,
+                  "startLine": 389,
                   "startColumn": 23,
-                  "endLine": 324,
+                  "endLine": 389,
                   "endColumn": 32
                 }
               }
@@ -101,9 +431,9 @@
               "physicalLocation": {
                 "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_PlayerCards_razor.g.cs",
                 "region": {
-                  "startLine": 324,
+                  "startLine": 389,
                   "startColumn": 23,
-                  "endLine": 324,
+                  "endLine": 389,
                   "endColumn": 32
                 }
               }
@@ -122,9 +452,9 @@
               "resultFile": {
                 "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_PlayerCards_razor.g.cs",
                 "region": {
-                  "startLine": 326,
+                  "startLine": 391,
                   "startColumn": 23,
-                  "endLine": 326,
+                  "endLine": 391,
                   "endColumn": 33
                 }
               }
@@ -135,9 +465,9 @@
               "physicalLocation": {
                 "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_PlayerCards_razor.g.cs",
                 "region": {
-                  "startLine": 326,
+                  "startLine": 391,
                   "startColumn": 23,
-                  "endLine": 326,
+                  "endLine": 391,
                   "endColumn": 33
                 }
               }
@@ -156,9 +486,9 @@
               "resultFile": {
                 "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_PlayerCards_razor.g.cs",
                 "region": {
-                  "startLine": 327,
+                  "startLine": 392,
                   "startColumn": 23,
-                  "endLine": 327,
+                  "endLine": 392,
                   "endColumn": 30
                 }
               }
@@ -169,9 +499,9 @@
               "physicalLocation": {
                 "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_PlayerCards_razor.g.cs",
                 "region": {
-                  "startLine": 327,
+                  "startLine": 392,
                   "startColumn": 23,
-                  "endLine": 327,
+                  "endLine": 392,
                   "endColumn": 30
                 }
               }
@@ -190,9 +520,9 @@
               "resultFile": {
                 "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_PlayerCards_razor.g.cs",
                 "region": {
-                  "startLine": 328,
+                  "startLine": 393,
                   "startColumn": 23,
-                  "endLine": 328,
+                  "endLine": 393,
                   "endColumn": 34
                 }
               }
@@ -203,9 +533,9 @@
               "physicalLocation": {
                 "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_PlayerCards_razor.g.cs",
                 "region": {
-                  "startLine": 328,
+                  "startLine": 393,
                   "startColumn": 23,
-                  "endLine": 328,
+                  "endLine": 393,
                   "endColumn": 34
                 }
               }
@@ -224,9 +554,9 @@
               "resultFile": {
                 "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_PlayerCards_razor.g.cs",
                 "region": {
-                  "startLine": 329,
+                  "startLine": 394,
                   "startColumn": 23,
-                  "endLine": 329,
+                  "endLine": 394,
                   "endColumn": 36
                 }
               }
@@ -237,9 +567,9 @@
               "physicalLocation": {
                 "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_PlayerCards_razor.g.cs",
                 "region": {
-                  "startLine": 329,
+                  "startLine": 394,
                   "startColumn": 23,
-                  "endLine": 329,
+                  "endLine": 394,
                   "endColumn": 36
                 }
               }
@@ -258,9 +588,9 @@
               "resultFile": {
                 "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_PlayerCards_razor.g.cs",
                 "region": {
-                  "startLine": 330,
+                  "startLine": 395,
                   "startColumn": 23,
-                  "endLine": 330,
+                  "endLine": 395,
                   "endColumn": 34
                 }
               }
@@ -271,9 +601,9 @@
               "physicalLocation": {
                 "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_PlayerCards_razor.g.cs",
                 "region": {
-                  "startLine": 330,
+                  "startLine": 395,
                   "startColumn": 23,
-                  "endLine": 330,
+                  "endLine": 395,
                   "endColumn": 34
                 }
               }
@@ -292,9 +622,9 @@
               "resultFile": {
                 "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_PlayerCards_razor.g.cs",
                 "region": {
-                  "startLine": 331,
+                  "startLine": 396,
                   "startColumn": 23,
-                  "endLine": 331,
+                  "endLine": 396,
                   "endColumn": 31
                 }
               }
@@ -305,9 +635,9 @@
               "physicalLocation": {
                 "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_PlayerCards_razor.g.cs",
                 "region": {
-                  "startLine": 331,
+                  "startLine": 396,
                   "startColumn": 23,
-                  "endLine": 331,
+                  "endLine": 396,
                   "endColumn": 31
                 }
               }
@@ -318,18 +648,18 @@
           }
         },
         {
-          "ruleId": "S2933",
+          "ruleId": "CS8602",
           "level": "warning",
-          "message": "Make 'players' 'readonly'.",
+          "message": "Dereference of a possibly null reference.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Lucah/Documents/School/2023-2024/IT-Project/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/PlayerCards.razor",
+                "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_JobOverview_razor.g.cs",
                 "region": {
-                  "startLine": 44,
-                  "startColumn": 31,
-                  "endLine": 44,
-                  "endColumn": 38
+                  "startLine": 461,
+                  "startColumn": 76,
+                  "endLine": 461,
+                  "endColumn": 84
                 }
               }
             }
@@ -339,39 +669,94 @@
           }
         },
         {
-          "ruleId": "S2933",
+          "ruleId": "CS8602",
           "level": "warning",
-          "message": "Make '_arrows' 'readonly'.",
+          "message": "Dereference of a possibly null reference.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Lucah/Documents/School/2023-2024/IT-Project/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/HomepageHeroe.razor",
+                "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_JobOverview_razor.g.cs",
                 "region": {
-                  "startLine": 20,
+                  "startLine": 462,
+                  "startColumn": 41,
+                  "endLine": 462,
+                  "endColumn": 49
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Name' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_JobOverview_razor.g.cs",
+                "region": {
+                  "startLine": 468,
+                  "startColumn": 19,
+                  "endLine": 468,
+                  "endColumn": 23
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_JobOverview_razor.g.cs",
+                "region": {
+                  "startLine": 468,
+                  "startColumn": 19,
+                  "endLine": 468,
+                  "endColumn": 23
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS0169",
+          "level": "warning",
+          "message": "The field 'JobOverview.multiselectionTextChoice' is never used",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_JobOverview_razor.g.cs",
+                "region": {
+                  "startLine": 441,
                   "startColumn": 18,
-                  "endLine": 20,
-                  "endColumn": 25
+                  "endLine": 441,
+                  "endColumn": 42
                 }
               }
             }
           ],
           "properties": {
-            "warningLevel": 1
+            "warningLevel": 3
           }
         },
         {
-          "ruleId": "S1104",
+          "ruleId": "S2933",
           "level": "warning",
-          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "message": "Make '_url' 'readonly'.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Lucah/Documents/School/2023-2024/IT-Project/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/HomepageHeroe.razor",
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/ApiClient/JobApiClient.cs",
                 "region": {
-                  "startLine": 38,
-                  "startColumn": 16,
-                  "endLine": 38,
-                  "endColumn": 33
+                  "startLine": 11,
+                  "startColumn": 18,
+                  "endLine": 11,
+                  "endColumn": 22
                 }
               }
             }
@@ -383,57 +768,15 @@
         {
           "ruleId": "S2933",
           "level": "warning",
-          "message": "Make '_bullets' 'readonly'.",
+          "message": "Make '_url' 'readonly'.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Lucah/Documents/School/2023-2024/IT-Project/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/HomepageHeroe.razor",
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/ApiClient/QuizApiClient.cs",
                 "region": {
-                  "startLine": 21,
-                  "startColumn": 18,
-                  "endLine": 21,
-                  "endColumn": 26
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2933",
-          "level": "warning",
-          "message": "Make '_enableSwipeGesture' 'readonly'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Lucah/Documents/School/2023-2024/IT-Project/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/HomepageHeroe.razor",
-                "region": {
-                  "startLine": 22,
-                  "startColumn": 18,
-                  "endLine": 22,
-                  "endColumn": 37
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2933",
-          "level": "warning",
-          "message": "Make '_autocycle' 'readonly'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Lucah/Documents/School/2023-2024/IT-Project/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/HomepageHeroe.razor",
-                "region": {
-                  "startLine": 23,
-                  "startColumn": 18,
-                  "endLine": 23,
+                  "startLine": 7,
+                  "startColumn": 24,
+                  "endLine": 7,
                   "endColumn": 28
                 }
               }
@@ -444,60 +787,18 @@
           }
         },
         {
-          "ruleId": "S2933",
-          "level": "warning",
-          "message": "Make '_source' 'readonly'.",
+          "ruleId": "CA2254",
+          "level": "note",
+          "message": "The logging message template should not vary between calls to 'LoggerExtensions.LogError(ILogger, Exception?, string?, params object?[])'",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Lucah/Documents/School/2023-2024/IT-Project/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/HomepageHeroe.razor",
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/ApiClient/BaseApiClient.cs",
                 "region": {
-                  "startLine": 24,
-                  "startColumn": 27,
-                  "endLine": 24,
-                  "endColumn": 34
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2933",
-          "level": "warning",
-          "message": "Make '_text' 'readonly'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Lucah/Documents/School/2023-2024/IT-Project/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/HomepageHeroe.razor",
-                "region": {
-                  "startLine": 31,
-                  "startColumn": 27,
-                  "endLine": 31,
-                  "endColumn": 32
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S4487",
-          "level": "warning",
-          "message": "Remove this unread private field '_carousel' or refactor the code to use its value.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Lucah/Documents/School/2023-2024/IT-Project/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/HomepageHeroe.razor",
-                "region": {
-                  "startLine": 19,
-                  "startColumn": 33,
-                  "endLine": 19,
-                  "endColumn": 42
+                  "startLine": 28,
+                  "startColumn": 25,
+                  "endLine": 28,
+                  "endColumn": 87
                 }
               }
             }
@@ -508,6 +809,77 @@
         }
       ],
       "rules": {
+        "CA2254": {
+          "id": "CA2254",
+          "shortDescription": "Template should be a static expression",
+          "fullDescription": "The logging message template should not vary between calls.",
+          "defaultLevel": "note",
+          "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2254",
+          "properties": {
+            "category": "Usage",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Telemetry",
+              "EnabledRuleInAggressiveMode"
+            ]
+          }
+        },
+        "CS0169": {
+          "id": "CS0169",
+          "shortDescription": "Field is never used",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0169)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS1998": {
+          "id": "CS1998",
+          "shortDescription": "Async method lacks 'await' operators and will run synchronously",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1998)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS8602": {
+          "id": "CS8602",
+          "shortDescription": "Dereference of a possibly null reference.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8602)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS8603": {
+          "id": "CS8603",
+          "shortDescription": "Possible null reference return.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8603)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
         "CS8618": {
           "id": "CS8618",
           "shortDescription": "Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.",
@@ -522,19 +894,17 @@
             ]
           }
         },
-        "S1104": {
-          "id": "S1104",
-          "shortDescription": "Fields should not have public accessibility",
-          "fullDescription": "Public fields in public classes do not respect the encapsulation principle and have three main disadvantages:",
+        "CS8625": {
+          "id": "CS8625",
+          "shortDescription": "Cannot convert null literal to non-nullable reference type.",
           "defaultLevel": "warning",
-          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1104",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8625)",
           "properties": {
-            "category": "Minor Code Smell",
+            "category": "Compiler",
             "isEnabledByDefault": true,
             "tags": [
-              "C#",
-              "MainSourceScope",
-              "SonarWay"
+              "Compiler",
+              "Telemetry"
             ]
           }
         },
@@ -546,23 +916,6 @@
           "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2933",
           "properties": {
             "category": "Major Code Smell",
-            "isEnabledByDefault": true,
-            "tags": [
-              "C#",
-              "MainSourceScope",
-              "TestSourceScope",
-              "SonarWay"
-            ]
-          }
-        },
-        "S4487": {
-          "id": "S4487",
-          "shortDescription": "Unread \"private\" fields should be removed",
-          "fullDescription": "Private fields which are written but never read are a case of \"dead store\". Changing the value of such a field is useless and most probably indicates an error in the code.",
-          "defaultLevel": "warning",
-          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-4487",
-          "properties": {
-            "category": "Critical Code Smell",
             "isEnabledByDefault": true,
             "tags": [
               "C#",
