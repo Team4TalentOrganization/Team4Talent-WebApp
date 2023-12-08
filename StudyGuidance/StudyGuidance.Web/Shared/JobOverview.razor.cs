@@ -22,6 +22,7 @@ namespace StudyGuidance.Web.Shared
         private string _immediateText = "";
         private List<Job> jobs = new List<Job>();
         private List<Option> subDomains = new List<Option>();
+        bool showNoJobsMessage;
         private List<Job> FilteredJobs
         {
             get
@@ -35,7 +36,7 @@ namespace StudyGuidance.Web.Shared
                 else
                 {
                     return options.Any()
-                        ? jobs.Where(job => options.Contains(job.SubDomain) && job.Name.ToLower().Contains(_immediateText.ToLower())).ToList()
+                        ? jobs.Where(job => options.Contains(job.SubDomain.ToUpper()) && job.Name.ToLower().Contains(_immediateText.ToLower())).ToList()
                         : jobs.Where(job => job.Name.ToLower().Contains(_immediateText.ToLower())).ToList();
                 }
             }
@@ -101,6 +102,14 @@ namespace StudyGuidance.Web.Shared
                 //jobs = await JobApiClient.GetJobsByFilterAsync(filterDomains, false, false);
                 jobs = await JobApiClient.GetJobsByFilterAsync(answers, workInTeam, workOnSite);
                 subDomains = await QuizApiClient.GetAllSubDomains();
+                if (jobs == null || !jobs.Any() || jobs.Count == 0)
+                {
+                    showNoJobsMessage = true;
+                }
+                else
+                {
+                    showNoJobsMessage = false;
+                }
             }
         }
     }

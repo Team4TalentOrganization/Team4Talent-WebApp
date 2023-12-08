@@ -33,7 +33,9 @@ namespace StudyGuidance.Web.ApiClient
         {
             string subdomainsParam = string.Join("&", subdomains.Select(subdomain => $"subdomains={subdomain}"));
             string url = $"{_url}/jobsByFilter?{subdomainsParam}&workInTeam={workInTeam}&workOnSite={workOnSite}";
-            return await GetJsonAsync<List<Job>>(url);
+            List<Job> result = await GetJsonAsync<List<Job>>(url);
+
+            return result ?? new List<Job>();
         }
     }
 }

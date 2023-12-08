@@ -3,8 +3,7 @@
 @using StudyGuidance.Web.ApiClient
 @inject IJobApiClient JobApiClient;
 @inject IQuizApiClient QuizApiClient;
-@inject NavigationManager NavigationManager;
-@inject IJSRuntime JS;
+@inject NavigationManager NavigationManager
 
 <div class="pt-5"></div>
 
@@ -40,17 +39,22 @@
             <MudTextField Class="custom-color" Placeholder="Zoeken" Immediate="true" @bind-Value="@_immediateText" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" />
         </div>
         <div class="overflow-auto">
-            @foreach (var job in FilteredJobs)
+            @if (showNoJobsMessage == false
+            )
             {
-                <div @onclick="@(e => GoToJobDetailPage(e, job.JobId))">
-                    <JobCards Job="job"></JobCards>
-                </div>
+                @foreach (var job in FilteredJobs)
+                {
+                    <div @onclick="@(e => GoToJobDetailPage(e, job.JobId))">
+                        <JobCards Job="job"></JobCards>
+                    </div>
+                }
+            }
+            else
+            {
+                <p class="text-center">Geen jobs gevonden.</p>
             }
         </div>
     </Animation>
 </div>
 
-@code {
 
-    
-}

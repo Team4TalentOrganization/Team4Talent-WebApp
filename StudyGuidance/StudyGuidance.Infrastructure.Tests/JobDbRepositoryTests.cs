@@ -67,7 +67,7 @@ namespace StudyGuidance.Infrastructure.Tests
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.That(1, Is.EqualTo(result.Count));
+            Assert.That(3, Is.EqualTo(result.Count));
             Assert.That(result.Select(job => job.SubDomain), Is.EquivalentTo(new[] { "Subdomain 1" }));
         }
 
