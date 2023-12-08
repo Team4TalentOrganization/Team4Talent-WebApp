@@ -58,5 +58,10 @@ namespace StudyGuidance.Infrastructure
         {
             return await _context.Questions.Where(q => q.Phrase == "In welk domein heb je interesse?").Include(options => options.Options).ToListAsync<Question>();
         }
+
+        public async Task<IReadOnlyList<Option>> GetSelectedSubDomainsForFilterAsync()
+        {
+            return await _context.Options.Where(o => o.QuestionId < 3).ToListAsync<Option>();
+        }
     }
 }

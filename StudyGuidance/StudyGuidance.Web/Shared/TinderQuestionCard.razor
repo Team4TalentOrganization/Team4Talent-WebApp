@@ -4,11 +4,11 @@
 @inject IJSRuntime JS;
 @inject IQuizApiClient QuizApiClient;
 <Animation Effect="Effecten" Enabled="IsActive" Speed="@Speed.Fast" OnAnimationEnd="End">
-    <div class="container bg-custom-color text-center outer-tinder-div">
+    <div class="container bg-custom-color text-center" style="width: 70%; height: 400px; position: relative; overflow: hidden; border-radius: 15px;">
         <div class="w-85 h-50 mx-auto mt-5 mb-3">
-            <img class="w-100 h-85 mt-3 bg-custom-border question-image" src="@GetAnswerForCurrentQuestion()" />
+            <img class="w-100 h-85 mt-3 bg-custom-border" src="@GetAnswerForCurrentQuestion()" style="border-radius: 15px;" />
         </div>
-        <p class="text-white text-center m-0 question-paragraph">@GetQuestionForCurrentQuestion()</p>
+        <p class="text-white text-center m-0 " style="font-size: 20px;">@GetQuestionForCurrentQuestion()</p>
         <div class="row mt-5">
             <div class="col-5 mt-5">
                 <svg @onclick="() => nextQuestionClicked(null)" xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#FF0000" class="bi bi-x-circle" viewBox="0 0 16 16">

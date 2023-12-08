@@ -22,7 +22,7 @@ namespace StudyGuidance.Infrastructure
         public async Task<IReadOnlyList<Job>> GetJobsByFilterAsync(List<int> subdomainIds, bool workInTeam, bool workOnSite)
         {
             List<Job> matchingJobs = await _context.Jobs
-                .Where(job => subdomainIds.Contains(job.OptionRelation) && (job.WorkInTeam == workInTeam || job.WorkOnSite == workOnSite))
+                .Where(job => subdomainIds.Contains(job.OptionRelation) || (job.WorkInTeam == workInTeam || job.WorkOnSite == workOnSite))
                 .ToListAsync();
 
             return matchingJobs;

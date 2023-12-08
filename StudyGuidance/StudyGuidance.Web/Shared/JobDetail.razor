@@ -53,21 +53,3 @@
 		</div>
 	</div>
 </div>
-
-@code {
-	[Parameter]
-	public int Id { get; set; }
-
-	private Job Job;
-
-
-	protected override async Task OnParametersSetAsync()
-	{
-		Job = await JobApiClient.GetJobByIdAsync(Id);
-	}
-
-	private async Task GoBackToOverview()
-	{
-		await JSRuntime.InvokeVoidAsync("history.back");
-	}
-}

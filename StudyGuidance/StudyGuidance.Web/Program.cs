@@ -4,6 +4,7 @@ using StudyGuidance.Web;
 using MudBlazor.Services;
 using BlazorAnimation;
 using StudyGuidance.Web.ApiClient;
+using Microsoft.AspNetCore.Components;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");

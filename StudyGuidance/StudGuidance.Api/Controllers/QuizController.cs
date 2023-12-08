@@ -98,5 +98,18 @@ namespace StudGuidance.Api.Controllers
 
             return Ok(allSelectedSubDomains);
         }
+
+        [HttpGet("subdomains/all")]
+        public async Task<IActionResult> GetAllSubDomainsForFilter()
+        {
+            IReadOnlyList<Option> allSelectedSubDomains = await _questionRepository.GetSelectedSubDomainsForFilterAsync();
+
+            if (allSelectedSubDomains.Count == 0)
+            {
+                return NotFound("SubDomains bevat geen inhoud");
+            }
+
+            return Ok(allSelectedSubDomains);
+        }
     }
 }

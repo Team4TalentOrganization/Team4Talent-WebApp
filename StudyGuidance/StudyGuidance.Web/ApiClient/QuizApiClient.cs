@@ -33,7 +33,7 @@ namespace StudyGuidance.Web.ApiClient
         }
         public async Task<List<Option>> GetAllSubDomains()
         {
-            return await GetJsonAsync<List<Option>>("https://localhost:7109/api/Quiz/subdomains?domainId=1&domainId=2&domainId=3&domainId=4&domainId=5&domainId=6&domainId=7");
+            return await GetJsonAsync<List<Option>>("https://localhost:7109/api/Quiz/subdomains/all");
         }
 
         public async Task<List<Question>> GetSubdomains(List<int> domainIds)

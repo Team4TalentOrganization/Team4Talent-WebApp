@@ -10,5 +10,6 @@ namespace StudyGuidance.AppLogic
         Task<IReadOnlyList<Question>> GetDomainQuestionsAsync();
         Task<IReadOnlyList<Option>> GetDomainsAsync();
         Task<IReadOnlyList<Question>> GetSelectedSubDomainsAsync(List<int> domainId);
-	}
+        Task<IReadOnlyList<Option>> GetSelectedSubDomainsForFilterAsync();
+    }
 }
