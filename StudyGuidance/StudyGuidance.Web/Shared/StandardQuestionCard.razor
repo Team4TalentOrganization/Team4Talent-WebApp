@@ -148,15 +148,39 @@ else
             }
         }
 
-        if (currentQuestion == questionsList.Count -1 && !subDomainsAreSet)
+        if (currentQuestion == questionsList.Count - 1 && !subDomainsAreSet)
         {
             selectedDomains = await QuizApiClient.GetSubdomains(domainAnswers);
-            foreach(Question selectedDomain in selectedDomains)
+            var questionsWithEmptyOption = new List<Question>();
+            var modifiedQuestions = new List<Question>();
+
+            foreach (var selectedDomain in selectedDomains)
             {
-                questionsList.Add(selectedDomain);
+                if (selectedDomain.Options.Any(option => string.IsNullOrEmpty(option.Content)))
+                {
+                    questionsWithEmptyOption.Add(selectedDomain);
+                }
+                else
+                {
+                    modifiedQuestions.Add(selectedDomain);
+                }
             }
+
+            modifiedQuestions.AddRange(questionsWithEmptyOption);
+
+            foreach (var question in modifiedQuestions)
+            {
+                while (question.Options.Count < 4)
+                {
+                    question.Options.Add(new Option());
+                }
+            }
+
+            questionsList.AddRange(modifiedQuestions);
+
             subDomainsAreSet = true;
         }
+
 
         ResetCardClasses();
         currentQuestion++;
@@ -219,6 +243,34 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        questionsList = await QuizApiClient.GetAllDomainQuestions();
+        var originalQuestionsList = await QuizApiClient.GetAllDomainQuestions();
+        var questionsWithEmptyOption = new List<Question>();
+        var modifiedQuestions = new List<Question>();
+
+        foreach (var question in originalQuestionsList)
+        {
+            if (question.Options.Any(option => string.IsNullOrEmpty(option.Content)))
+            {
+                questionsWithEmptyOption.Add(question);
+            }
+            else
+            {
+                modifiedQuestions.Add(question);
+            }
+        }
+
+        modifiedQuestions.AddRange(questionsWithEmptyOption);
+
+        foreach (var question in modifiedQuestions)
+        {
+            while (question.Options.Count < 4)
+            {
+                question.Options.Add(new Option());
+            }
+        }
+
+        questionsList = modifiedQuestions;
+
+        await JS.InvokeVoidAsync("console.log", questionsList);
     }
 }
