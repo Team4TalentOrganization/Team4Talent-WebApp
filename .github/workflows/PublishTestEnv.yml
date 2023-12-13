@@ -60,11 +60,6 @@ jobs:
         run: dotnet publish "${{ env.WORKING_DIRECTORY_BACKEND }}" --configuration ${{ env.CONFIGURATION }} --no-build --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH_BACKEND }}"
 
 
-      - name: Publish Artifacts Frontend
-        uses: actions/upload-artifact@v3
-        with:
-          name: webapp-backend
-          path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH_FRONTEND }}
 
       - name: Publish Artifacts Backend
         uses: actions/upload-artifact@v3
