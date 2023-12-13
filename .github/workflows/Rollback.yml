@@ -1,7 +1,12 @@
 name: Rollback version Test environment
 env:
+  AZURE_WEBAPP_NAME_FRONTEND: StudyGuidanceWebApp
+  AZURE_WEBAPP_NAME_BACKEND: StudGuidanceApi
+
+  AZURE_WEBAPP_PACKAGE_PATH_FRONTEND: './publish'
+  AZURE_WEBAPP_PACKAGE_PATH_BACKEND: './publish_backend'
+
   AZURE_WEBAPP_NAME: StudyGuidanceWebApp
-  AZURE_WEBAPP_PACKAGE_PATH: './publish'
   DOTNET_VERSION: '6.0'
   WORKING_DIRECTORY: '.\StudyGuidance\StudyGuidance.Web'
   CONFIGURATION: Release
@@ -23,17 +28,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Download artifact
+      - name: Download frontend artifact
         uses: actions/download-artifact@v3
         with:
           name: webapp-frontend-${{ github.event.inputs.rollback-version }}
-          path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+          path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH_FRONTEND }}
 
-      - name: deployment
+      - name: Download backend artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: webapp-backend-${{ github.event.inputs.rollback-version }}
+          path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH_BACKEND }}
+
+      - name: deployment frontend
         uses: azure/webapps-deploy@v2
         with:
-          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          app-name: ${{ env.AZURE_WEBAPP_NAME_FRONTEND }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH_FRONTEND }}
+
+      - name: deployment backend
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME_BACKEND }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_BACKEND }}
+          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH_BACKEND }}
 
 

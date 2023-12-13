@@ -58,18 +58,18 @@ jobs:
       - name: Publish
         run: dotnet publish "${{ env.WORKING_DIRECTORY_FRONTEND }}" --configuration ${{ env.CONFIGURATION }} --no-build --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH_FRONTEND }}"
     
-      - name: Publish Artifacts
+      - name: Publish frontend Artifacts
         uses: actions/upload-artifact@v3
         with:
           name: webapp-frontend
           path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH_FRONTEND }}
 
 
-      - name: Restore-backend
-        run: dotnet restore "${{ env.WORKING_DIRECTORY_BACKEND }}"
-
       - name: Set Database connection_string
         run: sed -i 's|"Data Source=(localdb)\\\\MSSQLLocalDB;Database=StudyGuidanceDb;Integrated Security=True;TrustServerCertificate=True;"|"${{ secrets.CONNECTION_STRING_DEVELOPMENT }}"|g' ./StudyGuidance/StudGuidance.Api/appsettings.json
+
+      - name: Restore-backend
+        run: dotnet restore "${{ env.WORKING_DIRECTORY_BACKEND }}"
 
       - name: build-backend
         run: dotnet build "${{ env.WORKING_DIRECTORY_BACKEND }}" --configuration ${{ env.CONFIGURATION }} --no-restore
@@ -90,8 +90,6 @@ jobs:
           name: webapp-backend
           path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH_BACKEND }}
 
-      - name: ls -la
-        run: ls -la ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
   
   publish:
     runs-on: ubuntu-latest
