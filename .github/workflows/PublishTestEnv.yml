@@ -44,25 +44,7 @@ jobs:
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
-      - name: Restore
-        run: dotnet restore "${{ env.WORKING_DIRECTORY_FRONTEND }}"
-
-      - name: Set Backend URL
-        run: |
-          sed -i 's|"https://localhost:7109/api/Quiz"|"${{ env.BACKEND_URL }}"|g' "${{ env.FRONTEND_URL_LOCATTION }}QuizApiClient.cs"
-          sed -i 's|"https://localhost:7109/api/Quiz"|"${{ env.BACKEND_URL }}"|g' "${{ env.FRONTEND_URL_LOCATTION }}JobApiClient.cs"
-
-      - name: Build
-        run: dotnet build "${{ env.WORKING_DIRECTORY_FRONTEND }}" --configuration ${{ env.CONFIGURATION }} --no-restore
-
-      - name: Publish
-        run: dotnet publish "${{ env.WORKING_DIRECTORY_FRONTEND }}" --configuration ${{ env.CONFIGURATION }} --no-build --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH_FRONTEND }}"
-    
-      - name: Publish frontend Artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: webapp-frontend
-          path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH_FRONTEND }}
+      
 
 
       - name: Set Database connection_string
@@ -96,11 +78,7 @@ jobs:
     needs: build
 
     steps:
-      - name: Download frontend artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: webapp-frontend
-          path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH_FRONTEND }}
+      
 
       - name: Download backend artifact
         uses: actions/download-artifact@v3
@@ -108,12 +86,7 @@ jobs:
           name: webapp-backend
           path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH_BACKEND }}
 
-      - name: deployment-frontend
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: ${{ env.AZURE_WEBAPP_NAME_FRONTEND }}
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH_FRONTEND }}
+      
 
       - name: deployment-backend
         uses: azure/webapps-deploy@v2
