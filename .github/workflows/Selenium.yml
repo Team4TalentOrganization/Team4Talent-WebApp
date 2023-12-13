@@ -1,5 +1,6 @@
 name: Selenium End-to-End Test
-
+env:
+  TEST_PATH: '.\Team4Talent-StudyGuidanceAutomationTests'
 on:
   workflow_dispatch:
   push:
@@ -22,18 +23,18 @@ jobs:
           
       - name: Build Maven project
         run: mvn package
-        working-directory: StudyGuidance-IntegrationTests/Team4Talent-StudyGuidanceAutomationTests
+        working-directory: TEST_PATH
 
       - name: Run Selenium tests
         run: mvn clean test
-        working-directory: StudyGuidance-IntegrationTests/Team4Talent-StudyGuidanceAutomationTests
+        working-directory: TEST_PATH
 
       - name: Create test report
         run: mvn surefire-report:report-only
-        working-directory: StudyGuidance-IntegrationTests/Team4Talent-StudyGuidanceAutomationTests
+        working-directory: TEST_PATH
 
       - name: Upload Surefire HTML report
         uses: actions/upload-artifact@v2
         with:
           name: surefire-report
-          path: StudyGuidance-IntegrationTests/Team4Talent-StudyGuidanceAutomationTests/target/site/surefire-report.html
+          path: '${{TEST_PATH}}/target/site/surefire-report.html'
