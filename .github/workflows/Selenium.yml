@@ -1,0 +1,36 @@
+name: Selenium End-to-End Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '21'
+          
+      - name: Build Maven project
+        run: mvn package
+        working-directory: StudyGuidance-IntegrationTests/Team4Talent-StudyGuidanceAutomationTests
+
+      - name: Run Selenium tests
+        run: mvn clean test
+        working-directory: StudyGuidance-IntegrationTests/Team4Talent-StudyGuidanceAutomationTests
+
+      - name: Create test report
+        run: mvn surefire-report:report-only
+        working-directory: StudyGuidance-IntegrationTests/Team4Talent-StudyGuidanceAutomationTests
+
+      - name: Upload Surefire HTML report
+        uses: actions/upload-artifact@v2
+        with:
+          name: surefire-report
+          path: StudyGuidance-IntegrationTests/Team4Talent-StudyGuidanceAutomationTests/target/site/surefire-report.html

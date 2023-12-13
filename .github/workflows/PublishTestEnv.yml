@@ -6,7 +6,8 @@ env:
   WORKING_DIRECTORY_FRONTEND: '.\StudyGuidance\StudyGuidance.Web'
   WORKING_DIRECTORY_BACKEND: '.\StudyGuidance\StudGuidance.Api'
   
-  AZURE_WEBAPP_PACKAGE_PATH: './publish'
+  AZURE_WEBAPP_PACKAGE_PATH_FRONTEND: './publish'
+  AZURE_WEBAPP_PACKAGE_PATH_BACKEND: './publish_backend'
   DOTNET_VERSION: '6.0'
   CONFIGURATION: Release
   AZURE_CORE_OUTPUT: 'none'
@@ -49,13 +50,11 @@ jobs:
       - name: Publish
         run: dotnet publish "${{ env.WORKING_DIRECTORY_FRONTEND }}" --configuration ${{ env.CONFIGURATION }} --no-build --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
     
-
-
       - name: Publish Artifacts
         uses: actions/upload-artifact@v3
         with:
           name: webapp-frontend
-          path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+          path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH_FRONTEND }}
 
 
       - name: Restore-backend
@@ -70,11 +69,18 @@ jobs:
       - name: Publish-backend
         run: dotnet publish "${{ env.WORKING_DIRECTORY_BACKEND }}" --configuration ${{ env.CONFIGURATION }} --no-build --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
 
-      - name: Publish Artifacts
+
+      - name: Publish Artifacts Frontend
         uses: actions/upload-artifact@v3
         with:
-          name: webapp-backend-
-          path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+          name: webapp-backend
+          path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH_FRONTEND }}
+
+      - name: Publish Artifacts Backend
+        uses: actions/upload-artifact@v3
+        with:
+          name: webapp-backend
+          path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH_BACKEND }}
 
       - name: ls -la
         run: ls -la ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
