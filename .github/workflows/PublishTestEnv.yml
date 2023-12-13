@@ -12,7 +12,7 @@ env:
   FRONTEND_URL_LOCATTION: './StudyGuidance/StudyGuidance.Web/ApiClient/'
   BACKEND_URL: 'https://studguidanceapi.azurewebsites.net/api/Quiz'
   DOTNET_VERSION: '6.0'
-  CONFIGURATION: Release
+  CONFIGURATION: Debug
   AZURE_CORE_OUTPUT: 'none'
 
 on:
@@ -51,8 +51,6 @@ jobs:
         run: |
           sed -i 's|"https://localhost:7109/api/Quiz"|"${{ env.BACKEND_URL }}"|g' "${{ env.FRONTEND_URL_LOCATTION }}QuizApiClient.cs"
           sed -i 's|"https://localhost:7109/api/Quiz"|"${{ env.BACKEND_URL }}"|g' "${{ env.FRONTEND_URL_LOCATTION }}JobApiClient.cs"
-          cat "${{ env.FRONTEND_URL_LOCATTION }}QuizApiClient.cs"
-          cat "${{ env.FRONTEND_URL_LOCATTION }}JobApiClient.cs"
 
       - name: Build
         run: dotnet build "${{ env.WORKING_DIRECTORY_FRONTEND }}" --configuration ${{ env.CONFIGURATION }} --no-restore
@@ -71,9 +69,7 @@ jobs:
         run: dotnet restore "${{ env.WORKING_DIRECTORY_BACKEND }}"
 
       - name: Set Database connection_string
-        run: |
-          sed -i 's|"Data Source=(localdb)\\\\MSSQLLocalDB;Database=StudyGuidanceDb;Integrated Security=True;TrustServerCertificate=True;"|"${{ secrets.CONNECTION_STRING_DEVELOPMENT }}"|g' ./StudyGuidance/StudGuidance.Api/appsettings.json
-          cat ./StudyGuidance/StudGuidance.Api/appsettings.json
+        run: sed -i 's|"Data Source=(localdb)\\\\MSSQLLocalDB;Database=StudyGuidanceDb;Integrated Security=True;TrustServerCertificate=True;"|"${{ secrets.CONNECTION_STRING_DEVELOPMENT }}"|g' ./StudyGuidance/StudGuidance.Api/appsettings.json
 
       - name: build-backend
         run: dotnet build "${{ env.WORKING_DIRECTORY_BACKEND }}" --configuration ${{ env.CONFIGURATION }} --no-restore
