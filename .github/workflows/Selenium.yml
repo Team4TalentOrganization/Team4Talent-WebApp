@@ -2,6 +2,9 @@ name: Selenium End-to-End Test
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+    - devops
 
 jobs:
   build:
