@@ -1,9 +1,13 @@
 name: Build and deploy StudyGuidance T4T
 env:
-  AZURE_WEBAPP_NAME: StudyGuidanceWebApp
+  AZURE_WEBAPP_NAME_FRONTEND: StudyGuidanceWebApp
+  AZURE_WEBAPP_NAME_BACKEND: StudyGuidanceWebApp
+
+  WORKING_DIRECTORY_FRONTEND: '.\StudyGuidance\StudyGuidance.Web'
+  WORKING_DIRECTORY_BACKEND: '.\StudyGuidance\StudGuidance.Api'
+  
   AZURE_WEBAPP_PACKAGE_PATH: './publish'
   DOTNET_VERSION: '6.0'
-  WORKING_DIRECTORY: '.\StudyGuidance\StudyGuidance.Web'
   CONFIGURATION: Release
   AZURE_CORE_OUTPUT: 'none'
 
@@ -16,6 +20,7 @@ on:
     - closed
     branches:
     - development
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -26,40 +31,54 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: 'development'
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
       - name: Restore
-        run: dotnet restore "${{ env.WORKING_DIRECTORY }}"
+        run: dotnet restore "${{ env.WORKING_DIRECTORY_FRONTEND }}"
 
       - name: Build
-        run: dotnet build "${{ env.WORKING_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-restore
+        run: dotnet build "${{ env.WORKING_DIRECTORY_FRONTEND }}" --configuration ${{ env.CONFIGURATION }} --no-restore
 
       - name: Publish
-        run: dotnet publish "${{ env.WORKING_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-build --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
+        run: dotnet publish "${{ env.WORKING_DIRECTORY_FRONTEND }}" --configuration ${{ env.CONFIGURATION }} --no-build --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
+      
+      - name: Extract tag name
+        id: get_tag
+        run: echo ::set-output name=TAG::${GITHUB_REF#refs/tags/}
+
       - name: Publish Artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: webapp
+          name: webapp-frontend-${{ steps.get_tag.outputs.TAG }}
           path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+
+
+      - name: Restore-backend
+        run: dotnet restore "${{ env.WORKING_DIRECTORY_BACKEND }}"
+
+      - name: Set Database connection_string
+        run: sed -i 's|"Data Source=(localdb)\\\\MSSQLLocalDB;Database=StudyGuidanceDb;Integrated Security=True;TrustServerCertificate=True;"|"${{ secrets.CONNECTION_STRING_DEVELOPMENT }}"|g' ./StudyGuidance/StudGuidance.Api/appsettings.json
+
+      - name: build-backend
+        run: dotnet build "${{ env.WORKING_DIRECTORY_BACKEND }}" --configuration ${{ env.CONFIGURATION }} --no-restore
+
+      - name: Publish-backend
+        run: dotnet publish "${{ env.WORKING_DIRECTORY_BACKEND }}" --configuration ${{ env.CONFIGURATION }} --no-build --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
+
+      - name: Publish Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: webapp-backend-${{ steps.get_tag.outputs.TAG }}
+          path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+
+      - name: ls -la
+        run: ls -la ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
   
-  publish:
-    runs-on: ubuntu-latest
-    needs: build
-
-    steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v3
-        with:
-          name: webapp
-          path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
-
-      - name: deployment
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+  
 
