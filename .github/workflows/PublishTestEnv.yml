@@ -108,7 +108,7 @@ jobs:
       - name: Download backend artifact
         uses: actions/download-artifact@v3
         with:
-          name: webapp-backend-${{ steps.get_tag.outputs.TAG }}
+          name: webapp-backend
           path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH_BACKEND }}
 
       - name: deployment-frontend
@@ -116,12 +116,12 @@ jobs:
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME_FRONTEND }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH_FRONTEND }}
 
       - name: deployment-backend
         uses: azure/webapps-deploy@v2
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME_BACKEND }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_BACKEND }}
-          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH_BACKEND }}
 
