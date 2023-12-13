@@ -1,7 +1,7 @@
 name: Build and deploy StudyGuidance T4T
 env:
   AZURE_WEBAPP_NAME_FRONTEND: StudyGuidanceWebApp
-  AZURE_WEBAPP_NAME_BACKEND: StudyGuidanceWebApp
+  AZURE_WEBAPP_NAME_BACKEND: StudGuidanceApi
 
   WORKING_DIRECTORY_FRONTEND: '.\StudyGuidance\StudyGuidance.Web'
   WORKING_DIRECTORY_BACKEND: '.\StudyGuidance\StudGuidance.Api'
