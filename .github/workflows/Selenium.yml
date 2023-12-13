@@ -24,18 +24,24 @@ jobs:
           
       - name: Build Maven project
         run: mvn package
-        working-directory: "${{ TEST_PATH }}"
+        env:
+          WORKING_DIRECTORY: ${{ env.TEST_PATH }}
+        working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Run Selenium tests
         run: mvn clean test
-        working-directory: "${{ TEST_PATH }}"
+        env:
+          WORKING_DIRECTORY: ${{ env.TEST_PATH }}
+        working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Create test report
         run: mvn surefire-report:report-only
-        working-directory: "${{ TEST_PATH }}"
+        env:
+          WORKING_DIRECTORY: ${{ env.TEST_PATH }}
+        working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Upload Surefire HTML report
         uses: actions/upload-artifact@v2
         with:
           name: surefire-report
-          path: ./Team4Talent-StudyGuidanceAutomationTests/target/site/surefire-report.html
+          path: ${{ env.TEST_PATH }}/target/site/surefire-report.html
