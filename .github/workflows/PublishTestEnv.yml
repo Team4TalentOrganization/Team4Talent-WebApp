@@ -10,7 +10,7 @@ env:
   AZURE_WEBAPP_PACKAGE_PATH_BACKEND: './publish_backend'
 
   FRONTEND_URL_LOCATTION: './StudyGuidance/StudyGuidance.Web/ApiClient/'
-  BACKEND_URL: 'studguidanceapi.azurewebsites.net/api/Quiz'
+  BACKEND_URL: 'https://studguidanceapi.azurewebsites.net/api/Quiz'
   DOTNET_VERSION: '6.0'
   CONFIGURATION: Release
   AZURE_CORE_OUTPUT: 'none'
@@ -51,6 +51,8 @@ jobs:
         run: |
           sed -i 's|"https://localhost:7109/api/Quiz"|"${{ env.BACKEND_URL }}"|g' "${{ env.FRONTEND_URL_LOCATTION }}QuizApiClient.cs"
           sed -i 's|"https://localhost:7109/api/Quiz"|"${{ env.BACKEND_URL }}"|g' "${{ env.FRONTEND_URL_LOCATTION }}JobApiClient.cs"
+          cat "${{ env.FRONTEND_URL_LOCATTION }}QuizApiClient.cs"
+          cat "${{ env.FRONTEND_URL_LOCATTION }}JobApiClient.cs"
 
       - name: Build
         run: dotnet build "${{ env.WORKING_DIRECTORY_FRONTEND }}" --configuration ${{ env.CONFIGURATION }} --no-restore
