@@ -49,8 +49,8 @@ jobs:
 
       - name: Set Backend URL
         run: |
-          sed -i 's|"https://localhost:7109/api/Quiz"|"${{ secrets.BACKEND_URL }}"|g' "${{ env.FRONTEND_URL_LOCATTION }}/QuizApiClient.cs"
-          sed -i 's|"https://localhost:7109/api/Quiz"|"${{ secrets.BACKEND_URL }}"|g' "${{ env.FRONTEND_URL_LOCATTION }}/JobApiClient.cs"
+          sed -i 's|"https://localhost:7109/api/Quiz"|"${{ secrets.BACKEND_URL }}"|g' "${{ env.FRONTEND_URL_LOCATTION }}QuizApiClient.cs"
+          sed -i 's|"https://localhost:7109/api/Quiz"|"${{ secrets.BACKEND_URL }}"|g' "${{ env.FRONTEND_URL_LOCATTION }}JobApiClient.cs"
 
       - name: Build
         run: dotnet build "${{ env.WORKING_DIRECTORY_FRONTEND }}" --configuration ${{ env.CONFIGURATION }} --no-restore
