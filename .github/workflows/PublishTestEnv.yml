@@ -15,6 +15,7 @@ on:
   push:
     branches:
     - development
+    - devops
   pull_request:
     types:
     - closed
