@@ -9,7 +9,7 @@ env:
   AZURE_WEBAPP_PACKAGE_PATH_FRONTEND: './publish'
   AZURE_WEBAPP_PACKAGE_PATH_BACKEND: './publish_backend'
 
-  FRONTEND_URL_LOCATTION: '.\StudyGuidance\StudyGuidance.Web\ApiClient\'
+  FRONTEND_URL_LOCATTION: './StudyGuidance/StudyGuidance.Web/ApiClient/'
   BACKEND_URL: 'studguidanceapi.azurewebsites.net'
   DOTNET_VERSION: '6.0'
   CONFIGURATION: Release
