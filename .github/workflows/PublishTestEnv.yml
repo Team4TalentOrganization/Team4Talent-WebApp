@@ -48,15 +48,13 @@ jobs:
 
       - name: Publish
         run: dotnet publish "${{ env.WORKING_DIRECTORY_FRONTEND }}" --configuration ${{ env.CONFIGURATION }} --no-build --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
-      
-      - name: Extract tag name
-        id: get_tag
-        run: echo ::set-output name=TAG::${GITHUB_REF#refs/tags/}
+    
+
 
       - name: Publish Artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: webapp-frontend-${{ steps.get_tag.outputs.TAG }}
+          name: webapp-frontend
           path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 
 
@@ -75,11 +73,11 @@ jobs:
       - name: Publish Artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: webapp-backend-${{ steps.get_tag.outputs.TAG }}
+          name: webapp-backend-
           path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 
       - name: ls -la
         run: ls -la ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
   
-  
+
 
