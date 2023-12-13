@@ -1,6 +1,6 @@
 name: Selenium End-to-End Test
 env:
-  TEST_PATH: '.\Team4Talent-StudyGuidanceAutomationTests'
+  TEST_PATH: './Team4Talent-StudyGuidanceAutomationTests'
 on:
   workflow_dispatch:
   push:
@@ -37,4 +37,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: surefire-report
-          path: '${{TEST_PATH}}/target/site/surefire-report.html'
+          path: ./Team4Talent-StudyGuidanceAutomationTests/target/site/surefire-report.html
