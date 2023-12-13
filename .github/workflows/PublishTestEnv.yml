@@ -11,8 +11,8 @@ env:
 
   FRONTEND_URL_LOCATTION: './StudyGuidance/StudyGuidance.Web/ApiClient/'
   BACKEND_URL: 'https://studguidanceapi.azurewebsites.net/api/Quiz'
-  DOTNET_VERSION: '6.0'
-  CONFIGURATION: Debug
+  DOTNET_VERSION: '6.0.24'
+  CONFIGURATION: Release
   AZURE_CORE_OUTPUT: 'none'
 
 on:
