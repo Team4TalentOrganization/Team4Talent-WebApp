@@ -88,6 +88,17 @@ jobs:
         with:
           name: webapp-backend
           path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH_BACKEND }}
+
+      - name: publish frontend to packages
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ${{ env.AZURE_WEBAPP_PACKAGE_PATH_FRONTEND }}
+          tag_name: TEST_v${{ github.run_number }}
+          body: |
+            This is a test release
+          draft: false
+          prerelease: false
+          token: ${{ secrets.TOKEN_GITHUB }}
   
   publish:
     runs-on: ubuntu-latest
