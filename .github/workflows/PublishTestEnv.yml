@@ -10,6 +10,7 @@ env:
   AZURE_WEBAPP_PACKAGE_PATH_BACKEND: './publish_backend'
 
   FRONTEND_URL_LOCATTION: './StudyGuidance/StudyGuidance.Web/ApiClient/'
+  BACKEND_BASE_URL: 'https://studguidanceapi.azurewebsites.net'
   BACKEND_URL_QUIZ: 'https://studguidanceapi.azurewebsites.net/api/Quiz'
   BACKEND_URL_JOB: 'https://studguidanceapi.azurewebsites.net/api/Job'
   DOTNET_VERSION: '6.0'
@@ -50,8 +51,6 @@ jobs:
         run: |
           sed -i 's|"https://localhost:7109/api/Quiz"|"${{ env.BACKEND_URL_QUIZ }}"|g' "${{ env.FRONTEND_URL_LOCATTION }}QuizApiClient.cs"
           sed -i 's|"https://localhost:7109/api/Job"|"${{ env.BACKEND_URL_JOB }}"|g' "${{ env.FRONTEND_URL_LOCATTION }}JobApiClient.cs"
-          cat "${{ env.FRONTEND_URL_LOCATTION }}JobApiClient.cs"
-          cat "${{ env.FRONTEND_URL_LOCATTION }}QuizApiClient.cs"
 
       - name: Restore
         run: dotnet restore "${{ env.WORKING_DIRECTORY_FRONTEND }}"
@@ -64,7 +63,9 @@ jobs:
     
 
       - name: Set Database connection_string
-        run: sed -i 's|"Data Source=(localdb)\\\\MSSQLLocalDB;Database=StudyGuidanceDb;Integrated Security=True;TrustServerCertificate=True;"|"Server=tcp:studyguidancedb.database.windows.net,1433;Initial Catalog=StudyGuidance;Persist Security Info=False;User ID=super;Password=${{secrets.DATABASE_PASSWORD}};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"|g' ./StudyGuidance/StudGuidance.Api/appsettings.json
+        run: |
+          sed -i 's|"Data Source=(localdb)\\\\MSSQLLocalDB;Database=StudyGuidanceDb;Integrated Security=True;TrustServerCertificate=True;"|"Server=tcp:studyguidancedb.database.windows.net,1433;Initial Catalog=StudyGuidance;Persist Security Info=False;User ID=super;Password=${{secrets.DATABASE_PASSWORD}};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"|g' ./StudyGuidance/StudGuidance.Api/appsettings.json
+          sed -i 's|"https://localhost:7063"|"${{ env.BACKEND_BASE_URL }}"|g' "${{ env.WORKING_DIRECTORY_BACKEND }}/Program.cs"
   
       - name: Restore-backend
         run: dotnet restore "${{ env.WORKING_DIRECTORY_BACKEND }}"
@@ -122,5 +123,5 @@ jobs:
           package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH_BACKEND }}
 
       - name: curl backend voor warmup
-        run: curl ${{ env.BACKEND_URL }}/questions
+        run: curl ${{ env.BACKEND_URL_QUIZ }}/questions
 
