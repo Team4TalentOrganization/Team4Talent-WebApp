@@ -1,0 +1,39 @@
+name: Gatling load test
+env:
+  TEST_PATH: './GatlingTests'
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Build and deploy StudyGuidance T4T"]
+    types:
+      - completed
+  push:
+    branches:
+      - development
+      - devops
+
+jobs:
+  test: 
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '21'
+
+      - name: run gatling tests
+        uses: liatrio/run-gatling@v1.2.0
+        with:
+          pomPath: my_test_suite/path
+
+      - name: Archive Gatling results
+        uses: actions/upload-artifact@v2
+        with:
+          name: gatling-results
+          path: target/gatling
