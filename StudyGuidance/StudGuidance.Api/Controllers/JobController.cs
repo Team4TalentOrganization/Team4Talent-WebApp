@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using StudGuidance.Api.Models;
 using StudyGuidance.AppLogic;
 using StudyGuidance.Domain;
+using System.Collections;
 
 namespace StudGuidance.Api.Controllers
 {
@@ -9,10 +11,12 @@ namespace StudGuidance.Api.Controllers
     public class JobController : ControllerBase
     {
         private readonly IJobRepository _jobRepository;
+        private readonly IStudyCourseRepository _studyCourseRepository;
 
-        public JobController(IJobRepository jobRepository)
+        public JobController(IJobRepository jobRepository, IStudyCourseRepository studyCourseRepository)
         {
             _jobRepository = jobRepository;
+            _studyCourseRepository = studyCourseRepository;
         }
 
         [HttpGet("jobs")]
@@ -38,7 +42,18 @@ namespace StudGuidance.Api.Controllers
                 return NotFound("Job niet gevonden");
             }
 
-            return Ok(job);
+            IReadOnlyList<StudyCourse> associatedStudyCourses = await _studyCourseRepository.GetStudyCoursesByRelationAsync(job.StudyCourseRelation);
+            List<StudyCourseDTO> associatedStudyCoursesDTO = new List<StudyCourseDTO>();
+
+            foreach (StudyCourse course in associatedStudyCourses)
+            {
+                associatedStudyCoursesDTO.Add(new StudyCourseDTO(course));
+            }
+
+            JobDTO jobDTO = new JobDTO(job);
+            jobDTO.AssociatedStudyCourses = associatedStudyCoursesDTO;
+
+            return Ok(jobDTO);
         }
 
         [HttpGet("jobsByFilter")]

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StudyGuidance.Infrastructure;
 
@@ -10,9 +11,10 @@ using StudyGuidance.Infrastructure;
 namespace StudyGuidance.Infrastructure.Migrations
 {
     [DbContext(typeof(StudyGuidanceDbContext))]
-    partial class StudyGuidanceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231214103600_update-jobs-studycourse")]
+    partial class updatejobsstudycourse
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -81,7 +83,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Software Management",
                             Name = "QA Engineer",
                             OptionRelation = 14,
-                            StudyCourseRelation = 2,
+                            StudyCourseRelation = 1,
                             SubDomain = "Project Management",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -93,7 +95,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Software Management",
                             Name = "Business Analyst",
                             OptionRelation = 15,
-                            StudyCourseRelation = 3,
+                            StudyCourseRelation = 1,
                             SubDomain = "Software analysis",
                             WorkInTeam = true,
                             WorkOnSite = false
@@ -105,7 +107,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Software Management",
                             Name = "Functional Analyst",
                             OptionRelation = 15,
-                            StudyCourseRelation = 4,
+                            StudyCourseRelation = 1,
                             SubDomain = "Software analysis",
                             WorkInTeam = true,
                             WorkOnSite = false
@@ -117,7 +119,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Development",
                             Name = "Application Support",
                             OptionRelation = 11,
-                            StudyCourseRelation = 5,
+                            StudyCourseRelation = 1,
                             SubDomain = "Fullstack",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -129,7 +131,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Software Management",
                             Name = "Helpdesk",
                             OptionRelation = 14,
-                            StudyCourseRelation = 6,
+                            StudyCourseRelation = 1,
                             SubDomain = "Project Management",
                             WorkInTeam = false,
                             WorkOnSite = true
@@ -141,7 +143,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Development",
                             Name = "PHP Developer",
                             OptionRelation = 13,
-                            StudyCourseRelation = 6,
+                            StudyCourseRelation = 1,
                             SubDomain = "Backend",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -153,7 +155,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Development",
                             Name = "Drupal Developer",
                             OptionRelation = 11,
-                            StudyCourseRelation = 7,
+                            StudyCourseRelation = 1,
                             SubDomain = "Fullstack",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -165,7 +167,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Development",
                             Name = "Cobol Developer",
                             OptionRelation = 11,
-                            StudyCourseRelation = 8,
+                            StudyCourseRelation = 1,
                             SubDomain = "Fullstack",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -177,7 +179,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Development",
                             Name = "Dynammics Developer",
                             OptionRelation = 11,
-                            StudyCourseRelation = 9,
+                            StudyCourseRelation = 1,
                             SubDomain = "Fullstack",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -189,7 +191,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Development",
                             Name = "Java Developer",
                             OptionRelation = 13,
-                            StudyCourseRelation = 10,
+                            StudyCourseRelation = 1,
                             SubDomain = "Backend",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -201,7 +203,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Development",
                             Name = "SAP Developer",
                             OptionRelation = 11,
-                            StudyCourseRelation = 11,
+                            StudyCourseRelation = 1,
                             SubDomain = "Fullstack",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -213,7 +215,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Development",
                             Name = "Siebel Developer",
                             OptionRelation = 11,
-                            StudyCourseRelation = 12,
+                            StudyCourseRelation = 1,
                             SubDomain = "Fullstack",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -225,7 +227,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Development",
                             Name = "RPG developer",
                             OptionRelation = 11,
-                            StudyCourseRelation = 13,
+                            StudyCourseRelation = 1,
                             SubDomain = "Fullstack",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -237,7 +239,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Systeem en netwerkbeheer",
                             Name = "System admin",
                             OptionRelation = 18,
-                            StudyCourseRelation = 14,
+                            StudyCourseRelation = 1,
                             SubDomain = "Networking",
                             WorkInTeam = false,
                             WorkOnSite = true
@@ -249,7 +251,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Systeem en netwerkbeheer",
                             Name = "Network engineer",
                             OptionRelation = 18,
-                            StudyCourseRelation = 15,
+                            StudyCourseRelation = 1,
                             SubDomain = "Networking",
                             WorkInTeam = false,
                             WorkOnSite = false
@@ -273,7 +275,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Data",
                             Name = "Data architect",
                             OptionRelation = 22,
-                            StudyCourseRelation = 2,
+                            StudyCourseRelation = 1,
                             SubDomain = "Analyst",
                             WorkInTeam = false,
                             WorkOnSite = false
@@ -285,7 +287,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Data",
                             Name = "Database administrator",
                             OptionRelation = 22,
-                            StudyCourseRelation = 3,
+                            StudyCourseRelation = 1,
                             SubDomain = "Analyst",
                             WorkInTeam = false,
                             WorkOnSite = false
@@ -297,7 +299,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Systeem en netwerkbeheer",
                             Name = "AWS DevOps Engineer",
                             OptionRelation = 16,
-                            StudyCourseRelation = 4,
+                            StudyCourseRelation = 1,
                             SubDomain = "Automation",
                             WorkInTeam = false,
                             WorkOnSite = false
@@ -309,7 +311,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Software Management",
                             Name = "Project manager",
                             OptionRelation = 14,
-                            StudyCourseRelation = 5,
+                            StudyCourseRelation = 1,
                             SubDomain = "Project Management",
                             WorkInTeam = true,
                             WorkOnSite = false
@@ -321,7 +323,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Systeem en netwerkbeheer",
                             Name = "Azure DevOps Engineer",
                             OptionRelation = 16,
-                            StudyCourseRelation = 6,
+                            StudyCourseRelation = 1,
                             SubDomain = "Automation",
                             WorkInTeam = false,
                             WorkOnSite = false
@@ -333,7 +335,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Development",
                             Name = "SharePoint Developer",
                             OptionRelation = 11,
-                            StudyCourseRelation = 7,
+                            StudyCourseRelation = 1,
                             SubDomain = "Fullstack",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -345,7 +347,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Development",
                             Name = ".NET Developer",
                             OptionRelation = 13,
-                            StudyCourseRelation = 8,
+                            StudyCourseRelation = 1,
                             SubDomain = "Backend",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -357,7 +359,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Development",
                             Name = "Frontend Developer",
                             OptionRelation = 12,
-                            StudyCourseRelation = 9,
+                            StudyCourseRelation = 1,
                             SubDomain = "Frontend",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -369,7 +371,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Development",
                             Name = "Software Architect",
                             OptionRelation = 11,
-                            StudyCourseRelation = 10,
+                            StudyCourseRelation = 1,
                             SubDomain = "Fullstack",
                             WorkInTeam = false,
                             WorkOnSite = false
@@ -381,7 +383,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Development",
                             Name = "Development Team Lead",
                             OptionRelation = 11,
-                            StudyCourseRelation = 11,
+                            StudyCourseRelation = 1,
                             SubDomain = "Fullstack",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -393,7 +395,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Software Management",
                             Name = "SCRUM Master",
                             OptionRelation = 14,
-                            StudyCourseRelation = 12,
+                            StudyCourseRelation = 1,
                             SubDomain = "Project Management",
                             WorkInTeam = true,
                             WorkOnSite = true
@@ -405,7 +407,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Systeem en netwerkbeheer",
                             Name = "Security Engineer",
                             OptionRelation = 17,
-                            StudyCourseRelation = 13,
+                            StudyCourseRelation = 1,
                             SubDomain = "Security",
                             WorkInTeam = false,
                             WorkOnSite = false
@@ -417,7 +419,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                             Domain = "Systeem en netwerkbeheer",
                             Name = "PEN Tester",
                             OptionRelation = 17,
-                            StudyCourseRelation = 14,
+                            StudyCourseRelation = 1,
                             SubDomain = "Security",
                             WorkInTeam = false,
                             WorkOnSite = true
@@ -766,7 +768,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                         {
                             Id = 1,
                             DiplomaType = 0,
-                            JobRelation = 1,
+                            JobRelation = 0,
                             Location = 0,
                             School = "Syntra",
                             Study = "Switch2It"
@@ -775,7 +777,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                         {
                             Id = 2,
                             DiplomaType = 0,
-                            JobRelation = 1,
+                            JobRelation = 0,
                             Location = 0,
                             School = "Hogeschool PXL",
                             Study = "Toegpaste Informatica"
@@ -784,7 +786,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                         {
                             Id = 3,
                             DiplomaType = 1,
-                            JobRelation = 1,
+                            JobRelation = 0,
                             Location = 0,
                             School = "Hogeschool PXL",
                             Study = "Elektronica-ICT"
@@ -793,244 +795,10 @@ namespace StudyGuidance.Infrastructure.Migrations
                         {
                             Id = 4,
                             DiplomaType = 2,
-                            JobRelation = 1,
+                            JobRelation = 0,
                             Location = 1,
-                            School = "KU Leuven",
+                            School = "Leuven",
                             Study = "Master: Toegepaste Informatica"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            DiplomaType = 1,
-                            JobRelation = 2,
-                            Location = 1,
-                            School = "KU Leuven",
-                            Study = "Biomedische Wetenschappen"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            DiplomaType = 2,
-                            JobRelation = 3,
-                            Location = 2,
-                            School = "VUB",
-                            Study = "Master in Business Administration"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            DiplomaType = 0,
-                            JobRelation = 3,
-                            Location = 3,
-                            School = "Artesis Plantijn Hogeschool",
-                            Study = "Marketing Management"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            DiplomaType = 1,
-                            JobRelation = 4,
-                            Location = 4,
-                            School = "UGent",
-                            Study = "Communication Sciences"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            DiplomaType = 2,
-                            JobRelation = 4,
-                            Location = 5,
-                            School = "Howest",
-                            Study = "Master in Environmental Sciences"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            DiplomaType = 1,
-                            JobRelation = 4,
-                            Location = 6,
-                            School = "Université de Liège",
-                            Study = "Computer Science"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            DiplomaType = 2,
-                            JobRelation = 5,
-                            Location = 7,
-                            School = "Université de Namur",
-                            Study = "Master in Physics"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            DiplomaType = 0,
-                            JobRelation = 5,
-                            Location = 8,
-                            School = "Haute École Louvain en Hainaut",
-                            Study = "Multimedia Production"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            DiplomaType = 1,
-                            JobRelation = 6,
-                            Location = 9,
-                            School = "Université de Mons",
-                            Study = "Industrial Engineering"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            DiplomaType = 2,
-                            JobRelation = 7,
-                            Location = 10,
-                            School = "Hogeschool Odisee",
-                            Study = "Master in Artificial Intelligence"
-                        },
-                        new
-                        {
-                            Id = 15,
-                            DiplomaType = 0,
-                            JobRelation = 8,
-                            Location = 11,
-                            School = "C-Mine Crib",
-                            Study = "Digital Marketing"
-                        },
-                        new
-                        {
-                            Id = 16,
-                            DiplomaType = 1,
-                            JobRelation = 9,
-                            Location = 12,
-                            School = "Howest",
-                            Study = "Product Design"
-                        },
-                        new
-                        {
-                            Id = 17,
-                            DiplomaType = 2,
-                            JobRelation = 9,
-                            Location = 13,
-                            School = "VIVES University College",
-                            Study = "Master in Marine Biology"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            DiplomaType = 0,
-                            JobRelation = 9,
-                            Location = 14,
-                            School = "HoGent",
-                            Study = "Web Development"
-                        },
-                        new
-                        {
-                            Id = 19,
-                            DiplomaType = 1,
-                            JobRelation = 9,
-                            Location = 15,
-                            School = "Thomas More",
-                            Study = "International Business"
-                        },
-                        new
-                        {
-                            Id = 20,
-                            DiplomaType = 2,
-                            JobRelation = 9,
-                            Location = 16,
-                            School = "Haute École de la Province de Hainaut Condorcet",
-                            Study = "Master in Environmental Engineering"
-                        },
-                        new
-                        {
-                            Id = 21,
-                            DiplomaType = 1,
-                            JobRelation = 10,
-                            Location = 17,
-                            School = "Hogeschool Gent",
-                            Study = "Applied Mathematics"
-                        },
-                        new
-                        {
-                            Id = 22,
-                            DiplomaType = 2,
-                            JobRelation = 10,
-                            Location = 18,
-                            School = "Howest",
-                            Study = "Master in Industrial Design"
-                        },
-                        new
-                        {
-                            Id = 23,
-                            DiplomaType = 1,
-                            JobRelation = 11,
-                            Location = 19,
-                            School = "Haute École de la Province de Liège",
-                            Study = "Electrical Engineering"
-                        },
-                        new
-                        {
-                            Id = 24,
-                            DiplomaType = 0,
-                            JobRelation = 12,
-                            Location = 20,
-                            School = "Thomas More",
-                            Study = "Graphic Design"
-                        },
-                        new
-                        {
-                            Id = 25,
-                            DiplomaType = 1,
-                            JobRelation = 12,
-                            Location = 21,
-                            School = "HEPH-Condorcet",
-                            Study = "Industrial Automation"
-                        },
-                        new
-                        {
-                            Id = 26,
-                            DiplomaType = 2,
-                            JobRelation = 12,
-                            Location = 22,
-                            School = "Université catholique de Louvain",
-                            Study = "Master in Civil Engineering"
-                        },
-                        new
-                        {
-                            Id = 27,
-                            DiplomaType = 1,
-                            JobRelation = 13,
-                            Location = 23,
-                            School = "Hogeschool VIVES",
-                            Study = "Tourism and Leisure Management"
-                        },
-                        new
-                        {
-                            Id = 28,
-                            DiplomaType = 2,
-                            JobRelation = 14,
-                            Location = 24,
-                            School = "Vrije Universiteit Brussel",
-                            Study = "Master in Neuroscience"
-                        },
-                        new
-                        {
-                            Id = 29,
-                            DiplomaType = 1,
-                            JobRelation = 14,
-                            Location = 25,
-                            School = "Erasmushogeschool Brussel",
-                            Study = "Culinary Arts"
-                        },
-                        new
-                        {
-                            Id = 30,
-                            DiplomaType = 2,
-                            JobRelation = 15,
-                            Location = 26,
-                            School = "Hogeschool PXL",
-                            Study = "Master in Archaeology"
                         });
                 });
 

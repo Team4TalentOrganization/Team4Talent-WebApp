@@ -9,7 +9,6 @@
         public bool WorkInTeam { get; set; }
         public bool WorkOnSite { get; set; }
         public int JobId { get; set; }
-
-
+        public List<StudyCourse> StudyCourses { get; set; }
     }
 }

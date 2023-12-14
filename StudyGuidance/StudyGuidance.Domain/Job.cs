@@ -15,10 +15,12 @@ namespace StudyGuidance.Domain
         public string _domain = string.Empty;
         public string _subDomain = string.Empty;
         public string _description = string.Empty;
+        private int _optionRelation;
+        private int _studyCourseRelation;
+
         public bool WorkInTeam { get; set; }
         public bool WorkOnSite { get; set; }
         public int JobId { get; set; }
-        private int _optionRelation;
 
         public int OptionRelation
         {
@@ -87,6 +89,20 @@ namespace StudyGuidance.Domain
                 }
 
                 _description = value;
+            }
+        }
+
+        public int StudyCourseRelation
+        {
+            get => _studyCourseRelation;
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new BusinessException("JobRelation must be greater than 0.");
+                }
+
+                _studyCourseRelation = value;
             }
         }
 

@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 
 namespace StudyGuidance.Api.Tests.Controllers.Api
 {
@@ -16,12 +17,14 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
 
         private JobController _controller;
         private Mock<IJobRepository> _jobRepositoryMock;
+        private Mock<IStudyCourseRepository> _studyCourseRepositoryMock;
 
         [SetUp]
         public void SetUp()
         {
             _jobRepositoryMock = new Mock<IJobRepository>();
-            _controller = new JobController(_jobRepositoryMock.Object);
+            _studyCourseRepositoryMock = new Mock<IStudyCourseRepository>();
+            _controller = new JobController(_jobRepositoryMock.Object, _studyCourseRepositoryMock.Object);
         }
 
         [Test]
