@@ -17,3 +17,6 @@ jobs:
         with:
           api_token: ${{ secrets.GATLING_ENTERPRISE_API_TOKEN }}
           simulation_id: ${{ env.simulation_id }}
+        
+      - run: |
+          echo "reports_url=${{ steps.enterprise-action.outputs.reports_url }}"
