@@ -1,4 +1,6 @@
-﻿using StudyGuidance.Domain.Exceptions;
+﻿using StudGuidance.Domain.Models;
+using StudyGuidance.Domain.Exceptions;
+using StudyGuidance.Domain.Models;
 
 namespace StudyGuidance.Domain
 {
@@ -9,6 +11,35 @@ namespace StudyGuidance.Domain
         private Diploma _diplomaType;
         private int _jobRelation;
         private Location _location;
+
+        public StudyCourse()
+        {
+
+        }
+
+        public StudyCourse(StudyCourseRequest studyCourseRequest)
+        { 
+            _study = studyCourseRequest.Study;
+            _school = studyCourseRequest.School;
+            if (Enum.TryParse(studyCourseRequest.DiplomaType, out Diploma diplomaType))
+            {
+                _diplomaType = diplomaType;
+            }
+            else
+            {
+                throw new ArgumentException($"Invalid diploma type: {studyCourseRequest.DiplomaType}");
+            }
+
+            if (Enum.TryParse(studyCourseRequest.Location, out Location location))
+            {
+                _location = location;
+            }
+            else
+            {
+                throw new ArgumentException($"Invalid location: {studyCourseRequest.Location}");
+            }
+            _jobRelation = studyCourseRequest.JobRelation;
+        }
 
         public int Id { get; set; }
 

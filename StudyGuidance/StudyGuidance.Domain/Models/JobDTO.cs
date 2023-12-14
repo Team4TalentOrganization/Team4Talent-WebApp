@@ -1,6 +1,6 @@
 ﻿using StudyGuidance.Domain;
 
-namespace StudGuidance.Api.Models
+namespace StudGuidance.Domain.Models
 {
     public class JobDTO
     {

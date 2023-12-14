@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\StudyGuidance.AppLogic\StudyGuidance.AppLogic.csproj" />
     <ProjectReference Include="..\StudyGuidance.Infrastructure\StudyGuidance.Infrastructure.csproj" />
   </ItemGroup>
 

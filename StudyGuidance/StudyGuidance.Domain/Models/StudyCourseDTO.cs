@@ -1,7 +1,6 @@
 ﻿using StudyGuidance.Domain;
-using StudyGuidance.Domain.Exceptions;
 
-namespace StudGuidance.Api.Models
+namespace StudGuidance.Domain.Models
 {
     public class StudyCourseDTO
     {

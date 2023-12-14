@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using StudGuidance.Api.Models;
+using StudGuidance.Domain.Models;
 using StudyGuidance.AppLogic;
 using StudyGuidance.Domain;
 using System.Collections;
