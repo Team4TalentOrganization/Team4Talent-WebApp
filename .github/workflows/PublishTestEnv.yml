@@ -51,6 +51,7 @@ jobs:
           sed -i 's|"https://localhost:7109/api/Quiz"|"${{ env.BABACKEND_URL_QUIZCKEND_URL }}"|g' "${{ env.FRONTEND_URL_LOCATTION }}QuizApiClient.cs"
           sed -i 's|"https://localhost:7109/api/Job"|"${{ env.BACKEND_URL_JOB }}"|g' "${{ env.FRONTEND_URL_LOCATTION }}JobApiClient.cs"
           cat "${{ env.FRONTEND_URL_LOCATTION }}JobApiClient.cs"
+          cat "${{ env.FRONTEND_URL_LOCATTION }}QuizApiClient.cs"
 
       - name: Restore
         run: dotnet restore "${{ env.WORKING_DIRECTORY_FRONTEND }}"
