@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using StudyGuidance.Web.Models;
 
 namespace StudyGuidance.Web.Shared
 {
@@ -23,20 +24,6 @@ namespace StudyGuidance.Web.Shared
             player.DivStyle = player.ShowFront
                 ? "width: 100%; height: 100%; opacity: 1; transform: translateY(0); transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;"
                 : "width: 100%; height: 100%; opacity: 1; transform: translateY(-100%); transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;";
-        }
-
-
-        public class PlayerModel
-        {
-            public string Name { get; set; }
-            public string ImagePath { get; set; }
-            public bool ShowFront { get; set; }
-            public string ImageStyle { get; set; }
-            public string HrStyle { get; set; }
-            public string HrStyleBack { get; set; }
-            public string CardBodyStyle { get; set; }
-            public string Description { get; set; }
-            public string DivStyle { get; set; }
         }
     }
 }

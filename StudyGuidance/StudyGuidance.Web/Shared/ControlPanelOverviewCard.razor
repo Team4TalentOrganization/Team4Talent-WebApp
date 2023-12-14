@@ -1,0 +1,13 @@
+﻿<div>
+	@foreach(var overview in overviewPages)
+	{
+		<a href="@overview.Path">
+			<div class="divOverview">
+				<div id="overviewText">
+					<h6>@overview.PageName</h6>
+					<p>@overview.description</p>
+				</div>
+			</div>
+		</a>
+	}
+</div>

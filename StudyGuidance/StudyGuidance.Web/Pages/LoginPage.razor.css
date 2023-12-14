@@ -1,0 +1,21 @@
+﻿body {
+}
+
+#loginPage{
+    background-color: white;
+}
+
+h4 {
+    color: #FF6900;
+}
+
+form{
+    margin-top: 30%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#errorMessage{
+    width: 80%;
+    margin-left: 9%;
+}
