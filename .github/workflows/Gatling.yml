@@ -28,9 +28,10 @@ jobs:
           java-version: '21'
 
       - name: run gatling tests
-        uses: liatrio/run-gatling@v1.2.0
-        with:
-          pomPath: my_test_suite/path
+        run: |
+          mvn gatling:test
+        env: 
+          GATLING_SIMULATIONS_FOLDER: "#{{ env.TEST_PATH }}"
 
       - name: Archive Gatling results
         uses: actions/upload-artifact@v2
