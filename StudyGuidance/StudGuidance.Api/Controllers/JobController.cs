@@ -2,6 +2,7 @@
 using StudGuidance.Domain.Models;
 using StudyGuidance.AppLogic;
 using StudyGuidance.Domain;
+using StudyGuidance.Domain.Models;
 using System.Collections;
 
 namespace StudGuidance.Api.Controllers
@@ -54,6 +55,46 @@ namespace StudGuidance.Api.Controllers
             jobDTO.AssociatedStudyCourses = associatedStudyCoursesDTO;
 
             return Ok(jobDTO);
+        }
+
+        [HttpPost("jobs/add")]
+        public async Task<IActionResult> AddJob([FromBody] JobRequest jobRequest)
+        {
+            Job job = await _jobRepository.AddJobAsync(jobRequest);
+            if (job == null) 
+            {
+                return NotFound();
+            } else
+            {
+                return Ok(job);
+            }
+        }
+
+        [HttpPut("jobs/update")]
+        public async Task<IActionResult> UpdateJob([FromBody] Job incomingJob)
+        {
+            Job job = await _jobRepository.ChangeJobAsync(incomingJob);
+            if (job == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(job);
+            }
+        }
+
+        [HttpDelete("jobs/delete/{id}")]
+        public async Task<IActionResult> DeleteJob(int id)
+        {
+            if (await _jobRepository.DeleteJobAsync(id))
+            {
+                return Ok();
+            }
+            else
+            {
+                return NotFound();
+            }
         }
 
         [HttpGet("jobsByFilter")]

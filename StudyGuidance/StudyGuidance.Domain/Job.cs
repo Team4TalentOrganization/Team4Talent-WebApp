@@ -1,4 +1,5 @@
 ﻿using StudyGuidance.Domain.Exceptions;
+using StudyGuidance.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -17,6 +18,18 @@ namespace StudyGuidance.Domain
         public string _description = string.Empty;
         private int _optionRelation;
         private int _studyCourseRelation;
+
+        public Job() { }
+
+        public Job(JobRequest jobRequest)
+        {
+            Name = jobRequest.Name ?? throw new BusinessException("Name cannot be null or empty.");
+            Domain = jobRequest.Domain ?? throw new BusinessException("Domain cannot be null or empty.");
+            SubDomain = jobRequest.SubDomain ?? throw new BusinessException("Sub domain cannot be null or empty.");
+            Description = jobRequest.Description ?? throw new BusinessException("Description cannot be null or empty.");
+            WorkInTeam = jobRequest.WorkInTeam;
+            WorkOnSite = jobRequest.WorkOnSite;
+        }
 
         public bool WorkInTeam { get; set; }
         public bool WorkOnSite { get; set; }
