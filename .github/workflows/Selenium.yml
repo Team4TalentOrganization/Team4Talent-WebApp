@@ -8,6 +8,9 @@ on:
     workflows: ["Build and deploy StudyGuidance T4T"]
     types:
       - completed
+  push:
+    branches:
+      - development
 
 jobs:
   build:
