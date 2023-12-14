@@ -5,6 +5,18 @@
     margin-bottom: 6%;
 }
 
+.transparent-background {
+    background-color: transparent !important;
+}
+
+.white-background {
+    background-color: white !important;
+}
+
+.orange-background {
+    background-color: #ff5404 !important;
+}
+
 .top-row {
     height: 3.5rem;
 }

@@ -24,6 +24,51 @@
 
 .container {
     width: 80%;
+    width: 70%; 
+    height: 350px; 
+    position: relative; 
+    overflow: hidden; 
+    border-radius: 15px;
+}
+
+.left-inner-container {
+    width: 48%; 
+    height:50%; 
+    float:left;
+}
+
+.right-inner-container {
+    width: 48%;
+    height:50%;
+    float:right;
+}
+
+.option-paragraph {
+    max-width: 100%;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.question-paragraph {
+    font-size: 20px;
+    position: absolute;
+    bottom: 13%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%
+}
+
+.previous-question-div {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .card {
@@ -56,8 +101,9 @@
     }
 }
 
-.previousButton {
-    animation: colorChange 1s; /* 1s duration for the animation */
+.previous-button {
+    position: absolute;
+    bottom: 0;
 }
 
 .nextButton {

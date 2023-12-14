@@ -29,3 +29,18 @@
 .nextButton {
 	background: #007ce0
 }
+.outer-tinder-div {
+	width: 70%;
+	height: 400px;
+	position: relative;
+	overflow: hidden;
+	border-radius: 15px;
+}
+
+.question-image {
+	border-radius: 15px;
+}
+
+.question-paragraph {
+	font-size: 20px;
+}

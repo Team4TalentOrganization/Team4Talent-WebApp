@@ -22,6 +22,7 @@ builder.Services.AddDbContext<StudyGuidanceDbContext>(options =>
     options.UseSqlServer(connectionString));
 
 builder.Services.AddScoped<IQuizRepository, QuizDbRepository>();
+builder.Services.AddScoped<IJobRepository, JobDbRepository>();
 builder.Services.AddScoped<IQuestionModificationService, QuestionModificationService>();
 
 var app = builder.Build();

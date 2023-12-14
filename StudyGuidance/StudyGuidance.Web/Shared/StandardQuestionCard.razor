@@ -6,45 +6,38 @@
 @if (!StandardQuizEnded)
 {
     <Animation Effect="Effect.ZoomIn" Speed="@Speed.Fast">
-        <div class="container bg-custom-color" style="width: 70%; height: 350px; position: relative; overflow: hidden; border-radius: 15px;">
-            <div class="mt-4" style="width: 48%; height:50%; float:left;">
-
+        <div class="container bg-custom-color">
+            <div class="mt-4 left-inner-container">
                     <div id="topLeftCard" class="card @CardClasses[0]" @onmouseover="() => MouseOver(0)" @onmouseout="() => MouseOut(0)" @onclick="() => CardClicked(0)">
                         <div class="card-body text-center d-flex align-items-center">
-                        <p class="m-auto" style="max-width: 100%; overflow: hidden; text-overflow: ellipsis; word-wrap: break-word; overflow-wrap: break-word;">@GetOptionsForCurrentQuestion().FirstOrDefault()</p>
+                        <p class="m-auto option-paragraph">@GetOptionsForCurrentQuestion().FirstOrDefault()</p>
                     </div>
                 </div>
-                
-          
                     <div id="topRightCard" class="card @CardClasses[1]" @onmouseover="() => MouseOver(1)" @onmouseout="() => MouseOut(1)" @onclick="() => CardClicked(1)">
                     <div class="card-body text-center d-flex align-items-center">
-                        <p class="m-auto" style="max-width: 100%; overflow: hidden; text-overflow: ellipsis; word-wrap: break-word; overflow-wrap: break-word;">@GetOptionsForCurrentQuestion().ElementAtOrDefault(1)</p>
+                        <p class="m-auto option-paragraph">@GetOptionsForCurrentQuestion().ElementAtOrDefault(1)</p>
                     </div>
                 </div>
-                
             </div>
-            <div class="mt-4" style="width: 48%; height:50%; float:right;">
-          
+            <div class="mt-4 right-inner-container">
                     <div id="bottomLeftCard" class="card @CardClasses[2]" @onmouseover="() => MouseOver(2)" @onmouseout="() => MouseOut(2)" @onclick="() => CardClicked(2)">
                     <div class="card-body text-center d-flex align-items-center">
-                        <p class="m-auto" style="max-width: 100%; overflow: hidden; text-overflow: ellipsis; word-wrap: break-word; overflow-wrap: break-word;">@GetOptionsForCurrentQuestion().ElementAtOrDefault(2)</p>
+                        <p class="m-auto option-paragraph">@GetOptionsForCurrentQuestion().ElementAtOrDefault(2)</p>
                     </div>
                 </div>
                
              
                     <div id="bottomRightCard" class="card @CardClasses[3]" @onmouseover="() => MouseOver(3)" @onmouseout="() => MouseOut(3)" @onclick="() => CardClicked(3)">
                     <div class="card-body text-center d-flex align-items-center">
-                        <p class="m-auto" style="max-width: 100%; overflow: hidden; text-overflow: ellipsis; word-wrap: break-word; overflow-wrap: break-word;">@GetOptionsForCurrentQuestion().ElementAtOrDefault(3)</p>
+                        <p class="m-auto option-paragraph">@GetOptionsForCurrentQuestion().ElementAtOrDefault(3)</p>
                     </div>
                 </div>
-                
             </div>
-            <div style="clear: both;"></div>
-            <p class="text-white text-center" style="position: absolute; bottom: 17%; left: 50%; transform: translateX(-50%); width:85%">@GetCurrentQuestionPhrase()</p>
-                <div style="position: absolute; bottom: 0; width: 100%; display: flex; justify-content: space-between; align-items: center;">
+            <p class="text-white text-center question-paragraph">@GetCurrentQuestionPhrase()</p>
+                <div class="previous-question-div">
                     @if (currentQuestion > 0)
                     {
-                        <button @onclick="() => PreviousQuestionClicked()" id="previousButton" type="button" class="btn btn-light btn-circle btn-lg rounded-circle mb-3" style="position: absolute; bottom: 0;">
+                        <button @onclick="() => PreviousQuestionClicked()" type="button" class="btn btn-light btn-circle btn-lg rounded-circle mb-3 previous-button">
                             <span style="font-size: 20px;">&lt;</span>
                         </button>
                     }
@@ -66,166 +59,4 @@ else
 }
 
 
-@code {
-    private bool StandardQuizEnded = false;
-    private int currentQuestion = 0;
-    private List<Question> questionsList = new List<Question>();
-    private List<int> domainAnswers = new List<int>();
-    private List<int> subDomainAnswers = new List<int>();
-    private List<Question> selectedDomains = new List<Question>();
-    private bool subDomainsAreSet = false;
-    private bool EndButtonDisabled = false;
 
-    private string[] CardClasses = new string[4] { "card text-black h-50 mb-3", "card text-black h-50 mb-3", "card text-black h-50 mb-3", "card text-black h-50 mb-3" };
-
-    private async Task MouseOver(int cardNumber)
-    {
-        await SetCardClass(cardNumber, CardClasses[cardNumber].Contains("bg-orange-color-click") ? "card text-white bg-orange-color-click h-50 mb-3" : "card text-white bg-orange-color h-50 mb-3");
-    }
-
-    private async Task MouseOut(int cardNumber)
-    {
-        await SetCardClass(cardNumber, CardClasses[cardNumber].Contains("bg-orange-color-click") ? "card text-white bg-orange-color-click h-50 mb-3" : "card text-black h-50 mb-3");
-    }
-
-    private async Task SetCardClass(int cardNumber, string cssClass)
-    {
-        CardClasses[cardNumber] = cssClass;
-    }
-
-    private void CardClicked(int cardNumber)
-    {
-        // Check if the option is not empty before toggling
-        if (!IsOptionValueEmpty(GetOptionsForCurrentQuestion()[cardNumber]))
-        {
-            // Toggle between two states
-            if (CardClasses[cardNumber].Contains("bg-orange-color-click"))
-            {
-                CardClasses[cardNumber] = "card text-black h-50 mb-3";
-            }
-            else
-            {
-                CardClasses[cardNumber] = "card text-white bg-orange-color-click h-50 mb-3";
-            }
-        }
-        else
-        {
-            CardClasses[cardNumber] = "card text-black h-50 mb-3";
-        }
-    }
-
-    private List<string> GetOptionsForCurrentQuestion()
-    {
-        return GetQuestionAtIndex(currentQuestion)?.Options.Select(option => option.Content).ToList() ?? new List<string>();
-    }
-
-    private List<int> GetOptionIdForCurrentQuestion()
-    {
-        return GetQuestionAtIndex(currentQuestion)?.Options.Select(option => option.OptionId).ToList() ?? new List<int>();
-    }
-
-    private string GetCurrentQuestionPhrase()
-    {
-        return GetQuestionAtIndex(currentQuestion)?.Phrase ?? string.Empty;
-    }
-
-    private string GetNextQuestionPhrase()
-    {
-        return GetQuestionAtIndex(currentQuestion + 1)?.Phrase ?? string.Empty;
-    }
-
-    private Question GetQuestionAtIndex(int index)
-    {
-        return (index >= 0 && index < questionsList.Count) ? questionsList[index] : null;
-    }
-
-
-    private async Task NextQuestionClicked()
-    {
-        for(int i = 0; i < 4; i++)
-        {
-            if (CardClasses[i] == "card text-white bg-orange-color-click h-50 mb-3")
-            {
-                domainAnswers.Add(GetOptionIdForCurrentQuestion()[i]);
-
-                if (subDomainsAreSet)
-                {
-                    subDomainAnswers.Add(GetOptionIdForCurrentQuestion()[i]);
-                }
-            }
-        }
-
-        if (currentQuestion == questionsList.Count -1 && !subDomainsAreSet)
-        {
-            selectedDomains = await QuizApiClient.GetSubdomains(domainAnswers);
-            foreach(Question selectedDomain in selectedDomains)
-            {
-                questionsList.Add(selectedDomain);
-            }
-            subDomainsAreSet = true;
-        }
-
-        ResetCardClasses();
-        currentQuestion++;
-    }
-
-    private void PreviousQuestionClicked()
-    {
-        if (currentQuestion > 0)
-        {
-            currentQuestion--;
-            if (GetCurrentQuestionPhrase() == "In welk domein heb je interesse?")
-            {
-                questionsList.RemoveAll(questions => questions.Phrase.Contains("In welk subdomein heb je interesse?"));
-                subDomainsAreSet = false;
-                domainAnswers.Clear();
-            }
-            ResetCardClasses();
-        }
-    }
-
-    private void ResetCardClasses()
-    {
-        for (int i = 0; i < CardClasses.Length; i++)
-        {
-            CardClasses[i] = "card text-black h-50 mb-3";
-        }
-    }
-
-    private void EndStandardQuiz() {
-        for (int i = 0; i < 4; i++)
-        {
-            if (CardClasses[i] == "card text-white bg-orange-color-click h-50 mb-3")
-            {
-                if (subDomainsAreSet)
-                {
-                    subDomainAnswers.Add(GetOptionIdForCurrentQuestion()[i]);
-                }
-            }
-        }
-        StandardQuizEnded = true;
-    }
-
-    private bool AreAnyCardsSelected()
-    {
-        if (!domainAnswers.Any() && currentQuestion == questionsList.Count)
-        {
-            return false;
-        }
-        return true;
-    }
-
-    private bool IsOptionValueEmpty(string value)
-    {
-        if (string.IsNullOrEmpty(value))
-        {
-            return true;
-        }
-        return false;
-    }
-
-    protected override async Task OnInitializedAsync()
-    {
-        questionsList = await QuizApiClient.GetAllDomainQuestions();
-    }
-}

@@ -8,7 +8,37 @@ main {
     flex: 1;
 }
 
-#mail{
+#video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.background-container {
+    background-color: #062455;
+}
+
+.button-style {
+    height: 50px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.text-style {
+    color: #FF6900;
+}
+
+.underline-style {
+    text-decoration: underline;
+}
+
+.bold-style {
+    font-weight: bold;
+}
+
+#mail {
     color: #FF6900;
 }
 

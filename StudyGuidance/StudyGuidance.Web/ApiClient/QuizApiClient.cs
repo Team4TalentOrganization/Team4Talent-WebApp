@@ -31,6 +31,10 @@ namespace StudyGuidance.Web.ApiClient
         {
             return await GetJsonAsync<List<Question>>($"{_url}/tinderquizquestions");
         }
+        public async Task<List<Option>> GetAllSubDomains()
+        {
+            return await GetJsonAsync<List<Option>>("https://localhost:7109/api/Quiz/subdomains/all");
+        }
 
         public async Task<List<Question>> GetSubdomains(List<int> domainIds)
         {

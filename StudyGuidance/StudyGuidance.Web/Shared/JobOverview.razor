@@ -2,6 +2,7 @@
 @using StudyGuidance.Web.Models;
 @using StudyGuidance.Web.ApiClient
 @inject IJobApiClient JobApiClient;
+@inject IQuizApiClient QuizApiClient;
 @inject NavigationManager NavigationManager
 
 <div class="pt-5"></div>
@@ -10,9 +11,9 @@
     @if (showFilterMenu)
     {
         <Animation Effect="Effect.ZoomIn" Speed="Speed.Fast">
-            <div class="mx-auto text-center" style="width: 90%; border: 2px solid #007ce0; border-radius: 10px;">
+            <div class="mx-auto text-center filter-menu-container">
                 <Button Class="w-100" Style="height: 55px; background-color: #007ce0; color: white; border-radius: 8px;" Type="BlazorBootstrap.ButtonType.Button" @onclick="ToggleContentAsync">
-                    <svg style="margin-right: 3%;" xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-sliders" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-sliders filter-icon" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1z" />
                     </svg>
                     FILTER RESULTATEN
@@ -24,7 +25,7 @@
                             <MudSelect MultiSelectionTextFunc="@(new Func<List<string>, string>(GetMultiSelectionText))" MultiSelection="true" @bind-Value="value" @bind-SelectedValues="options" T="string" Label="Subdomeinen" AdornmentIcon="@Icons.Material.Filled.ArrowDownward">
                                 @foreach (var subdomain in subDomains)
                                 {
-                                    <MudSelectItem T="string" Value="@subdomain.Content">@subdomain.Content</MudSelectItem>
+                                    <MudSelectItem T="string" Value="@subdomain.Content.ToUpper()">@subdomain.Content</MudSelectItem>
                                 }
                             </MudSelect>
                         </div>
@@ -34,116 +35,26 @@
         </Animation>
     }
     <Animation Effect="Effect.ZoomIn" Speed="Speed.Fast">
-        <div class="mx-auto text-center mt-5 mb-5" style="width: 90%;">
+        <div class="mx-auto text-center mt-5 mb-5 search-container">
             <MudTextField Class="custom-color" Placeholder="Zoeken" Immediate="true" @bind-Value="@_immediateText" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" />
         </div>
         <div class="overflow-auto">
-            @foreach (var job in FilteredJobs)
+            @if (showNoJobsMessage == false
+            )
             {
-                <div @onclick="@(e => GoToJobDetailPage(e, job.JobId))">
-                    <JobCards Job="job"></JobCards>
-                </div>
+                @foreach (var job in FilteredJobs)
+                {
+                    <div @onclick="@(e => GoToJobDetailPage(e, job.JobId))">
+                        <JobCards Job="job"></JobCards>
+                    </div>
+                }
+            }
+            else
+            {
+                <p class="text-center">Geen jobs gevonden.</p>
             }
         </div>
     </Animation>
 </div>
 
-@code {
-    @inject IJSRuntime JS;
-    private Collapse collapse1 = default!;
-    private Boolean showFilterMenu;
-    private async Task ShowContentAsync() => await collapse1.ShowAsync();
-    private async Task HideContentAsync() => await collapse1.HideAsync();
-    private async Task ToggleContentAsync() => await collapse1.ToggleAsync();
-    private bool multiselectionTextChoice;
-    private string value { get; set; } = "Nothing selected";
-    private IEnumerable<string> options { get; set; } = new HashSet<string>();
-    private string _immediateText = "";
-    private List<Job> jobs = new List<Job>();
-    private List<Option> subDomains = new List<Option>();
-    private List<String> filterDomains = new List<String>(){"Software analysis"};
-    private List<Job> FilteredJobs
-    {
-        get
-        {
-            if (string.IsNullOrWhiteSpace(_immediateText))
-            {
-                return options.Any()
-                    ? jobs.Where(job => options.Contains(job.SubDomain)).ToList()
-                    : jobs.ToList();
-            }
-            else
-            {
-                return options.Any()
-                    ? jobs.Where(job => options.Contains(job.SubDomain) && job.Name.ToLower().Contains(_immediateText.ToLower())).ToList()
-                    : jobs.Where(job => job.Name.ToLower().Contains(_immediateText.ToLower())).ToList();
-            }
-        }
-    }
 
-    [Parameter]
-    public string Name { get; set; }
-
-    protected override void OnParametersSet()
-    {
-        if(this.Name == "Gustaph")
-        {
-            this.showFilterMenu = true;
-        } else
-        {
-            this.showFilterMenu = false;
-        }
-
-        base.OnParametersSet();
-    }
-
-    private void GoToJobDetailPage(MouseEventArgs e, int id)
-    {
-        NavigationManager.NavigateTo($"/jobs/detail/{id}");
-    }
-
-    private string GetMultiSelectionText(List<string> selectedValues)
-    {
-        if(selectedValues.Count == 1)
-        {
-            return $"{selectedValues.Count} subdomein is geselecteerd";
-        } else
-        {
-            return $"{selectedValues.Count} subdomeinen zijn geselecteerd";
-        }
-
-    }
-
-    protected override async Task OnInitializedAsync()
-    {
-
-        // Get the current URI
-        var uri = new Uri(NavigationManager.Uri);
-
-        // Parse query parameters
-        var queryParams = System.Web.HttpUtility.ParseQueryString(uri.Query);
-        var answersParam = queryParams.Get("answers");
-        var workInTeamParam = queryParams.Get("workInTeam");
-        var workOnSiteParam = queryParams.Get("workOnSite");
-        List<string> answers = new List<string>();
-        answers = answersParam?.Split(',').ToList();
-        bool workInTeam;
-        workInTeam = bool.TryParse(workInTeamParam, out var workInTeamValue) ? workInTeamValue : false;
-        bool workOnSite;
-        workOnSite = bool.TryParse(workOnSiteParam, out var workOnSiteValue) ? workOnSiteValue : false;
-        await JS.InvokeVoidAsync("console.log", answers);
-        await JS.InvokeVoidAsync("console.log", workInTeam);
-        await JS.InvokeVoidAsync("console.log", workOnSite);
-
-        if (this.Name == "Gustaph")
-        {
-            jobs = await JobApiClient.GetJobsAsync();
-        }
-        else
-        {
-            //jobs = await JobApiClient.GetJobsByFilterAsync(filterDomains, false, false);
-            jobs = await JobApiClient.GetJobsByFilterAsync(answers, workInTeam, workOnSite);
-            subDomains = await JobApiClient.GetAllSubDomains();
-        }
-    }
-}

@@ -54,28 +54,14 @@ namespace StudyGuidance.Infrastructure
 
         }
 
-        public async Task<IReadOnlyList<Job>> GetJobsAsync()
-        {
-            return await _context.Jobs.ToListAsync<Job>();
-        }
-
-        public async Task<IReadOnlyList<Job>> GetJobsByFilterAsync(List<int> subdomainIds, bool workInTeam, bool workOnSite)
-        {
-            List<Job> matchingJobs = await _context.Jobs
-                .Where(job => subdomainIds.Contains(job.OptionRelation) && (job.WorkInTeam == workInTeam || job.WorkOnSite == workOnSite))
-                .ToListAsync();
-
-            return matchingJobs;
-        }
-
-		public async Task<Job> GetJobByIdAsync(int id)
-		{
-			return await _context.Jobs.SingleOrDefaultAsync(j => j.JobId == id);
-		}
-
         public async Task<IReadOnlyList<Question>> GetDomainQuestionsAsync()
         {
             return await _context.Questions.Where(q => q.Phrase == "In welk domein heb je interesse?").Include(options => options.Options).ToListAsync<Question>();
+        }
+
+        public async Task<IReadOnlyList<Option>> GetSelectedSubDomainsForFilterAsync()
+        {
+            return await _context.Options.Where(o => o.QuestionId < 3).ToListAsync<Option>();
         }
     }
 }

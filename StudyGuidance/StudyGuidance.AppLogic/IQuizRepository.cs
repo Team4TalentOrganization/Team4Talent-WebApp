@@ -10,8 +10,6 @@ namespace StudyGuidance.AppLogic
         Task<IReadOnlyList<Question>> GetDomainQuestionsAsync();
         Task<IReadOnlyList<Option>> GetDomainsAsync();
         Task<IReadOnlyList<Question>> GetSelectedSubDomainsAsync(List<int> domainId);
-        Task<IReadOnlyList<Job>> GetJobsAsync();
-        Task<IReadOnlyList<Job>> GetJobsByFilterAsync(List<int> subdomainIds, bool workInTeam, bool workOnSite);
-		Task<Job> GetJobByIdAsync(int id);
-	}
+        Task<IReadOnlyList<Option>> GetSelectedSubDomainsForFilterAsync();
+    }
 }
