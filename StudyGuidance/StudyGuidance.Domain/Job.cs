@@ -112,7 +112,7 @@ namespace StudyGuidance.Domain
             {
                 if (value <= 0)
                 {
-                    throw new BusinessException("JobRelation must be greater than 0.");
+                    throw new BusinessException("StudyCourseRelation must be greater than 0.");
                 }
 
                 _studyCourseRelation = value;

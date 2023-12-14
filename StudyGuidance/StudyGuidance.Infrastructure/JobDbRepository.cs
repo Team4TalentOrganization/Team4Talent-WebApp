@@ -54,7 +54,7 @@ namespace StudyGuidance.Infrastructure
             Job job = new Job(jobRequest)
             {
                 OptionRelation = matchingOption.OptionId,
-                StudyCourseRelation = 0,
+                StudyCourseRelation = 1,
             };
 
             _context.Jobs.Add(job);

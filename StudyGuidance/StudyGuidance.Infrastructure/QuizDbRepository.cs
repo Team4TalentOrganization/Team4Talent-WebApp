@@ -61,7 +61,7 @@ namespace StudyGuidance.Infrastructure
 
         public async Task<IReadOnlyList<Option>> GetSelectedSubDomainsForFilterAsync()
         {
-            return await _context.Options.Where(o => o.QuestionId < 3).ToListAsync<Option>();
+            return await _context.Options.Where(o => o.OptionId > 7).ToListAsync<Option>();
         }
     }
 }
