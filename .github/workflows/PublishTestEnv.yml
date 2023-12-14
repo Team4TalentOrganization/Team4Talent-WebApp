@@ -4,7 +4,7 @@ env:
   AZURE_WEBAPP_NAME_BACKEND: StudGuidanceApi
 
   WORKING_DIRECTORY_FRONTEND: './StudyGuidance/StudyGuidance.Web'
-  WORKING_DIRECTORY_BACKEND: './tudyGuidance/StudGuidance.Api'
+  WORKING_DIRECTORY_BACKEND: './StudyGuidance/StudGuidance.Api'
   
   AZURE_WEBAPP_PACKAGE_PATH_FRONTEND: './publish'
   AZURE_WEBAPP_PACKAGE_PATH_BACKEND: './publish_backend'
