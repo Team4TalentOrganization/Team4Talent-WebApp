@@ -46,7 +46,7 @@ jobs:
 
 
       - name: Set Database connection_string
-        run: sed -i 's|"Data Source=(localdb)\\MSSQLLocalDB;Database=StudyGuidanceDb;Integrated Security=True;TrustServerCertificate=True;"|"Server=tcp:studyguidancedb.database.windows.net,1433;Initial Catalog=StudyGuidance;Persist Security Info=False;User ID=super;Password=${{ secrets.DATABASE_PASSWORD }};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"|g' ./StudyGuidance/StudGuidance.Api/appsettings.json
+        run: sed -i 's|"Data Source=(localdb)\\\\MSSQLLocalDB;Database=StudyGuidanceDb;Integrated Security=True;TrustServerCertificate=True;"|"Server=tcp:studyguidancedb.database.windows.net,1433;Initial Catalog=StudyGuidance;Persist Security Info=False;User ID=super;Password=${{ secrets.DATABASE_PASSWORD }};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"|g' ./StudyGuidance/StudGuidance.Api/appsettings.json
   
 
       - name: Restore-backend
@@ -65,7 +65,6 @@ jobs:
         with:
           name: webapp-backend
           path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH_BACKEND }}
-
   
   publish:
     runs-on: ubuntu-latest
