@@ -16,7 +16,7 @@ jobs:
         uses: gatling/enterprise-action@v1
         with:
           api_token: ${{ secrets.GATLING_ENTERPRISE_API_TOKEN }}
-          simulation_id: ${{ env.simulation_id }}
+          simulation_id: "4eda4df9-b6b0-4d4d-b5dd-094e749a74e9"
         
       - run: |
           echo "reports_url=${{ steps.enterprise-action.outputs.reports_url }}"
