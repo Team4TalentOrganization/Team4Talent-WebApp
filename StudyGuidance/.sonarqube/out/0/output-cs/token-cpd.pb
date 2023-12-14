@@ -1,5 +1,5 @@
-ˆ
-§C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\Exceptions\BusinessException.cs
+ﬂ
+äC:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\Exceptions\BusinessException.cs
 	namespace 	
 StudyGuidance
  
@@ -21,319 +21,62 @@ Exceptions )
 { 
 public 
 BusinessException  
-(  !
-string! '
-message( /
-)/ 0
-: 
-base 
-( 
-message 
-) 
-{ 	
-} 	
-public 
-BusinessException  
-(  !
-)! "
+(  !
+)! "
+{ 	
+} 	
+public 
+BusinessException  
+(  !
+string! '
+message( /
+)/ 0
+: 
+base 
+( 
+message 
+) 
 { 	
-} 	
-public 
-BusinessException  
-(  !
-string! '
-message( /
-,/ 0
-	Exception1 :
-inner; @
-)@ A
-: 
-base 
-( 
-message 
-, 
-inner !
-)! "
-{ 	
-} 	
-public   
-BusinessException    
-(    !
-SerializationInfo  ! 2
-info  3 7
-,  7 8
-StreamingContext  9 I
-context  J Q
-)  Q R
-:!! 
-base!! 
-(!! 
-info!! 
-,!! 
-context!!  
-)!!  !
-{"" 	
-}## 	
-}$$ 
-}%% Ω"
-ãC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\Job.cs
-	namespace
-
- 	
-StudyGuidance
-
-
- 
-.
-
- 
-Domain
-
- 
-{ 
-public 
-
-class 
-Job 
-{ 
-public 
-string 
-_name 
-= 
-string $
-.$ %
-Empty% *
-;* +
-public 
-string 
-_domain 
-= 
-string  &
-.& '
-Empty' ,
-;, -
-public 
-string 
-
-_subDomain  
-=! "
-string# )
-.) *
-Empty* /
-;/ 0
-public 
-string 
-_description "
-=# $
-string% +
-.+ ,
-Empty, 1
-;1 2
-public 
-bool 
-
-WorkInTeam 
-{  
-get! $
-;$ %
-set& )
-;) *
-}+ ,
-public 
-bool 
-
-WorkOnSite 
-{  
-get! $
-;$ %
-set& )
-;) *
-}+ ,
-public 
-int 
-JobId 
-{ 
-get 
-; 
-set  #
-;# $
-}% &
-private 
-int 
-_optionRelation #
-;# $
-public 
-int 
-OptionRelation !
-{ 	
-get 
-=> 
-_optionRelation "
-;" #
-set 
-{ 
-if 
-( 
-value 
-<= 
-$num 
-) 
-{ 
-throw 
-new 
-BusinessException /
-(/ 0
-$str0 X
-)X Y
-;Y Z
-} 
-_optionRelation!! 
-=!!  !
-value!!" '
-;!!' (
-}"" 
-}## 	
-public%% 
-string%% 
-Name%% 
-{&& 	
-get'' 
-=>'' 
-_name'' 
-;'' 
-set(( 
-{)) 
-if** 
-(** 
-string** 
-.** 
-IsNullOrEmpty** (
-(**( )
-value**) .
-)**. /
-)**/ 0
-{++ 
-throw,, 
-new,, 
-BusinessException,, /
-(,,/ 0
-$str,,0 O
-),,O P
-;,,P Q
-}-- 
-_name// 
-=// 
-value// 
-;// 
-}00 
-}11 	
-public33 
-string33 
-Domain33 
-{44 	
-get55 
-=>55 
-_domain55 
-;55 
-set66 
-{77 
-if88 
-(88 
-string88 
-.88 
-IsNullOrEmpty88 (
-(88( )
-value88) .
-)88. /
-)88/ 0
-{99 
-throw:: 
-new:: 
-BusinessException:: /
-(::/ 0
-$str::0 Q
-)::Q R
-;::R S
-};; 
-_domain== 
-=== 
-value== 
-;==  
-}>> 
-}?? 	
-publicAA 
-stringAA 
-	SubDomainAA 
-{BB 	
-getCC 
-=>CC 
-
-_subDomainCC 
-;CC 
-setDD 
-{EE 
-ifFF 
-(FF 
-stringFF 
-.FF 
-IsNullOrEmptyFF (
-(FF( )
-valueFF) .
-)FF. /
-)FF/ 0
-{GG 
-throwHH 
-newHH 
-BusinessExceptionHH /
-(HH/ 0
-$strHH0 Z
-)HHZ [
-;HH[ \
-}II 
-
-_subDomainKK 
-=KK 
-valueKK "
-;KK" #
-}LL 
-}MM 	
-publicOO 
-stringOO 
-DescriptionOO !
-{PP 	
-getQQ 
-=>QQ 
-_descriptionQQ 
-;QQ  
-setRR 
-{SS 
-ifTT 
-(TT 
-stringTT 
-.TT 
-IsNullOrEmptyTT (
-(TT( )
-valueTT) .
-)TT. /
-)TT/ 0
-{UU 
-throwVV 
-newVV 
-BusinessExceptionVV /
-(VV/ 0
-$strVV0 V
-)VVV W
-;VVW X
-}WW 
-_descriptionYY 
-=YY 
-valueYY $
-;YY$ %
-}ZZ 
-}[[ 	
-}]] 
-}^^ è
-éC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\Option.cs
+} 	
+public 
+BusinessException  
+(  !
+string! '
+message( /
+,/ 0
+	Exception1 :
+inner; @
+)@ A
+: 
+base 
+( 
+message 
+, 
+inner !
+)! "
+{ 	
+} 	
+	protected 
+BusinessException #
+(# $
+SerializationInfo$ 5
+info6 :
+,: ;
+StreamingContext< L
+contextM T
+)T U
+:   
+base   
+(   
+info   
+,   
+context    
+)    !
+{!! 	
+}"" 	
+}## 
+}$$ Ù
+tC:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\Option.cs
 	namespace 	
 StudyGuidance
  
@@ -345,14 +88,14 @@ _subDomainKK 
 class 
 Option 
 { 
-private 
-string 
-_content 
-= 
-string  &
-.& '
-Empty' ,
-;, -
+private 
+string 
+_content 
+=  !
+string" (
+.( )
+Empty) .
+;. /
 private 
 int 
 _optionRelation #
@@ -480,8 +223,8 @@ QuestionId 
 false77. 3
 ;773 4
 }88 
-}99 π
-êC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\Question.cs
+}99 ¯
+vC:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\Question.cs
 	namespace 	
 StudyGuidance
  
@@ -515,11 +258,7 @@ QuestionId 
 >7 8
 (8 9
 )9 :
-;: ;
-private		 
-QuestionType		 
-_questionType		 *
-;		* +
+;: ;
 public
 
  
@@ -622,69 +361,6 @@ QuestionId
 value$$  
 ;$$  !
 }%% 
-}&& 	
-public'' 
-QuestionType'' 
-QuestionType'' (
-{(( 	
-get)) 
-=>)) 
-_questionType))  
-;))  !
-set** 
-{++ 
-if,, 
-(,, 
-!,, 
-Enum,, 
-.,, 
-	IsDefined,, #
-(,,# $
-typeof,,$ *
-(,,* +
-QuestionType,,+ 7
-),,7 8
-,,,8 9
-value,,: ?
-),,? @
-),,@ A
-{-- 
-throw.. 
-new.. 
-BusinessException.. /
-(../ 0
-$str..0 R
-)..R S
-;..S T
-}// 
-_questionType11 
-=11 
-value11  %
-;11% &
-}22 
-}33 	
-}44 
-}55 ≥
-îC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\QuestionType.cs
-	namespace 	
-StudyGuidance
- 
-. 
-Domain 
-{		 
-public
-
- 
-
-enum
-
- 
-QuestionType
-
- 
-{ 
-TinderQuizQuestion 
-,  
-StandardQuizQuestion 
-} 
-} 
+}&& 	
+}'' 
+}(( 

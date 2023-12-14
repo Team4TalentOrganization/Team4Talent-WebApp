@@ -6,65 +6,23 @@
       "tool": {
         "name": "Microsoft (R) Visual C# Compiler",
         "version": "4.6.0.0",
-        "fileVersion": "4.6.0-3.23212.2 (d78a163b)",
+        "fileVersion": "4.6.0-3.23259.8 (c3cc1d0c)",
         "semanticVersion": "4.6.0",
-        "language": "nl-NL"
+        "language": "en-US"
       },
       "results": [
         {
-          "ruleId": "CS8603",
-          "level": "warning",
-          "message": "Possible null reference return.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Infrastructure/JobDbRepository.cs",
-                "region": {
-                  "startLine": 33,
-                  "startColumn": 20,
-                  "endLine": 33,
-                  "endColumn": 80
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
           "ruleId": "S2933",
           "level": "warning",
           "message": "Make '_context' 'readonly'.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Infrastructure/JobDbRepository.cs",
+                "uri": "file:///C:/Users/Lucah/Documents/School/2023-2024/IT-Project/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Infrastructure/QuizDbRepository.cs",
                 "region": {
-                  "startLine": 11,
+                  "startLine": 10,
                   "startColumn": 32,
-                  "endLine": 11,
-                  "endColumn": 40
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2933",
-          "level": "warning",
-          "message": "Make '_context' 'readonly'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Infrastructure/QuizDbRepository.cs",
-                "region": {
-                  "startLine": 11,
-                  "startColumn": 32,
-                  "endLine": 11,
+                  "endLine": 10,
                   "endColumn": 40
                 }
               }
@@ -81,12 +39,12 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Infrastructure/QuizDbRepository.cs",
+                "uri": "file:///C:/Users/Lucah/Documents/School/2023-2024/IT-Project/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Infrastructure/QuizDbRepository.cs",
                 "region": {
-                  "startLine": 38,
-                  "startColumn": 89,
-                  "endLine": 38,
-                  "endColumn": 98
+                  "startLine": 27,
+                  "startColumn": 79,
+                  "endLine": 27,
+                  "endColumn": 88
                 }
               }
             }
@@ -97,20 +55,6 @@
         }
       ],
       "rules": {
-        "CS8603": {
-          "id": "CS8603",
-          "shortDescription": "Possible null reference return.",
-          "defaultLevel": "warning",
-          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8603)",
-          "properties": {
-            "category": "Compiler",
-            "isEnabledByDefault": true,
-            "tags": [
-              "Compiler",
-              "Telemetry"
-            ]
-          }
-        },
         "S2933": {
           "id": "S2933",
           "shortDescription": "Fields that are only assigned in the constructor should be \"readonly\"",
@@ -131,7 +75,7 @@
         "S927": {
           "id": "S927",
           "shortDescription": "Parameter names should match base declaration and other partial definitions",
-          "fullDescription": "The name of a parameter in an externally visible. This rule raises an issue when method override does not match the name of the parameter in the base declaration of the method, or the name of the parameter in the interface declaration of the method or the name of any other partial definition.",
+          "fullDescription": "Parameters are part of the method signature and its identity.",
           "defaultLevel": "warning",
           "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-927",
           "properties": {

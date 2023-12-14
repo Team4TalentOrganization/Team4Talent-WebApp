@@ -1,8 +1,6 @@
-ß
-ùC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Controllers\JobController.csutf-8®
-ûC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Controllers\QuizController.csutf-8ï
-ãC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Program.csutf-8¿
-¥C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\obj\Debug\net6.0\StudGuidance.Api.GlobalUsings.g.csutf-8Ã
-¿C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.csutf-8æ
-≤C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\obj\Debug\net6.0\StudGuidance.Api.AssemblyInfo.csutf-8—
-≈C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\obj\Debug\net6.0\StudGuidance.Api.MvcApplicationPartsAssemblyInfo.csutf-8
+Ü
+}C:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web.Tests\GlobalUsings.csutf-8}
+rC:\Users\Lucah\.nuget\packages\microsoft.net.test.sdk\17.5.0\build\netcoreapp3.1\Microsoft.NET.Test.Sdk.Program.csutf-8¥
+®C:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web.Tests\obj\Debug\net6.0\StudyGuidance.Web.Tests.GlobalUsings.g.csutf-8π
+≠C:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web.Tests\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.csutf-8≤
+¶C:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web.Tests\obj\Debug\net6.0\StudyGuidance.Web.Tests.AssemblyInfo.csutf-8

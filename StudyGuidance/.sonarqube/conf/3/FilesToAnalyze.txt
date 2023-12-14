@@ -1,4 +1,1 @@
-﻿C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\IJobRepository.cs
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\IQuestionModificationService.cs
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\IQuizRepository.cs
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\QuestionModificationService.cs
+﻿C:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\IQuizRepository.cs

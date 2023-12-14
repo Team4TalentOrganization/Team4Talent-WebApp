@@ -1,23 +1,5 @@
-À
-üC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\JobDbRepository.cs
-
- "2
- '  !+ 3!! !
-6 = 
-
-. :
-
-. B
-M Y *
-` j^ h
-q {	~ à
- " (
- 4 7L Ol o
-
- .
-3 5!!L N
-!!< =!!A Bâ
-∏C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231031163721_DomainQuestion.cs
+Ô
+ûC:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231031163721_DomainQuestion.cs
 
  '
 
@@ -32,8 +14,8 @@
 ''  !''% &
 
 DD  $
-DD6 FFF II ¡
-ªC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231109140326_SubDomainQuestion.cs
+DD6 FFF II ß
+°C:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231109140326_SubDomainQuestion.cs
 
  *
 
@@ -54,8 +36,8 @@
 ÆÆ 
 ≥≥ 
 ∫∫ 
-¡¡ ¨
-¡C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231110095936_SubDomainQuestionChange.cs
+¡¡ í
+ßC:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231110095936_SubDomainQuestionChange.cs
 
  0
 
@@ -85,121 +67,34 @@
 ˘˘ 
 ÄÄ 
 áá 
-éé ß
-ÆC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231124145101_Jobs.cs
+éé é
+ãC:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Properties\Properties.cs€
+ÜC:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\QuizDbRepository.cs
 
- 
+ #2
+
+
+ '  ! ! !
+7 > 
 
-		  "(
-		4 D  BB P
-  !! &! &   "  %" '
- " 
-0 15 6
+3 D
+4 ;? F
 
-LL  $(
-LL6 FNN QQ VV •
-¥C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231130124952_WorkInTeam.cs
+1 @
+0 15 6
 
- #
-
-		  "
-		4 D 
-
-  $2
-6 F  ## (( ù
-∂C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231130210840_QuestionType.cs
-
- %
-
-		  "(
-		4 D   
-
-!!  $
-!!6 F## ã
-∏C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231203184435_TinderQuestion.cs
-
- '
-
-		  "
-		4 D 
-
-  $
-6 F „
-µC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231203233840_JobsChanged.cs
-
- $
-
-		  "‹
-		4 D      '' .. 55 << CC JJ QQ XX __ ff mm tt {{ 
-ÇÇ 
-ââ 
-êê 
-óó 
-ûû 
-•• 
-¨¨ 
-≥≥ 
-∫∫ 
-¡¡ 
-»» 
-œœ 
-÷÷ 
-›› 
-
-ÂÂ  $$
-
-ÂÂ6 F
-ÁÁ 
-ÎÎ ®
-•C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Properties\Properties.cs‘
-†C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\QuizDbRepository.cs
-
- #Z
- '  ! ! !## !((1 9;; !@@ !
-7 > 
-
-3 D
-4 ;? F
-
-3 P
-2 37 8
-t {	 Ü
-
-3 N
-2 37 8
-r y	} Ñ
-
-!!1 @
-##0 1##5 6
-
-&&3 M
-&&X a)) %
-(( (00& 5
-)) ))/ 0
-,, 744 (55 /2
--- /.. &// &22 *44- G
-
-993 J
-;;2 3;;7 8
-;;o v	;;z Å
-
->>1 T
-@@0 1@@5 6
-¶C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\StudyGuidanceDbContext.cs
- )7 M
+1 C
+N W %
+ / 0ƒ
+åC:\Users\Lucah\Documents\School\2023-2024\IT-Project\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\StudyGuidanceDbContext.cs
+ )7 M
 
  (
 
-		 $
+		 $
+O V_ f
 
-
-
- 
-O V_ f
-
-  /n
-= I! -// 00 11 22 44 >> SS XX ]] Z
- //4 B55P ^66Y g77a o88f t99Y g::R `;;U c»
- !004 E??M ^@@R cAAR cBBL ]CCK \DDJ [EEU fFFT eGGM ^HHK \IIM ^JJR cKKU fLLS dMMJ [NNJ [OOE VPPE V(
-!! "114 FTTE WUUF X(
-(( "224 FYYE WZZF X
+  /<
+= I! -     ** Z
+ 4 B!!P ^""Y g##a o$$f t%%Y g&&R `''U c»
+ !4 E++M ^,,R c--R c..L ]//K \00J [11U f22T e33M ^44K \55M ^66R c77U f88S d99J [::J [;;E V<<E V
