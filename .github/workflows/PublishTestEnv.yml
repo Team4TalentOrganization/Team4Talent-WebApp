@@ -46,9 +46,9 @@ jobs:
 
       
 
-
       - name: Set Database connection_string
-        run: sed -i 's|"Data Source=(localdb)\\\\MSSQLLocalDB;Database=StudyGuidanceDb;Integrated Security=True;TrustServerCertificate=True;"|"${{ secrets.CONNECTION_STRING_DEVELOPMENT }}"|g' ./StudyGuidance/StudGuidance.Api/appsettings.json
+        run: sed -i 's|"Data Source=(localdb)\\\\MSSQLLocalDB;Database=StudyGuidanceDb;Integrated Security=True;TrustServerCertificate=True;"|"${{ secrets.CONNECTION_STRING_DEVELOPMENT }}"|g' ./StudyGuidance/StudGuidance.Api/appsettings.json"
+  
 
       - name: Restore-backend
         run: dotnet restore "${{ env.WORKING_DIRECTORY_BACKEND }}"
