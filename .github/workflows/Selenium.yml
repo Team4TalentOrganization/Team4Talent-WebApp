@@ -4,9 +4,10 @@ env:
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-    - devops
+  workflow_run:
+    workflows: ["PublishTestEnv.yml"]
+    types:
+      - completed
 
 jobs:
   build:
