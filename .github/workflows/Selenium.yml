@@ -5,7 +5,7 @@ env:
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: ["PublishTestEnv.yml"]
+    workflows: ["Build and deploy StudyGuidance T4T"]
     types:
       - completed
 
