@@ -18,11 +18,6 @@ namespace StudyGuidance.Web.Shared
             navStyle = collapseNavMenu ? "width: 100%; background-color: transparent" : "height: 100vh; background-color: white;";
         }
 
-        private Guid _guid = Guid.NewGuid();
-        private string _modalDisplay = "none;";
-        private string _modalClass = "";
-        private bool _showBackdrop = false;
-
         public Guid Guid { get; set; }
         public string ModalDisplay { get; set; }
         public string ModalClass { get; set; }
