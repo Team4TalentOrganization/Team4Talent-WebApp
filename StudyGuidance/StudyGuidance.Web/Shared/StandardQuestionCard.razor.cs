@@ -1,28 +1,32 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
+using StudyGuidance.Web.ApiClient;
 using StudyGuidance.Web.Models;
 
 namespace StudyGuidance.Web.Shared
 {
     public partial class StandardQuestionCard : ComponentBase
     {
-        private bool StandardQuizEnded = false;
-        private int currentQuestion = 0;
-        private List<Question> questionsList = new List<Question>();
-        private List<int> domainAnswers = new List<int>();
-        private List<int> subDomainAnswers = new List<int>();
-        private List<Question> selectedDomains = new List<Question>();
-        private bool subDomainsAreSet = false;
+        public bool StandardQuizEnded = false;
+        public int currentQuestion = 0;
+        public List<Question> questionsList = new List<Question>();
+        public List<int> domainAnswers = new List<int>();
+        public List<int> subDomainAnswers = new List<int>();
+        public List<Question> selectedDomains = new List<Question>();
+        public bool subDomainsAreSet = false;
         private bool EndButtonDisabled = false;
 
-        private string[] CardClasses = new string[4] { "card text-black h-50 mb-3", "card text-black h-50 mb-3", "card text-black h-50 mb-3", "card text-black h-50 mb-3" };
+        [Inject]
+        public IQuizApiClient QuizApiClient { get; set; }
 
-        private async Task MouseOver(int cardNumber)
+        public string[] CardClasses = new string[4] { "card text-black h-50 mb-3", "card text-black h-50 mb-3", "card text-black h-50 mb-3", "card text-black h-50 mb-3" };
+
+        public async Task MouseOver(int cardNumber)
         {
             await SetCardClass(cardNumber, CardClasses[cardNumber].Contains("bg-orange-color-click") ? "card text-white bg-orange-color-click h-50 mb-3" : "card text-white bg-orange-color h-50 mb-3");
         }
 
-        private async Task MouseOut(int cardNumber)
+        public async Task MouseOut(int cardNumber)
         {
             await SetCardClass(cardNumber, CardClasses[cardNumber].Contains("bg-orange-color-click") ? "card text-white bg-orange-color-click h-50 mb-3" : "card text-black h-50 mb-3");
         }
@@ -32,7 +36,7 @@ namespace StudyGuidance.Web.Shared
             CardClasses[cardNumber] = cssClass;
         }
 
-        private void CardClicked(int cardNumber)
+        public void CardClicked(int cardNumber)
         {
             // Check if the option is not empty before toggling
             if (!IsOptionValueEmpty(GetOptionsForCurrentQuestion()[cardNumber]))
@@ -53,12 +57,12 @@ namespace StudyGuidance.Web.Shared
             }
         }
 
-        private List<string> GetOptionsForCurrentQuestion()
+        public List<string> GetOptionsForCurrentQuestion()
         {
             return GetQuestionAtIndex(currentQuestion)?.Options.Select(option => option.Content).ToList() ?? new List<string>();
         }
 
-        private List<int> GetOptionIdForCurrentQuestion()
+        public List<int> GetOptionIdForCurrentQuestion()
         {
             return GetQuestionAtIndex(currentQuestion)?.Options.Select(option => option.OptionId).ToList() ?? new List<int>();
         }
@@ -68,18 +72,13 @@ namespace StudyGuidance.Web.Shared
             return GetQuestionAtIndex(currentQuestion)?.Phrase ?? string.Empty;
         }
 
-        private string GetNextQuestionPhrase()
-        {
-            return GetQuestionAtIndex(currentQuestion + 1)?.Phrase ?? string.Empty;
-        }
-
         private Question GetQuestionAtIndex(int index)
         {
             return (index >= 0 && index < questionsList.Count) ? questionsList[index] : null;
         }
 
 
-        private async Task NextQuestionClicked()
+        public async Task NextQuestionClicked()
         {
             for (int i = 0; i < 4; i++)
             {
@@ -132,7 +131,7 @@ namespace StudyGuidance.Web.Shared
             currentQuestion++;
         }
 
-        private void PreviousQuestionClicked()
+        public void PreviousQuestionClicked()
         {
             if (currentQuestion > 0)
             {
@@ -155,7 +154,7 @@ namespace StudyGuidance.Web.Shared
             }
         }
 
-        private void EndStandardQuiz()
+        public void EndStandardQuiz()
         {
             for (int i = 0; i < 4; i++)
             {
@@ -170,7 +169,7 @@ namespace StudyGuidance.Web.Shared
             StandardQuizEnded = true;
         }
 
-        private bool AreAnyCardsSelected()
+        public bool AreAnyCardsSelected()
         {
             if (!domainAnswers.Any() && currentQuestion == questionsList.Count)
             {
@@ -179,7 +178,7 @@ namespace StudyGuidance.Web.Shared
             return true;
         }
 
-        private bool IsOptionValueEmpty(string value)
+        public bool IsOptionValueEmpty(string value)
         {
             if (string.IsNullOrEmpty(value))
             {

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.JSInterop;
+using StudyGuidance.Web.ApiClient;
 using StudyGuidance.Web.Models;
 using System;
 
@@ -9,21 +10,27 @@ namespace StudyGuidance.Web.Shared
 {
     public partial class JobOverview : ComponentBase
     {
+        [Inject]
+        public NavigationManager NavigationManager { get; set; }
+        [Inject]
+        public IJobApiClient JobApiClient { get; set; }
+        [Inject]
+        public IQuizApiClient QuizApiClient { get; set; }
         [Parameter]
         public string Name { get; set; }
-        private Collapse collapse1 = default!;
+        public Collapse collapse1 = default!;
         private Boolean showFilterMenu;
-        private async Task ShowContentAsync() => await collapse1.ShowAsync();
-        private async Task HideContentAsync() => await collapse1.HideAsync();
-        private async Task ToggleContentAsync() => await collapse1.ToggleAsync();
+        public async Task ShowContentAsync() => await collapse1.ShowAsync();
+        public async Task HideContentAsync() => await collapse1.HideAsync();
+        public async Task ToggleContentAsync() => await collapse1.ToggleAsync();
         private bool multiselectionTextChoice;
         private string value { get; set; } = "Nothing selected";
-        private IEnumerable<string> options { get; set; } = new HashSet<string>();
-        private string _immediateText = "";
-        private List<Job> jobs = new List<Job>();
-        private List<Option> subDomains = new List<Option>();
-        bool showNoJobsMessage;
-        private List<Job> FilteredJobs
+        public IEnumerable<string> options { get; set; } = new HashSet<string>();
+        public string _immediateText = "";
+        public List<Job> jobs = new List<Job>();
+        public List<Option> subDomains = new List<Option>();
+        public bool showNoJobsMessage;
+        public List<Job> FilteredJobs
         {
             get
             {
@@ -56,12 +63,12 @@ namespace StudyGuidance.Web.Shared
             base.OnParametersSet();
         }
 
-        private void GoToJobDetailPage(MouseEventArgs e, int id)
+        public void GoToJobDetailPage(MouseEventArgs e, int id)
         {
             NavigationManager.NavigateTo($"/jobs/detail/{id}");
         }
 
-        private string GetMultiSelectionText(List<string> selectedValues)
+        public string GetMultiSelectionText(List<string> selectedValues)
         {
             if (selectedValues.Count == 1)
             {
@@ -72,6 +79,11 @@ namespace StudyGuidance.Web.Shared
                 return $"{selectedValues.Count} subdomeinen zijn geselecteerd";
             }
 
+        }
+
+        public async Task InvokeOnInitializedAsync()
+        {
+            await OnInitializedAsync();
         }
 
         protected override async Task OnInitializedAsync()

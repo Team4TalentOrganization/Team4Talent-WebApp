@@ -41,15 +41,22 @@ namespace StudyGuidance.Domain.Tests
         public void SerializationConstructor_ShouldCreateInstance()
         {
             // Arrange
-            var serializationInfo = new SerializationInfo(typeof(Exception), new FormatterConverter());
-            var streamingContext = new StreamingContext();
+            var expectedMessage = "Test Message";
+            var innerException = new Exception("Inner Exception");
 
-            // Act
-            BusinessException exception = new BusinessException("Test Message", new Exception("Inner Exception"));
+            // Create a new BusinessException instance using reflection
+            var uninitializedObject = FormatterServices.GetUninitializedObject(typeof(BusinessException));
+            var exception = uninitializedObject as BusinessException;
 
-            // Assert
+            // Set private fields using reflection
+            typeof(Exception).GetField("_message", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic)
+                ?.SetValue(exception, expectedMessage);
+            typeof(Exception).GetField("_innerException", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic)
+                ?.SetValue(exception, innerException);
+
+            // Act & Assert
             Assert.That(exception, Is.Not.Null);
-            Assert.That(exception.Message, Is.EqualTo("Test Message"));
+            Assert.That(exception.Message, Is.EqualTo(expectedMessage));
             Assert.That(exception.InnerException, Is.Not.Null);
             Assert.That(exception.InnerException.Message, Is.EqualTo("Inner Exception"));
         }

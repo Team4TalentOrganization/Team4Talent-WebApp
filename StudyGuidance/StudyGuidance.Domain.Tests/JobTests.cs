@@ -88,5 +88,13 @@ namespace StudyGuidance.Domain.Tests
 
             Assert.That(() => job.Description = emptyDescription, Throws.InstanceOf<BusinessException>());
         }
+
+        [Test]
+        public void SetOptionRelation_InvalidValue_ShouldThrowBusinessException()
+        {
+            Job job = new Job();
+
+            Assert.That(() => job.OptionRelation = 0, Throws.InstanceOf<BusinessException>());
+        }
     }
 }
