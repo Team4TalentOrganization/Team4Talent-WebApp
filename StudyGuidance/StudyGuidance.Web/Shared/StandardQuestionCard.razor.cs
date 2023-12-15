@@ -13,7 +13,6 @@ namespace StudyGuidance.Web.Shared
         private List<int> subDomainAnswers = new List<int>();
         private List<Question> selectedDomains = new List<Question>();
         private bool subDomainsAreSet = false;
-        private bool EndButtonDisabled = false;
 
         private string[] CardClasses = new string[4] { "card text-black h-50 mb-3", "card text-black h-50 mb-3", "card text-black h-50 mb-3", "card text-black h-50 mb-3" };
 
@@ -72,7 +71,6 @@ namespace StudyGuidance.Web.Shared
         {
             return (index >= 0 && index < questionsList.Count) ? questionsList[index] : null;
         }
-
 
         private async Task NextQuestionClicked()
         {
@@ -203,13 +201,15 @@ namespace StudyGuidance.Web.Shared
 
             modifiedQuestions.AddRange(questionsWithEmptyOption);
 
-            foreach (var question in modifiedQuestions)
+            modifiedQuestions.ForEach(question =>
             {
-                while (question.Options.Count < 4)
+                var optionsToAdd = 4 - question.Options.Count;
+                if (optionsToAdd > 0)
                 {
-                    question.Options.Add(new Option());
+                    Enumerable.Range(1, optionsToAdd).ToList().ForEach(_ => question.Options.Add(new Option()));
                 }
-            }
+            });
+
 
             questionsList = modifiedQuestions;
 

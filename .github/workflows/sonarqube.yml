@@ -15,6 +15,7 @@ on:
     branches:
       - main
       - development
+      - code-smells-frontend 
 
 jobs:
   build:
