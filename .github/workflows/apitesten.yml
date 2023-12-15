@@ -28,7 +28,7 @@ jobs:
         run: npm install -g newman newman-reporter-htmlextra
 
       - name: run newman
-        run: newman run ./postman/StudyGuidance.postman_collection.json -- environment ./postman/StudyGuidance.postman_environment.json -r htmlextra
+        run: newman run ./postman/StudyGuidance.postman_collection.json --environment ./postman/StudyGuidance.postman_environment.json -r htmlextra
 
       - name: Upload Newman HTML report
         uses: actions/upload-artifact@v2
