@@ -1,5 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StudyGuidance.Domain;
+using StudyGuidance.Domain.Exceptions;
+using StudyGuidance.Domain.Models;
+using StudyGuidance.Infrastructure.Migrations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +30,6 @@ namespace StudyGuidance.Infrastructure.Tests
         [Test]
         public async Task GetJobsAsync_ReturnsAllJobsFromRepository()
         {
-            // Arrange
             var jobs = new List<Job>
             {
                 new Job { JobId = 1, SubDomain = "Subdomain 1" },
@@ -37,10 +39,8 @@ namespace StudyGuidance.Infrastructure.Tests
             _dbContext.Jobs.AddRange(jobs);
             _dbContext.SaveChanges();
 
-            // Act
             var result = await _repository.GetJobsAsync();
 
-            // Assert
             Assert.IsNotNull(result);
             Assert.That(3, Is.EqualTo(result.Count));
         }
@@ -48,7 +48,6 @@ namespace StudyGuidance.Infrastructure.Tests
         [Test]
         public async Task GetJobsByFilterAsync_ReturnsAllRequestedJobsFromRepository()
         {
-            // Arrange
             var jobs = new List<Job>
             {
                 new Job { JobId = 1, OptionRelation = 5, SubDomain = "Subdomain 1", WorkInTeam = true, WorkOnSite = true },
@@ -62,19 +61,256 @@ namespace StudyGuidance.Infrastructure.Tests
             _dbContext.Jobs.AddRange(jobs);
             _dbContext.SaveChanges();
 
-            // Act
             var result = await _repository.GetJobsByFilterAsync(new List<int> { 5, 6 }, workInTeam, workOnSite);
 
-            // Assert
             Assert.IsNotNull(result);
             Assert.That(1, Is.EqualTo(result.Count));
             Assert.That(result.Select(job => job.SubDomain), Is.EquivalentTo(new[] { "Subdomain 1" }));
         }
 
+        [Test]
+        public async Task GetJobByIdAsync_ReturnsCorrectJob()
+        {
+            var job = new Job { JobId = 1, Name = "Test Job" };
+            _dbContext.Jobs.Add(job);
+            _dbContext.SaveChanges();
+
+            var result = await _repository.GetJobByIdAsync(1);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(job.JobId, result.JobId);
+            Assert.AreEqual(job.Name, result.Name);
+        }
+
+        [Test]
+        public async Task AddJobAsync_ValidJobRequest_ReturnsAddedJob()
+        {
+
+            var jobRequest = new JobRequest
+            {
+                Name = "sqdqs",
+                Domain = "Development",
+                SubDomain = "Ai Robotics",
+                Description = "Your Job Description Here",
+                WorkInTeam = true,
+                WorkOnSite = false,
+                TestamonialRequest = new TestimonialRequest
+                {
+                    Name = "Testimonial Name",
+                    Description = "Testimonial Description",
+                    JobTitel = "Testimonial Job Title"
+                }
+            };
+            _dbContext.Options.Add(new Option { OptionId = 2, Content = "Development", QuestionId = 1 });
+            _dbContext.Options.Add(new Option { OptionId = 8, Content = "AI Robotics", QuestionId = 2, OptionRelation = 1 });
+            _dbContext.SaveChanges();
+            var result = await _repository.AddJobAsync(jobRequest);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(jobRequest.Name, result.Name);
+        }
+
+        [Test]
+        public void AddJobAsync_InvalidDomain_ThrowsBusinessException()
+        {
+            var jobRequest = new JobRequest
+            {
+                Domain = "InvalidDomain",
+                SubDomain = "ValidSubDomain",
+            };
+
+            Assert.ThrowsAsync<BusinessException>(async () => await _repository.AddJobAsync(jobRequest));
+        }
+
+        [Test]
+        public async Task ChangeJobAsync_ValidJob_ReturnsUpdatedJob()
+        {
+            var job = new Job
+            {
+                JobId = 1,
+                Name = "OriginalName",
+                Domain = "development",
+                SubDomain = "ai robotics",
+                WorkInTeam = true,
+                WorkOnSite = false,
+                OptionRelation = 1,
+                StudyCourseRelation = 1,
+                Testamonial = new Testamonial
+                {
+                    Name = "OriginalTestimonial",
+                    Description = "OriginalTestimonialDescription",
+                    JobTitel = "OriginalTestimonialTitle"
+                }
+            };
+
+            _dbContext.Jobs.Add(job);
+            await _dbContext.SaveChangesAsync();
+
+            var updatedJob = new Job
+            {
+                JobId = 1,
+                Name = "UpdatedName",
+                Domain = "UpdatedDomain",
+                SubDomain = "UpdatedSubDomain",
+                WorkInTeam = false,
+                WorkOnSite = true,
+                OptionRelation = 2,
+                StudyCourseRelation = 2,
+                Testamonial = new Testamonial
+                {
+                    Name = "UpdatedTestimonial",
+                    Description = "UpdatedTestimonialDescription",
+                    JobTitel = "UpdatedTestimonialTitle"
+                }
+            };
+
+            var result = await _repository.ChangeJobAsync(updatedJob);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(updatedJob.Name, result.Name);
+            Assert.AreEqual(updatedJob.Domain, result.Domain);
+            Assert.AreEqual(updatedJob.SubDomain, result.SubDomain);
+            Assert.AreEqual(updatedJob.WorkInTeam, result.WorkInTeam);
+            Assert.AreEqual(updatedJob.WorkOnSite, result.WorkOnSite);
+            Assert.AreEqual(updatedJob.OptionRelation, result.OptionRelation);
+            Assert.AreEqual(updatedJob.StudyCourseRelation, result.StudyCourseRelation);
+            Assert.IsNotNull(result.Testamonial);
+            Assert.AreEqual(updatedJob.Testamonial.Name, result.Testamonial.Name);
+            Assert.AreEqual(updatedJob.Testamonial.Description, result.Testamonial.Description);
+            Assert.AreEqual(updatedJob.Testamonial.JobTitel, result.Testamonial.JobTitel);
+        }
+
+        [Test]
+        public async Task ChangeJobAsync_InvalidDomain_ThrowsBusinessException()
+        {
+            var job = new Job
+            {
+                JobId = 1,
+                Name = "OriginalName",
+                Domain = "OriginalDomain",
+                SubDomain = "OriginalSubDomain",
+                WorkInTeam = true,
+                WorkOnSite = false,
+                OptionRelation = 1,
+                StudyCourseRelation = 1,
+                Testamonial = new Testamonial
+                {
+                    Name = "OriginalTestimonial",
+                    Description = "OriginalTestimonialDescription",
+                    JobTitel = "OriginalTestimonialTitle"
+                }
+            };
+
+            _dbContext.Jobs.Add(job);
+            await _dbContext.SaveChangesAsync();
+
+            var updatedJob = new Job
+            {
+                JobId = 1,
+                Name = "UpdatedName",
+                Domain = "InvalidDomain",
+                SubDomain = "UpdatedSubDomain",
+                WorkInTeam = false,
+                WorkOnSite = true,
+                OptionRelation = 2,
+                StudyCourseRelation = 2,
+                Testamonial = new Testamonial
+                {
+                    Name = "UpdatedTestimonial",
+                    Description = "UpdatedTestimonialDescription",
+                    JobTitel = "UpdatedTestimonialTitle"
+                }
+            };
+
+            Assert.ThrowsAsync<BusinessException>(() => _repository.ChangeJobAsync(updatedJob));
+        }
+
+        [Test]
+        public async Task ChangeJobAsync_InvalidSubdomain_ThrowsBusinessException()
+        {
+            var job = new Job
+            {
+                JobId = 1,
+                Name = "OriginalName",
+                Domain = "OriginalDomain",
+                SubDomain = "OriginalSubDomain",
+                WorkInTeam = true,
+                WorkOnSite = false,
+                OptionRelation = 1,
+                StudyCourseRelation = 1,
+                Testamonial = new Testamonial
+                {
+                    Name = "OriginalTestimonial",
+                    Description = "OriginalTestimonialDescription",
+                    JobTitel = "OriginalTestimonialTitle"
+                }
+            };
+
+            _dbContext.Jobs.Add(job);
+            await _dbContext.SaveChangesAsync();
+
+            var updatedJob = new Job
+            {
+                JobId = 1,
+                Name = "UpdatedName",
+                Domain = "UpdatedDomain",
+                SubDomain = "InvalidSubDomain",
+                WorkInTeam = false,
+                WorkOnSite = true,
+                OptionRelation = 2,
+                StudyCourseRelation = 2,
+                Testamonial = new Testamonial
+                {
+                    Name = "UpdatedTestimonial",
+                    Description = "UpdatedTestimonialDescription",
+                    JobTitel = "UpdatedTestimonialTitle"
+                }
+            };
+
+            Assert.ThrowsAsync<BusinessException>(() => _repository.ChangeJobAsync(updatedJob));
+        }
+
+        [Test]
+        public async Task DeleteJobAsync_JobExists_ReturnsTrueAndDeletesJob()
+        {
+            var job = new Job
+            {
+                JobId = 1,
+                Name = "OriginalName",
+                Domain = "OriginalDomain",
+                SubDomain = "OriginalSubDomain",
+                WorkInTeam = true,
+                WorkOnSite = false,
+                OptionRelation = 1,
+                StudyCourseRelation = 1,
+                Testamonial = new Testamonial
+                {
+                    Name = "OriginalTestimonial",
+                    Description = "OriginalTestimonialDescription",
+                    JobTitel = "OriginalTestimonialTitle"
+                }
+            };
+
+            _dbContext.Jobs.Add(job);
+            await _dbContext.SaveChangesAsync();
+
+            var result = await _repository.DeleteJobAsync(1);
+
+            Assert.IsTrue(result);
+            Assert.AreEqual(0, _dbContext.Jobs.Count());
+        }
+
+        [Test]
+        public async Task DeleteJobAsync_JobDoesNotExist_ReturnsFalse()
+        {
+            var result = await _repository.DeleteJobAsync(1);
+
+            Assert.IsFalse(result);
+        }
+
         [TearDown]
         public void TearDown()
         {
-            _dbContext.Database.EnsureDeleted(); // database deleten
+            _dbContext.Database.EnsureDeleted();
             _dbContext.Dispose();
         }
     }

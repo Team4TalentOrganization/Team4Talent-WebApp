@@ -29,7 +29,6 @@ namespace StudyGuidance.Infrastructure.Tests
         [Test]
         public async Task GetQuestionsAsync_ReturnsAllQuestionsWithOptions()
         {
-            // Arrange
             var questions = new List<Question>
             {
                 new Question { QuestionId = 1, Phrase = "Question 1" },
@@ -47,10 +46,8 @@ namespace StudyGuidance.Infrastructure.Tests
             _dbContext.Options.AddRange(options);
             _dbContext.SaveChanges();
 
-            // Act
             var result = await _repository.GetQuestionsAsync();
 
-            // Assert
             Assert.IsNotNull(result);
             Assert.That(2, Is.EqualTo(result.Count));
             Assert.IsTrue(result.All(q => q.Options.Any()));
@@ -59,7 +56,6 @@ namespace StudyGuidance.Infrastructure.Tests
         [Test]
         public async Task GetDomainsAsync_ReturnsAllDomainsFromRepository()
         {
-            // Arrange
             var domains = new List<Option>
             {
                 new Option { OptionId = 4, Content = "Domain 1", QuestionId = 1 },
@@ -69,10 +65,8 @@ namespace StudyGuidance.Infrastructure.Tests
             _dbContext.Options.AddRange(domains);
             _dbContext.SaveChanges();
 
-            // Act
             var result = await _repository.GetDomainsAsync();
 
-            // Assert
             Assert.IsNotNull(result);
             Assert.That(2, Is.EqualTo(result.Count));
         }
@@ -80,12 +74,10 @@ namespace StudyGuidance.Infrastructure.Tests
         [Test]
         public async Task GetSubDomainsAsync_ReturnsAllSubDomainsFromRepository()
         {
-            // Arrange
             var subDomains = new List<Question>
             {
                 new Question
                 {
-                    // Assuming properties for Question (e.g., Phrase) are present
                     Phrase = "Question 1",
                     Options = new List<Option>
                     {
@@ -93,25 +85,99 @@ namespace StudyGuidance.Infrastructure.Tests
                         new Option { OptionId = 7, Content = "Subdomain 2", OptionRelation = 2 }
                     }
                 },
-                // Add more questions if needed
             };
 
 
             _dbContext.Questions.AddRange(subDomains);
             _dbContext.SaveChanges();
 
-            // Act
             var result = await _repository.GetSelectedSubDomainsAsync(new List<int> { 1 });
 
-            // Assert
             Assert.IsNotNull(result);
             Assert.That(1, Is.EqualTo(result.Count));
         }
 
+        [Test]
+        public async Task GetSelectedSubDomainsForFilterAsync_ReturnsSelectedSubDomains()
+        {
+            var selectedSubDomains = new List<Option>
+    {
+        new Option { OptionId = 8, Content = "Subdomain 3", OptionRelation = 3 },
+        new Option { OptionId = 9, Content = "Subdomain 4", OptionRelation = 4 }
+    };
+
+            _dbContext.Options.AddRange(selectedSubDomains);
+            _dbContext.SaveChanges();
+
+            var result = await _repository.GetSelectedSubDomainsForFilterAsync();
+
+            Assert.IsNotNull(result);
+            Assert.That(2, Is.EqualTo(result.Count));
+            Assert.IsTrue(result.All(o => o.OptionId > 7));
+        }
+
+        [Test]
+        public async Task GetStandardQuizQuestionsAsync_ReturnsStandardQuizQuestions()
+        {
+            var standardQuizQuestions = new List<Question>
+    {
+        new Question { QuestionId = 1, QuestionType = QuestionType.StandardQuizQuestion, Phrase = "Standard Question 1" },
+        new Question { QuestionId = 2, QuestionType = QuestionType.StandardQuizQuestion, Phrase = "Standard Question 2" }
+    };
+
+            _dbContext.Questions.AddRange(standardQuizQuestions);
+            _dbContext.SaveChanges();
+
+            var result = await _repository.GetStandardQuizQuestionsAsync();
+
+            Assert.IsNotNull(result);
+            Assert.That(2, Is.EqualTo(result.Count));
+            Assert.IsTrue(result.All(q => q.QuestionType == QuestionType.StandardQuizQuestion));
+        }
+
+        [Test]
+        public async Task GetTinderQuizQuestionsAsync_ReturnsTinderQuizQuestions()
+        {
+            var tinderQuizQuestions = new List<Question>
+    {
+        new Question { QuestionId = 3, QuestionType = QuestionType.TinderQuizQuestion, Phrase = "Tinder Question 1" },
+        new Question { QuestionId = 4, QuestionType = QuestionType.TinderQuizQuestion, Phrase = "Tinder Question 2" }
+    };
+
+            _dbContext.Questions.AddRange(tinderQuizQuestions);
+            _dbContext.SaveChanges();
+
+            var result = await _repository.GetTinderQuizQuestionsAsync();
+
+            Assert.IsNotNull(result);
+            Assert.That(2, Is.EqualTo(result.Count));
+            Assert.IsTrue(result.All(q => q.QuestionType == QuestionType.TinderQuizQuestion));
+        }
+
+        [Test]
+        public async Task GetDomainQuestionsAsync_ReturnsDomainQuestions()
+        {
+            var domainQuestions = new List<Question>
+    {
+        new Question { QuestionId = 5, Phrase = "In welk domein heb je interesse?" },
+        new Question { QuestionId = 6, Phrase = "Another Domain Question" }
+    };
+
+            _dbContext.Questions.AddRange(domainQuestions);
+            _dbContext.SaveChanges();
+
+            var result = await _repository.GetDomainQuestionsAsync();
+
+            Assert.IsNotNull(result);
+            Assert.That(1, Is.EqualTo(result.Count));
+            Assert.That("In welk domein heb je interesse?", Is.EqualTo(result.First().Phrase));
+        }
+
+
         [TearDown]
         public void TearDown()
         {
-            _dbContext.Database.EnsureDeleted(); // database deleten
+            _dbContext.Database.EnsureDeleted();
             _dbContext.Dispose();
         }
 
