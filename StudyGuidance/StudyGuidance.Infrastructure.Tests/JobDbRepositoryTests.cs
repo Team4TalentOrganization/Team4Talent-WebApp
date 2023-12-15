@@ -71,6 +71,32 @@ namespace StudyGuidance.Infrastructure.Tests
             Assert.That(result.Select(job => job.SubDomain), Is.EquivalentTo(new[] { "Subdomain 1" }));
         }
 
+        [Test]
+        public async Task GetJobByIdAsync_ExistingJobId_ShouldReturnJob()
+        {
+            // Arrange
+            var dbContextOptions = new DbContextOptionsBuilder<StudyGuidanceDbContext>()
+                .UseInMemoryDatabase(databaseName: "TestDatabase")
+                .Options;
+
+            using (var context = new StudyGuidanceDbContext(dbContextOptions))
+            {
+                var jobId = 1;
+                var expectedJob = new Job { JobId = jobId };
+                context.Jobs.Add(expectedJob);
+                context.SaveChanges();
+
+                var repository = new JobDbRepository(context);
+
+                // Act
+                var result = await repository.GetJobByIdAsync(jobId);
+
+                // Assert
+                Assert.IsNotNull(result);
+                Assert.AreEqual(jobId, result.JobId);
+            }
+        }
+
         [TearDown]
         public void TearDown()
         {

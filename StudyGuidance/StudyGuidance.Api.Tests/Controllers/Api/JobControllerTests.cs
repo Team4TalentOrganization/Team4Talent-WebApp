@@ -102,5 +102,37 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
             var okResult = (OkObjectResult)result;
             Assert.That(selectedJobs, Is.EqualTo(okResult.Value));
         }
+
+        [Test]
+        public async Task GetJobById_ReturnsNotFound_WhenJobNotFound()
+        {
+            // Arrange
+            int nonExistentJobId = 999;
+            _jobRepositoryMock.Setup(repo => repo.GetJobByIdAsync(nonExistentJobId))
+                              .ReturnsAsync((Job)null); // Use Task.FromResult<Job>(null)
+
+            // Act
+            var result = await _controller.GetJobById(nonExistentJobId);
+
+            // Assert
+            Assert.IsInstanceOf<NotFoundObjectResult>(result);
+        }
+
+        [Test]
+        public async Task GetJobById_ReturnsOk_WhenJobExists()
+        {
+            // Arrange
+            int existingJobId = 1;
+            var existingJob = new Job { JobId = existingJobId, Name = "Existing Job" };
+            _jobRepositoryMock.Setup(repo => repo.GetJobByIdAsync(existingJobId)).ReturnsAsync(existingJob);
+
+            // Act
+            var result = await _controller.GetJobById(existingJobId);
+
+            // Assert
+            Assert.IsInstanceOf<OkObjectResult>(result);
+            var okResult = (OkObjectResult)result;
+            Assert.That(existingJob, Is.EqualTo(okResult.Value));
+        }
     }
 }

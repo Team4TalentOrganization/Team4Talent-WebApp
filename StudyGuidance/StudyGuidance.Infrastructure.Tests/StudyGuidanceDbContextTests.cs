@@ -44,12 +44,21 @@ namespace StudyGuidance.Infrastructure.Tests
         [Test]
         public void Can_Add_And_Retrieve_Jobs_From_DbContext()
         {
+            _context.Database.EnsureDeleted(); // database deleten
+            _context.Dispose();
+
+            var options = new DbContextOptionsBuilder<StudyGuidanceDbContext>()
+                .UseInMemoryDatabase(databaseName: "TestDatabase")
+                .Options;
+
+            _context = new StudyGuidanceDbContext(options);
+            _context.Database.EnsureCreated();
             // Arrange
             var jobsList = _context.Jobs.ToList();
 
             // Assert
             Assert.IsNotNull(jobsList);
-            Assert.That(30, Is.EqualTo(jobsList.Count));
+            Assert.That(jobsList.Count, Is.EqualTo(30));
             Assert.IsTrue(jobsList.Any(j => j.Name == "Tester"));
             Assert.IsTrue(jobsList.Any(j => j.Name == "PHP Developer"));
         }

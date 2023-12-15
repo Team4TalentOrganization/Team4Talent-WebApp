@@ -108,6 +108,94 @@ namespace StudyGuidance.Infrastructure.Tests
             Assert.That(1, Is.EqualTo(result.Count));
         }
 
+        [Test]
+        public async Task GetStandardQuizQuestionsAsync_ReturnsQuestionsOfTypeStandardQuiz()
+        {
+            // Arrange
+            var questions = new List<Question>
+            {
+                new Question { QuestionId = 1, QuestionType = QuestionType.StandardQuizQuestion },
+                new Question { QuestionId = 2, QuestionType = QuestionType.TinderQuizQuestion },
+                new Question { QuestionId = 3, QuestionType = QuestionType.StandardQuizQuestion }
+            };
+
+            _dbContext.Questions.AddRange(questions);
+            _dbContext.SaveChanges();
+
+            // Act
+            var result = await _repository.GetStandardQuizQuestionsAsync();
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.That(result.All(q => q.QuestionType == QuestionType.StandardQuizQuestion), Is.True);
+        }
+
+        [Test]
+        public async Task GetTinderQuizQuestionsAsync_ReturnsQuestionsOfTypeTinderQuiz()
+        {
+            // Arrange
+            var questions = new List<Question>
+            {
+                new Question { QuestionId = 1, QuestionType = QuestionType.StandardQuizQuestion },
+                new Question { QuestionId = 2, QuestionType = QuestionType.TinderQuizQuestion },
+                new Question { QuestionId = 3, QuestionType = QuestionType.StandardQuizQuestion }
+            };
+
+            _dbContext.Questions.AddRange(questions);
+            _dbContext.SaveChanges();
+
+            // Act
+            var result = await _repository.GetTinderQuizQuestionsAsync();
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.That(result.All(q => q.QuestionType == QuestionType.TinderQuizQuestion), Is.True);
+        }
+
+        [Test]
+        public async Task GetDomainQuestionsAsync_ReturnsQuestionsWithSpecifiedPhrase()
+        {
+            // Arrange
+            var questions = new List<Question>
+            {
+                new Question { QuestionId = 1, Phrase = "In welk domein heb je interesse?" },
+                new Question { QuestionId = 2, Phrase = "Andere vraag" },
+                new Question { QuestionId = 3, Phrase = "In welk domein heb je interesse?" }
+            };
+
+            _dbContext.Questions.AddRange(questions);
+            _dbContext.SaveChanges();
+
+            // Act
+            var result = await _repository.GetDomainQuestionsAsync();
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.That(result.All(q => q.Phrase == "In welk domein heb je interesse?"), Is.True);
+        }
+
+        [Test]
+        public async Task GetSelectedSubDomainsForFilterAsync_ReturnsOptionsWithQuestionIdLessThan3()
+        {
+            // Arrange
+            var options = new List<Option>
+            {
+                new Option { OptionId = 1, Content = "Option 1", QuestionId = 1 },
+                new Option { OptionId = 2, Content = "Option 2", QuestionId = 2 },
+                new Option { OptionId = 3, Content = "Option 3", QuestionId = 3 }
+            };
+
+            _dbContext.Options.AddRange(options);
+            _dbContext.SaveChanges();
+
+            // Act
+            var result = await _repository.GetSelectedSubDomainsForFilterAsync();
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.That(result.All(o => o.QuestionId < 3), Is.True);
+        }
+
         [TearDown]
         public void TearDown()
         {
