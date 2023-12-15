@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StudyGuidance.Infrastructure;
 
@@ -10,9 +11,10 @@ using StudyGuidance.Infrastructure;
 namespace StudyGuidance.Infrastructure.Migrations
 {
     [DbContext(typeof(StudyGuidanceDbContext))]
-    partial class StudyGuidanceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231214143607_testimonials")]
+    partial class testimonials
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1069,7 +1071,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                         {
                             Id = 1,
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                            JobId = 1,
+                            JobId = 2,
                             JobTitel = "QA Enigneer consultant",
                             Name = "Luca Hendrickx"
                         },
@@ -1093,7 +1095,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                         {
                             Id = 4,
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. As a QA Engineer, I've had the opportunity to work on innovative projects and contribute to the continuous improvement of software quality.",
-                            JobId = 4,
+                            JobId = 2,
                             JobTitel = "QA Engineer",
                             Name = "QA Engineer 2"
                         },
@@ -1101,7 +1103,7 @@ namespace StudyGuidance.Infrastructure.Migrations
                         {
                             Id = 5,
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Being a Business Analyst, I've played a key role in aligning business goals with technological solutions, ensuring successful project outcomes.",
-                            JobId = 5,
+                            JobId = 3,
                             JobTitel = "Business Analyst",
                             Name = "Business Analyst 2"
                         },

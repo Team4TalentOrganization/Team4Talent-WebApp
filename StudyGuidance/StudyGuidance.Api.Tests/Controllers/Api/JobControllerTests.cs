@@ -18,13 +18,15 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
         private JobController _controller;
         private Mock<IJobRepository> _jobRepositoryMock;
         private Mock<IStudyCourseRepository> _studyCourseRepositoryMock;
+        private Mock<ITestamonialRepository> _testamonialRepositoryMock;
 
         [SetUp]
         public void SetUp()
         {
             _jobRepositoryMock = new Mock<IJobRepository>();
             _studyCourseRepositoryMock = new Mock<IStudyCourseRepository>();
-            _controller = new JobController(_jobRepositoryMock.Object, _studyCourseRepositoryMock.Object);
+            _testamonialRepositoryMock = new Mock<ITestamonialRepository>();
+            _controller = new JobController(_jobRepositoryMock.Object, _studyCourseRepositoryMock.Object, _testamonialRepositoryMock.Object);
         }
 
         [Test]

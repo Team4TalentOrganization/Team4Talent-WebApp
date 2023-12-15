@@ -4,6 +4,7 @@ using StudyGuidance.Domain;
 using StudyGuidance.Domain.Exceptions;
 using StudyGuidance.Domain.Models;
 using System.Linq;
+using System.Text.Json.Serialization;
 
 namespace StudyGuidance.Infrastructure
 {
@@ -58,6 +59,7 @@ namespace StudyGuidance.Infrastructure
             };
 
             _context.Jobs.Add(job);
+            _context.Testamonials.Add(job.Testamonial);
             await _context.SaveChangesAsync();
 
             return job;
@@ -83,6 +85,7 @@ namespace StudyGuidance.Infrastructure
                 existingJob.WorkOnSite = job.WorkOnSite;
                 existingJob.OptionRelation = job.OptionRelation;
                 existingJob.StudyCourseRelation = job.StudyCourseRelation;
+                existingJob.Testamonial = job.Testamonial;
 
                 await _context.SaveChangesAsync();
 
@@ -100,6 +103,7 @@ namespace StudyGuidance.Infrastructure
             {
                 Job job = await _context.Jobs.FindAsync(id);
                 _context.Jobs.Remove(job);
+                _context.Testamonials.Remove(job.Testamonial);
                 await _context.SaveChangesAsync();
                 return true;
             }

@@ -12,6 +12,7 @@ namespace StudGuidance.Domain.Models
         public bool WorkOnSite { get; set; }
         public int JobId { get; set; }
         public List<StudyCourseDTO> AssociatedStudyCourses { get; set; }
+        public Testamonial Testamonial { get; set; }
 
         public JobDTO(Job job)
         {
@@ -22,6 +23,7 @@ namespace StudGuidance.Domain.Models
             Description = job.Description;
             WorkInTeam = job.WorkInTeam;
             WorkOnSite = job.WorkOnSite;
+            Testamonial = job.Testamonial;
         }
     }
 }

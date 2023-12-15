@@ -14,5 +14,6 @@ namespace StudyGuidance.Domain.Models
         public string? Description { get; set; }
         public bool WorkInTeam { get; set; }
         public bool WorkOnSite { get; set; }
+        public TestimonialRequest TestamonialRequest { get; set; }
     }
 }

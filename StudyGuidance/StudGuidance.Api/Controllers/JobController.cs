@@ -13,11 +13,13 @@ namespace StudGuidance.Api.Controllers
     {
         private readonly IJobRepository _jobRepository;
         private readonly IStudyCourseRepository _studyCourseRepository;
+        private readonly ITestamonialRepository _testamonialRepository;
 
-        public JobController(IJobRepository jobRepository, IStudyCourseRepository studyCourseRepository)
+        public JobController(IJobRepository jobRepository, IStudyCourseRepository studyCourseRepository, ITestamonialRepository testamonialRepository)
         {
             _jobRepository = jobRepository;
             _studyCourseRepository = studyCourseRepository;
+            _testamonialRepository = testamonialRepository;
         }
 
         [HttpGet("jobs")]
@@ -43,6 +45,7 @@ namespace StudGuidance.Api.Controllers
                 return NotFound("Job niet gevonden");
             }
 
+            Testamonial testamonial = await _testamonialRepository.GetTestamonialByJobId(job.JobId);
             IReadOnlyList<StudyCourse> associatedStudyCourses = await _studyCourseRepository.GetStudyCoursesByRelationAsync(job.StudyCourseRelation);
             List<StudyCourseDTO> associatedStudyCoursesDTO = new List<StudyCourseDTO>();
 
@@ -53,6 +56,13 @@ namespace StudGuidance.Api.Controllers
 
             JobDTO jobDTO = new JobDTO(job);
             jobDTO.AssociatedStudyCourses = associatedStudyCoursesDTO;
+            if(testamonial != null) 
+            {
+                jobDTO.Testamonial = testamonial;
+            } else
+            {
+                jobDTO.Testamonial = null;
+            }
 
             return Ok(jobDTO);
         }
