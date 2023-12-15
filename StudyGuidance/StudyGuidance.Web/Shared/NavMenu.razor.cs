@@ -1,18 +1,29 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
+using System;
 
 namespace StudyGuidance.Web.Shared
 {
     public partial class NavMenu : ComponentBase
     {
-        private bool collapseNavMenu = true;
 
-        private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+        [Inject]
+        [Parameter]
+        public NavigationManager NavigationManager { get; set; }
 
-        private string navStyle = "width: 100%; background-color: transparent;";
+        [Inject]
+        [Parameter]
+        public IJSRuntime JSRuntime { get; set; }
 
-        private string destinationUrl = String.Empty;
+        public bool collapseNavMenu = true;
 
-        private void ToggleNavMenu()
+        public string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+        public string navStyle = "width: 100%; background-color: transparent;";
+
+        public string destinationUrl = String.Empty;
+
+        public void ToggleNavMenu()
         {
             collapseNavMenu = !collapseNavMenu;
             navStyle = collapseNavMenu ? "width: 100%; background-color: transparent" : "height: 100vh; background-color: white;";
@@ -36,7 +47,7 @@ namespace StudyGuidance.Web.Shared
             else
             {
                 this.destinationUrl = destinationUrl;
-                UriHelper.NavigateTo(this.destinationUrl);
+                NavigationManager.NavigateTo(this.destinationUrl);
             }
         }
 
@@ -54,7 +65,7 @@ namespace StudyGuidance.Web.Shared
             ModalClass = "";
             ShowBackdrop = false;
             StateHasChanged();
-            UriHelper.NavigateTo(this.destinationUrl);
+            NavigationManager.NavigateTo(this.destinationUrl);
         }
     }
 }
