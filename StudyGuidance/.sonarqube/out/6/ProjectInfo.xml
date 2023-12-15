@@ -4,14 +4,14 @@
   <ProjectLanguage>C#</ProjectLanguage>
   <ProjectType>Test</ProjectType>
   <ProjectGuid>e25522f8-d6ab-4d34-9cfa-caf4337a3892</ProjectGuid>
-  <FullPath>C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure.Tests\StudyGuidance.Infrastructure.Tests.csproj</FullPath>
+  <FullPath>C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure.Tests\StudyGuidance.Infrastructure.Tests.csproj</FullPath>
   <IsExcluded>false</IsExcluded>
   <AnalysisResults>
-    <AnalysisResult Id="FilesToAnalyze" Location="C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\.sonarqube\conf\6\FilesToAnalyze.txt" />
+    <AnalysisResult Id="FilesToAnalyze" Location="C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\.sonarqube\conf\6\FilesToAnalyze.txt" />
   </AnalysisResults>
   <AnalysisSettings>
-    <Property Name="sonar.cs.roslyn.reportFilePaths">C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\.sonarqube\out\6\Issues.json</Property>
-    <Property Name="sonar.cs.analyzer.projectOutPaths">C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\.sonarqube\out\6</Property>
+    <Property Name="sonar.cs.roslyn.reportFilePaths">C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\.sonarqube\out\6\Issues.json</Property>
+    <Property Name="sonar.cs.analyzer.projectOutPaths">C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\.sonarqube\out\6</Property>
   </AnalysisSettings>
   <Configuration>Debug</Configuration>
   <Platform>AnyCPU</Platform>

@@ -1,5 +1,5 @@
-û
-˜C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\IJobRepository.cs
+Ê
+hC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\IJobRepository.cs
 
  #
 
@@ -15,8 +15,8 @@
 
 		 !
 
-		& (Í
-¦C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\IQuestionModificationService.cs
+		& (œ
+vC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\IQuestionModificationService.cs
 
 
 
@@ -24,8 +24,8 @@
 
   /
 
-H Qˆ
-™C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\IQuizRepository.cs
+H Q×
+iC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\IQuizRepository.cs
 
  $
 
@@ -45,8 +45,8 @@
 
 K S
 
-$ GŠ
-¥C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\QuestionModificationService.cs
+$ GÙ
+uC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\QuestionModificationService.cs
 
  ,
 

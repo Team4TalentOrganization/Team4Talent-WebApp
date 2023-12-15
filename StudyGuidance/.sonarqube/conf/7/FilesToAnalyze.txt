@@ -1,12 +1,12 @@
-﻿C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Controllers\JobController.cs
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Controllers\QuizController.cs
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Program.cs
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\obj\Debug\net6.0\StudGuidance.Api.GlobalUsings.g.cs
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.cs
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\obj\Debug\net6.0\StudGuidance.Api.AssemblyInfo.cs
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\obj\Debug\net6.0\StudGuidance.Api.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\appsettings.Development.json
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\appsettings.json
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Dockerfile
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Properties\launchSettings.json
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\.dockerignore
+﻿C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Controllers\JobController.cs
+C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Controllers\QuizController.cs
+C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Program.cs
+C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\obj\Debug\net6.0\StudGuidance.Api.GlobalUsings.g.cs
+C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.cs
+C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\obj\Debug\net6.0\StudGuidance.Api.AssemblyInfo.cs
+C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\obj\Debug\net6.0\StudGuidance.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\appsettings.Development.json
+C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\appsettings.json
+C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Dockerfile
+C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Properties\launchSettings.json
+C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\.dockerignore

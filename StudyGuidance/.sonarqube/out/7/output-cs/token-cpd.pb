@@ -1,5 +1,5 @@
-Ω 
-ùC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Controllers\JobController.cs
+å 
+mC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Controllers\JobController.cs
 	namespace 	
 StudGuidance
  
@@ -237,8 +237,8 @@ workOnSite//s }
 ;66& '
 }77 	
 }88 
-}99 ¬I
-ûC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Controllers\QuizController.cs
+}99 ëI
+nC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Controllers\QuizController.cs
 	namespace 	
 StudGuidance
  
@@ -718,8 +718,8 @@ allDomainsUU  
 ;pp, -
 }qq 	
 }rr 
-}ss ˚
-ãC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Program.cs
+}ss  
+[C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Program.cs
 var 
 builder 
 = 

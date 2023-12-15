@@ -1,5 +1,5 @@
-ˆ
-§C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\Exceptions\BusinessException.cs
+≈
+tC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\Exceptions\BusinessException.cs
 	namespace 	
 StudyGuidance
  
@@ -75,8 +75,8 @@ Exceptions )
 {"" 	
 }## 	
 }$$ 
-}%% Ω"
-ãC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\Job.cs
+}%% å"
+[C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\Job.cs
 	namespace
 
  	
@@ -332,8 +332,8 @@ _subDomainKK 
 }ZZ 
 }[[ 	
 }]] 
-}^^ è
-éC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\Option.cs
+}^^ ﬁ
+^C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\Option.cs
 	namespace 	
 StudyGuidance
  
@@ -480,8 +480,8 @@ QuestionId 
 false77. 3
 ;773 4
 }88 
-}99 π
-êC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\Question.cs
+}99 à
+`C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\Question.cs
 	namespace 	
 StudyGuidance
  
@@ -664,8 +664,8 @@ QuestionId
 }22 
 }33 	
 }44 
-}55 ≥
-îC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\QuestionType.cs
+}55 Ç
+dC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\QuestionType.cs
 	namespace 	
 StudyGuidance
  

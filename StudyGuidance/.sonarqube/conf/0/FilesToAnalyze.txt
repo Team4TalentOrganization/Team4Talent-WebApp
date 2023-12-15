@@ -1,5 +1,5 @@
-﻿C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\Exceptions\BusinessException.cs
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\Job.cs
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\Option.cs
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\Question.cs
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\QuestionType.cs
+﻿C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\Exceptions\BusinessException.cs
+C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\Job.cs
+C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\Option.cs
+C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\Question.cs
+C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain\QuestionType.cs

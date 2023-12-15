@@ -1,18 +1,4 @@
-﻿C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain.Tests\Builders\BuilderBase.cs
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain.Tests\Builders\JobBuilder.cs
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain.Tests\Builders\OptionBuilder.cs
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain.Tests\Builders\QuestionBuilder.cs
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain.Tests\BusinessExceptionTests.cs
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain.Tests\JobTests.cs
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain.Tests\OptionTests.cs
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain.Tests\QuestionTests.cs
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Domain.Tests\Usings.cs
-C:\Users\Gebruiker\.nuget\packages\microsoft.net.test.sdk\17.5.0\build\netcoreapp3.1\Microsoft.NET.Test.Sdk.Program.cs
-C:\Users\Gebruiker\.nuget\packages\microsoft.testplatform.testhost\17.5.0\build\netcoreapp3.1\x64\testhost.exe
-C:\Users\Gebruiker\.nuget\packages\microsoft.testplatform.testhost\17.5.0\build\netcoreapp3.1\x64\testhost.dll
-C:\Users\Gebruiker\.nuget\packages\nunit3testadapter\4.4.2\build\netcoreapp3.1\NUnit3.TestAdapter.dll
-C:\Users\Gebruiker\.nuget\packages\nunit3testadapter\4.4.2\build\netcoreapp3.1\NUnit3.TestAdapter.pdb
-C:\Users\Gebruiker\.nuget\packages\nunit3testadapter\4.4.2\build\netcoreapp3.1\nunit.engine.dll
-C:\Users\Gebruiker\.nuget\packages\nunit3testadapter\4.4.2\build\netcoreapp3.1\nunit.engine.api.dll
-C:\Users\Gebruiker\.nuget\packages\nunit3testadapter\4.4.2\build\netcoreapp3.1\nunit.engine.core.dll
-C:\Users\Gebruiker\.nuget\packages\nunit3testadapter\4.4.2\build\netcoreapp3.1\testcentric.engine.metadata.dll
+﻿C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\IJobRepository.cs
+C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\IQuestionModificationService.cs
+C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\IQuizRepository.cs
+C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.AppLogic\QuestionModificationService.cs

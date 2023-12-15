@@ -18,7 +18,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/Builders/BuilderBase.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/Builders/BuilderBase.cs",
                 "region": {
                   "startLine": 30,
                   "startColumn": 20,
@@ -39,7 +39,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/Builders/BuilderBase.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/Builders/BuilderBase.cs",
                 "region": {
                   "startLine": 52,
                   "startColumn": 19,
@@ -60,7 +60,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/Builders/BuilderBase.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/Builders/BuilderBase.cs",
                 "region": {
                   "startLine": 54,
                   "startColumn": 52,
@@ -81,7 +81,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/Builders/BuilderBase.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/Builders/BuilderBase.cs",
                 "region": {
                   "startLine": 55,
                   "startColumn": 26,
@@ -96,58 +96,13 @@
           }
         },
         {
-          "ruleId": "CS8602",
-          "level": "warning",
-          "message": "Dereference of a possibly null reference.",
-          "suppressionStates": [
-            "suppressedInSource"
-          ],
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/BusinessExceptionTests.cs",
-                "region": {
-                  "startLine": 54,
-                  "startColumn": 25,
-                  "endLine": 54,
-                  "endColumn": 49
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CS0219",
-          "level": "warning",
-          "message": "The variable 'streamingContext' is assigned but its value is never used",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/BusinessExceptionTests.cs",
-                "region": {
-                  "startLine": 45,
-                  "startColumn": 17,
-                  "endLine": 45,
-                  "endColumn": 33
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 3
-          }
-        },
-        {
           "ruleId": "CS8618",
           "level": "warning",
           "message": "Non-nullable field '_itemType' must contain a non-null value when exiting constructor. Consider declaring the field as nullable.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/Builders/BuilderBase.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/Builders/BuilderBase.cs",
                 "region": {
                   "startLine": 19,
                   "startColumn": 22,
@@ -160,7 +115,7 @@
           "relatedLocations": [
             {
               "physicalLocation": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/Builders/BuilderBase.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/Builders/BuilderBase.cs",
                 "region": {
                   "startLine": 19,
                   "startColumn": 22,
@@ -181,7 +136,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/Builders/BuilderBase.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/Builders/BuilderBase.cs",
                 "region": {
                   "startLine": 21,
                   "startColumn": 21,
@@ -194,7 +149,7 @@
           "relatedLocations": [
             {
               "physicalLocation": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/Builders/BuilderBase.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/Builders/BuilderBase.cs",
                 "region": {
                   "startLine": 21,
                   "startColumn": 21,
@@ -209,6 +164,51 @@
           }
         },
         {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Dereference of a possibly null reference.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/BusinessExceptionTests.cs",
+                "region": {
+                  "startLine": 54,
+                  "startColumn": 25,
+                  "endLine": 54,
+                  "endColumn": 49
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS0219",
+          "level": "warning",
+          "message": "The variable 'streamingContext' is assigned but its value is never used",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/BusinessExceptionTests.cs",
+                "region": {
+                  "startLine": 45,
+                  "startColumn": 17,
+                  "endLine": 45,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 3
+          }
+        },
+        {
           "ruleId": "CS8618",
           "level": "warning",
           "message": "Non-nullable field '_name' must contain a non-null value when exiting constructor. Consider declaring the field as nullable.",
@@ -218,7 +218,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/JobTests.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/JobTests.cs",
                 "region": {
                   "startLine": 12,
                   "startColumn": 24,
@@ -231,7 +231,7 @@
           "relatedLocations": [
             {
               "physicalLocation": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/JobTests.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/JobTests.cs",
                 "region": {
                   "startLine": 12,
                   "startColumn": 24,
@@ -255,7 +255,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/JobTests.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/JobTests.cs",
                 "region": {
                   "startLine": 13,
                   "startColumn": 24,
@@ -268,7 +268,7 @@
           "relatedLocations": [
             {
               "physicalLocation": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/JobTests.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/JobTests.cs",
                 "region": {
                   "startLine": 13,
                   "startColumn": 24,
@@ -292,7 +292,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/JobTests.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/JobTests.cs",
                 "region": {
                   "startLine": 14,
                   "startColumn": 24,
@@ -305,7 +305,7 @@
           "relatedLocations": [
             {
               "physicalLocation": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/JobTests.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/JobTests.cs",
                 "region": {
                   "startLine": 14,
                   "startColumn": 24,
@@ -329,7 +329,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/JobTests.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/JobTests.cs",
                 "region": {
                   "startLine": 15,
                   "startColumn": 24,
@@ -342,7 +342,7 @@
           "relatedLocations": [
             {
               "physicalLocation": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/JobTests.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/JobTests.cs",
                 "region": {
                   "startLine": 15,
                   "startColumn": 24,
@@ -363,7 +363,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/Builders/BuilderBase.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/Builders/BuilderBase.cs",
                 "region": {
                   "startLine": 17,
                   "startColumn": 33,
@@ -384,49 +384,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/QuestionTests.cs",
-                "region": {
-                  "startLine": 38,
-                  "startColumn": 13,
-                  "endLine": 38,
-                  "endColumn": 70
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "NUnit2045",
-          "level": "note",
-          "message": "Call independent Assert statements from inside an Assert.Multiple",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/BusinessExceptionTests.cs",
-                "region": {
-                  "startLine": 52,
-                  "startColumn": 13,
-                  "endLine": 52,
-                  "endColumn": 71
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "NUnit2045",
-          "level": "note",
-          "message": "Call independent Assert statements from inside an Assert.Multiple",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/BusinessExceptionTests.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/BusinessExceptionTests.cs",
                 "region": {
                   "startLine": 36,
                   "startColumn": 13,
@@ -447,7 +405,28 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/QuestionTests.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/QuestionTests.cs",
+                "region": {
+                  "startLine": 38,
+                  "startColumn": 13,
+                  "endLine": 38,
+                  "endColumn": 70
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "NUnit2045",
+          "level": "note",
+          "message": "Call independent Assert statements from inside an Assert.Multiple",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/QuestionTests.cs",
                 "region": {
                   "startLine": 39,
                   "startColumn": 13,
@@ -468,7 +447,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/JobTests.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/JobTests.cs",
                 "region": {
                   "startLine": 47,
                   "startColumn": 13,
@@ -489,7 +468,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/JobTests.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/JobTests.cs",
                 "region": {
                   "startLine": 48,
                   "startColumn": 13,
@@ -510,7 +489,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/JobTests.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/JobTests.cs",
                 "region": {
                   "startLine": 49,
                   "startColumn": 13,
@@ -531,7 +510,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/JobTests.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/JobTests.cs",
                 "region": {
                   "startLine": 50,
                   "startColumn": 13,
@@ -552,7 +531,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/JobTests.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/JobTests.cs",
                 "region": {
                   "startLine": 51,
                   "startColumn": 13,
@@ -573,7 +552,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/JobTests.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/JobTests.cs",
                 "region": {
                   "startLine": 52,
                   "startColumn": 13,
@@ -594,7 +573,28 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/OptionTests.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/BusinessExceptionTests.cs",
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 13,
+                  "endLine": 52,
+                  "endColumn": 71
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "NUnit2045",
+          "level": "note",
+          "message": "Call independent Assert statements from inside an Assert.Multiple",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/OptionTests.cs",
                 "region": {
                   "startLine": 41,
                   "startColumn": 13,
@@ -615,7 +615,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/OptionTests.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/OptionTests.cs",
                 "region": {
                   "startLine": 42,
                   "startColumn": 13,
@@ -636,7 +636,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/OptionTests.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/OptionTests.cs",
                 "region": {
                   "startLine": 43,
                   "startColumn": 13,
@@ -657,7 +657,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/OptionTests.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain.Tests/OptionTests.cs",
                 "region": {
                   "startLine": 44,
                   "startColumn": 13,

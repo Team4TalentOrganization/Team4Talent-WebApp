@@ -68,11 +68,6 @@ namespace StudyGuidance.Web.Shared
             return GetQuestionAtIndex(currentQuestion)?.Phrase ?? string.Empty;
         }
 
-        private string GetNextQuestionPhrase()
-        {
-            return GetQuestionAtIndex(currentQuestion + 1)?.Phrase ?? string.Empty;
-        }
-
         private Question GetQuestionAtIndex(int index)
         {
             return (index >= 0 && index < questionsList.Count) ? questionsList[index] : null;
@@ -114,13 +109,13 @@ namespace StudyGuidance.Web.Shared
 
                 modifiedQuestions.AddRange(questionsWithEmptyOption);
 
-                foreach (var question in modifiedQuestions)
+
+                modifiedQuestions.ForEach(question =>
                 {
-                    while (question.Options.Count < 4)
-                    {
-                        question.Options.Add(new Option());
-                    }
-                }
+                    question.Options.AddRange(Enumerable.Range(0, 4 - question.Options.Count)
+                        .Select(_ => new Option()));
+                });
+
 
                 questionsList.AddRange(modifiedQuestions);
 

@@ -1,5 +1,5 @@
-ó
-úC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\ApiClient\BaseApiClient.cs
+Ê
+lC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\ApiClient\BaseApiClient.cs
 	namespace 	
 StudyGuidance
  
@@ -142,8 +142,8 @@ HttpClient 
 ; 
 }   
 }!! 
-}"" Ö	
-úC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\ApiClient\IJobApiClient.cs
+}"" ‘
+lC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\ApiClient\IJobApiClient.cs
 	namespace 	
 StudyGuidance
  
@@ -207,8 +207,8 @@ workOnSite		V `
 }
 
  
-} Ü
-ùC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\ApiClient\IQuizApiClient.cs
+} ’
+mC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\ApiClient\IQuizApiClient.cs
 	namespace 	
 StudyGuidance
  
@@ -316,8 +316,8 @@ workOnSite		V `
 )> ?
 ;? @
 } 
-} ˝!
-õC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\ApiClient\JobApiClient.cs
+} Ã!
+kC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\ApiClient\JobApiClient.cs
 	namespace 	
 StudyGuidance
  
@@ -569,8 +569,8 @@ workOnSite##e o
 ;&&, -
 }'' 	
 }(( 
-})) †,
-úC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\ApiClient\QuizApiClient.cs
+})) Ô+
+lC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\ApiClient\QuizApiClient.cs
 	namespace 	
 StudyGuidance
  
@@ -883,8 +883,8 @@ httpClientZ d
 ;<<E F
 }== 	
 }>> 
-}?? Ì
-èC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Models\Job.cs
+}?? º
+_C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Models\Job.cs
 	namespace 	
 StudyGuidance
  
@@ -986,8 +986,8 @@ WorkOnSite
 ;# $
 }% &
 } 
-} È
-íC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Models\Option.cs
+} ∏
+bC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Models\Option.cs
 	namespace 	
 StudyGuidance
  
@@ -1041,8 +1041,8 @@ QuestionId 
 }		 
 }
 
- ˇ
-îC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Models\Question.cs
+ Œ
+dC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Models\Question.cs
 	namespace 	
 StudyGuidance
  
@@ -1088,8 +1088,8 @@ QuestionId 
 ;' (
 }) *
 } 
-}		 î
-ûC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Pages\JobDetailPage.razor.cs
+}		 „
+nC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Pages\JobDetailPage.razor.cs
 	namespace 	
 StudyGuidance
  
@@ -1120,8 +1120,8 @@ QuestionId 
 }		 
 }
 
- á
-ïC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Pages\Jobs.razor.cs
+ ÷
+eC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Pages\Jobs.razor.cs
 	namespace 	
 StudyGuidance
  
@@ -1153,8 +1153,8 @@ QuestionId 
 }		 
 }
 
- ì
-åC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Program.cs
+ ‚
+\C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Program.cs
 var		 
 builder		 
 =		 "
@@ -1317,8 +1317,8 @@ HttpClient% /
 RunAsync 
 ( 
 )  
-;  !∆
-üC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Shared\HomepageHeroe.razor.cs
+;  !ï
+oC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Shared\HomepageHeroe.razor.cs
 	namespace 	
 StudyGuidance
  
@@ -1335,106 +1335,112 @@ HttpClient% /
 :' (
 ComponentBase) 6
 { 
-private		 
-int		 
-selectedIndex		 !
-=		" #
-$num		$ %
-;		% &
-public 
-int 
-SelectedIndex  
-{ 	
-get 
-{ 
-return 
-selectedIndex &
-;& '
-}( )
-set 
-{ 
-selectedIndex 
-=  !
-value" '
-;' (
-}) *
-} 	
+private 
+int 
+selectedIndex !
+=" #
+$num$ %
+;% &
+public
+
+ 
+int
+
+ 
+SelectedIndex
+
+  
+{ 	
+get 
+{ 
+return 
+selectedIndex &
+;& '
+}( )
+set 
+{ 
+selectedIndex 
+=  !
+value" '
+;' (
+}) *
+} 	
+private 
+bool 
+_arrows 
+= 
+false $
+;$ %
 private 
-bool 
-_arrows 
-= 
-false $
+bool 
+_bullets 
+= 
+true  $
 ;$ %
 private 
-bool 
-_bullets 
-= 
-true  $
-;$ %
+bool 
+_enableSwipeGesture (
+=) *
+true+ /
+;/ 0
 private 
-bool 
-_enableSwipeGesture (
-=) *
-true+ /
-;/ 0
-private 
-bool 
+bool 
 
-_autocycle 
-=  !
-true" &
-;& '
-private 
-IList 
-< 
-string 
-> 
-_source %
-=& '
-new( +
-List, 0
-<0 1
-string1 7
->7 8
-(8 9
-)9 :
-{ 	
+_autocycle 
+=  !
+true" &
+;& '
+private 
+IList 
+< 
+string 
+> 
+_source %
+=& '
+new( +
+List, 0
+<0 1
+string1 7
+>7 8
+(8 9
+)9 :
+{ 	
+$str !
+,! "
 $str !
 ,! "
 $str !
-,! "
-$str !
-,! "
-} 	
-;	 
+,! "
+} 	
+;	 
 
-private 
-IList 
-< 
-string 
-> 
-_text #
-=$ %
-new& )
-List* .
-<. /
-string/ 5
->5 6
-(6 7
-)7 8
-{ 	
-$str @
-,@ A
-$str T
-,T U
-$str V
-,V W
-}   	
-;  	 
+private 
+IList 
+< 
+string 
+> 
+_text #
+=$ %
+new& )
+List* .
+<. /
+string/ 5
+>5 6
+(6 7
+)7 8
+{ 	
+$str @
+,@ A
+$str T
+,T U
+$str V
+,V W
+} 	
+;	 
 
-}## 
-}$$ ç
-öC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Shared\JobCards.razor.cs
+}"" 
+}## ‹
+jC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Shared\JobCards.razor.cs
 	namespace 	
 StudyGuidance
  
@@ -1466,9 +1472,9 @@ _autocycle 
 }
 
  
-} „
+} ≤
 
-õC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Shared\JobDetail.razor.cs
+kC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Shared\JobDetail.razor.cs
 	namespace 	
 StudyGuidance
  
@@ -1555,8 +1561,8 @@ _autocycle 
 ;; <
 } 	
 } 
-} ¸W
-ùC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Shared\JobOverview.razor.cs
+} ¥W
+mC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Shared\JobOverview.razor.cs
 	namespace 	
 StudyGuidance
  
@@ -1589,14 +1595,15 @@ _autocycle 
 	Parameter	 
 ] 
 public 
-string 
-Name 
-{ 
-get  
-;  !
-set" %
-;% &
-}' (
+string 
+? 
+Name 
+{ 
+get !
+;! "
+set# &
+;& '
+}( )
 private 
 Collapse 
 	collapse1 "
@@ -1917,13 +1924,10 @@ subDomains '
 private;; 
 void;; 
 GoToJobDetailPage;; &
-(;;& '
-MouseEventArgs;;' 5
-e;;6 7
-,;;7 8
-int;;9 <
-id;;= ?
-);;? @
+(;;& '
+int;;' *
+id;;+ -
+);;- .
 {<< 	
 NavigationManager== 
 .== 
@@ -1940,15 +1944,16 @@ NavigateTo== (
 ;==> ?
 }>> 	
 private@@ 
-string@@ !
-GetMultiSelectionText@@ ,
-(@@, -
-List@@- 1
-<@@1 2
-string@@2 8
->@@8 9
-selectedValues@@: H
-)@@H I
+static@@ 
+string@@ !
+GetMultiSelectionText@@ 3
+(@@3 4
+List@@4 8
+<@@8 9
+string@@9 ?
+>@@? @
+selectedValues@@A O
+)@@O P
 {AA 	
 ifBB 
 (BB 
@@ -2152,69 +2157,69 @@ subDomainsbb 
 }cc 
 elsedd 
 {ee 
-jobsgg 
-=gg 
-awaitgg 
-JobApiClientgg )
-.gg) * 
-GetJobsByFilterAsyncgg* >
-(gg> ?
-answersgg? F
-,ggF G
+jobsff 
+=ff 
+awaitff 
+JobApiClientff )
+.ff) * 
+GetJobsByFilterAsyncff* >
+(ff> ?
+answersff? F
+,ffF G
 
-workInTeamggH R
-,ggR S
+workInTeamffH R
+,ffR S
 
-workOnSiteggT ^
-)gg^ _
-;gg_ `
+workOnSiteffT ^
+)ff^ _
+;ff_ `
 
-subDomainshh 
-=hh 
-awaithh "
-QuizApiClienthh# 0
-.hh0 1
-GetAllSubDomainshh1 A
-(hhA B
+subDomainsgg 
+=gg 
+awaitgg "
+QuizApiClientgg# 0
+.gg0 1
+GetAllSubDomainsgg1 A
+(ggA B
+)ggB C
+;ggC D
+ifhh 
+(hh 
+jobshh 
+==hh 
+nullhh  
+||hh! #
+!hh$ %
+jobshh% )
+.hh) *
+Anyhh* -
+(hh- .
+)hh. /
+||hh0 2
+jobshh3 7
+.hh7 8
+Counthh8 =
+==hh> @
+$numhhA B
 )hhB C
-;hhC D
-ifii 
-(ii 
-jobsii 
-==ii 
-nullii  
-||ii! #
-!ii$ %
-jobsii% )
-.ii) *
-Anyii* -
-(ii- .
-)ii. /
-||ii0 2
-jobsii3 7
-.ii7 8
-Countii8 =
-==ii> @
-$numiiA B
-)iiB C
-{jj 
-showNoJobsMessagekk %
-=kk& '
-truekk( ,
-;kk, -
-}ll 
-elsemm 
-{nn 
-showNoJobsMessageoo %
-=oo& '
-falseoo( -
-;oo- .
-}pp 
-}qq 
-}rr 	
-}ss 
-}tt „
-ôC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Shared\NavMenu.razor.cs
+{ii 
+showNoJobsMessagejj %
+=jj& '
+truejj( ,
+;jj, -
+}kk 
+elsell 
+{mm 
+showNoJobsMessagenn %
+=nn& '
+falsenn( -
+;nn- .
+}oo 
+}pp 
+}qq 	
+}rr 
+}ss ≤
+iC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Shared\NavMenu.razor.cs
 	namespace 	
 StudyGuidance
  
@@ -2435,8 +2440,8 @@ NavigateTo99  
 ;995 6
 }:: 	
 };; 
-}<< ﬂ.
-ùC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Shared\PlayerCards.razor.cs
+}<< Æ.
+mC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Shared\PlayerCards.razor.cs
 	namespace 	
 StudyGuidance
  
@@ -2934,8 +2939,8 @@ ImageStyle"" $
 }''/ 0
 }(( 	
 })) 
-}** „ë
-¶C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Shared\StandardQuestionCard.razor.cs
+}** ≤ë
+vC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Shared\StandardQuestionCard.razor.cs
 	namespace 	
 StudyGuidance
  

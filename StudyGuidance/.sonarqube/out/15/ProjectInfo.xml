@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
-  <ProjectName>StudyGuidance.Infrastructure.Tests</ProjectName>
+  <ProjectName>StudGuidance.Api</ProjectName>
   <ProjectLanguage>C#</ProjectLanguage>
-  <ProjectType>Test</ProjectType>
-  <ProjectGuid>e25522f8-d6ab-4d34-9cfa-caf4337a3892</ProjectGuid>
-  <FullPath>C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure.Tests\StudyGuidance.Infrastructure.Tests.csproj</FullPath>
+  <ProjectType>Product</ProjectType>
+  <ProjectGuid>25cde89a-f3d1-4376-aa16-4c1f84e200ad</ProjectGuid>
+  <FullPath>C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\StudGuidance.Api.csproj</FullPath>
   <IsExcluded>false</IsExcluded>
   <AnalysisResults>
-    <AnalysisResult Id="FilesToAnalyze" Location="C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\.sonarqube\conf\15\FilesToAnalyze.txt" />
+    <AnalysisResult Id="FilesToAnalyze" Location="C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\.sonarqube\conf\15\FilesToAnalyze.txt" />
   </AnalysisResults>
   <AnalysisSettings>
-    <Property Name="sonar.cs.roslyn.reportFilePaths">C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\.sonarqube\out\15\Issues.json</Property>
-    <Property Name="sonar.cs.analyzer.projectOutPaths">C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\.sonarqube\out\15</Property>
+    <Property Name="sonar.cs.roslyn.reportFilePaths">C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\.sonarqube\out\15\Issues.json</Property>
+    <Property Name="sonar.cs.analyzer.projectOutPaths">C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\.sonarqube\out\15</Property>
   </AnalysisSettings>
   <Configuration>Debug</Configuration>
   <Platform>AnyCPU</Platform>

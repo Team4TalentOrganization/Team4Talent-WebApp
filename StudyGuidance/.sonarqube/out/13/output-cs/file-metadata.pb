@@ -1,25 +1,25 @@
-©
-üC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\JobDbRepository.csutf-8¬
-∏C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231031163721_DomainQuestion.csutf-8Õ
-¡C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231031163721_DomainQuestion.Designer.csutf-8≈
-ªC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231109140326_SubDomainQuestion.csutf-8–
-ƒC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231109140326_SubDomainQuestion.Designer.csutf-8À
-¡C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231110095936_SubDomainQuestionChange.csutf-8÷
- C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231110095936_SubDomainQuestionChange.Designer.csutf-8∏
-ÆC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231124145101_Jobs.csutf-8√
-∑C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231124145101_Jobs.Designer.csutf-8æ
-¥C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231130124952_WorkInTeam.csutf-8…
-ΩC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231130124952_WorkInTeam.Designer.csutf-8¿
-∂C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231130210840_QuestionType.csutf-8À
-øC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231130210840_QuestionType.Designer.csutf-8¬
-∏C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231203184435_TinderQuestion.csutf-8Õ
-¡C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231203184435_TinderQuestion.Designer.csutf-8ø
-µC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231203233840_JobsChanged.csutf-8 
-æC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231203233840_JobsChanged.Designer.csutf-8 
-æC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\StudyGuidanceDbContextModelSnapshot.csutf-8Ø
-•C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Properties\Properties.csutf-8™
-†C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\QuizDbRepository.csutf-8∞
-¶C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\StudyGuidanceDbContext.csutf-8ÿ
-ÃC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\obj\Debug\net6.0\StudyGuidance.Infrastructure.GlobalUsings.g.csutf-8ÿ
-ÃC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.csutf-8÷
- C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\obj\Debug\net6.0\StudyGuidance.Infrastructure.AssemblyInfo.csutf-8
+x
+oC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\JobDbRepository.csutf-8í
+àC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231031163721_DomainQuestion.csutf-8ù
+ëC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231031163721_DomainQuestion.Designer.csutf-8ï
+ãC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231109140326_SubDomainQuestion.csutf-8†
+îC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231109140326_SubDomainQuestion.Designer.csutf-8õ
+ëC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231110095936_SubDomainQuestionChange.csutf-8¶
+öC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231110095936_SubDomainQuestionChange.Designer.csutf-8á
+~C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231124145101_Jobs.csutf-8ì
+áC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231124145101_Jobs.Designer.csutf-8é
+ÑC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231130124952_WorkInTeam.csutf-8ô
+çC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231130124952_WorkInTeam.Designer.csutf-8ê
+ÜC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231130210840_QuestionType.csutf-8õ
+èC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231130210840_QuestionType.Designer.csutf-8í
+àC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231203184435_TinderQuestion.csutf-8ù
+ëC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231203184435_TinderQuestion.Designer.csutf-8è
+ÖC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231203233840_JobsChanged.csutf-8ö
+éC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\20231203233840_JobsChanged.Designer.csutf-8ö
+éC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Migrations\StudyGuidanceDbContextModelSnapshot.csutf-8~
+uC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\Properties\Properties.csutf-8y
+pC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\QuizDbRepository.csutf-8
+vC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\StudyGuidanceDbContext.csutf-8®
+úC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\obj\Debug\net6.0\StudyGuidance.Infrastructure.GlobalUsings.g.csutf-8®
+úC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.csutf-8¶
+öC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Infrastructure\obj\Debug\net6.0\StudyGuidance.Infrastructure.AssemblyInfo.csutf-8

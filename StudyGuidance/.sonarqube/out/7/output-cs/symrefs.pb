@@ -1,5 +1,5 @@
-‘
-ùC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Controllers\JobController.cs
+£
+mC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Controllers\JobController.cs
 
 		 2
 ( 6 / ="" *//7 E
@@ -17,8 +17,8 @@
 --o y//g q
 
 --å ñ//s }
-// .11 66 %´
-ûC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Controllers\QuizController.cs
+// .11 66 %˙
+nC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Controllers\QuizController.cs
 
 		 Z
 ) < 9 L$$? R22E X@@C VNN5 H[[B Uii@ SF
@@ -46,8 +46,8 @@
 [[$ 9\\ !\\Q f^^ %cc +
 
 gg) B
-ii" 7kk %pp +ò
-ãC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Program.cs^
+ii" 7kk %pp +Á
+[C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\Program.cs^
           
  
   		 

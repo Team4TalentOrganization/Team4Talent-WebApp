@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
-  <ProjectName>StudGuidance.Api</ProjectName>
+  <ProjectName>StudyGuidance.Web.Tests</ProjectName>
   <ProjectLanguage>C#</ProjectLanguage>
-  <ProjectType>Product</ProjectType>
-  <ProjectGuid>25cde89a-f3d1-4376-aa16-4c1f84e200ad</ProjectGuid>
-  <FullPath>C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudGuidance.Api\StudGuidance.Api.csproj</FullPath>
+  <ProjectType>Test</ProjectType>
+  <ProjectGuid>6b6d6515-e61b-49ed-8062-8e681f6d285c</ProjectGuid>
+  <FullPath>C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web.Tests\StudyGuidance.Web.Tests.csproj</FullPath>
   <IsExcluded>false</IsExcluded>
   <AnalysisResults>
-    <AnalysisResult Id="FilesToAnalyze" Location="C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\.sonarqube\conf\16\FilesToAnalyze.txt" />
+    <AnalysisResult Id="FilesToAnalyze" Location="C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\.sonarqube\conf\16\FilesToAnalyze.txt" />
   </AnalysisResults>
   <AnalysisSettings>
-    <Property Name="sonar.cs.roslyn.reportFilePaths">C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\.sonarqube\out\16\Issues.json</Property>
-    <Property Name="sonar.cs.analyzer.projectOutPaths">C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\.sonarqube\out\16</Property>
+    <Property Name="sonar.cs.roslyn.reportFilePaths">C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\.sonarqube\out\16\Issues.json</Property>
+    <Property Name="sonar.cs.analyzer.projectOutPaths">C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\.sonarqube\out\16</Property>
   </AnalysisSettings>
   <Configuration>Debug</Configuration>
   <Platform>AnyCPU</Platform>

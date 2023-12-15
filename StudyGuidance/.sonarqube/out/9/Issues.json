@@ -18,7 +18,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain/Exceptions/BusinessException.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain/Exceptions/BusinessException.cs",
                 "region": {
                   "startLine": 15,
                   "startColumn": 18,
@@ -31,7 +31,7 @@
           "relatedLocations": [
             {
               "physicalLocation": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain/Exceptions/BusinessException.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain/Exceptions/BusinessException.cs",
                 "region": {
                   "startLine": 32,
                   "startColumn": 16,
@@ -55,7 +55,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain/Job.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain/Job.cs",
                 "region": {
                   "startLine": 14,
                   "startColumn": 23,
@@ -76,28 +76,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain/Job.cs",
-                "region": {
-                  "startLine": 15,
-                  "startColumn": 23,
-                  "endLine": 15,
-                  "endColumn": 45
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1104",
-          "level": "warning",
-          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain/Job.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain/Job.cs",
                 "region": {
                   "startLine": 16,
                   "startColumn": 23,
@@ -118,7 +97,28 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain/Job.cs",
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain/Job.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 23,
+                  "endLine": 15,
+                  "endColumn": 45
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1104",
+          "level": "warning",
+          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/itNieuwProj/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Domain/Job.cs",
                 "region": {
                   "startLine": 17,
                   "startColumn": 23,

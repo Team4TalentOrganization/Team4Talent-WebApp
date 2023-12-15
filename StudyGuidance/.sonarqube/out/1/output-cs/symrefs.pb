@@ -1,5 +1,5 @@
-‹
-œC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\ApiClient\BaseApiClient.cs
+Ú
+lC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\ApiClient\BaseApiClient.cs
 		 $ *9 F
   *  
 , 2 	 
@@ -9,8 +9,8 @@
 
  &
 ' ( - .
-1 90 8K Sÿ
-œC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\ApiClient\IJobApiClient.cs
+1 90 8K SÎ
+lC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\ApiClient\IJobApiClient.cs
 
  
 
@@ -26,8 +26,8 @@
 
 		E O
 
-		V `€
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\ApiClient\IQuizApiClient.cs
+		V `Ï
+mC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\ApiClient\IQuizApiClient.cs
 
  #
 
@@ -45,8 +45,8 @@
 
  *
 
-5 >ô
-›C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\ApiClient\JobApiClient.cs
+5 >Ã
+kC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\ApiClient\JobApiClient.cs
  ; G2
  7 ;% )4 8##  
 ' 1X b
@@ -66,8 +66,8 @@
 "" "##0 ?
 ""H Q""c l
 ## $$= @
-$$ && ç
-œC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\ApiClient\QuizApiClient.cs
+$$ && ¶
+lC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\ApiClient\QuizApiClient.cs
 
  <
 		 9 =9 =9 =  9 =**# '
@@ -88,8 +88,8 @@
 ''B K..% .<
 )) )** ++ 22 #55 ::$ 3
 ,, 00 "77 
-:: !<<6 Dò
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Models\Job.cs
+:: !<<6 DÁ
+_C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Models\Job.cs
 
  
 
@@ -107,8 +107,8 @@
 
  
 
- Ñ
-’C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Models\Option.cs
+  
+bC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Models\Option.cs
 
  
 
@@ -118,8 +118,8 @@
 
  
 
- Ç
-”C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Models\Question.cs
+ –
+dC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Models\Question.cs
 
  
 
@@ -127,49 +127,51 @@
 
  
 
- ¹
-žC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Pages\JobDetailPage.razor.cs
+ ˆ
+nC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Pages\JobDetailPage.razor.cs
 
  #
 
- °
-•C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Pages\Jobs.razor.cs
+ 
+eC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Pages\Jobs.razor.cs
 
  
 
- ‡
-ŒC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Program.cs^
+ Ö
+\C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Program.cs^
 		 
 
      H O    
 
 H I
 
- ¢
-ŸC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Shared\HomepageHeroe.razor.cs
+ ñ
+oC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Shared\HomepageHeroe.razor.cs
 
  &
-		 ! & 
+ ! & 
 
-  
+
+
+  
 
- 
+ 
 
- 
+ 
 
- (
+ (
 
- 
+ 
 
- %
+ %
 
- #µ
-šC:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Shared\JobCards.razor.cs
+ #„
+jC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Shared\JobCards.razor.cs
 
  !
 
-		 î
-›C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Shared\JobDetail.razor.cs
+		 ½
+kC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Shared\JobDetail.razor.cs
 
  "
 
@@ -179,13 +181,13 @@
 
 & :
 
- +¹
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Shared\JobOverview.razor.cs
+ +ü
+mC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Shared\JobOverview.razor.cs
 
 
 
  $
- // __ (
+ // __ (
  "7 @7 @9 B
  &11 #55 #
 
@@ -200,9 +202,9 @@
  2
 $ +   "!!, 3&& "'', 3)
  %. <	''u ƒ((H Vd
- !! "" '' (( aa gg ii ii% )ii3 7
- 'bb hh 
- kk %oo %
+ !! "" '' (( aa ff hh hh% )hh3 7
+ 'bb gg 
+ jj %nn %
 
  &
 !!% (!!= @
@@ -211,13 +213,11 @@
 
 --  /
 
-;; &
+;; &
+;;+ -==9 ;
 
-;;6 7
-;;= ?==9 ;
-
-@@ ,(
-@@: HBB DD (HH (
+@@ 3(
+@@A OBB DD (HH (
 
 MM& 8
 QQ TTF I(
@@ -225,12 +225,12 @@
 UU YY "
 VV [[' 6
 WW ]]' 6
-XX  YY gg? F
-ZZ [[ ggH R
+XX  YY ff? F
+ZZ [[ ffH R
 [[@ O[[S b
-\\ ]] ggT ^
-]]@ O]]S bŒ
-™C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Shared\NavMenu.razor.cs
+\\ ]] ffT ^
+]]@ O]]S bÛ
+iC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Shared\NavMenu.razor.cs
 
   2
  $		+ :  . &
@@ -251,8 +251,8 @@
 
 ++ 
 
-33 #­
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Shared\PlayerCards.razor.cs
+33 #ü
+mC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Shared\PlayerCards.razor.cs
 
  $
 
@@ -310,8 +310,8 @@
 
 
 † Ž
-û ƒ «
-¦C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Shared\StandardQuestionCard.razor.cs
+û ƒ ú
+vC:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\StudyGuidance.Web\Shared\StandardQuestionCard.razor.cs
 
  -
 		 &

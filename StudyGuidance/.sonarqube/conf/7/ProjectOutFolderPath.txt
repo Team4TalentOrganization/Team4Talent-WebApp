@@ -1,1 +1,1 @@
-C:\Users\Gebruiker\OneDrive - PXL\Documenten\pxl\3AONb\IT-project\NieuwProject\Team4Talent-WebApp\StudyGuidance\.sonarqube\out\7
+C:\Users\Gebruiker\itNieuwProj\Team4Talent-WebApp\StudyGuidance\.sonarqube\out\7
