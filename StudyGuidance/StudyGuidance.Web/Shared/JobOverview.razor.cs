@@ -25,12 +25,12 @@ namespace StudyGuidance.Web.Shared
         public async Task ToggleContentAsync() => await collapse1.ToggleAsync();
         private bool multiselectionTextChoice;
         private string value { get; set; } = "Nothing selected";
-        private IEnumerable<string> options { get; set; } = new HashSet<string>();
-        private string _immediateText = "";
+        public IEnumerable<string> options { get; set; } = new HashSet<string>();
+        public string _immediateText = "";
         public List<Job> jobs = new List<Job>();
         public List<Option> subDomains = new List<Option>();
         public bool showNoJobsMessage;
-        private List<Job> FilteredJobs
+        public List<Job> FilteredJobs
         {
             get
             {
