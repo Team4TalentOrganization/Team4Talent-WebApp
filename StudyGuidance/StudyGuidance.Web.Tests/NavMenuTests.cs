@@ -64,5 +64,57 @@ namespace StudyGuidance.Web.Tests
             Assert.AreEqual("", _navMenu.ModalClass);
             Assert.IsFalse(_navMenu.ShowBackdrop);
         }
+
+        [Test]
+        public void CloseAndRouteTo_ShouldSetPropertiesRightAndRouteToGivenUrl()
+        {
+            // Arrange
+            var navMenu = new NavMenu
+            {
+                destinationUrl = "https://example.com/somepage",
+                ModalDisplay = "none",
+                ModalClass = "",
+                ShowBackdrop = false
+            };
+
+            // Act
+            var cut = RenderComponent<NavMenu>();
+
+            cut.InvokeAsync(() => _navMenu.CloseAndRouteTo());
+
+            // Assert
+            Assert.AreEqual("none", navMenu.ModalDisplay);
+            Assert.AreEqual("", navMenu.ModalClass);
+            Assert.IsFalse(navMenu.ShowBackdrop);
+        }
+
+        [Test]
+        public void Open_ShouldSetPropertiesRight()
+        {
+            // Arrange
+            var navMenu = new NavMenu();
+            var destinationUrl = "https://example.com/quiz";
+            navMenu.destinationUrl = destinationUrl;
+            navMenu.ModalDisplay = "block";
+            navMenu.ModalClass = "Show";
+            navMenu.ShowBackdrop = true;
+
+            // Act
+            var cut = RenderComponent<NavMenu>(
+                parameters => parameters
+                    .Add(p => p.NavigationManager, _mockNavigationManager.Object)
+                    .Add(p => p.JSRuntime, _mockJSRuntime.Object)
+            );
+
+            cut.InvokeAsync(() => _navMenu.Close());
+            cut.InvokeAsync(() => _navMenu.Open(destinationUrl));
+
+            // Assert
+            Assert.AreEqual(destinationUrl, navMenu.destinationUrl);
+            Assert.AreEqual("block", navMenu.ModalDisplay);
+            Assert.AreEqual("Show", navMenu.ModalClass);
+            Assert.IsTrue(navMenu.ShowBackdrop);
+        }
+
     }
 }
