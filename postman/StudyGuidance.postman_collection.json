@@ -1,0 +1,416 @@
+{
+	"info": {
+		"_postman_id": "b2ddc80c-01fe-4d60-a28a-acd5631a5087",
+		"name": "API tests StudyGuidance",
+		"description": "Check of elke api endpoint een 200 code teruggeeft en of de response body juist geformat is en alle verwachte properties heeft.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25001156"
+	},
+	"item": [
+		{
+			"name": "GetAllDomains",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"var responseBody = pm.response.json();",
+							"",
+							"pm.test(\"json object has correct properties\", function () {",
+							"    pm.expect(responseBody).to.be.an('array'); // Check if the response is an array",
+							"",
+							"    // Loop through each object in the array",
+							"    responseBody.forEach(function (item) {",
+							"        pm.expect(item).to.be.an('object'); // Check if each item in the array is an object",
+							"",
+							"        // Check if each object has the required properties",
+							"        pm.expect(item).to.have.property('questionId');",
+							"        pm.expect(item).to.have.property('phrase');",
+							"        pm.expect(item).to.have.property('options');",
+							"",
+							"        // Check if 'options' is an array",
+							"        pm.expect(item.options).to.be.an('array');",
+							"",
+							"        // Loop through each option in the 'options' array",
+							"        item.options.forEach(function (option) {",
+							"            pm.expect(option).to.be.an('object'); // Check if each option is an object",
+							"",
+							"            // Check if each option object has the required properties",
+							"            pm.expect(option).to.have.property('optionId');",
+							"            pm.expect(option).to.have.property('optionRelation');",
+							"            pm.expect(option).to.have.property('questionId');",
+							"            pm.expect(option).to.have.property('content');",
+							"            pm.expect(option).to.have.property('isChecked');",
+							"",
+							"",
+							"            pm.expect(option.optionId).to.be.a('number');",
+							"            pm.expect(option.optionRelation).to.be.a('number');",
+							"            pm.expect(option.questionId).to.be.a('number');",
+							"            pm.expect(option.content).to.be.a('string');",
+							"            pm.expect(option.isChecked).to.be.a('boolean');",
+							"        });",
+							"    });",
+							"",
+							"    ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_Quiz}}/domainquestions",
+					"host": [
+						"{{base_url_Quiz}}"
+					],
+					"path": [
+						"domainquestions"
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": []
+		},
+		{
+			"name": "GettAllQuestions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"var responseBody = pm.response.json();",
+							"",
+							"pm.test(\"json object has correct properties\", function () {",
+							"    pm.expect(responseBody).to.be.an('array'); // Check if the response is an array",
+							"",
+							"    // Loop through each object in the array",
+							"    responseBody.forEach(function (item) {",
+							"        pm.expect(item).to.be.an('object'); // Check if each item in the array is an object",
+							"",
+							"        // Check if each object has the required properties",
+							"        pm.expect(item).to.have.property('questionId');",
+							"        pm.expect(item).to.have.property('phrase');",
+							"        pm.expect(item).to.have.property('options');",
+							"",
+							"        // Check if 'options' is an array",
+							"        pm.expect(item.options).to.be.an('array');",
+							"",
+							"        // Loop through each option in the 'options' array",
+							"        item.options.forEach(function (option) {",
+							"            pm.expect(option).to.be.an('object'); // Check if each option is an object",
+							"",
+							"            // Check if each option object has the required properties",
+							"            pm.expect(option).to.have.property('optionId');",
+							"            pm.expect(option).to.have.property('optionRelation');",
+							"            pm.expect(option).to.have.property('questionId');",
+							"            pm.expect(option).to.have.property('content');",
+							"            pm.expect(option).to.have.property('isChecked');",
+							"",
+							"",
+							"            pm.expect(option.optionId).to.be.a('number');",
+							"            pm.expect(option.optionRelation).to.be.a('number');",
+							"            pm.expect(option.questionId).to.be.a('number');",
+							"            pm.expect(option.content).to.be.a('string');",
+							"            pm.expect(option.isChecked).to.be.a('boolean');",
+							"        });",
+							"    });",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_Quiz}}/questions",
+					"host": [
+						"{{base_url_Quiz}}"
+					],
+					"path": [
+						"questions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllSubDomains",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"var responseBody = pm.response.json();",
+							"",
+							"pm.test(\"json object has correct properties\", function () {",
+							"    pm.expect(responseBody).to.be.an('array'); // Check if the response is an array",
+							"",
+							"    // Loop through each object in the array",
+							"    responseBody.forEach(function (option) {",
+							"        pm.expect(option).to.be.an('object'); // Check if each item in the array is an object",
+							"",
+							"        // Check if each object has the required properties",
+							"        pm.expect(option).to.have.property('optionId');",
+							"        pm.expect(option).to.have.property('optionRelation');",
+							"        pm.expect(option).to.have.property('questionId');",
+							"        pm.expect(option).to.have.property('content');",
+							"        pm.expect(option).to.have.property('isChecked');",
+							"",
+							"    });",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_Quiz}}/subdomains/all",
+					"host": [
+						"{{base_url_Quiz}}"
+					],
+					"path": [
+						"subdomains",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetSubdomains",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var responseBody = pm.response.json();",
+							"",
+							"pm.test(\"json object has correct properties\", function () {",
+							"    pm.expect(responseBody).to.be.an('array'); // Check if the response is an array",
+							"",
+							"    // Loop through each object in the array",
+							"    responseBody.forEach(function (item) {",
+							"        pm.expect(item).to.be.an('object'); // Check if each item in the array is an object",
+							"",
+							"        // Check if each object has the required properties",
+							"        pm.expect(item).to.have.property('questionId');",
+							"        pm.expect(item).to.have.property('phrase');",
+							"        pm.expect(item).to.have.property('options');",
+							"",
+							"        // Check if 'options' is an array",
+							"        pm.expect(item.options).to.be.an('array');",
+							"",
+							"        // Loop through each option in the 'options' array",
+							"        item.options.forEach(function (option) {",
+							"            pm.expect(option).to.be.an('object'); // Check if each option is an object",
+							"",
+							"            // Check if each option object has the required properties",
+							"            pm.expect(option).to.have.property('optionId');",
+							"            pm.expect(option).to.have.property('optionRelation');",
+							"            pm.expect(option).to.have.property('questionId');",
+							"            pm.expect(option).to.have.property('content');",
+							"            pm.expect(option).to.have.property('isChecked');",
+							"",
+							"            pm.expect(option.optionId).to.be.a('number');",
+							"            pm.expect(option.optionRelation).to.be.a('number');",
+							"            pm.expect(option.questionId).to.be.a('number');",
+							"            pm.expect(option.content).to.be.a('string');",
+							"            pm.expect(option.isChecked).to.be.a('boolean');",
+							"        });",
+							"    });",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_Quiz}}/subdomains?domainId=1&domainId=2&domainId=3",
+					"host": [
+						"{{base_url_Quiz}}"
+					],
+					"path": [
+						"subdomains"
+					],
+					"query": [
+						{
+							"key": "domainId",
+							"value": "1"
+						},
+						{
+							"key": "domainId",
+							"value": "2"
+						},
+						{
+							"key": "domainId",
+							"value": "3"
+						},
+						{
+							"key": "domainId",
+							"value": "4",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllJobs",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"var responseBody = pm.response.json();",
+							"",
+							"pm.test(\"json object has correct properties\", function () {",
+							"    pm.expect(responseBody).to.be.an('array'); // Check if the response is an array",
+							"",
+							"    // Loop through each object in the array",
+							"    responseBody.forEach(function (option) {",
+							"        pm.expect(option).to.be.an('object'); // Check if each item in the array is an object",
+							"",
+							"        // Check if each object has the required properties",
+							"        pm.expect(option).to.have.property('workInTeam');",
+							"        pm.expect(option).to.have.property('workOnSite');",
+							"        pm.expect(option).to.have.property('jobId');",
+							"        pm.expect(option).to.have.property('optionRelation');",
+							"        pm.expect(option).to.have.property('name');",
+							"        pm.expect(option).to.have.property('domain');",
+							"        pm.expect(option).to.have.property('subDomain');",
+							"        pm.expect(option).to.have.property('description');",
+							"",
+							"    });",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_Job}}/jobs",
+					"host": [
+						"{{base_url_Job}}"
+					],
+					"path": [
+						"jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetJobDetail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"var responseBody = pm.response.json();",
+							"",
+							"pm.test(\"json object has correct properties\", function () {",
+							"        // Check if each object has the required properties",
+							"        pm.expect(responseBody).to.have.property('workInTeam');",
+							"        pm.expect(responseBody).to.have.property('workOnSite');",
+							"        pm.expect(responseBody).to.have.property('jobId');",
+							"        pm.expect(responseBody).to.have.property('optionRelation');",
+							"        pm.expect(responseBody).to.have.property('name');",
+							"        pm.expect(responseBody).to.have.property('domain');",
+							"        pm.expect(responseBody).to.have.property('subDomain');",
+							"        pm.expect(responseBody).to.have.property('description');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_Job}}/jobs/detail/1",
+					"host": [
+						"{{base_url_Job}}"
+					],
+					"path": [
+						"jobs",
+						"detail",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url_Quiz",
+			"value": "https://studguidanceapi.azurewebsites.net/api/Quiz"
+		},
+		{
+			"key": "base_url_Job",
+			"value": "https://studguidanceapi.azurewebsites.net/api/Job",
+			"type": "string"
+		}
+	]
+}

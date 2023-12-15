@@ -1,0 +1,39 @@
+name: Api tests using postman
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Build and deploy StudyGuidance T4T"]
+    types:
+      - completed
+  push:
+    branches:
+      - development
+
+jobs:
+  test: 
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: install node 
+        uses: actions/setup-node@v4
+        with:
+          node-version: '14.x'
+
+      - name: install newman
+        run: |
+          npm install -g newman
+          npm install -g newman-reporter-htmlextra
+
+
+      - name: run newman
+        run: newman run ./postman/StudyGuidance.postman_collection.json -- environment ./postman/StudyGuidance.postman_environment.json -r htmlextra
+
+      - name: Upload Newman HTML report
+        uses: actions/upload-artifact@v2
+        with:
+          name: newman-report
+          path: ./newman/*.html
