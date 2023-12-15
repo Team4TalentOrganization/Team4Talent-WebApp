@@ -72,11 +72,6 @@ namespace StudyGuidance.Web.Shared
             return GetQuestionAtIndex(currentQuestion)?.Phrase ?? string.Empty;
         }
 
-        private string GetNextQuestionPhrase()
-        {
-            return GetQuestionAtIndex(currentQuestion + 1)?.Phrase ?? string.Empty;
-        }
-
         private Question GetQuestionAtIndex(int index)
         {
             return (index >= 0 && index < questionsList.Count) ? questionsList[index] : null;
