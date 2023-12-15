@@ -31,7 +31,7 @@ jobs:
 
 
       - name: run newman
-        run: newman run ./postman/StudyGuidance.postman_collection.json -- environment ./postman/StudyGuidance.postman_environment.json -r htmlextra
+        run: newman run ./postman/StudyGuidance.postman_collection.json -- environment ./postman/StudyGuidance.postman_environment.json --reporters cli,html --reporter-html-export report.html
 
       - name: ls newman folder
         run: ls ./newman
