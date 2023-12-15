@@ -15,6 +15,7 @@ on:
     branches:
       - main
       - development
+      - backend-cms
 
 jobs:
   build:

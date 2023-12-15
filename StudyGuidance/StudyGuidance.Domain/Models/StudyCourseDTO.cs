@@ -11,6 +11,11 @@ namespace StudGuidance.Domain.Models
         public string Location { get; set; }
         public int JobRelation { get; set; }
 
+        public StudyCourseDTO()
+        {
+
+        }
+
         public StudyCourseDTO(StudyCourse course)
         {
             Id = course.Id;
