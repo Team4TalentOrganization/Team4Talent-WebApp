@@ -158,10 +158,10 @@ namespace StudyGuidance.Infrastructure.Tests
         public async Task GetDomainQuestionsAsync_ReturnsDomainQuestions()
         {
             var domainQuestions = new List<Question>
-    {
-        new Question { QuestionId = 5, Phrase = "In welk domein heb je interesse?" },
-        new Question { QuestionId = 6, Phrase = "Another Domain Question" }
-    };
+            {
+              new Question { QuestionId = 5, Phrase = "In welk domein heb je interesse?" },
+              new Question { QuestionId = 6, Phrase = "Another Domain Question" }
+            };
 
             _dbContext.Questions.AddRange(domainQuestions);
             _dbContext.SaveChanges();
@@ -172,6 +172,7 @@ namespace StudyGuidance.Infrastructure.Tests
             Assert.That(1, Is.EqualTo(result.Count));
             Assert.That("In welk domein heb je interesse?", Is.EqualTo(result.First().Phrase));
         }
+
 
 
         [TearDown]

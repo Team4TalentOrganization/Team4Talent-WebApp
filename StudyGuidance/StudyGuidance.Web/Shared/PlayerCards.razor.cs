@@ -11,7 +11,7 @@ namespace StudyGuidance.Web.Shared
         new PlayerModel { Name = "Ayoub", Description="Ik heb een technische achtergrond maar weet niet welke job bij mij past.", ImagePath = "/images/man2.png", ShowFront = true, ImageStyle = "width: 100%; height: 100%;", HrStyle= "height: 3px; border: none; background-color: white; opacity: revert;", HrStyleBack="height: 0; visibility: hidden; margin: 0;", CardBodyStyle="", DivStyle="" },
     };
 
-        private void FlipCard(PlayerModel player)
+        public void FlipCard(PlayerModel player)
         {
             player.ShowFront = !player.ShowFront;
             player.ImageStyle = player.ShowFront

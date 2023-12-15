@@ -15,6 +15,7 @@ on:
     branches:
       - main
       - development
+      - job-overview-page
 
 jobs:
   build:

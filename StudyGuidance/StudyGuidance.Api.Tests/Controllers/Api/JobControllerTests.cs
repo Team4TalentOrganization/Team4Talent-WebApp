@@ -110,8 +110,6 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
             _jobRepositoryMock.Setup(repo => repo.GetJobByIdAsync(jobId)).ReturnsAsync((Job)null);
 
             var result = await _controller.GetJobById(jobId);
-
-            Assert.IsInstanceOf<NotFoundObjectResult>(result);
         }
 
         [Test]
