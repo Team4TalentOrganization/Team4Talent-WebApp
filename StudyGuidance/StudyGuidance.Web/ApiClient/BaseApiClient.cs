@@ -30,7 +30,54 @@ namespace StudyGuidance.Web.ApiClient
 
 			return default;
 		}
-	}
+
+        protected async Task<T> PostJsonAsync<T>(string endpoint, object data)
+        {
+            try
+            {
+                var response = await HttpClient.PostAsJsonAsync(endpoint, data);
+                response.EnsureSuccessStatusCode();
+                return await response.Content.ReadFromJsonAsync<T>();
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex, $"An error occurred while making a POST request to {endpoint}.");
+            }
+
+            return default;
+        }
+
+        protected async Task<T> PutJsonAsync<T>(string endpoint, object data)
+        {
+            try
+            {
+                var response = await HttpClient.PutAsJsonAsync(endpoint, data);
+                response.EnsureSuccessStatusCode();
+                return await response.Content.ReadFromJsonAsync<T>();
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex, $"An error occurred while making a PUT request to {endpoint}.");
+            }
+
+            return default;
+        }
+
+        protected async Task<bool> DeleteAsync(string endpoint)
+        {
+            try
+            {
+                var response = await HttpClient.DeleteAsync(endpoint);
+                response.EnsureSuccessStatusCode();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex, $"An error occurred while making a DELETE request to {endpoint}.");
+                return false;
+            }
+        }
+    }
 }
 
 
