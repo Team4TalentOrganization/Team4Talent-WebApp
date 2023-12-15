@@ -23,29 +23,11 @@ namespace StudyGuidance.Web.Shared
         private string _modalClass = "";
         private bool _showBackdrop = false;
 
-        public Guid Guid
-        {
-            get { return _guid; }
-            set { _guid = value; }
-        }
+        public Guid Guid { get; set; }
+        public string ModalDisplay { get; set; }
+        public string ModalClass { get; set; }
+        public bool ShowBackdrop { get; set; }
 
-        public string ModalDisplay
-        {
-            get { return _modalDisplay; }
-            set { _modalDisplay = value; }
-        }
-
-        public string ModalClass
-        {
-            get { return _modalClass; }
-            set { _modalClass = value; }
-        }
-
-        public bool ShowBackdrop
-        {
-            get { return _showBackdrop; }
-            set { _showBackdrop = value; }
-        }
 
         public void Open(string destinationUrl)
         {

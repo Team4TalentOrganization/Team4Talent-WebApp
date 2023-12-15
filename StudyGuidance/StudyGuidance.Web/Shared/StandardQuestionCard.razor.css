@@ -20,6 +20,8 @@
 
 .card {
     border-radius: 15px;
+    transition: transform 0.3s ease; /* Add a smooth transition effect */
+    transition: background-color 1s ease;
 }
 
 .container {
@@ -69,11 +71,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.card {
-    transition: transform 0.3s ease; /* Add a smooth transition effect */
-    transition: background-color 1s ease;
 }
 
 .card:hover {

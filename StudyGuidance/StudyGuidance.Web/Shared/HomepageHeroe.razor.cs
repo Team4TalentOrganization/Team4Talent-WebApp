@@ -7,11 +7,7 @@ namespace StudyGuidance.Web.Shared
     {
         private int selectedIndex = 0;
 
-        public int SelectedIndex
-        {
-            get { return selectedIndex; }
-            set { selectedIndex = value; }
-        }
+        public int SelectedIndex { get; set; }
         private bool _arrows = false;
         private bool _bullets = true;
         private bool _enableSwipeGesture = true;
