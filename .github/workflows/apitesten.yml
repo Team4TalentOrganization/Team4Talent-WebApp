@@ -33,6 +33,9 @@ jobs:
       - name: run newman
         run: newman run ./postman/StudyGuidance.postman_collection.json -- environment ./postman/StudyGuidance.postman_environment.json -r htmlextra
 
+      - name: ls newman folder
+        run: ls ./newman
+
       - name: Upload Newman HTML report
         uses: actions/upload-artifact@v2
         with:
