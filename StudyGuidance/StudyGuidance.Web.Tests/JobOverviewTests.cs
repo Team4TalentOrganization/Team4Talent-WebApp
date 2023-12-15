@@ -1,16 +1,11 @@
-﻿using BlazorBootstrap;
-using Microsoft.AspNetCore.Components.Web;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 using Moq;
 using StudyGuidance.Web.ApiClient;
+using StudyGuidance.Web.Models;
 using StudyGuidance.Web.Shared;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Reflection;
-using Microsoft.JSInterop;
+using Xunit;
 
 namespace StudyGuidance.Web.Tests
 {
