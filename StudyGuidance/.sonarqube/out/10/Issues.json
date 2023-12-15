@@ -1,0 +1,2065 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Microsoft (R) Visual C# Compiler",
+        "version": "4.6.0.0",
+        "fileVersion": "4.6.0-3.23212.2 (d78a163b)",
+        "semanticVersion": "4.6.0",
+        "language": "nl-NL"
+      },
+      "results": [
+        {
+          "ruleId": "CS8625",
+          "level": "warning",
+          "message": "Cannot convert null literal to non-nullable reference type.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_TinderQuestionCard_razor.g.cs",
+                "region": {
+                  "startLine": 212,
+                  "startColumn": 58,
+                  "endLine": 212,
+                  "endColumn": 62
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'subDomainAnswers' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_TinderQuestionCard_razor.g.cs",
+                "region": {
+                  "startLine": 289,
+                  "startColumn": 12,
+                  "endLine": 289,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_TinderQuestionCard_razor.g.cs",
+                "region": {
+                  "startLine": 265,
+                  "startColumn": 22,
+                  "endLine": 265,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable event 'AnimationComplete' must contain a non-null value when exiting constructor. Consider declaring the event as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_TinderQuestionCard_razor.g.cs",
+                "region": {
+                  "startLine": 289,
+                  "startColumn": 12,
+                  "endLine": 289,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_TinderQuestionCard_razor.g.cs",
+                "region": {
+                  "startLine": 273,
+                  "startColumn": 32,
+                  "endLine": 273,
+                  "endColumn": 49
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'subDomainAnswers' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_TinderQuestionCard_razor.g.cs",
+                "region": {
+                  "startLine": 293,
+                  "startColumn": 12,
+                  "endLine": 293,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_TinderQuestionCard_razor.g.cs",
+                "region": {
+                  "startLine": 265,
+                  "startColumn": 22,
+                  "endLine": 265,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable event 'AnimationComplete' must contain a non-null value when exiting constructor. Consider declaring the event as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_TinderQuestionCard_razor.g.cs",
+                "region": {
+                  "startLine": 293,
+                  "startColumn": 12,
+                  "endLine": 293,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_TinderQuestionCard_razor.g.cs",
+                "region": {
+                  "startLine": 273,
+                  "startColumn": 32,
+                  "endLine": 273,
+                  "endColumn": 49
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8603",
+          "level": "warning",
+          "message": "Possible null reference return.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/ApiClient/BaseApiClient.cs",
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 12,
+                  "endLine": 24,
+                  "endColumn": 58
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8603",
+          "level": "warning",
+          "message": "Possible null reference return.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/ApiClient/BaseApiClient.cs",
+                "region": {
+                  "startLine": 31,
+                  "startColumn": 11,
+                  "endLine": 31,
+                  "endColumn": 18
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Options' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Models/Question.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 29,
+                  "endLine": 5,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Models/Question.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 29,
+                  "endLine": 5,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Phrase' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Models/Question.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 23,
+                  "endLine": 7,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Models/Question.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 23,
+                  "endLine": 7,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Content' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Models/Option.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 23,
+                  "endLine": 5,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Models/Option.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 23,
+                  "endLine": 5,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8625",
+          "level": "warning",
+          "message": "Cannot convert null literal to non-nullable reference type.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "Microsoft.NET.Sdk.Razor.SourceGenerators/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Shared_TinderQuestionCard_razor.g.cs",
+                "region": {
+                  "startLine": 333,
+                  "startColumn": 66,
+                  "endLine": 333,
+                  "endColumn": 70
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS1998",
+          "level": "warning",
+          "message": "This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/StandardQuestionCard.razor.cs",
+                "region": {
+                  "startLine": 30,
+                  "startColumn": 28,
+                  "endLine": 30,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8603",
+          "level": "warning",
+          "message": "Possible null reference return.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/StandardQuestionCard.razor.cs",
+                "region": {
+                  "startLine": 78,
+                  "startColumn": 20,
+                  "endLine": 78,
+                  "endColumn": 93
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Name' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Pages/Jobs.razor.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 23,
+                  "endLine": 8,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Pages/Jobs.razor.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 23,
+                  "endLine": 8,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable field 'Job' must contain a non-null value when exiting constructor. Consider declaring the field as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/JobDetail.razor.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 21,
+                  "endLine": 12,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/JobDetail.razor.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 21,
+                  "endLine": 12,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Name' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/PlayerCards.razor.cs",
+                "region": {
+                  "startLine": 31,
+                  "startColumn": 27,
+                  "endLine": 31,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/PlayerCards.razor.cs",
+                "region": {
+                  "startLine": 31,
+                  "startColumn": 27,
+                  "endLine": 31,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'ImagePath' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/PlayerCards.razor.cs",
+                "region": {
+                  "startLine": 32,
+                  "startColumn": 27,
+                  "endLine": 32,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/PlayerCards.razor.cs",
+                "region": {
+                  "startLine": 32,
+                  "startColumn": 27,
+                  "endLine": 32,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'ImageStyle' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/PlayerCards.razor.cs",
+                "region": {
+                  "startLine": 34,
+                  "startColumn": 27,
+                  "endLine": 34,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/PlayerCards.razor.cs",
+                "region": {
+                  "startLine": 34,
+                  "startColumn": 27,
+                  "endLine": 34,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'HrStyle' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/PlayerCards.razor.cs",
+                "region": {
+                  "startLine": 35,
+                  "startColumn": 27,
+                  "endLine": 35,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/PlayerCards.razor.cs",
+                "region": {
+                  "startLine": 35,
+                  "startColumn": 27,
+                  "endLine": 35,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'HrStyleBack' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/PlayerCards.razor.cs",
+                "region": {
+                  "startLine": 36,
+                  "startColumn": 27,
+                  "endLine": 36,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/PlayerCards.razor.cs",
+                "region": {
+                  "startLine": 36,
+                  "startColumn": 27,
+                  "endLine": 36,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'CardBodyStyle' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/PlayerCards.razor.cs",
+                "region": {
+                  "startLine": 37,
+                  "startColumn": 27,
+                  "endLine": 37,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/PlayerCards.razor.cs",
+                "region": {
+                  "startLine": 37,
+                  "startColumn": 27,
+                  "endLine": 37,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Description' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/PlayerCards.razor.cs",
+                "region": {
+                  "startLine": 38,
+                  "startColumn": 27,
+                  "endLine": 38,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/PlayerCards.razor.cs",
+                "region": {
+                  "startLine": 38,
+                  "startColumn": 27,
+                  "endLine": 38,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'DivStyle' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/PlayerCards.razor.cs",
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 27,
+                  "endLine": 39,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/PlayerCards.razor.cs",
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 27,
+                  "endLine": 39,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Dereference of a possibly null reference.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/JobOverview.razor.cs",
+                "region": {
+                  "startLine": 33,
+                  "startColumn": 62,
+                  "endLine": 33,
+                  "endColumn": 75
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Dereference of a possibly null reference.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/JobOverview.razor.cs",
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 62,
+                  "endLine": 39,
+                  "endColumn": 75
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Dereference of a possibly null reference.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/JobOverview.razor.cs",
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 90,
+                  "endLine": 39,
+                  "endColumn": 98
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Dereference of a possibly null reference.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/JobOverview.razor.cs",
+                "region": {
+                  "startLine": 40,
+                  "startColumn": 45,
+                  "endLine": 40,
+                  "endColumn": 53
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8600",
+          "level": "warning",
+          "message": "Converting null literal or possible null value to non-nullable type.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/JobOverview.razor.cs",
+                "region": {
+                  "startLine": 89,
+                  "startColumn": 23,
+                  "endLine": 89,
+                  "endColumn": 56
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8604",
+          "level": "warning",
+          "message": "Possible null reference argument for parameter 'subdomains' in 'Task<List<Job>> IJobApiClient.GetJobsByFilterAsync(List<string> subdomains, bool workInTeam, bool workOnSite)'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/JobOverview.razor.cs",
+                "region": {
+                  "startLine": 103,
+                  "startColumn": 64,
+                  "endLine": 103,
+                  "endColumn": 71
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Name' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/JobOverview.razor.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 23,
+                  "endLine": 13,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/JobOverview.razor.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 23,
+                  "endLine": 13,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Job' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/JobCards.razor.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 20,
+                  "endLine": 9,
+                  "endColumn": 23
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/JobCards.razor.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 20,
+                  "endLine": 9,
+                  "endColumn": 23
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS0169",
+          "level": "warning",
+          "message": "The field 'JobOverview.multiselectionTextChoice' is never used",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/JobOverview.razor.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 22,
+                  "endLine": 19,
+                  "endColumn": 46
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 3
+          }
+        },
+        {
+          "ruleId": "CS0414",
+          "level": "warning",
+          "message": "The field 'StandardQuestionCard.EndButtonDisabled' is assigned but its value is never used",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/StandardQuestionCard.razor.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 22,
+                  "endLine": 16,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 3
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/JobOverview.razor.cs",
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 17,
+                  "endLine": 102,
+                  "endColumn": 95
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2933",
+          "level": "warning",
+          "message": "Make '_url' 'readonly'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/ApiClient/JobApiClient.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 18,
+                  "endLine": 11,
+                  "endColumn": 22
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2933",
+          "level": "warning",
+          "message": "Make '_url' 'readonly'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/ApiClient/QuizApiClient.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 24,
+                  "endLine": 9,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2292",
+          "level": "warning",
+          "message": "Make this an auto-implemented property and remove its backing field.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/HomepageHeroe.razor.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 20,
+                  "endLine": 11,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2365",
+          "level": "warning",
+          "message": "Refactor 'FilteredJobs' into a method, properties should not copy collections.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/JobOverview.razor.cs",
+                "region": {
+                  "startLine": 33,
+                  "startColumn": 27,
+                  "endLine": 33,
+                  "endColumn": 94
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2365",
+          "level": "warning",
+          "message": "Refactor 'FilteredJobs' into a method, properties should not copy collections.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/JobOverview.razor.cs",
+                "region": {
+                  "startLine": 34,
+                  "startColumn": 27,
+                  "endLine": 34,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2365",
+          "level": "warning",
+          "message": "Refactor 'FilteredJobs' into a method, properties should not copy collections.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/JobOverview.razor.cs",
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 27,
+                  "endLine": 39,
+                  "endColumn": 151
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2365",
+          "level": "warning",
+          "message": "Refactor 'FilteredJobs' into a method, properties should not copy collections.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/JobOverview.razor.cs",
+                "region": {
+                  "startLine": 40,
+                  "startColumn": 27,
+                  "endLine": 40,
+                  "endColumn": 106
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1104",
+          "level": "warning",
+          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/NavMenu.razor.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 21,
+                  "endLine": 21,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1104",
+          "level": "warning",
+          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/NavMenu.razor.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 23,
+                  "endLine": 22,
+                  "endColumn": 45
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1104",
+          "level": "warning",
+          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/NavMenu.razor.cs",
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 23,
+                  "endLine": 23,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1104",
+          "level": "warning",
+          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/NavMenu.razor.cs",
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 21,
+                  "endLine": 24,
+                  "endColumn": 41
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1144",
+          "level": "warning",
+          "message": "Remove the unused private method 'ShowContentAsync'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/JobOverview.razor.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 9,
+                  "endLine": 16,
+                  "endColumn": 78
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1144",
+          "level": "warning",
+          "message": "Remove the unused private method 'HideContentAsync'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/JobOverview.razor.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 9,
+                  "endLine": 17,
+                  "endColumn": 78
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1144",
+          "level": "warning",
+          "message": "Remove the unused private field 'multiselectionTextChoice'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/JobOverview.razor.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 9,
+                  "endLine": 19,
+                  "endColumn": 47
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1144",
+          "level": "warning",
+          "message": "Remove the unused private field 'EndButtonDisabled'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/StandardQuestionCard.razor.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 9,
+                  "endLine": 16,
+                  "endColumn": 48
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1144",
+          "level": "warning",
+          "message": "Remove the unused private method 'GetNextQuestionPhrase'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/StandardQuestionCard.razor.cs",
+                "region": {
+                  "startLine": 71,
+                  "startColumn": 9,
+                  "endLine": 74,
+                  "endColumn": 10
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1834",
+          "level": "note",
+          "message": "Use 'StringBuilder.Append(char)' instead of 'StringBuilder.Append(string)' when the input is a constant unit string",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/ApiClient/QuizApiClient.cs",
+                "region": {
+                  "startLine": 50,
+                  "startColumn": 44,
+                  "endLine": 50,
+                  "endColumn": 47
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3776",
+          "level": "warning",
+          "message": "Refactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/StandardQuestionCard.razor.cs",
+                "region": {
+                  "startLine": 82,
+                  "startColumn": 28,
+                  "endLine": 82,
+                  "endColumn": 47
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/StandardQuestionCard.razor.cs",
+                "region": {
+                  "startLine": 84,
+                  "startColumn": 13,
+                  "endLine": 84,
+                  "endColumn": 16
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/StandardQuestionCard.razor.cs",
+                "region": {
+                  "startLine": 86,
+                  "startColumn": 17,
+                  "endLine": 86,
+                  "endColumn": 19
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/StandardQuestionCard.razor.cs",
+                "region": {
+                  "startLine": 90,
+                  "startColumn": 21,
+                  "endLine": 90,
+                  "endColumn": 23
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/StandardQuestionCard.razor.cs",
+                "region": {
+                  "startLine": 97,
+                  "startColumn": 13,
+                  "endLine": 97,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/StandardQuestionCard.razor.cs",
+                "region": {
+                  "startLine": 97,
+                  "startColumn": 60,
+                  "endLine": 97,
+                  "endColumn": 62
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/StandardQuestionCard.razor.cs",
+                "region": {
+                  "startLine": 103,
+                  "startColumn": 17,
+                  "endLine": 103,
+                  "endColumn": 24
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/StandardQuestionCard.razor.cs",
+                "region": {
+                  "startLine": 105,
+                  "startColumn": 21,
+                  "endLine": 105,
+                  "endColumn": 23
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/StandardQuestionCard.razor.cs",
+                "region": {
+                  "startLine": 109,
+                  "startColumn": 21,
+                  "endLine": 109,
+                  "endColumn": 25
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/StandardQuestionCard.razor.cs",
+                "region": {
+                  "startLine": 117,
+                  "startColumn": 17,
+                  "endLine": 117,
+                  "endColumn": 24
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/StandardQuestionCard.razor.cs",
+                "region": {
+                  "startLine": 119,
+                  "startColumn": 21,
+                  "endLine": 119,
+                  "endColumn": 26
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "+1",
+              "1": "+2 (incl 1 for nesting)",
+              "2": "+3 (incl 2 for nesting)",
+              "3": "+1",
+              "4": "+1",
+              "5": "+2 (incl 1 for nesting)",
+              "6": "+3 (incl 2 for nesting)",
+              "7": "+1",
+              "8": "+2 (incl 1 for nesting)",
+              "9": "+3 (incl 2 for nesting)"
+            }
+          }
+        },
+        {
+          "ruleId": "CA2254",
+          "level": "note",
+          "message": "The logging message template should not vary between calls to 'LoggerExtensions.LogError(ILogger, Exception?, string?, params object?[])'",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/ApiClient/BaseApiClient.cs",
+                "region": {
+                  "startLine": 28,
+                  "startColumn": 25,
+                  "endLine": 28,
+                  "endColumn": 87
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1066",
+          "level": "warning",
+          "message": "Merge this if statement with the enclosing one.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/StandardQuestionCard.razor.cs",
+                "region": {
+                  "startLine": 164,
+                  "startColumn": 21,
+                  "endLine": 164,
+                  "endColumn": 23
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/StandardQuestionCard.razor.cs",
+                "region": {
+                  "startLine": 162,
+                  "startColumn": 17,
+                  "endLine": 162,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3267",
+          "level": "warning",
+          "message": "Loop should be simplified by calling Select(question => question.Options))",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/StandardQuestionCard.razor.cs",
+                "region": {
+                  "startLine": 117,
+                  "startColumn": 42,
+                  "endLine": 117,
+                  "endColumn": 59
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3267",
+          "level": "warning",
+          "message": "Loop should be simplified by calling Select(question => question.Options))",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/StandardQuestionCard.razor.cs",
+                "region": {
+                  "startLine": 211,
+                  "startColumn": 38,
+                  "endLine": 211,
+                  "endColumn": 55
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1125",
+          "level": "warning",
+          "message": "Remove the unnecessary Boolean literal(s).",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/JobOverview.razor.cs",
+                "region": {
+                  "startLine": 91,
+                  "startColumn": 102,
+                  "endLine": 91,
+                  "endColumn": 107
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1125",
+          "level": "warning",
+          "message": "Remove the unnecessary Boolean literal(s).",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/JobOverview.razor.cs",
+                "region": {
+                  "startLine": 93,
+                  "startColumn": 102,
+                  "endLine": 93,
+                  "endColumn": 107
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1172",
+          "level": "warning",
+          "message": "Remove this unused method parameter 'e'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/JobOverview.razor.cs",
+                "region": {
+                  "startLine": 59,
+                  "startColumn": 40,
+                  "endLine": 59,
+                  "endColumn": 56
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "IsRemovable": "True"
+            }
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "Member 'FlipCard' does not access instance data and can be marked as static",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/PlayerCards.razor.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 22,
+                  "endLine": 14,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "Member 'IsOptionValueEmpty' does not access instance data and can be marked as static",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/StandardQuestionCard.razor.cs",
+                "region": {
+                  "startLine": 182,
+                  "startColumn": 22,
+                  "endLine": 182,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "Member 'GetMultiSelectionText' does not access instance data and can be marked as static",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gebruiker/OneDrive%20-%20PXL/Documenten/pxl/3AONb/IT-project/NieuwProject/Team4Talent-WebApp/StudyGuidance/StudyGuidance.Web/Shared/JobOverview.razor.cs",
+                "region": {
+                  "startLine": 64,
+                  "startColumn": 24,
+                  "endLine": 64,
+                  "endColumn": 45
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        }
+      ],
+      "rules": {
+        "CA1822": {
+          "id": "CA1822",
+          "shortDescription": "Mark members as static",
+          "fullDescription": "Members that do not access instance data or call instance methods can be marked as static. After you mark the methods as static, the compiler will emit nonvirtual call sites to these members. This can give you a measurable performance gain for performance-sensitive code.",
+          "defaultLevel": "note",
+          "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1822",
+          "properties": {
+            "category": "Performance",
+            "isEnabledByDefault": true,
+            "tags": [
+              "PortedFromFxCop",
+              "Telemetry",
+              "EnabledRuleInAggressiveMode"
+            ]
+          }
+        },
+        "CA1834": {
+          "id": "CA1834",
+          "shortDescription": "Consider using 'StringBuilder.Append(char)' when applicable",
+          "fullDescription": "'StringBuilder.Append(char)' is more efficient than 'StringBuilder.Append(string)' when the string is a single character. When calling 'Append' with a constant, prefer using a constant char rather than a constant string containing one character.",
+          "defaultLevel": "note",
+          "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1834",
+          "properties": {
+            "category": "Performance",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Telemetry",
+              "EnabledRuleInAggressiveMode"
+            ]
+          }
+        },
+        "CA2254": {
+          "id": "CA2254",
+          "shortDescription": "Template should be a static expression",
+          "fullDescription": "The logging message template should not vary between calls.",
+          "defaultLevel": "note",
+          "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2254",
+          "properties": {
+            "category": "Usage",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Telemetry",
+              "EnabledRuleInAggressiveMode"
+            ]
+          }
+        },
+        "CS0169": {
+          "id": "CS0169",
+          "shortDescription": "Field is never used",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0169)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS0414": {
+          "id": "CS0414",
+          "shortDescription": "Field is assigned but its value is never used",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0414)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS1998": {
+          "id": "CS1998",
+          "shortDescription": "Async method lacks 'await' operators and will run synchronously",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1998)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS8600": {
+          "id": "CS8600",
+          "shortDescription": "Converting null literal or possible null value to non-nullable type.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8600)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS8602": {
+          "id": "CS8602",
+          "shortDescription": "Dereference of a possibly null reference.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8602)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS8603": {
+          "id": "CS8603",
+          "shortDescription": "Possible null reference return.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8603)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS8604": {
+          "id": "CS8604",
+          "shortDescription": "Possible null reference argument.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8604)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS8618": {
+          "id": "CS8618",
+          "shortDescription": "Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8618)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS8625": {
+          "id": "CS8625",
+          "shortDescription": "Cannot convert null literal to non-nullable reference type.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8625)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "S1066": {
+          "id": "S1066",
+          "shortDescription": "Collapsible \"if\" statements should be merged",
+          "fullDescription": "Merging collapsible if statements increases the code’s readability.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1066",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S1104": {
+          "id": "S1104",
+          "shortDescription": "Fields should not have public accessibility",
+          "fullDescription": "Public fields in public classes do not respect the encapsulation principle and has three main disadvantages:",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1104",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S1125": {
+          "id": "S1125",
+          "shortDescription": "Boolean literals should not be redundant",
+          "fullDescription": "Redundant Boolean literals should be removed from expressions to improve readability.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1125",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S1144": {
+          "id": "S1144",
+          "shortDescription": "Unused private types or members should be removed",
+          "fullDescription": "private or internal types or private members that are never executed or referenced are dead code: unnecessary, inoperative code that should be removed. Cleaning out dead code decreases the size of the maintained codebase, making it easier to understand the program and preventing bugs from being introduced.",
+          "defaultLevel": "note",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1144",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay",
+              "Unnecessary"
+            ]
+          }
+        },
+        "S1172": {
+          "id": "S1172",
+          "shortDescription": "Unused method parameters should be removed",
+          "fullDescription": "Unused parameters are misleading. Whatever the values passed to such parameters, the behavior will be the same.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1172",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S125": {
+          "id": "S125",
+          "shortDescription": "Sections of code should not be commented out",
+          "fullDescription": "Programmers should not comment out code as it bloats programs and reduces readability.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-125",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S2292": {
+          "id": "S2292",
+          "shortDescription": "Trivial properties should be auto-implemented",
+          "fullDescription": "Trivial properties, which include no logic but setting and getting a backing field should be converted to auto-implemented properties, yielding cleaner and more readable code.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2292",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S2365": {
+          "id": "S2365",
+          "shortDescription": "Properties should not make collection or array copies",
+          "fullDescription": "Most developers expect property access to be as efficient as field access. However, if a property returns a copy of an array or collection, it will be much slower than simple field access, contrary to the caller’s likely expectations. Therefore, such properties should be refactored into methods so that callers are not surprised by the unexpectedly poor performance.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2365",
+          "properties": {
+            "category": "Critical Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S2933": {
+          "id": "S2933",
+          "shortDescription": "Fields that are only assigned in the constructor should be \"readonly\"",
+          "fullDescription": "readonly fields can only be assigned in a class constructor. If a class has a field that’s not marked readonly but is only set in the constructor, it could cause confusion about the field’s intended use. To avoid confusion, such fields should be marked readonly to make their intended use explicit, and to prevent future maintainers from inadvertently changing their use.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2933",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S3267": {
+          "id": "S3267",
+          "shortDescription": "Loops should be simplified with \"LINQ\" expressions",
+          "fullDescription": "When a loop is filtering, selecting or aggregating, those functions can be handled with a clearer, more concise LINQ expression instead.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3267",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S3776": {
+          "id": "S3776",
+          "shortDescription": "Cognitive Complexity of methods should not be too high",
+          "fullDescription": "Cognitive Complexity is a measure of how hard the control flow of a method is to understand. Methods with high Cognitive Complexity will be difficult to maintain.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3776",
+          "properties": {
+            "category": "Critical Code Smell",
+            "isEnabledByDefault": false,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

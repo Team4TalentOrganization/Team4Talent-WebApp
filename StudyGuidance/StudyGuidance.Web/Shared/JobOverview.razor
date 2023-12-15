@@ -44,7 +44,7 @@
             {
                 @foreach (var job in FilteredJobs)
                 {
-                    <div @onclick="@(e => GoToJobDetailPage(e, job.JobId))">
+                    <div @onclick="@(e => GoToJobDetailPage(job.JobId))">
                         <JobCards Job="job"></JobCards>
                     </div>
                 }

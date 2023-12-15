@@ -5,7 +5,13 @@ namespace StudyGuidance.Web.Shared
 {
     public partial class HomepageHeroe : ComponentBase
     {
-        private MudCarousel<string> _carousel;
+        private int selectedIndex = 0;
+
+        public int SelectedIndex
+        {
+            get { return selectedIndex; }
+            set { selectedIndex = value; }
+        }
         private bool _arrows = false;
         private bool _bullets = true;
         private bool _enableSwipeGesture = true;
@@ -18,12 +24,12 @@ namespace StudyGuidance.Web.Shared
         };
 
         private IList<string> _text = new List<string>()
-    {
-        "Via Talent-IT Group heb ik mijn droomjob gevonden!",
-        "De juiste studierichting? Talent-IT Group heeft me super goed geholpen",
-        "De juiste studierichting vinden om je droomjob te doen? Talent-IT Group!",
-    };
+        {
+            "Via Talent-IT Group heb ik mijn droomjob gevonden!",
+            "De juiste studierichting? Talent-IT Group heeft me super goed geholpen",
+            "De juiste studierichting vinden om je droomjob te doen? Talent-IT Group!",
+        };
 
-        public int selectedIndex = 0;
+        
     }
 }

@@ -10,7 +10,7 @@ namespace StudyGuidance.Web.Shared
     public partial class JobOverview : ComponentBase
     {
         [Parameter]
-        public string Name { get; set; }
+        public string? Name { get; set; }
         private Collapse collapse1 = default!;
         private Boolean showFilterMenu;
         private async Task ShowContentAsync() => await collapse1.ShowAsync();
@@ -56,12 +56,12 @@ namespace StudyGuidance.Web.Shared
             base.OnParametersSet();
         }
 
-        private void GoToJobDetailPage(MouseEventArgs e, int id)
+        private void GoToJobDetailPage(int id)
         {
             NavigationManager.NavigateTo($"/jobs/detail/{id}");
         }
 
-        private string GetMultiSelectionText(List<string> selectedValues)
+        private static string GetMultiSelectionText(List<string> selectedValues)
         {
             if (selectedValues.Count == 1)
             {
@@ -99,7 +99,6 @@ namespace StudyGuidance.Web.Shared
             }
             else
             {
-                //jobs = await JobApiClient.GetJobsByFilterAsync(filterDomains, false, false);
                 jobs = await JobApiClient.GetJobsByFilterAsync(answers, workInTeam, workOnSite);
                 subDomains = await QuizApiClient.GetAllSubDomains();
                 if (jobs == null || !jobs.Any() || jobs.Count == 0)
