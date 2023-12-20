@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Shared\JobOverview - Copy.razor.css" />
     <None Remove="Shared\JobOverview.razor.css" />
     <None Remove="Shared\TinderQuestionCard.razor.css" />
   </ItemGroup>
@@ -35,6 +36,10 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StudyGuidance.Domain\StudyGuidance.Domain.csproj" />
   </ItemGroup>
 
 </Project>

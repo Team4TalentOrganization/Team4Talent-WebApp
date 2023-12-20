@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StudyGuidance.Infrastructure;
 
@@ -10,9 +11,10 @@ using StudyGuidance.Infrastructure;
 namespace StudyGuidance.Infrastructure.Migrations
 {
     [DbContext(typeof(StudyGuidanceDbContext))]
-    partial class StudyGuidanceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231214131137_Recruiters")]
+    partial class Recruiters
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -56,7 +58,7 @@ namespace StudyGuidance.Infrastructure.Migrations
 
                     b.HasKey("JobId");
 
-                    b.ToTable("Jobs", (string)null);
+                    b.ToTable("Jobs");
 
                     b.HasData(
                         new
@@ -416,7 +418,7 @@ namespace StudyGuidance.Infrastructure.Migrations
 
                     b.HasIndex("QuestionId");
 
-                    b.ToTable("Options", (string)null);
+                    b.ToTable("Options");
 
                     b.HasData(
                         new
@@ -670,7 +672,7 @@ namespace StudyGuidance.Infrastructure.Migrations
 
                     b.HasKey("QuestionId");
 
-                    b.ToTable("Questions", (string)null);
+                    b.ToTable("Questions");
 
                     b.HasData(
                         new
@@ -725,7 +727,7 @@ namespace StudyGuidance.Infrastructure.Migrations
 
                     b.HasKey("RecruiterId");
 
-                    b.ToTable("Recruiters", (string)null);
+                    b.ToTable("Recruiters");
 
                     b.HasData(
                         new

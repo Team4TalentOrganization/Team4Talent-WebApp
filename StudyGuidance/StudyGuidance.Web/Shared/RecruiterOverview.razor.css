@@ -1,0 +1,44 @@
+﻿table {
+    text-align: center;
+}
+
+th {
+    font-weight: bold;
+    border-bottom: none; /* Remove the bottom border for th elements */
+}
+
+.pencil-td {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.trash-td {
+    padding-left: 0;
+}
+
+.add-div {
+    text-align: center;
+}
+
+.home-div {
+    margin-top: 57%;
+    text-align: center;
+}
+
+.bi-plus {
+    padding: 0;
+}
+
+.name-td, .email-td, company-td {
+    max-width: 45px;
+    word-wrap: break-word;
+}
+
+.modal {
+    display: inline-block;
+}
+
+.modal p {
+    margin-top: 1rem;
+    margin-bottom: 5px;
+}

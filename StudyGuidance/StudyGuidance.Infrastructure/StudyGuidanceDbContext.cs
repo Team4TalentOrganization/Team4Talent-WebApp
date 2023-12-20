@@ -8,7 +8,7 @@ namespace StudyGuidance.Infrastructure
         public DbSet<Question> Questions { get; set; } = null!;
         public DbSet<Option> Options { get; set; } = null!;
         public DbSet<Job> Jobs { get; set; } = null!;
-
+        public DbSet<Recruiter> Recruiters { get; set; } = null!;
 
         public StudyGuidanceDbContext(DbContextOptions<StudyGuidanceDbContext> options) : base(options) { }
 
@@ -121,6 +121,16 @@ namespace StudyGuidance.Infrastructure
             new Job { JobId = 28, OptionRelation = 14, Name = "SCRUM Master", WorkInTeam = true, WorkOnSite = true, Domain = "Software Management", SubDomain = "Project Management", Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." },
             new Job { JobId = 29, OptionRelation = 17, Name = "Security Engineer", WorkInTeam = false, WorkOnSite = false, Domain = "Systeem en netwerkbeheer", SubDomain = "Security", Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." },
             new Job { JobId = 30, OptionRelation = 17, Name = "PEN Tester", WorkInTeam = false, WorkOnSite = true, Domain = "Systeem en netwerkbeheer", SubDomain = "Security", Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." }
+            );
+
+            modelBuilder.Entity<Recruiter>().HasData(
+            new Recruiter { RecruiterId = 1, FirstName = "Noah", LastName = "De Pauw", Company = "PXL", Email="noah.depauw@gmail.com"},
+            new Recruiter { RecruiterId = 2, FirstName = "Federico", LastName = "Oliva", Company = "Bewire", Email = "federico.oliva@gmail.com" },
+            new Recruiter { RecruiterId = 3, FirstName = "Ruben", LastName = "Owsiamicki", Company = "Team4Talent", Email = "ruben.owsiamicki@gmail.com" },
+            new Recruiter { RecruiterId = 4, FirstName = "Mieszko", LastName = "Blazniak", Company = "Fenego", Email = "mieszko.blazniak@gmail.com" },
+            new Recruiter { RecruiterId = 5, FirstName = "Max", LastName = "Valkenburg", Company = "Cegeka", Email = "max.valkenburg@gmail.com" },
+            new Recruiter { RecruiterId = 6, FirstName = "Dries", LastName = "Cox", Company = "ACA", Email = "noah.depauw@gmail.com" },
+            new Recruiter { RecruiterId = 7, FirstName = "Luca", LastName = "Hendrickx", Company = "ACA", Email = "luca.hendrickx@gmail.com" }
             );
         }
     }
