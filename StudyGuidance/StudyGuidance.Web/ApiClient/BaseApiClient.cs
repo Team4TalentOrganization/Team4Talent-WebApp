@@ -52,8 +52,6 @@ namespace StudyGuidance.Web.ApiClient
             try
             {
                 var response = await HttpClient.PutAsJsonAsync(endpoint, data);
-                response.EnsureSuccessStatusCode();
-                return await response.Content.ReadFromJsonAsync<T>();
             }
             catch (Exception ex)
             {
@@ -63,7 +61,7 @@ namespace StudyGuidance.Web.ApiClient
             return default;
         }
 
-        protected async Task<bool> DeleteAsync(string endpoint)
+        protected async Task<bool> DeleteJsonAsync(string endpoint)
         {
             try
             {
