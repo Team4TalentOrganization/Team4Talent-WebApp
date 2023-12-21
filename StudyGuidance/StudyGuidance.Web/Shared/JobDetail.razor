@@ -25,19 +25,41 @@
 				</div>
 				<div class="row">
 					<div class="col">
-						<h4><strong>@Job.Name</strong></h4>
+						<h3 class="fw-bold"><strong>@Job.Testamonial.Name</strong> - <strong>@Job.Name</strong></h3>
 					</div>
 				</div>
 				<hr />
 				<div class="row">
-					<div class="col">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					<p class="fw-bolder mb-1">Getuigenis</p>
+					<div class="col text-center">
+						@Job.Testamonial.Description
 					</div>
 				</div>
 				<hr />
 				<div class="row">
-					<div class="col">
+					<p class="fw-bolder mb-1">Beschrijving</p>
+					<div class="col text-center">
 						@Job.Description
+					</div>
+				</div>
+				<hr />
+				<div class="row">
+					<p class="fw-bolder mb-0">Gerelateerde Studierichtingen</p>
+					<div class="w-50">
+						<MudSelect @bind-Value="@LocationValue" Dense="true" T="string" Label="Locatie" Variant="Variant.Text">
+							@foreach (string location in Locations)
+							{
+								<MudSelectItem T="string" Value="@location.ToUpper()">@location</MudSelectItem>
+							}
+						</MudSelect>
+					</div>
+					<div class="row mt-3 text-center mx-auto mb-3">
+						@foreach (StudyCourse studyCourse in FilteredStudyCourse)
+						{
+							<div class="studycourse-custom mb-2">
+								<p class="m-2">@studyCourse.Study - @studyCourse.DiplomaType  - @studyCourse.Location <br> @studyCourse.School</p>
+							</div>
+						}
 					</div>
 				</div>
 			}
