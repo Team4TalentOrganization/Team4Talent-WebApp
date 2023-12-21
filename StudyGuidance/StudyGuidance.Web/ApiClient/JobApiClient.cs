@@ -37,5 +37,11 @@ namespace StudyGuidance.Web.ApiClient
 
             return result ?? new List<Job>();
         }
-    }
+
+		public async Task<List<string>> GetLocationsAsync()
+		{
+            List<string> locations = await GetJsonAsync<List<string>>("https://localhost:7109/api/StudyCourse/locations");
+            return locations ?? new List<string>();
+		}
+	}
 }
