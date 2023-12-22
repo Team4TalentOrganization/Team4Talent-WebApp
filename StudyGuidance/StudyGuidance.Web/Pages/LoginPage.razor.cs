@@ -4,26 +4,26 @@ namespace StudyGuidance.Web.Pages
 {
     public partial class LoginPage : ComponentBase
     {
-        public string email { get; set; }
-        public string password { get; set; }
-        private bool showError = false;
+        public string Email { get; set; }
+        public string Password { get; set; }
+        private bool _showError = false;
 
         [Inject]
         public NavigationManager NavigationManager { get; set; }
 
         private async void OnLoginFormSubmit()
         {
-            if (email == "admin" && password == "admin")
+            if (Email == "admin" && Password == "admin")
             {
                 NavigationManager.NavigateTo("/controlpanel");
             }
             else
             {
-                showError = true;
+                _showError = true;
                 StateHasChanged();
 
                 await Task.Delay(3000);
-                showError = false;
+                _showError = false;
                 StateHasChanged();
             }
         }
