@@ -5,7 +5,7 @@ namespace StudyGuidance.Web.ApiClient
     public class StudyCourseApiClient : BaseApiClient, IStudyCourseApiClient
     {
 
-        private string _url = $"https://localhost:7109/api/studyCourse";
+        private string _url = $"https://localhost:7109/api/";
 
         public StudyCourseApiClient(HttpClient httpClient, ILogger<StudyCourseApiClient> logger) : base(httpClient, logger)
         {
