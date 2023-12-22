@@ -1,5 +1,6 @@
 ﻿table {
     text-align: center;
+    background-color: white;
 }
 
 th {
@@ -10,18 +11,15 @@ th {
 .pencil-td {
     padding-left: 0;
     padding-right: 0;
+    color: blue;
 }
 
 .trash-td {
     padding-left: 0;
+    color: red;
 }
 
 .add-div {
-    text-align: center;
-}
-
-.home-div {
-    margin-top: 57%;
     text-align: center;
 }
 
@@ -41,4 +39,15 @@ th {
 .modal p {
     margin-top: 1rem;
     margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.add-recruiter-button, .edit-recruiter-button {
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+::deep .form-control {
+    border-radius: 20px;
+    background-color: lightgray;
 }

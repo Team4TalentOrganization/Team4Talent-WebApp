@@ -4,69 +4,109 @@
 @inject IRecruiterApiClient RecruiterApiClient;
 @inject IJSRuntime JSRuntime;
 @inject NavigationManager NavigationManager;
-@if(showEditModal)
+@if (showEditModal)
 {
-    <div class="modal show" id="editRecruiterModal" tabindex="-1" role="dialog" aria-labelledby="editRecruiterModalLabel" aria-hidden="true">
-        @if (currentRecruiter != null)
-        {
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="editRecruiterModalLabel">Edit Recruiter @currentRecruiter.FirstName</h5>
-                        <button type="button" class="close" @onclick="OnCloseClick" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p>First name</p>
-                        <input @bind="currentRecruiter.FirstName" class="form-control" />
-                        <p>Last name</p>
-                        <input @bind="currentRecruiter.LastName" class="form-control" />
-                        <p>Email</p>
-                        <input @bind="currentRecruiter.Email" class="form-control" />
-                        <p>Company</p>
-                        <input @bind="currentRecruiter.Company" class="form-control" />
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" @onclick="() => OnSaveClick()">Save changes</button>
-                        <button type="button" class="btn btn-secondary" @onclick="OnCloseClick">Close</button>
+    <EditForm Model="@currentRecruiter" OnValidSubmit="OnSaveClick">
+        <DataAnnotationsValidator />
+
+        <div class="modal show" id="editRecruiterModal" tabindex="-1" role="dialog" aria-labelledby="editRecruiterModalLabel" aria-hidden="true">
+            @if (currentRecruiter != null)
+            {
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editRecruiterModalLabel">Wijzig recruiter: @currentRecruiter.FirstName</h5>
+                            <button type="button" class="close" @onclick="OnCloseClick" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>VOORNAAM</p>
+                            <InputText @bind-Value="currentRecruiter.FirstName" class="form-control" />
+                            <ValidationMessage For="@(() => currentRecruiter.FirstName)" />
+
+                            <p>ACHTERNAAM</p>
+                            <InputText @bind-Value="currentRecruiter.LastName" class="form-control" />
+                            <ValidationMessage For="@(() => currentRecruiter.LastName)" />
+
+                            <p>E-MAILADRES</p>
+                            <InputText @bind-Value="currentRecruiter.Email" class="form-control" />
+                            <ValidationMessage For="@(() => currentRecruiter.Email)" />
+
+                            <p>BEDRIJF</p>
+                            <InputText @bind-Value="currentRecruiter.Company" class="form-control" />
+                            <ValidationMessage For="@(() => currentRecruiter.Company)" />
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary edit-recruiter-button">OPSLAAN</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        }
-    </div>
+            }
+        </div>
+    </EditForm>
 }
 
 @if (showAddModal)
 {
-    <div class="modal show" id="addRecruiterModal" tabindex="-1" role="dialog" aria-labelledby="addRecruiterModalLabel" aria-hidden="true">
+    <EditForm Model="@newRecruiter" OnValidSubmit="OnAddRecruiterSaveClick">
+        <DataAnnotationsValidator />
+        
+        <div class="modal show" id="addRecruiterModal" tabindex="-1" role="dialog" aria-labelledby="addRecruiterModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="addRecruiterModalLabel">Add Recruiter</h5>
-                    <button type="button" class="close" @onclick="() => OnCloseRecruiterModalClick()" aria-label="Close">
+                        <h5 class="modal-title" id="addRecruiterModalLabel">Voeg recruiter toe</h5>
+                        <button type="button" class="close" @onclick="() => OnCloseRecruiterModalClick()" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                    <p>First name</p>
-                    <input @bind="newRecruiter.FirstName" class="form-control" />
-                    <p>Last name</p>
-                    <input @bind="newRecruiter.LastName" class="form-control" />
-                    <p>Email</p>
-                    <input @bind="newRecruiter.Email" class="form-control" />
-                    <p>Company</p>
-                    <input @bind="newRecruiter.Company" class="form-control" />
+                        <p>VOORNAAM</p>
+                        <InputText @bind-Value="newRecruiter.FirstName" class="form-control" />
+                        <ValidationMessage For="@(() => newRecruiter.FirstName)" />
+
+                        <p>ACHTERNAAM</p>
+                        <InputText @bind-Value="newRecruiter.LastName" class="form-control" />
+                        <ValidationMessage For="@(() => newRecruiter.LastName)" />
+
+                        <p>E-MAILADRES</p>
+                        <InputText @bind-Value="newRecruiter.Email" class="form-control" />
+                        <ValidationMessage For="@(() => newRecruiter.Email)" />
+
+                        <p>BEDRIJF</p>
+                        <InputText @bind-Value="newRecruiter.Company" class="form-control" />
+                        <ValidationMessage For="@(() => newRecruiter.Company)" />
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" @onclick="() => OnAddRecruiterSaveClick()">Save recruiter</button>
-                    <button type="button" class="btn btn-secondary" @onclick="() => OnCloseRecruiterModalClick()">Close</button>
+                        <button type="submit" class="btn btn-primary add-recruiter-button">TOEVOEGEN</button>
                     </div>
                 </div>
             </div>
-    </div>
+        </div>
+    </EditForm>
 }
 
+
+@if (showConfirmationModal)
+{
+<div class="modal mx-auto" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Let op!</h5>
+            </div>
+            <div class="modal-body">
+                <p>Ben je zeker dat je deze recruiter wil verwijderen?</p>
+            </div>
+            <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" @onclick="() => OnConfirmationModalConfirm()">Ja</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" @onclick='() => OnConfirmationModalCancel()'>Nee</button>
+            </div>
+        </div>
+    </div>
+</div>
+}
 
 <table class="table">
     <thead>
@@ -92,7 +132,5 @@
 <div class="add-div">
     <MudFab Color="Color.Primary" Icon="@Icons.Material.Filled.Add" Size="MudBlazor.Size.Small" @onclick="() => OnOpenAddModalClick()" />
 </div>
-<div class="home-div">
-    <MudFab Color="Color.Primary" Icon="@Icons.Material.Filled.Home" Size="MudBlazor.Size.Small" @onclick="() => OnHomeClick()" />
-</div>
+
 

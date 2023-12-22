@@ -16,6 +16,7 @@ namespace StudyGuidance.Web.Shared
         Recruiter? newRecruiter = new Recruiter();
         private Boolean showEditModal;
         private Boolean showAddModal;
+        private Boolean showConfirmationModal;
 
         void OnEditClick(Recruiter recruiter)
         {
@@ -23,10 +24,22 @@ namespace StudyGuidance.Web.Shared
             showEditModal = true;
         }
 
-        async Task OnDeleteClick(Recruiter recruiter)
+        void OnDeleteClick(Recruiter recruiter)
         {
-            await RecruiterApiClient.DeleteRecruiter(recruiter.RecruiterId);
+            currentRecruiter = recruiter;
+            showConfirmationModal = true;
+        }
+
+        async Task OnConfirmationModalConfirm()
+        {
+            await RecruiterApiClient.DeleteRecruiter(currentRecruiter!.RecruiterId);
             recruiters = await RecruiterApiClient.GetRecruitersAsync();
+            showConfirmationModal = false;
+        }
+
+        void OnConfirmationModalCancel()
+        {
+            showConfirmationModal = false;
         }
 
         async Task OnSaveClick()
@@ -55,11 +68,6 @@ namespace StudyGuidance.Web.Shared
         void OnOpenAddModalClick()
         {
             showAddModal = true;
-        }
-
-        void OnHomeClick()
-        {
-            NavigationManager.NavigateTo("/");
         }
 
         protected override async Task OnInitializedAsync()
