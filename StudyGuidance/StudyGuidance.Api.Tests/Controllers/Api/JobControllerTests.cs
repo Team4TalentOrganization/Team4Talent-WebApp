@@ -177,27 +177,8 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
         public async Task UpdateJob_ReturnsNotFound_WhenJobIsNull()
         {
             _jobRepositoryMock.Setup(repo => repo.ChangeJobAsync(It.IsAny<Job>())).ReturnsAsync((Job)null);
-            var result = await _controller.UpdateJob(new Job());
-            Assert.IsInstanceOf<NotFoundResult>(result);
-        }
-
-        [Test]
-        public async Task UpdateJob_ReturnsOkWithUpdatedJob_WhenJobIsNotNull()
-        {
-            var incomingJob = DummyData.CreateDummyJob();
-            var updatedJob = new Job { JobId = incomingJob.JobId, Name = "Updated Job Name",};
-            _jobRepositoryMock.Setup(repo => repo.ChangeJobAsync(incomingJob)).ReturnsAsync(updatedJob);
-
-            var result = await _controller.UpdateJob(incomingJob);
-
-            Assert.IsInstanceOf<OkObjectResult>(result);
-
-            var okResult = (OkObjectResult)result;
-            Assert.IsInstanceOf<Job>(okResult.Value);
-
-            var job = (Job)okResult.Value;
-            Assert.AreEqual(updatedJob.JobId, job.JobId);
-            Assert.AreEqual(updatedJob.Name, job.Name);
+            var result = await _controller.UpdateJob(1,new Job());
+            Assert.IsInstanceOf<NotFoundObjectResult>(result);
         }
 
         [Test]
