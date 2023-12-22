@@ -1,0 +1,27 @@
+﻿body {
+}
+
+#domains{
+    color: grey;
+    font-size: 125%;
+}
+
+.container{
+    padding: 6%;
+}
+
+#JobCard{
+    background-color: white;
+}
+
+hr{
+    margin: auto;
+}
+
+h6{
+    font-weight: bold;
+}
+
+hr{
+    height: 2px;
+}

@@ -3,15 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33801.468
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudGuidance.Api", "StudGuidance.Api\StudGuidance.Api.csproj", "{25CDE89A-F3D1-4376-AA16-4C1F84E200AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudGuidance.Api", "StudGuidance.Api\StudGuidance.Api.csproj", "{25CDE89A-F3D1-4376-AA16-4C1F84E200AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyGuidance.Web", "StudyGuidance.Web\StudyGuidance.Web.csproj", "{E5A752AE-EE66-49FF-AA12-1AD34F42DF9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyGuidance.Web", "StudyGuidance.Web\StudyGuidance.Web.csproj", "{E5A752AE-EE66-49FF-AA12-1AD34F42DF9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyGuidance.Domain", "StudyGuidance.Domain\StudyGuidance.Domain.csproj", "{CF7ACD6C-D963-4C6D-8C38-5F32C4B34043}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyGuidance.Domain", "StudyGuidance.Domain\StudyGuidance.Domain.csproj", "{CF7ACD6C-D963-4C6D-8C38-5F32C4B34043}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyGuidance.AppLogic", "StudyGuidance.AppLogic\StudyGuidance.AppLogic.csproj", "{665BC8A3-14EE-49B9-B9F8-075AF12FC50E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyGuidance.AppLogic", "StudyGuidance.AppLogic\StudyGuidance.AppLogic.csproj", "{665BC8A3-14EE-49B9-B9F8-075AF12FC50E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyGuidance.Infrastructure", "StudyGuidance.Infrastructure\StudyGuidance.Infrastructure.csproj", "{7E658973-57F8-4F48-9660-49C1E46F3491}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyGuidance.Infrastructure", "StudyGuidance.Infrastructure\StudyGuidance.Infrastructure.csproj", "{7E658973-57F8-4F48-9660-49C1E46F3491}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyGuidance.Infrastructure.Tests", "StudyGuidance.Infrastructure.Tests\StudyGuidance.Infrastructure.Tests.csproj", "{E25522F8-D6AB-4D34-9CFA-CAF4337A3892}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyGuidance.Api.Tests", "StudyGuidance.Api.Tests\StudyGuidance.Api.Tests.csproj", "{0B458C75-EB6F-4D05-BA40-828AEBE26C99}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyGuidance.Domain.Tests", "StudyGuidance.Domain.Tests\StudyGuidance.Domain.Tests.csproj", "{0B0AD721-1432-4F89-9A08-CCC91D17B3C0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyGuidance.Web.Tests", "StudyGuidance.Web.Tests\StudyGuidance.Web.Tests.csproj", "{6B6D6515-E61B-49ED-8062-8E681F6D285C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +47,22 @@ Global
 		{7E658973-57F8-4F48-9660-49C1E46F3491}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E658973-57F8-4F48-9660-49C1E46F3491}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E658973-57F8-4F48-9660-49C1E46F3491}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E25522F8-D6AB-4D34-9CFA-CAF4337A3892}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E25522F8-D6AB-4D34-9CFA-CAF4337A3892}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E25522F8-D6AB-4D34-9CFA-CAF4337A3892}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E25522F8-D6AB-4D34-9CFA-CAF4337A3892}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B458C75-EB6F-4D05-BA40-828AEBE26C99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B458C75-EB6F-4D05-BA40-828AEBE26C99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B458C75-EB6F-4D05-BA40-828AEBE26C99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B458C75-EB6F-4D05-BA40-828AEBE26C99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B0AD721-1432-4F89-9A08-CCC91D17B3C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B0AD721-1432-4F89-9A08-CCC91D17B3C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B0AD721-1432-4F89-9A08-CCC91D17B3C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B0AD721-1432-4F89-9A08-CCC91D17B3C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B6D6515-E61B-49ED-8062-8E681F6D285C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B6D6515-E61B-49ED-8062-8E681F6D285C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B6D6515-E61B-49ED-8062-8E681F6D285C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B6D6515-E61B-49ED-8062-8E681F6D285C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,57 @@
+﻿@using System.Linq
+@using StudyGuidance.Web.Models;
+@using StudyGuidance.Web.ApiClient
+
+<div class="pt-5"></div>
+
+<div>
+    @if (showFilterMenu)
+    {
+        <Animation Effect="Effect.ZoomIn" Speed="Speed.Fast">
+            <div class="mx-auto text-center filter-menu-container">
+                <Button Class="w-100" Style="height: 55px; background-color: #007ce0; color: white; border-radius: 8px;" Type="BlazorBootstrap.ButtonType.Button" @onclick="ToggleContentAsync">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-sliders filter-icon" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1z" />
+                    </svg>
+                    FILTER RESULTATEN
+                </Button>
+
+                <Collapse Class="container text-center" @ref="collapse1" Style="border: none">
+                    <Card Class="p-0 text-center mt-4" Style="border: none; border-radius: 25px">
+                        <div class="row">
+                            <MudSelect MultiSelectionTextFunc="@(new Func<List<string>, string>(GetMultiSelectionText))" MultiSelection="true" @bind-Value="value" @bind-SelectedValues="options" T="string" Label="Subdomeinen" AdornmentIcon="@Icons.Material.Filled.ArrowDownward">
+                                @foreach (var subdomain in subDomains)
+                                {
+                                    <MudSelectItem T="string" Value="@subdomain.Content.ToUpper()">@subdomain.Content</MudSelectItem>
+                                }
+                            </MudSelect>
+                        </div>
+                    </Card>
+                </Collapse>
+            </div>
+        </Animation>
+    }
+    <Animation Effect="Effect.ZoomIn" Speed="Speed.Fast">
+        <div class="mx-auto text-center mt-5 mb-5 search-container">
+            <MudTextField Class="custom-color" Placeholder="Zoeken" Immediate="true" @bind-Value="@_immediateText" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" />
+        </div>
+        <div class="overflow-auto">
+            @if (showNoJobsMessage == false
+            )
+            {
+                @foreach (var job in FilteredJobs)
+                {
+                    <div @onclick="@(e => GoToJobDetailPage(e, job.JobId))">
+                        <JobCards Job="job"></JobCards>
+                    </div>
+                }
+            }
+            else
+            {
+                <p class="text-center">Geen jobs gevonden.</p>
+            }
+        </div>
+    </Animation>
+</div>
+
+

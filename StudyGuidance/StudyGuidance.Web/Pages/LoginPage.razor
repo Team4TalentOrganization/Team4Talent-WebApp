@@ -1,0 +1,24 @@
+﻿@page "/login"
+
+<div id="loginPage" class="vh-100">
+    <h4 class="text-center pt-4">LOGIN</h4>
+    <hr class=" mt-0 mx-auto w-25 carousel-hr" />
+    @if (_showError)
+    {
+        <div id="errorMessage" class="alert alert-danger mt-5 mb-0 text-center" role="alert">
+            Fout: Ongeldige inloggegevens. Probeer opnieuw.
+        </div>
+    }
+    <form @onsubmit="OnLoginFormSubmit">
+
+        <div class="form-group">
+            <input @bind="Email" name="Email" class="form-control rounded-3" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+        </div>
+        <br />
+        <div class="form-group">
+            <input @bind="Password" type="password" class="form-control rounded-3" id="exampleInputPassword1" placeholder="Wachtwoord">
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary rounded-3">Login</button>
+    </form>
+</div>

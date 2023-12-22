@@ -1,0 +1,18 @@
+﻿.bg-custom-color {
+    background-color: #FF6900 !important;
+    border: #FF6900 !important
+}
+
+.card-body{
+    overflow: hidden;
+}
+
+a{
+    color: white;
+}
+
+.button-style {
+    border-radius: 15px !important;
+    background-color: #062455 !important;
+    border-color: #062455 !important;
+}

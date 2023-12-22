@@ -1,0 +1,112 @@
+﻿.bg-custom-color {
+    background: #007ce0 !important; /* Adjust the gradient colors */
+}
+
+.bg-orange-color {
+    background-color: #fc8403 !important;
+}
+
+.bg-orange-color-click {
+    background-color: #FF6900 !important;
+}
+
+.rounded-btn {
+    border-radius: 25px;
+    font-size: 8px;
+    float: right;
+    margin-right: 15%;
+    margin-top: 10%;
+}
+
+.card {
+    border-radius: 15px;
+}
+
+.container {
+    width: 80%;
+    width: 70%; 
+    height: 350px; 
+    position: relative; 
+    overflow: hidden; 
+    border-radius: 15px;
+}
+
+.left-inner-container {
+    width: 48%; 
+    height:50%; 
+    float:left;
+}
+
+.right-inner-container {
+    width: 48%;
+    height:50%;
+    float:right;
+}
+
+.option-paragraph {
+    max-width: 100%;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.question-paragraph {
+    font-size: 20px;
+    position: absolute;
+    bottom: 13%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%
+}
+
+.previous-question-div {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card {
+    transition: transform 0.3s ease; /* Add a smooth transition effect */
+    transition: background-color 1s ease;
+}
+
+.card:hover {
+        transform: scale(1.05); /* Adjust the scale factor as needed */
+        animation: scaleAnimation 2s forwards; /* Use a CSS animation for the hover effect */
+}
+
+@keyframes scaleAnimation {
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        background-color: #fff;
+    }
+
+    50% {
+        background-color: #fc8403;
+    }
+
+    100% {
+        background-color: #fff;
+    }
+}
+
+.previous-button {
+    position: absolute;
+    bottom: 0;
+}
+
+.nextButton {
+    background: #007ce0
+}
+

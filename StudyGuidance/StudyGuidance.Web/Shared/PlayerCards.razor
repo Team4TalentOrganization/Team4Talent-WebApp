@@ -1,0 +1,47 @@
+﻿<div class="container mt-3">
+    <h1 class="text-center mt-5 custom-color">Kies een speler</h1>
+    <p class="text-center custom-color">Klik op een van onderstaande situaties die het beste bij jou past.</p>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+        @foreach (var player in players)
+        {
+            <Animation Effect="Effect.ZoomIn" Speed="@Speed.Slow">
+                <div class="col mb-3 w-75 mx-auto">
+                    <div class="card text-white bg-custom-color" @onclick="() => FlipCard(player)">
+                        <div class="card-body mx-auto" style="@player.CardBodyStyle">
+                            <img id="@player.Name" class="" src="@player.ImagePath" alt="@player.Name" style="@player.ImageStyle" />
+                            <div style="@player.DivStyle">
+                                <hr class="mx-auto w-50" style="@player.HrStyle" />
+                                <h1 class="text-center">@player.Name</h1>
+                                @if (!@player.ShowFront)
+                                {
+                                    <hr class="mx-auto w-50" style="@player.HrStyleBack" />
+                                    <p class="h-50">@player.Description</p>
+                                    @if (@player.Name == "Gustaph")
+                                    {
+                                        <div class="text-center align-items-end">
+                                            <button href="jobs" class="btn btn-primary w-75 button-style">
+                                                <a href="/jobs/@player.Name.ToString()">Naar Jobs</a>
+                                            </button>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="text-center align-items-end">
+                                            <button href="quiz" class="btn btn-primary w-75 button-style">
+                                                <a href="quiz">Start De Quiz</a>
+                                            </button>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Animation>
+        }
+    </div>
+</div>
+
+@code {
+    
+}

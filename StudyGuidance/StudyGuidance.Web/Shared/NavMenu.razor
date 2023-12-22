@@ -1,39 +1,73 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">StudyGuidance.Web</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+﻿<div class="modal @ModalClass mx-auto" tabindex="-1" role="dialog" style="display:@ModalDisplay;">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Let op!</h5>
+            </div>
+            <div class="modal-body">
+                <p>Ben je zeker dat je de quiz wil verlaten?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" @onclick="() => Close()">Doordoen!</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" @onclick='() => CloseAndRouteTo()'>Verlaten</button>
+            </div>
+        </div>
     </div>
 </div>
 
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
-            </NavLink>
+
+@if (ShowBackdrop)
+{
+    <div class="modal-backdrop fade show"></div>
+}
+
+
+<div class="sidebar" style="@navStyle">
+@if(collapseNavMenu){
+        <div class="top-row ps-3 navbar navbar-light transparent-background">
+        <div class="container-fluid">
+                <a class="navbar-brand" @onclick='() => Open("/")'>
+                <p class="titleApp">STUDY GUIDANCE</p>
+            </a>
+            <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Counter
-            </NavLink>
+    </div>
+}
+else
+{
+        <div class="top-row ps-3 navbar navbar-light white-background">
+        <div class="container-fluid">
+                <a class="navbar-brand" @onclick='() => Open("/")'>
+                <p class="titleApp">STUDY GUIDANCE</p>
+            </a>
+                <button title="Navigation menu" class="navbar-toggler orange-background" @onclick="ToggleNavMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
-            </NavLink>
-        </div>
-    </nav>
+    </div>
+}
+
+
+    <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+        <nav class="flex-column">
+            <div >
+                <a class="nav-link" @onclick='() => Open("/")' aria-hidden="true">HOME</a>
+            </div>
+            <div>
+                <a class="nav-link" @onclick='() => Open("/faq")' aria-hidden="true">FAQ</a>
+            </div>
+            <div >
+                <a class="nav-link" @onclick='() => Open("https://www.cookiecrunchers.be/")' aria-hidden="true">COOKIE CRUNCHERS</a>
+            </div>
+            <div class="nav flex-column nav-pills">
+                <a class="nav-link active" @onclick='() => Open("/ContactPage")' aria-selected="true">CONTACTEER ONS</a>
+            </div>
+        </nav>
+    </div>
 </div>
 
 @code {
-    private bool collapseNavMenu = true;
-
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
+    
 }

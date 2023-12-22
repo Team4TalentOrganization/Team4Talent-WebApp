@@ -8,9 +8,58 @@ main {
     flex: 1;
 }
 
-.sidebar {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+main::-webkit-scrollbar {
+    display: none;
 }
+
+#video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.background-container {
+    background-color: #062455;
+}
+
+.button-style {
+    height: 50px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.text-style {
+    color: #FF6900;
+}
+
+.underline-style {
+    text-decoration: underline;
+}
+
+.bold-style {
+    font-weight: bold;
+}
+
+#mail {
+    color: #FF6900;
+}
+
+#linkCookieCrunchers {
+    color: #062455;
+}
+
+.sidebar {
+    background-color: white;
+}
+
+.btn-primary {
+    background-color: #FF6900 !important;
+    border-color: #FF6900 !important;
+    color: #062455 !important
+}
+
 
 .top-row {
     background-color: #f7f7f7;

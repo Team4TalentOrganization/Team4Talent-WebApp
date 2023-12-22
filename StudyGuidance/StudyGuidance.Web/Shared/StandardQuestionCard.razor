@@ -1,0 +1,61 @@
+﻿@using System.Text;
+@using StudyGuidance.Web.Models;
+@using StudyGuidance.Web.ApiClient;
+@inject IJSRuntime JS;
+@if (!StandardQuizEnded)
+{
+    <Animation Effect="Effect.ZoomIn" Speed="@Speed.Fast">
+        <div class="container bg-custom-color">
+            <div class="mt-4 left-inner-container">
+                    <div id="topLeftCard" class="card @CardClasses[0]" @onmouseover="() => MouseOver(0)" @onmouseout="() => MouseOut(0)" @onclick="() => CardClicked(0)">
+                        <div class="card-body text-center d-flex align-items-center">
+                        <p class="m-auto option-paragraph">@GetOptionsForCurrentQuestion().FirstOrDefault()</p>
+                    </div>
+                </div>
+                    <div id="topRightCard" class="card @CardClasses[1]" @onmouseover="() => MouseOver(1)" @onmouseout="() => MouseOut(1)" @onclick="() => CardClicked(1)">
+                    <div class="card-body text-center d-flex align-items-center">
+                        <p class="m-auto option-paragraph">@GetOptionsForCurrentQuestion().ElementAtOrDefault(1)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4 right-inner-container">
+                    <div id="bottomLeftCard" class="card @CardClasses[2]" @onmouseover="() => MouseOver(2)" @onmouseout="() => MouseOut(2)" @onclick="() => CardClicked(2)">
+                    <div class="card-body text-center d-flex align-items-center">
+                        <p class="m-auto option-paragraph">@GetOptionsForCurrentQuestion().ElementAtOrDefault(2)</p>
+                    </div>
+                </div>
+               
+             
+                    <div id="bottomRightCard" class="card @CardClasses[3]" @onmouseover="() => MouseOver(3)" @onmouseout="() => MouseOut(3)" @onclick="() => CardClicked(3)">
+                    <div class="card-body text-center d-flex align-items-center">
+                        <p class="m-auto option-paragraph">@GetOptionsForCurrentQuestion().ElementAtOrDefault(3)</p>
+                    </div>
+                </div>
+            </div>
+            <p class="text-white text-center question-paragraph">@GetCurrentQuestionPhrase()</p>
+                <div class="previous-question-div">
+                    @if (currentQuestion > 0)
+                    {
+                        <button @onclick="() => PreviousQuestionClicked()" type="button" class="btn btn-light btn-circle btn-lg rounded-circle mb-3 previous-button">
+                            <span style="font-size: 20px;">&lt;</span>
+                        </button>
+                    }
+                </div>
+        </div>
+    </Animation>
+    @if (currentQuestion < questionsList.Count -1 || !subDomainsAreSet)
+    {
+        <button @onclick="() => NextQuestionClicked()" disabled="@(!AreAnyCardsSelected())" type="button" class="nextButton btn btn-primary rounded-btn">VOLGENDE VRAAG</button>
+    }
+    else
+    {
+        <button @onclick="() => EndStandardQuiz()" disabled="@(subDomainAnswers.Count == 0 && !CardClasses.Any(cc => cc == "card text-white bg-orange-color-click h-50 mb-3"))" type="button" class="nextButton btn btn-primary rounded-btn">GO TO TINDER QUIZ</button>
+    }
+}
+else
+{
+    <TinderQuestionCard subDomainAnswers="subDomainAnswers"></TinderQuestionCard>
+}
+
+
+

@@ -1,0 +1,75 @@
+﻿@using StudyGuidance.Web.Models;
+@using StudyGuidance.Web.ApiClient;
+@inject NavigationManager NavigationManager
+
+<div class="vh-100 bg-light container pt-3">
+	<div class="row">
+		<div class="col-10"></div>
+		<div class="col-2">
+			<button class="btn btn-close" @onclick="GoBackToOverview"></button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			@if (Job != null)
+			{
+				<div class="row">
+					<div class="col">
+						<div class="w-50 mx-auto text-center">
+							<figure class="shadow rounded-3 m-0 p-0">
+								<img class="w-100 h-100 rounded-3" src="/images/person1.jpg" />
+							</figure>
+							<hr />
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<h3 class="fw-bold"><strong>@Job.Testamonial.Name</strong> - <strong>@Job.Name</strong></h3>
+					</div>
+				</div>
+				<hr />
+				<div class="row">
+					<p class="fw-bolder mb-1">Getuigenis</p>
+					<div class="col text-center">
+						@Job.Testamonial.Description
+					</div>
+				</div>
+				<hr />
+				<div class="row">
+					<p class="fw-bolder mb-1">Beschrijving</p>
+					<div class="col text-center">
+						@Job.Description
+					</div>
+				</div>
+				<hr />
+				<div class="row">
+					<p class="fw-bolder mb-0">Gerelateerde Studierichtingen</p>
+					<div class="w-50">
+						<MudSelect @bind-Value="@LocationValue" Dense="true" T="string" Label="Locatie" Variant="Variant.Text">
+							@foreach (string location in Locations)
+							{
+								<MudSelectItem T="string" Value="@location.ToUpper()">@location</MudSelectItem>
+							}
+						</MudSelect>
+					</div>
+					<div class="row mt-3 text-center mx-auto mb-3">
+						@foreach (StudyCourse studyCourse in FilteredStudyCourse)
+						{
+							<div class="studycourse-custom mb-2">
+								<p class="m-2">@studyCourse.Study - @studyCourse.DiplomaType  - @studyCourse.Location <br> @studyCourse.School</p>
+							</div>
+						}
+					</div>
+				</div>
+			}
+			else
+			{
+				<div class="spinner-border text-primary" role="status">
+					<span class="visually-hidden">Loading...</span>
+				</div>
+				<p>Loading job details...</p>
+			}
+		</div>
+	</div>
+</div>

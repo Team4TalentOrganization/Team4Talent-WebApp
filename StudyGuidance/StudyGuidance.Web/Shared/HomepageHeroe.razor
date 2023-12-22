@@ -1,0 +1,19 @@
+﻿<div style="position: relative; overflow: hidden; height: 100vh; ">
+    
+    <div>
+        <figure class="mt-5 m-0 w-75 mx-auto">
+            <img class="w-100 mx-auto" src="/images/logo-talentit-white.png" alt="Talent-It" />
+        </figure>
+    </div>
+    <MudCarousel Class="mud-width-full" @ref="_carousel" ItemsSource="_source" @bind-SelectedIndex="selectedIndex" Style="height:600px;" ShowArrows="_arrows" ShowBullets="_bullets" EnableSwipeGesture="_enableSwipeGesture" AutoCycle="_autocycle">
+        <ItemTemplate>
+            <div class="d-flex flex-column flex-column justify-center" style="height:100%; opacity: revert;">
+                <div class="container text-center">
+                    <img src="@_source[selectedIndex]" alt="Carousel Image" class="mx-auto" style="max-width: 50%; height: 50; border-radius: 20%;" />
+                    <hr class="mx-auto w-50 carousel-hr" />
+                    <MudText Align="@Align.Center" Class="mx-auto mt-5 w-50 text-white">@_text[selectedIndex]</MudText>
+                </div>
+            </div>
+        </ItemTemplate>
+    </MudCarousel>
+</div>
