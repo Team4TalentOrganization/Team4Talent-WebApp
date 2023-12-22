@@ -35,6 +35,7 @@
 
 
 	<ItemGroup>
+	  <ProjectReference Include="..\StudyGuidance.Domain\StudyGuidance.Domain.csproj" />
 	  <ProjectReference Include="..\StudyGuidance.Web\StudyGuidance.Web.csproj" />
 	</ItemGroup>
 

@@ -56,6 +56,14 @@ namespace StudyGuidance.Domain.Tests
 
             Assert.That(() => question.Phrase = emptyPhrase, Throws.InstanceOf<BusinessException>());
         }
+
+        [Test]
+        public void SetQuestionType_InvalidValue_ShouldThrowBusinessException()
+        {
+            Question question = new Question();
+
+            Assert.That(() => question.QuestionType = (QuestionType)100, Throws.InstanceOf<BusinessException>());
+        }
     }
 
 }

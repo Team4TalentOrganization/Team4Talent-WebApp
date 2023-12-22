@@ -28,10 +28,5 @@ namespace StudyGuidance.Domain.Exceptions
             : base(message, inner)
         {
         }
-
-        public BusinessException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
-        }
     }
 }

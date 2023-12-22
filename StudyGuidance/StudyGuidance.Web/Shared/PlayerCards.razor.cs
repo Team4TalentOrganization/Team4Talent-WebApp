@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using StudyGuidance.Web.Models;
 
 namespace StudyGuidance.Web.Shared
 {
@@ -11,7 +12,7 @@ namespace StudyGuidance.Web.Shared
         new PlayerModel { Name = "Ayoub", Description="Ik heb een technische achtergrond maar weet niet welke job bij mij past.", ImagePath = "/images/man2.png", ShowFront = true, ImageStyle = "width: 100%; height: 100%;", HrStyle= "height: 3px; border: none; background-color: white; opacity: revert;", HrStyleBack="height: 0; visibility: hidden; margin: 0;", CardBodyStyle="", DivStyle="" },
     };
 
-        private void FlipCard(PlayerModel player)
+        public void FlipCard(PlayerModel player)
         {
             player.ShowFront = !player.ShowFront;
             player.ImageStyle = player.ShowFront
@@ -26,17 +27,6 @@ namespace StudyGuidance.Web.Shared
         }
 
 
-        public class PlayerModel
-        {
-            public string Name { get; set; }
-            public string ImagePath { get; set; }
-            public bool ShowFront { get; set; }
-            public string ImageStyle { get; set; }
-            public string HrStyle { get; set; }
-            public string HrStyleBack { get; set; }
-            public string CardBodyStyle { get; set; }
-            public string Description { get; set; }
-            public string DivStyle { get; set; }
-        }
+       
     }
 }

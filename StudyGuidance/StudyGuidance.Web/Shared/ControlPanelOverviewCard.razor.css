@@ -1,0 +1,27 @@
+﻿body {
+}
+
+.divOverview {
+    background-color: #ededed;
+    overflow: auto;
+    margin: 7%;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+#overviewText {
+    padding: 4%;
+}
+
+h6 {
+    color: #007CE0;
+    font-weight: bold;
+}
+
+p {
+    margin: 0;
+}
+
+footer {
+    display: none;
+}

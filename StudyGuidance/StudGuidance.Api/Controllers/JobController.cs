@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using StudGuidance.Domain.Models;
 using StudyGuidance.AppLogic;
 using StudyGuidance.Domain;
+using StudyGuidance.Domain.Models;
+using System.Collections;
 
 namespace StudGuidance.Api.Controllers
 {
@@ -9,10 +12,14 @@ namespace StudGuidance.Api.Controllers
     public class JobController : ControllerBase
     {
         private readonly IJobRepository _jobRepository;
+        private readonly IStudyCourseRepository _studyCourseRepository;
+        private readonly ITestamonialRepository _testamonialRepository;
 
-        public JobController(IJobRepository jobRepository)
+        public JobController(IJobRepository jobRepository, IStudyCourseRepository studyCourseRepository, ITestamonialRepository testamonialRepository)
         {
             _jobRepository = jobRepository;
+            _studyCourseRepository = studyCourseRepository;
+            _testamonialRepository = testamonialRepository;
         }
 
         [HttpGet("jobs")]
@@ -38,7 +45,66 @@ namespace StudGuidance.Api.Controllers
                 return NotFound("Job niet gevonden");
             }
 
-            return Ok(job);
+            Testamonial testamonial = await _testamonialRepository.GetTestamonialByJobId(job.JobId);
+            IReadOnlyList<StudyCourse> associatedStudyCourses = await _studyCourseRepository.GetStudyCoursesByRelationAsync(job.StudyCourseRelation);
+            List<StudyCourseDTO> associatedStudyCoursesDTO = new List<StudyCourseDTO>();
+
+            foreach (StudyCourse course in associatedStudyCourses)
+            {
+                associatedStudyCoursesDTO.Add(new StudyCourseDTO(course));
+            }
+
+            JobDTO jobDTO = new JobDTO(job);
+            jobDTO.AssociatedStudyCourses = associatedStudyCoursesDTO;
+            if(testamonial != null) 
+            {
+                jobDTO.Testamonial = testamonial;
+            } else
+            {
+                jobDTO.Testamonial = null;
+            }
+
+            return Ok(jobDTO);
+        }
+
+        [HttpPost("jobs/add")]
+        public async Task<IActionResult> AddJob([FromBody] JobRequest jobRequest)
+        {
+            Job job = await _jobRepository.AddJobAsync(jobRequest);
+            if (job == null) 
+            {
+                return NotFound();
+            } else
+            {
+                return Ok(job);
+            }
+        }
+
+        [HttpPut("jobs/update")]
+        public async Task<IActionResult> UpdateJob([FromBody] Job incomingJob)
+        {
+            Job job = await _jobRepository.ChangeJobAsync(incomingJob);
+            if (job == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(job);
+            }
+        }
+
+        [HttpDelete("jobs/delete/{id}")]
+        public async Task<IActionResult> DeleteJob(int id)
+        {
+            if (await _jobRepository.DeleteJobAsync(id))
+            {
+                return Ok();
+            }
+            else
+            {
+                return NotFound();
+            }
         }
 
         [HttpGet("jobsByFilter")]
