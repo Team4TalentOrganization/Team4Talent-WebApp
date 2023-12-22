@@ -51,11 +51,16 @@ namespace StudyGuidance.Infrastructure
             var matchingOption = await _context.Options
                 .Where(o => o.Content == jobRequest.SubDomain && o.OptionId > 7)
                 .FirstOrDefaultAsync();
+            Testamonial testamonial = new Testamonial();
+            testamonial.Name = jobRequest.TestamonialRequest.Name;
+            testamonial.Description = jobRequest.TestamonialRequest.Description;
+            testamonial.JobTitel = jobRequest.TestamonialRequest.JobTitel;
 
             Job job = new Job(jobRequest)
             {
                 OptionRelation = matchingOption.OptionId,
                 StudyCourseRelation = 1,
+                Testamonial = testamonial
             };
 
             _context.Jobs.Add(job);
@@ -84,7 +89,16 @@ namespace StudyGuidance.Infrastructure
                 existingJob.WorkInTeam = job.WorkInTeam;
                 existingJob.WorkOnSite = job.WorkOnSite;
                 existingJob.OptionRelation = job.OptionRelation;
-                existingJob.StudyCourseRelation = job.StudyCourseRelation;
+           
+                if (job.StudyCourseRelation != null)
+                {
+                    existingJob.StudyCourseRelation = job.StudyCourseRelation;
+                }
+
+                if (job.Testamonial != null)
+                {
+                    existingJob.Testamonial = job.Testamonial;
+                }
                 existingJob.Testamonial = job.Testamonial;
 
                 await _context.SaveChangesAsync();
@@ -99,11 +113,18 @@ namespace StudyGuidance.Infrastructure
         public async Task<bool> DeleteJobAsync(int id)
         {
             bool jobExists = await _context.Jobs.AnyAsync(j => j.JobId == id);
+
             if (jobExists)
             {
                 Job job = await _context.Jobs.FindAsync(id);
+
+                // Check if the Testamonial property is not null before removing it
+                if (job.Testamonial != null)
+                {
+                    _context.Testamonials.Remove(job.Testamonial);
+                }
+
                 _context.Jobs.Remove(job);
-                _context.Testamonials.Remove(job.Testamonial);
                 await _context.SaveChangesAsync();
                 return true;
             }
