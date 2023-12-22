@@ -13,27 +13,27 @@ namespace StudyGuidance.Web.ApiClient
 
         public async Task AddStudyCourse(StudyCourse studyCourse)
         {
-            await PostJsonAsync<StudyCourse>($"{_url}/Studycourse/studycourse/add", studyCourse);
+            await PostJsonAsync<StudyCourse>($"{_url}Studycourse/studycourse/add", studyCourse);
         }
 
         public async Task DeleteStudyCourse(int id)
         {
-            await DeleteJsonAsync($"{_url}/Studycourse/studycourse/delete/{id}");
+            await DeleteJsonAsync($"{_url}Studycourse/studycourse/delete/{id}");
         }
 
         public async Task<StudyCourse> GetStudyCourseByIdAsync(int id)
         {
-            return await GetJsonAsync<StudyCourse>($"{_url}/Studycourse/studycourse/{id}");
+            return await GetJsonAsync<StudyCourse>($"{_url}Studycourse/studycourse/{id}");
         }
 
         public async Task<List<StudyCourse>> GetStudyCoursesAsync()
         {
-            return await GetJsonAsync<List<StudyCourse>>($"{_url}/Studycourse/studycourse/all");
+            return await GetJsonAsync<List<StudyCourse>>($"{_url}Studycourse/studycourse/all");
         }
 
         public async Task UpdateStudyCourseAsync(StudyCourse studyCourse)
         {
-            await PutJsonAsync<StudyCourse>($"{_url}/Studycourse/studycourse/update/", studyCourse);
+            await PutJsonAsync<StudyCourse>($"{_url}Studycourse/studycourse/update/", studyCourse);
         }
     }
 }
