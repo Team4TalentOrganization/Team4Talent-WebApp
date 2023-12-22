@@ -13,7 +13,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="editJobModalLabel">Edit Job @currentJob.Name</h5>
-                        <button type="button" class="close" @onclick="OnCloseClick" aria-label="Close">
+                        <button type="button" class="close" @onclick="OnCloseClick" aria-label="Sluit">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -45,8 +45,8 @@
                         <input @bind="currentJob.TestamonialRequest.JobTitel" class="form-control" />
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" @onclick="() => OnSaveClick()">Save changes</button>
-                        <button type="button" class="btn btn-secondary" @onclick="OnCloseClick">Close</button>
+                        <button type="button" class="btn btn-primary" @onclick="() => OnSaveClick()">Opslaan</button>
+                        <button type="button" class="btn btn-secondary" @onclick="OnCloseClick">Sluit</button>
                     </div>
                 </div>
             </div>
@@ -84,18 +84,18 @@
                         <label class="form-check-label" for="workInTeamCheckbox">Werken in team</label>
                     </div>
 
-                    <p>Testamonial Name</p>
+                    <p>Testamonial Naam</p>
                     <input @bind="newJob.TestamonialRequest.Name" class="form-control" />
 
-                    <p>Testamonial Description</p>
+                    <p>Testamonial Descriptie</p>
                     <input @bind="newJob.TestamonialRequest.Description" class="form-control" />
 
                     <p>Testamonial Job Titel</p>
                     <input @bind="newJob.TestamonialRequest.JobTitel" class="form-control" />
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" @onclick="() => OnAddJobSaveClick()">Save job</button>
-                    <button type="button" class="btn btn-secondary" @onclick="() => OnCloseJobModalClick()">Close</button>
+                    <button type="button" class="btn btn-primary" @onclick="() => OnAddJobSaveClick()">Opslaan</button>
+                    <button type="button" class="btn btn-secondary" @onclick="() => OnCloseJobModalClick()">Sluit</button>
                 </div>
             </div>
         </div>
@@ -111,8 +111,8 @@
     <thead>
         <tr>
             <th style="width: 15%;" scope="col">Job titel</th>
-            <th style="width: 40%;" scope="col">Beschrijving</th>
-            <th style="width: 10%;" scope="col">Domein</th>
+            <th style="width: 50%;" scope="col">Beschrijving</th>
+            <th style="width: 5%;" scope="col">Domein</th>
         </tr>
     </thead>
     <tbody>
