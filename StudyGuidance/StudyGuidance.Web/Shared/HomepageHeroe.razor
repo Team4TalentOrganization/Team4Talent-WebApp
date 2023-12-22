@@ -1,6 +1,10 @@
 ﻿<div style="position: relative; overflow: hidden; height: 100vh; ">
     
-    <MudBlazor.MudText Class="custom-font-size mud-width-full text-center text-white fw-bold" style="z-index: 1; position: absolute; --mud-typography-body1-size: 45px; margin-top: 40px;">Talent-IT Group</MudBlazor.MudText>
+    <div>
+        <figure>
+            <img src="~/logo-talentit-white.png" alt="Talent-It" />
+        </figure>
+    </div>
     <MudCarousel Class="mud-width-full" @ref="_carousel" ItemsSource="_source" @bind-SelectedIndex="selectedIndex" Style="height:600px;" ShowArrows="_arrows" ShowBullets="_bullets" EnableSwipeGesture="_enableSwipeGesture" AutoCycle="_autocycle">
         <ItemTemplate>
             <div class="d-flex flex-column flex-column justify-center" style="height:100%; opacity: revert;">
