@@ -9,8 +9,8 @@
         public bool WorkInTeam { get; set; }
         public bool WorkOnSite { get; set; }
         public int JobId { get; set; }
-
         public TestamonialRequest TestamonialRequest { get; set; } = new TestamonialRequest();
-        //public List<StudyCourse> StudyCourses { get; set; } = new List<StudyCourse>();
+        public List<StudyCourse> AssociatedStudyCourses { get; set; }
+        public Testamonial Testamonial { get; set; }
     }
 }

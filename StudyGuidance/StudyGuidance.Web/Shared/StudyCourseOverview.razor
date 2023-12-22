@@ -1,0 +1,99 @@
+﻿@using System.Linq
+@using StudyGuidance.Web.Models;
+@using StudyGuidance.Web.ApiClient
+@inject IStudyCourseApiClient StudyCourseApiClient;
+@inject IJSRuntime JSRuntime;
+@inject NavigationManager NavigationManager;
+@if (showEditModal)
+{
+    <div class="modal show" id="editStudyCourseModal" tabindex="-1" role="dialog" aria-labelledby="editStudyCourseModalLabel" aria-hidden="true">
+        @if (currentStudyCourse != null)
+        {
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editStudyCourseModalLabel">Pas studierichting aan @currentStudyCourse.Study</h5>
+                        <button type="button" class="close" @onclick="OnCloseClick" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>School</p>
+                        <input @bind="currentStudyCourse.School" class="form-control" />
+                        <p>Studie</p>
+                        <input @bind="currentStudyCourse.Study" class="form-control" />
+                        <p>Soort diploma</p>
+                        <input @bind="currentStudyCourse.DiplomaType" class="form-control" />
+                        <p>Locatie</p>
+                        <input @bind="currentStudyCourse.Location" class="form-control" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" @onclick="() => OnSaveClick()">Opslaan</button>
+                        <button type="button" class="btn btn-secondary" @onclick="OnCloseClick">Sluiten</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@if (showAddModal)
+{
+    <div class="modal show" id="addStudyCourseModal" tabindex="-1" role="dialog" aria-labelledby="addStudyCourseModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addStudyCourseModalLabel">Studierichting toevoegen</h5>
+                    <button type="button" class="close" @onclick="() => OnCloseStudyCourseModalClick()" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>School</p>
+                    <input @bind="newStudyCourse.School" class="form-control" />
+                    <p>Studie</p>
+                    <input @bind="newStudyCourse.Study" class="form-control" />
+                    <p>Diploma</p>
+                    <input @bind="newStudyCourse.DiplomaType" class="form-control" />
+                    <p>Locatie</p>
+                    <input @bind="newStudyCourse.Location" class="form-control" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" @onclick="() => OnAddStudyCourseSaveClick()">Opslaan</button>
+                    <button type="button" class="btn btn-secondary" @onclick="() => OnCloseStudyCourseModalClick()">Sluiten</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">School</th>
+            <th class="col-collapse" scope="col">Diploma</th>
+            <th scope="col">Locatie</th>
+            <th scope="col">Studie</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var studyCourse in studyCourses)
+        {
+            <tr>
+                <td class="name-td align-middle w-25">@studyCourse.School</td>
+                <td class="email-td align-middle col-collapse">@studyCourse.DiplomaType</td>
+                <td class="company-td align-middle w-25">@studyCourse.Location</td>
+                <td class="company-td align-middle">@studyCourse.Study</td>
+                <td class="pencil-td align-middle"><i class="bi bi-pencil-fill" @onclick="() => OnEditClick(studyCourse)"></i></td>
+                <td class="trash-td align-middle"><i class="bi bi-trash3-fill" @onclick="() => OnDeleteClick(studyCourse)"></i></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="add-div">
+    <MudFab Color="Color.Primary" Icon="@Icons.Material.Filled.Add" Size="MudBlazor.Size.Small" @onclick="() => OnOpenAddModalClick()" />
+</div>
+<div class="home-div">
+    <MudFab Color="Color.Primary" Icon="@Icons.Material.Filled.Home" Size="MudBlazor.Size.Small" @onclick="() => OnHomeClick()" />
+</div>

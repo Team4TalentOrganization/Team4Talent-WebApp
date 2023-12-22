@@ -59,9 +59,6 @@ namespace StudGuidance.Api.Controllers
             if(testamonial != null) 
             {
                 jobDTO.Testamonial = testamonial;
-            } else
-            {
-                jobDTO.Testamonial = null;
             }
 
             return Ok(jobDTO);

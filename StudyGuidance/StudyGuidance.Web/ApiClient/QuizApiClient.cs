@@ -6,7 +6,7 @@ namespace StudyGuidance.Web.ApiClient
 {
     public class QuizApiClient : BaseApiClient, IQuizApiClient
     {
-        private string _url = $"https://localhost:7109/api/Quiz";
+        private string _url = $"https://localhost:7109/api/";
 
         public QuizApiClient(HttpClient httpClient, ILogger<BaseApiClient> logger) : base(httpClient, logger)
         {
@@ -14,33 +14,33 @@ namespace StudyGuidance.Web.ApiClient
 
         public async Task<List<Question>> GetAllDomainQuestions()
         {
-            return await GetJsonAsync<List<Question>>($"{_url}/domainquestions");
+            return await GetJsonAsync<List<Question>>($"{_url}Quiz/domainquestions");
         }
 
         public async Task<List<Question>> GetAllQuestions()
         {
-            return await GetJsonAsync<List<Question>>($"{_url}/questions");
+            return await GetJsonAsync<List<Question>>($"{_url}Quiz/questions");
         }
 
         public async Task<List<Question>> GetAllStandardQuizQuestions()
         {
-            return await GetJsonAsync<List<Question>>($"{_url}/standardquizquestions");
+            return await GetJsonAsync<List<Question>>($"{_url}Quiz/standardquizquestions");
         }
 
         public async Task<List<Question>> GetAllTinderQuizQuestions()
         {
-            return await GetJsonAsync<List<Question>>($"{_url}/tinderquizquestions");
+            return await GetJsonAsync<List<Question>>($"{_url}Quiz/tinderquizquestions");
         }
         public async Task<List<Option>> GetAllSubDomains()
         {
-            return await GetJsonAsync<List<Option>>("https://localhost:7109/api/Quiz/subdomains/all");
+			return await GetJsonAsync<List<Option>>($"{_url}Quiz/subdomains/all");
         }
 
         public async Task<List<Question>> GetSubdomains(List<int> domainIds)
         {
             StringBuilder endpointBuilder = new StringBuilder();
             endpointBuilder.Append(_url);
-            endpointBuilder.Append("/subdomains?");
+            endpointBuilder.Append("Quiz/subdomains?");
             bool isFirstDomain = true;
 
             foreach (int domainId in domainIds)

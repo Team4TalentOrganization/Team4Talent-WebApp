@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.Extensions.Options;
 using Microsoft.JSInterop;
 using StudyGuidance.Web.ApiClient;
 using StudyGuidance.Web.Models;
@@ -15,7 +16,28 @@ namespace StudyGuidance.Web.Shared
         [Parameter]
         public int Id { get; set; }
 
-        public Job Job;
+        public Job Job { get; set; }
+
+        public List<string> Locations { get; set; }
+
+        public string LocationValue = "All";
+
+        public List<StudyCourse> FilteredStudyCourse
+        {
+            get
+            {
+				if (string.IsNullOrWhiteSpace(LocationValue) || LocationValue.Equals("All", StringComparison.OrdinalIgnoreCase))
+				{
+                    return Job.AssociatedStudyCourses;
+				}
+				else
+				{
+					return Job.AssociatedStudyCourses
+				            .Where(course => course.Location.Equals(LocationValue, StringComparison.OrdinalIgnoreCase))
+				            .ToList();
+				}
+			}
+        }
 
         public async Task InitializeAsync(int id)
         {
@@ -26,6 +48,8 @@ namespace StudyGuidance.Web.Shared
         protected override async Task OnParametersSetAsync()
         {
             Job = await JobApiClient.GetJobByIdAsync(Id);
+            Locations = await JobApiClient.GetLocationsAsync();
+            Locations.Add("All");
         }
 
         public async Task GoBackToOverview()

@@ -10,7 +10,7 @@ env:
   AZURE_WEBAPP_PACKAGE_PATH_BACKEND: './publish_backend'
 
   FRONTEND_URL_LOCATTION: './StudyGuidance/StudyGuidance.Web/ApiClient/'
-  BACKEND_URL: 'https://studguidanceapi.azurewebsites.net/api/Quiz'
+  BACKEND_URL: 'https://studguidanceapi.azurewebsites.net/api/'
   DOTNET_VERSION: '6.0'
   CONFIGURATION: Release
   AZURE_CORE_OUTPUT: 'none'
@@ -47,8 +47,10 @@ jobs:
 
       - name: Set Backend URL
         run: |
-          sed -i 's|"https://localhost:7109/api/Quiz"|"${{ env.BACKEND_URL }}"|g' "${{ env.FRONTEND_URL_LOCATTION }}QuizApiClient.cs"
-          sed -i 's|"https://localhost:7109/api/Quiz"|"${{ env.BACKEND_URL }}"|g' "${{ env.FRONTEND_URL_LOCATTION }}JobApiClient.cs"
+          sed -i 's|"https://localhost:7109/api/"|"${{ env.BACKEND_URL }}"|g' "${{ env.FRONTEND_URL_LOCATTION }}QuizApiClient.cs"
+          sed -i 's|"https://localhost:7109/api/"|"${{ env.BACKEND_URL }}"|g' "${{ env.FRONTEND_URL_LOCATTION }}JobApiClient.cs"
+          sed -i 's|"https://localhost:7109/api/"|"${{ env.BACKEND_URL }}"|g' "${{ env.FRONTEND_URL_LOCATTION }}StudyCourseApiClient.cs"
+          sed -i 's|"https://localhost:7109/api/"|"${{ env.BACKEND_URL }}"|g' "${{ env.FRONTEND_URL_LOCATTION }}RecruiterApiClient.cs"
 
       - name: Restore
         run: dotnet restore "${{ env.WORKING_DIRECTORY_FRONTEND }}"

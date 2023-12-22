@@ -23,9 +23,11 @@ builder.Services.AddDbContext<StudyGuidanceDbContext>(options =>
 
 builder.Services.AddScoped<IQuizRepository, QuizDbRepository>();
 builder.Services.AddScoped<IJobRepository, JobDbRepository>();
+builder.Services.AddScoped<IRecruiterRepository, RecruiterDbRepository>();
 builder.Services.AddScoped<IStudyCourseRepository, StudyCourseRepository>();
 builder.Services.AddScoped<ITestamonialRepository, TestamonialRepository>();
 builder.Services.AddScoped<IQuestionModificationService, QuestionModificationService>();
+
 
 var app = builder.Build();
 
