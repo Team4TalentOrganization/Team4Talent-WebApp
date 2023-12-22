@@ -20,11 +20,11 @@
                     <div class="modal-body">
                         <p>School</p>
                         <input @bind="currentStudyCourse.School" class="form-control" />
-                        <p>Study</p>
+                        <p>Studie</p>
                         <input @bind="currentStudyCourse.Study" class="form-control" />
-                        <p>DiplomaType</p>
+                        <p>Soort diploma</p>
                         <input @bind="currentStudyCourse.DiplomaType" class="form-control" />
-                        <p>Location</p>
+                        <p>Locatie</p>
                         <input @bind="currentStudyCourse.Location" class="form-control" />
                     </div>
                     <div class="modal-footer">
@@ -51,16 +51,16 @@
                 <div class="modal-body">
                     <p>School</p>
                     <input @bind="newStudyCourse.School" class="form-control" />
-                    <p>Study</p>
+                    <p>Studie</p>
                     <input @bind="newStudyCourse.Study" class="form-control" />
-                    <p>DiplomaType</p>
+                    <p>Diploma</p>
                     <input @bind="newStudyCourse.DiplomaType" class="form-control" />
-                    <p>Location</p>
+                    <p>Locatie</p>
                     <input @bind="newStudyCourse.Location" class="form-control" />
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" @onclick="() => OnAddStudyCourseSaveClick()">Save recruiter</button>
-                    <button type="button" class="btn btn-secondary" @onclick="() => OnCloseStudyCourseModalClick()">Close</button>
+                    <button type="button" class="btn btn-primary" @onclick="() => OnAddStudyCourseSaveClick()">Opslaan</button>
+                    <button type="button" class="btn btn-secondary" @onclick="() => OnCloseStudyCourseModalClick()">Sluiten</button>
                 </div>
             </div>
         </div>
@@ -71,19 +71,19 @@
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">SCHOOL</th>
-            <th class="col-collapse" scope="col">DiplomaType</th>
-            <th scope="col">Location</th>
-            <th scope="col">study</th>
+            <th scope="col">School</th>
+            <th class="col-collapse" scope="col">Diploma</th>
+            <th scope="col">Locatie</th>
+            <th scope="col">Studie</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var studyCourse in studyCourses)
         {
             <tr>
-                <td class="name-td align-middle">@studyCourse.School</td>
+                <td class="name-td align-middle w-25">@studyCourse.School</td>
                 <td class="email-td align-middle col-collapse">@studyCourse.DiplomaType</td>
-                <td class="company-td align-middle">@studyCourse.Location</td>
+                <td class="company-td align-middle w-25">@studyCourse.Location</td>
                 <td class="company-td align-middle">@studyCourse.Study</td>
                 <td class="pencil-td align-middle"><i class="bi bi-pencil-fill" @onclick="() => OnEditClick(studyCourse)"></i></td>
                 <td class="trash-td align-middle"><i class="bi bi-trash3-fill" @onclick="() => OnDeleteClick(studyCourse)"></i></td>

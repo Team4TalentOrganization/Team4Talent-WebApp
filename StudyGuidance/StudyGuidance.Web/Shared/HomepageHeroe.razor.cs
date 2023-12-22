@@ -18,11 +18,11 @@ namespace StudyGuidance.Web.Shared
         };
 
         public IList<string> _text = new List<string>()
-    {
-        "Via Talent-IT Group heb ik mijn droomjob gevonden!",
-        "De juiste studierichting? Talent-IT Group heeft me super goed geholpen",
-        "De juiste studierichting vinden om je droomjob te doen? Talent-IT Group!",
-    };
+        {
+            "Via Talent-IT Group heb ik mijn droomjob gevonden!",
+            "De juiste studierichting? Talent-IT Group heeft me super goed geholpen",
+            "De juiste studierichting vinden om je droomjob te doen? Talent-IT Group!",
+        };
 
         public int selectedIndex = 0;
     }
