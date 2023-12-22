@@ -14,13 +14,13 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
 
         private QuizController _controller;
         private Mock<IQuizRepository> _questionRepositoryMock;
-        private Mock<IQuestionModificationService> _questionModificationServiceMock;
+        private Mock<IQuestionService> _questionModificationServiceMock;
 
         [SetUp]
         public void SetUp()
         {
             _questionRepositoryMock = new Mock<IQuizRepository>();
-            _questionModificationServiceMock = new Mock<IQuestionModificationService>();
+            _questionModificationServiceMock = new Mock<IQuestionService>();
             _controller = new QuizController(_questionRepositoryMock.Object, _questionModificationServiceMock.Object);
         }
 
@@ -34,7 +34,7 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
             };
             _questionRepositoryMock.Setup(repo => repo.GetQuestionsAsync()).ReturnsAsync(questions);
 
-            _questionModificationServiceMock.Setup(service => service.ModifyQuestions(It.IsAny<List<Question>>())).Returns<List<Question>>(inputQuestions => inputQuestions);
+            _questionModificationServiceMock.Setup(service => service.AddUntilFourOptionsPerQuestion(It.IsAny<List<Question>>())).Returns<List<Question>>(inputQuestions => inputQuestions);
 
             var result = await _controller.GetAllQuestions();
 
@@ -70,7 +70,7 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
                 new QuestionBuilder().WithQuestionId(domainIds[1]).Build(),
             };
             _questionRepositoryMock.Setup(repo => repo.GetSelectedSubDomainsAsync(domainIds)).ReturnsAsync(subDomains);
-            _questionModificationServiceMock.Setup(service => service.ModifyQuestions(It.IsAny<List<Question>>())).Returns<List<Question>>(inputQuestions => inputQuestions);
+            _questionModificationServiceMock.Setup(service => service.AddUntilFourOptionsPerQuestion(It.IsAny<List<Question>>())).Returns<List<Question>>(inputQuestions => inputQuestions);
 
             var result = await _controller.GetAllSubDomains(domainIds);
 
@@ -85,7 +85,7 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
             var invalidDomainIds = new List<int> { 3, 4 };
             var subDomains = new List<Question> { };
             _questionRepositoryMock.Setup(repo => repo.GetSelectedSubDomainsAsync(invalidDomainIds)).ReturnsAsync(subDomains);
-            _questionModificationServiceMock.Setup(service => service.ModifyQuestions(It.IsAny<List<Question>>())).Returns<List<Question>>(inputQuestions => inputQuestions);
+            _questionModificationServiceMock.Setup(service => service.AddUntilFourOptionsPerQuestion(It.IsAny<List<Question>>())).Returns<List<Question>>(inputQuestions => inputQuestions);
 
             var result = await _controller.GetAllSubDomains(invalidDomainIds);
 
@@ -97,7 +97,7 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
         {
             var emptyList = new List<Question>();
             _questionRepositoryMock.Setup(repo => repo.GetQuestionsAsync()).ReturnsAsync(emptyList);
-            _questionModificationServiceMock.Setup(service => service.ModifyQuestions(It.IsAny<List<Question>>())).Returns<List<Question>>(inputQuestions => inputQuestions);
+            _questionModificationServiceMock.Setup(service => service.AddUntilFourOptionsPerQuestion(It.IsAny<List<Question>>())).Returns<List<Question>>(inputQuestions => inputQuestions);
 
             // Act
             var result = await _controller.GetAllQuestions();
@@ -128,7 +128,7 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
             new QuestionBuilder().Build(),
         };
             _questionRepositoryMock.Setup(repo => repo.GetDomainQuestionsAsync()).ReturnsAsync(domainQuestions);
-            _questionModificationServiceMock.Setup(service => service.ModifyQuestions(It.IsAny<List<Question>>())).Returns<List<Question>>(inputQuestions => inputQuestions);
+            _questionModificationServiceMock.Setup(service => service.AddUntilFourOptionsPerQuestion(It.IsAny<List<Question>>())).Returns<List<Question>>(inputQuestions => inputQuestions);
 
             var result = await _controller.GetAllDomainQuestions();
 
@@ -146,7 +146,7 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
             new QuestionBuilder().Build(),
         };
             _questionRepositoryMock.Setup(repo => repo.GetStandardQuizQuestionsAsync()).ReturnsAsync(standardQuizQuestions);
-            _questionModificationServiceMock.Setup(service => service.ModifyQuestions(It.IsAny<List<Question>>())).Returns<List<Question>>(inputQuestions => inputQuestions);
+            _questionModificationServiceMock.Setup(service => service.AddUntilFourOptionsPerQuestion(It.IsAny<List<Question>>())).Returns<List<Question>>(inputQuestions => inputQuestions);
 
             var result = await _controller.GetAllStandardQuizQuestions();
 
@@ -164,7 +164,7 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
             new QuestionBuilder().Build(),
         };
             _questionRepositoryMock.Setup(repo => repo.GetTinderQuizQuestionsAsync()).ReturnsAsync(tinderQuizQuestions);
-            _questionModificationServiceMock.Setup(service => service.ModifyQuestions(It.IsAny<List<Question>>())).Returns<List<Question>>(inputQuestions => inputQuestions);
+            _questionModificationServiceMock.Setup(service => service.AddUntilFourOptionsPerQuestion(It.IsAny<List<Question>>())).Returns<List<Question>>(inputQuestions => inputQuestions);
 
             var result = await _controller.GetAllTinderQuizQuestions();
 
@@ -195,7 +195,7 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
         {
             var emptyList = new List<Question>();
             _questionRepositoryMock.Setup(repo => repo.GetDomainQuestionsAsync()).ReturnsAsync(emptyList);
-            _questionModificationServiceMock.Setup(service => service.ModifyQuestions(It.IsAny<List<Question>>())).Returns<List<Question>>(inputQuestions => inputQuestions);
+            _questionModificationServiceMock.Setup(service => service.AddUntilFourOptionsPerQuestion(It.IsAny<List<Question>>())).Returns<List<Question>>(inputQuestions => inputQuestions);
 
             // Act
             var result = await _controller.GetAllDomainQuestions();
@@ -209,7 +209,7 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
         {
             var emptyList = new List<Question>();
             _questionRepositoryMock.Setup(repo => repo.GetStandardQuizQuestionsAsync()).ReturnsAsync(emptyList);
-            _questionModificationServiceMock.Setup(service => service.ModifyQuestions(It.IsAny<List<Question>>())).Returns<List<Question>>(inputQuestions => inputQuestions);
+            _questionModificationServiceMock.Setup(service => service.AddUntilFourOptionsPerQuestion(It.IsAny<List<Question>>())).Returns<List<Question>>(inputQuestions => inputQuestions);
 
             // Act
             var result = await _controller.GetAllStandardQuizQuestions();
@@ -223,7 +223,7 @@ namespace StudyGuidance.Api.Tests.Controllers.Api
         {
             var emptyList = new List<Question>();
             _questionRepositoryMock.Setup(repo => repo.GetTinderQuizQuestionsAsync()).ReturnsAsync(emptyList);
-            _questionModificationServiceMock.Setup(service => service.ModifyQuestions(It.IsAny<List<Question>>())).Returns<List<Question>>(inputQuestions => inputQuestions);
+            _questionModificationServiceMock.Setup(service => service.AddUntilFourOptionsPerQuestion(It.IsAny<List<Question>>())).Returns<List<Question>>(inputQuestions => inputQuestions);
 
             // Act
             var result = await _controller.GetAllTinderQuizQuestions();

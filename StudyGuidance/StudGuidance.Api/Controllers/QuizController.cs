@@ -9,8 +9,8 @@ namespace StudGuidance.Api.Controllers
     public class QuizController : ControllerBase
     {
         private readonly IQuizRepository _questionRepository;
-        private readonly IQuestionModificationService _questionModificationService;
-        public QuizController(IQuizRepository questionRepository, IQuestionModificationService questionModificationService)
+        private readonly IQuestionService _questionModificationService;
+        public QuizController(IQuizRepository questionRepository, IQuestionService questionModificationService)
         {
             _questionRepository = questionRepository;
             _questionModificationService = questionModificationService;
@@ -20,7 +20,7 @@ namespace StudGuidance.Api.Controllers
         public async Task<IActionResult> GetAllQuestions()
         {
             IReadOnlyList<Question> allQuestions = await _questionRepository.GetQuestionsAsync();
-            allQuestions = _questionModificationService.ModifyQuestions(allQuestions);
+            allQuestions = _questionModificationService.AddUntilFourOptionsPerQuestion(allQuestions);
 
             if (allQuestions.Count <= 0) 
             {
@@ -34,7 +34,7 @@ namespace StudGuidance.Api.Controllers
         public async Task<IActionResult> GetAllDomainQuestions()
         {
             IReadOnlyList<Question> allDomainQuestions = await _questionRepository.GetDomainQuestionsAsync();
-            allDomainQuestions = _questionModificationService.ModifyQuestions(allDomainQuestions);
+            allDomainQuestions = _questionModificationService.AddUntilFourOptionsPerQuestion(allDomainQuestions);
 
             if (allDomainQuestions.Count <= 0)
             {
@@ -48,7 +48,7 @@ namespace StudGuidance.Api.Controllers
         public async Task<IActionResult> GetAllStandardQuizQuestions()
         {
             IReadOnlyList<Question> allStandardQuizQuestions = await _questionRepository.GetStandardQuizQuestionsAsync();
-            allStandardQuizQuestions = _questionModificationService.ModifyQuestions(allStandardQuizQuestions);
+            allStandardQuizQuestions = _questionModificationService.AddUntilFourOptionsPerQuestion(allStandardQuizQuestions);
 
             if (allStandardQuizQuestions.Count <= 0)
             {
@@ -62,7 +62,7 @@ namespace StudGuidance.Api.Controllers
         public async Task<IActionResult> GetAllTinderQuizQuestions()
         {
             IReadOnlyList<Question> allTinderQuizQuestions = await _questionRepository.GetTinderQuizQuestionsAsync();
-            allTinderQuizQuestions = _questionModificationService.ModifyQuestions(allTinderQuizQuestions);
+            allTinderQuizQuestions = _questionModificationService.AddUntilFourOptionsPerQuestion(allTinderQuizQuestions);
 
             if (allTinderQuizQuestions.Count <= 0)
             {
@@ -89,7 +89,7 @@ namespace StudGuidance.Api.Controllers
         public async Task<IActionResult> GetAllSubDomains([FromQuery] List<int> domainId)
         {
             IReadOnlyList<Question> allSelectedSubDomains = await _questionRepository.GetSelectedSubDomainsAsync(domainId);
-            allSelectedSubDomains = _questionModificationService.ModifyQuestions(allSelectedSubDomains);
+            allSelectedSubDomains = _questionModificationService.AddUntilFourOptionsPerQuestion(allSelectedSubDomains);
 
             if (allSelectedSubDomains.Count == 0) 
             { 

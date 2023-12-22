@@ -5,9 +5,9 @@ using System.Linq;
 
 namespace StudyGuidance.AppLogic
 {
-    public class QuestionModificationService : IQuestionModificationService
+    public class QuestionService : IQuestionService
     {
-        public IReadOnlyList<Question> ModifyQuestions(IReadOnlyList<Question> questions)
+        public IReadOnlyList<Question> AddUntilFourOptionsPerQuestion(IReadOnlyList<Question> questions)
         {
             List<Question> modifiedQuestions = new List<Question>();
 
