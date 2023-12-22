@@ -37,5 +37,20 @@ namespace StudyGuidance.Web.ApiClient
 
             return result ?? new List<Job>();
         }
+
+        public async Task AddJob(Job job)
+        {
+            await PostJsonAsync<Job>($"{_url}/createjob", job);
+        }
+
+        public async Task DeleteJob(int id)
+        {
+            await DeleteJsonAsync($"{_url}/jobs/delete/{id}");
+        }
+
+        public async Task UpdateJobAsync(Job job)
+        {
+            await PutJsonAsync<Job>($"{_url}/jobs/update/{job.JobId}", job);
+        }
     }
 }

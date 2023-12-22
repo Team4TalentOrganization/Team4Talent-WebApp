@@ -1,0 +1,136 @@
+﻿@using System.Linq
+@using StudyGuidance.Web.Models;
+@using StudyGuidance.Web.ApiClient
+@inject IJobApiClient JobApiClient;
+@inject IJSRuntime JSRuntime;
+@inject NavigationManager NavigationManager;
+@if (showEditModal)
+{
+    <div class="modal show" id="editJobModal" tabindex="-1" role="dialog" aria-labelledby="editJobModalLabel" aria-hidden="true">
+        @if (currentJob != null)
+        {
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editJobModalLabel">Edit Job @currentJob.Name</h5>
+                        <button type="button" class="close" @onclick="OnCloseClick" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Job titel</p>
+                        <input @bind="currentJob.Name" class="form-control" />
+                        <p>Beschrijving</p>
+                        <input @bind="currentJob.Description" class="form-control" />
+                        <p>Domein</p>
+                        <input @bind="currentJob.Domain" class="form-control" />
+                        <p>Sub domein</p>
+                        <input @bind="currentJob.SubDomain" class="form-control" />
+                        <div class="form-check">
+                            <input type="checkbox" @bind="currentJob.WorkOnSite" class="form-check-input" />
+                            <label class="form-check-label" for="workOnSiteCheckbox">Werken op de bedrijfsvloer</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="checkbox" @bind="currentJob.WorkInTeam" class="form-check-input" />
+                            <label class="form-check-label" for="workInTeamCheckbox">Werken in team</label>
+                        </div>
+                        <p>Testamonial Name</p>
+                        <input @bind="currentJob.TestamonialRequest.Name" class="form-control" />
+
+                        <p>Testamonial Description</p>
+                        <input @bind="currentJob.TestamonialRequest.Description" class="form-control" />
+
+                        <p>Testamonial Job Titel</p>
+                        <input @bind="currentJob.TestamonialRequest.JobTitel" class="form-control" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" @onclick="() => OnSaveClick()">Save changes</button>
+                        <button type="button" class="btn btn-secondary" @onclick="OnCloseClick">Close</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@if (showAddModal)
+{
+    <div class="modal show" id="addJobModal" tabindex="-1" role="dialog" aria-labelledby="addJobModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addJobModalLabel">Add Job</h5>
+                    <button type="button" class="close" @onclick="() => OnCloseJobModalClick()" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Job titel</p>
+                    <input @bind="newJob.Name" class="form-control" />
+                    <p>Beschrijving</p>
+                    <input @bind="newJob.Description" class="form-control" />
+                    <p>Domein</p>
+                    <input @bind="newJob.Domain" class="form-control" />
+                    <p>Sub domein</p>
+                    <input @bind="newJob.SubDomain" class="form-control" />
+                    <div class="form-check">
+                        <input type="checkbox" @bind="newJob.WorkOnSite" class="form-check-input" />
+                        <label class="form-check-label" for="workOnSiteCheckbox">Werken op de bedrijfsvloer</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="checkbox" @bind="newJob.WorkInTeam" class="form-check-input" />
+                        <label class="form-check-label" for="workInTeamCheckbox">Werken in team</label>
+                    </div>
+
+                    <p>Testamonial Name</p>
+                    <input @bind="newJob.TestamonialRequest.Name" class="form-control" />
+
+                    <p>Testamonial Description</p>
+                    <input @bind="newJob.TestamonialRequest.Description" class="form-control" />
+
+                    <p>Testamonial Job Titel</p>
+                    <input @bind="newJob.TestamonialRequest.JobTitel" class="form-control" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" @onclick="() => OnAddJobSaveClick()">Save job</button>
+                    <button type="button" class="btn btn-secondary" @onclick="() => OnCloseJobModalClick()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="search-container">
+    <input class="filterInput" @bind="searchTerm" type="text" placeholder="Zoek voor jobs...">
+    <button class="btn searchButton" @onclick="OnSearch">Zoek</button>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Job titel</th>
+            <th scope="col">Beschrijving</th>
+            <th scope="col">Domein</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var job in jobs)
+        {
+            <tr>
+                <td class="name-td align-middle">@job.Name</td>
+                <td class="email-td align-middle">@job.Description</td>
+                <td class="company-td align-middle">@job.Domain</td>
+                <!--<td class="pencil-td align-middle"><i class="bi bi-pencil-fill" @onclick="() => OnEditClick(job)"></i></td>-->
+                <td class="trash-td align-middle"><i class="bi bi-trash3-fill" @onclick="() => OnDeleteClick(job)"></i></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="add-div">
+    <MudFab Color="Color.Primary" Icon="@Icons.Material.Filled.Add" Size="MudBlazor.Size.Small" @onclick="() => OnOpenAddModalClick()" />
+</div>
+<div class="home-div">
+    <MudFab Color="Color.Primary" Icon="@Icons.Material.Filled.Home" Size="MudBlazor.Size.Small" @onclick="() => OnHomeClick()" />
+</div>

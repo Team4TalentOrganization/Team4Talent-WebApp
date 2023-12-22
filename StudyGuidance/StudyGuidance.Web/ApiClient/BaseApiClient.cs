@@ -63,7 +63,7 @@ namespace StudyGuidance.Web.ApiClient
             return default;
         }
 
-        protected async Task<bool> DeleteAsync(string endpoint)
+        protected async Task<bool> DeleteJsonAsync(string endpoint)
         {
             try
             {
