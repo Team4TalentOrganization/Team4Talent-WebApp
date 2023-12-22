@@ -64,7 +64,7 @@ namespace StudGuidance.Api.Controllers
             return Ok(jobDTO);
         }
 
-        [HttpPost("jobs/add")]
+        [HttpPost("createjob")]
         public async Task<IActionResult> AddJob([FromBody] JobRequest jobRequest)
         {
             Job job = await _jobRepository.AddJobAsync(jobRequest);
@@ -77,18 +77,15 @@ namespace StudGuidance.Api.Controllers
             }
         }
 
-        [HttpPut("jobs/update")]
-        public async Task<IActionResult> UpdateJob([FromBody] Job incomingJob)
+        [HttpPut("jobs/update/{jobId}")]
+        public async Task<IActionResult> UpdateJob(int jobId, [FromBody] Job incomingJob)
         {
-            Job job = await _jobRepository.ChangeJobAsync(incomingJob);
-            if (job == null)
+            if (await _jobRepository.GetJobByIdAsync(jobId) == null)
             {
-                return NotFound();
+                return NotFound("Recruiter met opgegeven ID bestaat niet");
             }
-            else
-            {
-                return Ok(job);
-            }
+            await _jobRepository.ChangeJobAsync(incomingJob);
+            return Ok();
         }
 
         [HttpDelete("jobs/delete/{id}")]

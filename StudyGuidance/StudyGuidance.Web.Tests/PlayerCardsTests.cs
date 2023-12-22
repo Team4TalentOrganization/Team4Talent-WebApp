@@ -24,9 +24,9 @@ namespace StudyGuidance.Web.Tests
         //    // Arrange
         //    var player = new PlayerCards.PlayerModel { ShowFront = true };
 
+
         //    // Act
         //    playerCards.FlipCard(player);
-
         //    // Assert
         //    Assert.IsFalse(player.ShowFront);
         //}
@@ -72,7 +72,6 @@ namespace StudyGuidance.Web.Tests
 
         //    // Act
         //    playerCards.FlipCard(player);
-
         //    // Assert
         //    Assert.AreEqual("width: 100%; height: 100%; opacity: 1; transform: translateY(0); transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;", player.ImageStyle);
         //    Assert.AreEqual("height: 3px; border: none; background-color: white; opacity: revert;", player.HrStyle);

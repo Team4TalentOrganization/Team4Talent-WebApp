@@ -1,0 +1,22 @@
+﻿.header {
+    text-align: center;
+    color: #FF6900;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.line {
+    border: 2px solid black;
+    width: 200px;
+    margin: auto;
+    opacity: 100%;
+}
+
+.parentDiv {
+    overflow-x: hidden;
+    background-color: white;
+}
+
+    .parentDiv::-webkit-scrollbar {
+        display: none;
+    }

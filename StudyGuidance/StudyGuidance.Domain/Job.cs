@@ -29,7 +29,9 @@ namespace StudyGuidance.Domain
             Description = jobRequest.Description ?? throw new BusinessException("Description cannot be null or empty.");
             WorkInTeam = jobRequest.WorkInTeam;
             WorkOnSite = jobRequest.WorkOnSite;
-            Testamonial = new Testamonial(jobRequest.TestamonialRequest, JobId);
+            Testamonial = jobRequest.TestamonialRequest != null
+            ? new Testamonial(jobRequest.TestamonialRequest, JobId)
+            : new Testamonial();
         }
 
         public bool WorkInTeam { get; set; }

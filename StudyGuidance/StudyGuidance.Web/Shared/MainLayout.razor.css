@@ -6,7 +6,10 @@
 
 main {
     flex: 1;
-    overflow: hidden;
+}
+
+main::-webkit-scrollbar {
+    display: none;
 }
 
 #video video {
