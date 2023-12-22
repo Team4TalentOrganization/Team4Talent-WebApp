@@ -14,22 +14,22 @@ namespace StudyGuidance.Web.ApiClient
 
         public async Task<List<Question>> GetAllDomainQuestions()
         {
-            return await GetJsonAsync<List<Question>>($"{_url}/Quiz/domainquestions");
+            return await GetJsonAsync<List<Question>>($"{_url}Quiz/domainquestions");
         }
 
         public async Task<List<Question>> GetAllQuestions()
         {
-            return await GetJsonAsync<List<Question>>($"{_url}/Quiz/questions");
+            return await GetJsonAsync<List<Question>>($"{_url}Quiz/questions");
         }
 
         public async Task<List<Question>> GetAllStandardQuizQuestions()
         {
-            return await GetJsonAsync<List<Question>>($"{_url}/Quiz/standardquizquestions");
+            return await GetJsonAsync<List<Question>>($"{_url}Quiz/standardquizquestions");
         }
 
         public async Task<List<Question>> GetAllTinderQuizQuestions()
         {
-            return await GetJsonAsync<List<Question>>($"{_url}/Quiz/tinderquizquestions");
+            return await GetJsonAsync<List<Question>>($"{_url}Quiz/tinderquizquestions");
         }
         public async Task<List<Option>> GetAllSubDomains()
         {
@@ -40,7 +40,7 @@ namespace StudyGuidance.Web.ApiClient
         {
             StringBuilder endpointBuilder = new StringBuilder();
             endpointBuilder.Append(_url);
-            endpointBuilder.Append("/Quiz/subdomains?");
+            endpointBuilder.Append("Quiz/subdomains?");
             bool isFirstDomain = true;
 
             foreach (int domainId in domainIds)

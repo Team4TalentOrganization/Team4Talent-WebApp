@@ -8,7 +8,7 @@ namespace StudyGuidance.Web.Shared
     {
         private List<StudyCourse> studyCourses = new List<StudyCourse>();
         StudyCourse? currentStudyCourse;
-        StudyCourse? newStudyCourse = new StudyCourse();
+        StudyCourse newStudyCourse = new StudyCourse();
         private Boolean showEditModal;
         private Boolean showAddModal;
 

@@ -16,23 +16,23 @@ namespace StudyGuidance.Web.ApiClient
 
         public async Task<List<Option>> GetAllDomains()
         {
-            return await GetJsonAsync<List<Option>>($"{_url}/Job/domains");
+            return await GetJsonAsync<List<Option>>($"{_url}Job/domains");
         }
 
         public async Task<Job> GetJobByIdAsync(int id)
 		{
-			return await GetJsonAsync<Job>($"{_url}/Job/jobs/detail/{id}");
+			return await GetJsonAsync<Job>($"{_url}Job/jobs/detail/{id}");
 		}
 
         public async Task<List<Job>> GetJobsAsync()
         {
-            return await GetJsonAsync<List<Job>>($"{_url}/Job/jobs");
+            return await GetJsonAsync<List<Job>>($"{_url}Job/jobs");
         }
 
         public async Task<List<Job>> GetJobsByFilterAsync(List<string> subdomains, bool workInTeam, bool workOnSite)
         {
             string subdomainsParam = string.Join("&", subdomains.Select(subdomain => $"subdomains={subdomain}"));
-            string url = $"{_url}/jobsByFilter?{subdomainsParam}&workInTeam={workInTeam}&workOnSite={workOnSite}";
+            string url = $"{_url}Job/jobsByFilter?{subdomainsParam}&workInTeam={workInTeam}&workOnSite={workOnSite}";
             List<Job> result = await GetJsonAsync<List<Job>>(url);
 
             return result ?? new List<Job>();
@@ -40,7 +40,7 @@ namespace StudyGuidance.Web.ApiClient
 
 		public async Task<List<string>> GetLocationsAsync()
 		{
-			List<string> locations = await GetJsonAsync<List<string>>($"{_url}/StudyCourse/locations");
+			List<string> locations = await GetJsonAsync<List<string>>($"{_url}StudyCourse/locations");
             return locations ?? new List<string>();
 		}
 	}

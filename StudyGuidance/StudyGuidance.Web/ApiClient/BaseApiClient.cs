@@ -17,7 +17,7 @@ namespace StudyGuidance.Web.ApiClient
 			Logger = logger ?? throw new ArgumentNullException(nameof(logger));
 		}
 
-		protected async Task<T> GetJsonAsync<T>(string endpoint)
+		protected async Task<T?> GetJsonAsync<T>(string endpoint)
 		{
 			try
 			{
