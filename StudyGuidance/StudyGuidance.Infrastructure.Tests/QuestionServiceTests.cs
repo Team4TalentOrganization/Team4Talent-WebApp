@@ -9,18 +9,18 @@ using StudyGuidance.AppLogic;
 
 namespace StudyGuidance.Infrastructure.Tests
 {
-    public class QuestionModificationServiceTests
+    public class QuestionServiceTests
     {
-        private QuestionModificationService _service;
+        private QuestionService _service;
 
         [SetUp]
         public void SetUp()
         {
-            _service = new QuestionModificationService();
+            _service = new QuestionService();
         }
 
         [Test]
-        public async Task QuestionModification_ReturnsAllQuestionsWithFourOptions()
+        public async Task AddUntilFourOptionsPerQuestion_ReturnsAllQuestionsWithFourOptions()
         {
             // Arrange
             var questions = new List<Question>
@@ -48,7 +48,7 @@ namespace StudyGuidance.Infrastructure.Tests
             questions[1].Options.AddRange(optionsQuestionTwo);
 
             // Act
-            var modifiedQuestions = _service.ModifyQuestions(questions);
+            var modifiedQuestions = _service.AddUntilFourOptionsPerQuestion(questions);
 
             // Assert
             Assert.IsNotNull(modifiedQuestions);
@@ -56,7 +56,7 @@ namespace StudyGuidance.Infrastructure.Tests
             Assert.IsTrue(modifiedQuestions.All(q => q.Options.Count == 4));
         }
         [Test]
-        public void ModifyQuestions_WhenOptionsCountGreaterThanFour_CreatesNewQuestions()
+        public void AddUntilFourOptionsPerQuestion_WhenOptionsCountGreaterThanFour_CreatesNewQuestions()
         {
             // Arrange
             var questions = new List<Question>
@@ -80,7 +80,7 @@ namespace StudyGuidance.Infrastructure.Tests
     };
 
             // Act
-            var modifiedQuestions = _service.ModifyQuestions(questions);
+            var modifiedQuestions = _service.AddUntilFourOptionsPerQuestion(questions);
 
             // Assert
             Assert.IsNotNull(modifiedQuestions);

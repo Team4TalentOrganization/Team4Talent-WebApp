@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace StudyGuidance.AppLogic
 {
-    public interface IQuestionModificationService
+    public interface IQuestionService
     {
-        IReadOnlyList<Question> ModifyQuestions(IReadOnlyList<Question> questions);
+        IReadOnlyList<Question> AddUntilFourOptionsPerQuestion(IReadOnlyList<Question> questions);
     }
 }
